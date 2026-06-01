@@ -1,0 +1,315 @@
+/* =====================================================================
+   Mastercard Design System — Design Tokens
+   Color, typography, radius, spacing, shadow primitives + semantic vars.
+   Drop MarkForMC woff2 files into fonts/ and the @font-face below will
+   pick them up; otherwise Sofia Sans (Google Fonts) is used as the
+   documented open-source substitute from Mastercard's own fallback stack.
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,400;0,450;0,500;0,700;1,400;1,500&display=swap');
+
+/* If you have MarkForMC woff2 files, drop them in fonts/ and this picks up. */
+@font-face {
+  font-family: 'MarkForMC';
+  src: local('MarkForMC'),
+       url('fonts/MarkForMC-Regular.woff2') format('woff2');
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MarkForMC';
+  src: local('MarkForMC Medium'),
+       url('fonts/MarkForMC-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MarkForMC';
+  src: local('MarkForMC Bold'),
+       url('fonts/MarkForMC-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* =====================================================================
+     COLOR — raw palette
+     ===================================================================== */
+
+  /* Brand mark only — never UI colors */
+  --mc-red:                   #EB001B;
+  --mc-yellow:                #F79E1B;
+
+  /* Ink */
+  --mc-ink:                   #141413;  /* warm near-black */
+  --mc-charcoal:              #262627;
+  --mc-granite:               #555555;
+  --mc-graphite:              #565656;
+  --mc-slate:                 #696969;
+  --mc-dust:                  #D1CDC7;  /* whisper/disabled */
+
+  /* Canvas */
+  --mc-canvas:                #F3F0EE;  /* warm putty cream — the page */
+  --mc-lifted:                #FCFBFA;  /* one step lighter */
+  --mc-white:                 #FFFFFF;
+  --mc-bone:                  #F4F4F4;  /* cool-gray alt surface */
+
+  /* Ghost watermark (cream-on-cream) */
+  --mc-whisper:               #E8E2DA;
+
+  /* Signal */
+  --mc-signal-orange:         #CF4500;  /* consent/legal only */
+  --mc-signal-orange-light:   #F37338;  /* orbital arcs, dots */
+  --mc-clay:                  #9A3A0A;  /* rust secondary link */
+
+  /* Semantic accents */
+  --mc-link:                  #3860BE;
+
+  /* =====================================================================
+     COLOR — semantic
+     ===================================================================== */
+
+  --color-bg:                 var(--mc-canvas);
+  --color-bg-lifted:          var(--mc-lifted);
+  --color-bg-inverse:         var(--mc-ink);
+
+  --color-fg:                 var(--mc-ink);
+  --color-fg-muted:           var(--mc-slate);
+  --color-fg-whisper:         var(--mc-dust);
+  --color-fg-inverse:         var(--mc-canvas);
+
+  --color-border:             var(--mc-ink);
+  --color-border-muted:       rgba(20, 20, 19, 0.15);
+  --color-border-inverse:     rgba(255, 255, 255, 0.30);
+
+  --color-accent-arc:         var(--mc-signal-orange-light);
+  --color-accent-dot:         var(--mc-signal-orange-light);
+  --color-signal:             var(--mc-signal-orange);
+  --color-link:               var(--mc-link);
+
+  /* =====================================================================
+     TYPOGRAPHY
+     ===================================================================== */
+
+  --font-sans: 'MarkForMC', 'Sofia Sans', Arial, sans-serif;
+  --font-official: 'MarkForMC', 'Sofia Sans', Arial, sans-serif;
+
+  /* Weights — note 450 is load-bearing for body */
+  --fw-body:       450;
+  --fw-medium:     500;
+  --fw-bold:       700;
+
+  /* Size scale */
+  --fs-h1:         64px;
+  --fs-h2:         36px;
+  --fs-h3:         24px;
+  --fs-h4:         14px;
+  --fs-eyebrow:    14px;
+  --fs-body:       16px;
+  --fs-nav:        16px;
+  --fs-footer:     14px;
+  --fs-micro:      12px;
+
+  /* Line-height ratio drops with size */
+  --lh-h1:         1.0;
+  --lh-h2:         1.222;   /* 44/36 */
+  --lh-h3:         1.2;
+  --lh-h4:         1.3;
+  --lh-body:       1.4;
+  --lh-nav:        1.0;
+
+  /* Letter-spacing — tight headlines, wide eyebrow */
+  --tracking-headline: -0.02em;   /* -2% */
+  --tracking-button:   -0.03em;   /* -3% */
+  --tracking-body:     normal;
+  --tracking-eyebrow:  0.04em;    /* +4% uppercase */
+
+  /* =====================================================================
+     SPACING — base 8
+     ===================================================================== */
+
+  --space-1:       8px;
+  --space-2:       16px;
+  --space-3:       24px;
+  --space-4:       32px;
+  --space-5:       48px;
+  --space-6:       64px;
+  --space-7:       96px;
+  --space-8:       128px;
+
+  /* Section + container */
+  --section-y:           96px;
+  --section-y-mobile:    48px;
+  --container-max:       1280px;
+  --container-gutter:    48px;
+  --nav-top-margin:      24px;
+
+  /* =====================================================================
+     RADIUS — the famous scale (no 8/12 middle ground)
+     ===================================================================== */
+
+  --radius-micro:  4px;     /* tiny decorative only */
+  --radius-button: 20px;    /* primary/secondary CTAs */
+  --radius-consent:24px;    /* signal-orange pills */
+  --radius-stadium:40px;    /* hero media, big cards */
+  --radius-pill:   999px;   /* nav, country selector, carousel cards */
+  --radius-circle: 50%;     /* portraits, icon buttons */
+
+  /* =====================================================================
+     SHADOWS — atmospheric cushioning, not directional
+     ===================================================================== */
+
+  --shadow-0: none;
+  --shadow-1: 0 4px 24px 0 rgba(0, 0, 0, 0.04);
+  --shadow-2: 0 24px 48px 0 rgba(0, 0, 0, 0.08);
+  --shadow-3: 0 70px 110px 0 rgba(0, 0, 0, 0.25);
+
+  /* =====================================================================
+     MOTION
+     ===================================================================== */
+
+  --ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --dur-fast:     180ms;
+  --dur-base:     240ms;
+  --dur-slow:     400ms;
+}
+
+/* =====================================================================
+   BASE — body, headings, paragraphs
+   ===================================================================== */
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--tracking-headline);
+  color: var(--color-fg);
+  margin: 0;
+  text-wrap: pretty;
+}
+h2, .h2 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--tracking-headline);
+  color: var(--color-fg);
+  margin: 0;
+  text-wrap: pretty;
+}
+h3, .h3 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-h3);
+  letter-spacing: var(--tracking-headline);
+  color: var(--color-fg);
+  margin: 0;
+}
+h4, .h4 {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-h4);
+  margin: 0;
+}
+p, .body {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-body);
+  line-height: var(--lh-body);
+  margin: 0;
+}
+.eyebrow {
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--color-fg);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-dot);
+}
+.ghost-headline {
+  font-size: clamp(72px, 9vw, 128px);
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  letter-spacing: var(--tracking-headline);
+  color: var(--mc-whisper);
+  user-select: none;
+}
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* =====================================================================
+   BUTTON BASES
+   ===================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-nav);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-button);
+  line-height: 1;
+  padding: 10px 24px;
+  border-radius: var(--radius-button);
+  border: 1.5px solid var(--mc-ink);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-standard),
+              color var(--dur-fast) var(--ease-standard);
+}
+.btn--primary {
+  background: var(--mc-ink);
+  color: var(--color-fg-inverse);
+}
+.btn--primary:hover { background: #1f1f1e; border-color: #1f1f1e; }
+
+.btn--secondary {
+  background: var(--mc-white);
+  color: var(--mc-ink);
+  font-weight: var(--fw-body);
+}
+.btn--secondary:hover { background: var(--mc-canvas); }
+
+.btn--signal {
+  background: var(--mc-signal-orange);
+  color: var(--mc-white);
+  border: 0;
+  border-radius: var(--radius-consent);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.13px;
+  padding: 8px 30px;
+}
+.btn--signal:hover { background: #b53b00; }

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curriculum Vitae · Emin Köksal</title>
+<meta name="description" content="Curriculum Vitae of Emin Köksal — Associate Professor of Economics (Doç. Dr.), AI strategist, Routledge author, SAGE editor.">
+<link rel="canonical" href="https://eminkoksal.com/cv.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://eminkoksal.com/cv.html">
+<meta property="og:title" content="Curriculum Vitae · Emin Köksal">
+<meta property="og:description" content="Associate Professor of Economics (Doç. Dr.), AI strategist, Routledge author, SAGE editor.">
+<meta property="og:image" content="https://eminkoksal.com/assets/portrait.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  /* ---- CV print stylesheet ---- */
+  @media print {
+    @page { margin: 18mm 14mm; size: A4; }
+
+    /* Hide chrome that doesn't belong on the printed CV */
+    nav, footer, .cv-toc, .cv-hero__actions, .cv-footer-cta { display: none !important; }
+    /* Hide the floating top nav-pill container too */
+    body > * > nav, .nav-pill { display: none !important; }
+
+    html, body { background: #FFFFFF !important; color: #000 !important; }
+    main { animation: none !important; }
+
+    /* Compact section spacing for print */
+    .cv-section { padding: 24px 0 !important; background: transparent !important; break-inside: avoid; }
+    .cv-section--break { break-before: page; page-break-before: always; }
+
+    /* Single column, ignore decorative offsets */
+    .container { padding: 0 !important; max-width: 100% !important; }
+
+    /* Ghost watermarks off in print */
+    .ghost, [class*="ghost"] { display: none !important; }
+
+    /* Hide circular satellite buttons / external link circles */
+    .cv-cite a[target="_blank"] { color: #000 !important; border: 0 !important; }
+    .cv-cite__ext { display: none !important; }
+
+    /* Smaller hero on print */
+    .cv-hero { padding: 0 0 16px !important; }
+    .cv-hero h1.display { font-size: 28pt !important; line-height: 1.1 !important; }
+
+    /* Headings */
+    h2 { font-size: 16pt !important; }
+    h3, .cv-pub-group { font-size: 11pt !important; }
+    p, li, td, th { font-size: 10pt !important; line-height: 1.4 !important; }
+
+    /* Citation rows: keep tight */
+    .cv-cite { padding: 6px 0 !important; }
+
+    /* Avoid breaking individual citations across pages */
+    .cv-cite, tr, li { break-inside: avoid; page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="/src/entry-cv.jsx"></script>
+</body>
+</html>

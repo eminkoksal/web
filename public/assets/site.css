@@ -1,0 +1,149 @@
+/* Site-wide layout + page chrome on top of tokens.css */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--mc-canvas);
+  font-family: var(--font-sans);
+  color: var(--mc-ink);
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+
+/* Selection */
+::selection { background: var(--mc-ink); color: var(--mc-canvas); }
+
+/* Container utility */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+}
+
+/* Eyebrow w/ accent dot — same as token but as a class */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--mc-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--mc-signal-orange-light);
+  flex-shrink: 0;
+}
+.eyebrow--inverse { color: rgba(255,255,255,.85); }
+
+/* Ghost cream-on-cream display */
+.ghost {
+  color: var(--mc-whisper);
+  font-weight: 500;
+  letter-spacing: var(--tracking-headline);
+  line-height: .92;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Editorial headline scale used across pages */
+.display {
+  font-size: clamp(48px, 7.4vw, 116px);
+  font-weight: 500;
+  line-height: .96;
+  letter-spacing: -0.025em;
+  margin: 0;
+  text-wrap: balance;
+}
+.display--mid {
+  font-size: clamp(36px, 4.6vw, 72px);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.022em;
+}
+
+/* Page hero shared wrapper */
+.page-hero {
+  position: relative;
+  padding: 120px 0 96px;
+}
+
+/* Section spacing */
+.section { padding: var(--section-y) 0; }
+.section--tight { padding: 64px 0; }
+
+/* Button overrides — slightly more padding than tokens default */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -.03em;
+  line-height: 1;
+  padding: 14px 26px;
+  border-radius: var(--radius-button);
+  border: 1.5px solid var(--mc-ink);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--dur-fast) var(--ease-standard),
+              color var(--dur-fast) var(--ease-standard),
+              border-color var(--dur-fast) var(--ease-standard);
+}
+.btn--primary { background: var(--mc-ink); color: var(--mc-canvas); }
+.btn--primary:hover { background: #1f1f1e; border-color: #1f1f1e; }
+.btn--ghost { background: transparent; color: var(--mc-ink); font-weight: 450; }
+.btn--ghost:hover { background: var(--mc-ink); color: var(--mc-canvas); }
+
+/* Link reset for nav links */
+a.plain { color: inherit; text-decoration: none; }
+a.plain:hover { text-decoration: none; }
+
+/* Card primitives */
+.surface {
+  background: var(--mc-lifted);
+  border-radius: var(--radius-stadium);
+  padding: 48px;
+}
+.surface--ink {
+  background: var(--mc-ink);
+  color: var(--mc-canvas);
+}
+
+/* Subtle hairline border */
+.hairline { border-top: 1px solid var(--color-border-muted); }
+
+/* Quiet meta text */
+.meta {
+  font-size: 14px;
+  color: var(--mc-slate);
+  letter-spacing: -.005em;
+}
+
+/* Body prose */
+.prose p { font-size: 18px; line-height: 1.55; color: var(--mc-charcoal); margin: 0 0 1.1em; }
+.prose p:last-child { margin-bottom: 0; }
+.prose a { color: var(--mc-link); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Footer is rendered globally as JSX */
+
+/* Page transition: subtle fade for nav clicks */
+main { animation: pageIn .42s var(--ease-standard) both; }
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Tiny utility */
+.row { display: flex; align-items: center; gap: 16px; }
+.col { display: flex; flex-direction: column; gap: 16px; }
+
+/* Make the floating nav not eat hero space when overlayed */
+.nav-spacer { height: 24px; }

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="24" cy="32" r="22" fill="#141413"/>
+  <circle cx="37" cy="32" r="22" fill="#F37338"/>
+  <path d="M30.5 11 a22 22 0 0 1 0 42 a22 22 0 0 1 0 -42 Z" fill="#CF4500"/>
+  <text x="30.5" y="32" text-anchor="middle" dominant-baseline="central"
+        font-family="'Sofia Sans',Arial,sans-serif" font-size="19" font-weight="700"
+        letter-spacing="-0.5" fill="#F3F0EE">EK</text>
+</svg>
