@@ -243,11 +243,9 @@ function Footer() {
     {
       title: 'Elsewhere',
       links: [
-        { label: 'LinkedIn', ext: true, href: '#' },
-        { label: 'Twitter / X', ext: true, href: '#' },
-        { label: 'Instagram', ext: true, href: '#' },
-        { label: 'Google Scholar', ext: true, href: '#' },
-        { label: 'SSRN', ext: true, href: '#' },
+        { label: 'LinkedIn', ext: true, href: 'https://www.linkedin.com/in/eminkoksal' },
+        { label: 'X / Twitter', ext: true, href: 'https://x.com/eminkoksal' },
+        { label: 'Instagram', ext: true, href: 'https://instagram.com/emnkksl' },
       ],
     },
     {
@@ -316,10 +314,9 @@ function Footer() {
             <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Colophon</a>
           </div>
           <div style={{ display: 'flex', gap: 14 }}>
-            <SocialIcon kind="linkedin" />
-            <SocialIcon kind="x" />
-            <SocialIcon kind="instagram" />
-            <SocialIcon kind="scholar" />
+            <SocialIcon kind="linkedin" href="https://www.linkedin.com/in/eminkoksal" />
+            <SocialIcon kind="x" href="https://x.com/eminkoksal" />
+            <SocialIcon kind="instagram" href="https://instagram.com/emnkksl" />
           </div>
         </div>
       </div>
@@ -339,7 +336,10 @@ function FooterColumn({ title, links }) {
         {links.map((l, i) => (
           <li key={i}>
             {l.href ? (
-              <a href={l.href} style={{
+              <a href={l.href}
+                target={l.ext ? '_blank' : undefined}
+                rel={l.ext ? 'noopener noreferrer' : undefined}
+                style={{
                 fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 450,
                 color: '#FFFFFF', textDecoration: 'none',
                 display: 'inline-flex', alignItems: 'center', gap: 6,
@@ -360,7 +360,7 @@ function FooterColumn({ title, links }) {
   );
 }
 
-function SocialIcon({ kind }) {
+function SocialIcon({ kind, href }) {
   const paths = {
     linkedin:  'M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z',
     x:         'M4 4l16 16M20 4L4 20',
@@ -368,7 +368,8 @@ function SocialIcon({ kind }) {
     scholar:   'M12 14l-9-5 9-5 9 5-9 5zm0 0v6m-5-3.5a5 5 0 0 0 10 0',
   };
   return (
-    <a href="#" style={{ width: 36, height: 36, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF' }}>
+    <a href={href || '#'} target="_blank" rel="noopener noreferrer" aria-label={kind}
+       style={{ width: 36, height: 36, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF' }}>
       <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor"
            strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
         <path d={paths[kind]} />

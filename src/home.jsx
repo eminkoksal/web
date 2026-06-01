@@ -517,7 +517,7 @@ function FeaturedCard({ eyebrow, title, body, meta, cta, href }) {
     onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
     style={{
       display: 'flex', flexDirection: 'column',
-      background: '#FCFBFA', borderRadius: 40,
+      borderRadius: 40,
       padding: 36, gap: 20,
       minHeight: 420,
       textDecoration: 'none', color: '#141413',
