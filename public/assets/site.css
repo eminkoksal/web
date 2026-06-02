@@ -147,3 +147,69 @@ main { animation: pageIn .42s var(--ease-standard) both; }
 
 /* Make the floating nav not eat hero space when overlayed */
 .nav-spacer { height: 24px; }
+
+/* ============================================================
+   Responsive / mobile
+   The pages are built with desktop-first inline styles (no
+   per-component media queries), so the rules below use !important
+   to override those inline declarations at small widths.
+   ============================================================ */
+
+/* Nav collapses to a hamburger menu — 6 links + name + CTA can't
+   fit a phone-width pill. Breaks earlier than the body layout. */
+@media (max-width: 860px) {
+  .nav-pill { position: relative; }
+  .nav-burger { display: inline-flex !important; }
+  .nav-links { display: none !important; }
+  .nav-links.is-open {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px !important;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0; right: 0;
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 14px;
+    box-shadow: 0 14px 44px rgba(0, 0, 0, .16);
+  }
+  .nav-links.is-open a {
+    justify-content: flex-start;
+    padding: 13px 16px !important;
+    border-radius: 14px;
+    margin: 0 !important;
+  }
+  .nav-links.is-open a:not(:last-child):hover { background: #F3F0EE; }
+}
+
+/* Phone layout: collapse columns, scale spacing, cap media. */
+@media (max-width: 768px) {
+  :root { --container-gutter: 20px; }
+
+  /* Collapse every multi-column body grid to a single column */
+  main [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+
+  /* Footer's 4-column link block -> 2 columns */
+  footer [style*="grid-template-columns"] { grid-template-columns: 1fr 1fr !important; }
+
+  /* Hero / decorative portraits can't exceed the viewport */
+  .portrait {
+    max-width: 74vw !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    margin-inline: auto;
+  }
+
+  /* Tighten the big desktop vertical rhythm */
+  .section { padding: var(--section-y-mobile) 0 !important; }
+  .page-hero { padding: 84px 0 52px !important; }
+  .surface { padding: 26px !important; }
+  footer { padding: 72px 20px 48px !important; }
+  main [style*="padding:128px"],
+  main [style*="padding:120px"],
+  main [style*="padding:100px"] {
+    padding-top: 56px !important;
+    padding-bottom: 48px !important;
+  }
+}

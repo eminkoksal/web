@@ -121,7 +121,7 @@ function Portrait({ size = 280, src, gradient, children, style }) {
   const bg = src ? `url(${src}) center 25%/cover` :
     gradient || 'radial-gradient(circle at 35% 35%, #F37338 0%, #CF4500 50%, #9A3A0A 100%)';
   return (
-    <div style={{
+    <div className="portrait" style={{
       position: 'relative', width: size, height: size,
       borderRadius: '50%', background: bg, overflow: 'visible', ...style,
     }}>
@@ -156,6 +156,7 @@ function SatelliteCTA({ onClick, href, size = 60, anchor = { right: -6, bottom: 
 
 /* ------- Nav (floating white pill) ------- */
 function Nav({ active = 'Home' }) {
+  const [open, setOpen] = useState(false);
   const links = [
     { label: 'Home', href: 'index.html' },
     { label: 'About', href: 'about.html' },
@@ -170,7 +171,7 @@ function Nav({ active = 'Home' }) {
       padding: '0 32px', display: 'flex', justifyContent: 'center',
       pointerEvents: 'none',
     }}>
-      <div style={{
+      <div className="nav-pill" style={{
         background: '#FFFFFF', borderRadius: 999,
         boxShadow: '0 4px 24px rgba(0,0,0,.06)',
         padding: '12px 14px 12px 22px',
@@ -183,7 +184,21 @@ function Nav({ active = 'Home' }) {
             Emin Köksal
           </span>
         </a>
-        <nav style={{ display: 'flex', gap: 28, flex: 1, justifyContent: 'flex-end', alignItems: 'center' }}>
+        <button type="button" className="nav-burger" aria-label="Menu" aria-expanded={open}
+          onClick={() => setOpen((o) => !o)}
+          style={{
+            display: 'none', marginLeft: 'auto', width: 42, height: 42,
+            alignItems: 'center', justifyContent: 'center',
+            background: 'transparent', border: 0, borderRadius: 999, cursor: 'pointer',
+            color: '#141413',
+          }}>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            {open
+              ? <g stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><line x1="5" y1="5" x2="17" y2="17"/><line x1="17" y1="5" x2="5" y2="17"/></g>
+              : <g stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"><line x1="3" y1="7" x2="19" y2="7"/><line x1="3" y1="11" x2="19" y2="11"/><line x1="3" y1="15" x2="19" y2="15"/></g>}
+          </svg>
+        </button>
+        <nav className={'nav-links' + (open ? ' is-open' : '')} style={{ display: 'flex', gap: 28, flex: 1, justifyContent: 'flex-end', alignItems: 'center' }}>
           {links.map((l) => (
             <a key={l.label} href={l.href}
                style={{
