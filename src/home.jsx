@@ -121,7 +121,7 @@ function HeroEditorial({ t }) {
           position: 'relative', zIndex: 1, paddingTop: 80
         }}>
           <div>
-            <Eyebrow>Economist · Associate Professor · AI Strategist</Eyebrow>
+            <Eyebrow>Economist · Associate Professor · AI Consultant</Eyebrow>
             <h1 className="display" style={{ margin: '28px 0 28px' }}>
               Emin Köksal
             </h1>
@@ -178,7 +178,7 @@ function HeroStadium({ t }) {
           display: 'flex', alignItems: 'baseline', justifyContent: 'space-between',
           paddingTop: 60, paddingBottom: 32
         }}>
-          <Eyebrow>Economist · Associate Professor · AI Strategist</Eyebrow>
+          <Eyebrow>Economist · Associate Professor · AI Consultant</Eyebrow>
           <span style={{ fontSize: 14, color: '#555' }}>
             Istanbul&nbsp;·&nbsp;Türkiye
           </span>
@@ -284,7 +284,7 @@ function HeroTypographic({ t }) {
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           paddingTop: 80, position: 'relative', zIndex: 2
         }}>
-          <Eyebrow>Economist · Associate Professor · AI Strategist</Eyebrow>
+          <Eyebrow>Economist · Associate Professor · AI Consultant</Eyebrow>
           <span style={{
             fontSize: 13, fontWeight: 500, letterSpacing: '.04em',
             textTransform: 'uppercase', color: '#555'

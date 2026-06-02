@@ -671,7 +671,7 @@ function CVHero() {
               fontFamily: 'var(--font-sans)', fontSize: 'clamp(18px, 1.8vw, 22px)',
               fontWeight: 500, letterSpacing: '-.018em', color: '#141413',
               margin: 0, lineHeight: 1.35
-            }}>Associate Professor of Economics · AI Strategist · Researcher
+            }}>Associate Professor of Economics · AI Consultant · Researcher
 
             </p>
             <p style={{

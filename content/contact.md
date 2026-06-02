@@ -124,4 +124,4 @@
 
 ## SEO meta description (≤155 chars)
 
-> *Contact Emin Köksal — Associate Professor of Economics and AI strategist. Email, LinkedIn, and speaking inquiries.*
+> *Contact Emin Köksal — Associate Professor of Economics and AI consultant. Email, LinkedIn, and speaking inquiries.*

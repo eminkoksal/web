@@ -12,11 +12,11 @@
 
 **H1**
 
-> Academic economist. AI strategist. Researcher of how AI is changing the questions economic research can ask.
+> Academic economist. AI consultant. Researcher of how AI is changing the questions economic research can ask.
 
 **Lead paragraph** *(max ~120 words)*
 
-> I'm Emin Köksal — Associate Professor of Economics (Doç. Dr.), Routledge author, and AI strategist. Twenty years of my work has been inside competition economics and digital regulation; the last few have been about rebuilding that same work around AI. I design AI workflows for competition and regulation teams at leading international law firms, train practitioners on next-generation legal AI platforms, and use AI to extend what economic and competition-law research can ask. The four pillars below are not four careers — they are one identity, viewed from four angles.
+> I'm Emin Köksal — Associate Professor of Economics (Doç. Dr.), Routledge author, and AI consultant. Twenty years of my work has been inside competition economics and digital regulation; the last few have been about rebuilding that same work around AI. I design AI workflows for competition and regulation teams at leading international law firms, train practitioners on next-generation legal AI platforms, and use AI to extend what economic and competition-law research can ask. The four pillars below are not four careers — they are one identity, viewed from four angles.
 
 **Headshot:** single headshot reused across the site; placement and treatment defined in Claude Design.
 
@@ -41,7 +41,7 @@
 
 **H2**
 
-> Academic economist *and* AI strategist — in that order.
+> Academic economist *and* AI consultant — in that order.
 
 **Body**
 
@@ -215,4 +215,4 @@ The four pillar sections use `#academic`, `#ai-strategy`, `#research`. The homep
 
 ## SEO meta description (≤155 chars)
 
-> *About Emin Köksal — Associate Professor of Economics (Doç. Dr.), AI strategist, and researcher using AI to extend competition and regulation research.*
+> *About Emin Köksal — Associate Professor of Economics (Doç. Dr.), AI consultant, and researcher using AI to extend competition and regulation research.*

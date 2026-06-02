@@ -8,7 +8,7 @@
 
 **Eyebrow**
 
-> ECONOMIST · ASSOCIATE PROFESSOR · AI STRATEGIST
+> ECONOMIST · ASSOCIATE PROFESSOR · AI CONSULTANT
 
 **H1**
 
@@ -155,4 +155,4 @@
 
 ## SEO meta description (≤155 chars)
 
-> *Academic economist (Doç. Dr.) and AI strategist. Twenty years in competition economics. AI workflows, training, and AI-native research.*
+> *Academic economist (Doç. Dr.) and AI consultant. Twenty years in competition economics. AI workflows, training, and AI-native research.*

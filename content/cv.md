@@ -18,7 +18,7 @@
 
 **Body**
 
-> Associate Professor of Economics (Doç. Dr.) · AI Strategist · Researcher
+> Associate Professor of Economics (Doç. Dr.) · AI Consultant · Researcher
 > Last updated: February 2026
 
 **Buttons**
@@ -233,4 +233,4 @@
 
 ## SEO meta description (≤155 chars)
 
-> *Curriculum Vitae of Emin Köksal — Associate Professor of Economics (Doç. Dr.), AI strategist, Routledge author, SAGE editor.*
+> *Curriculum Vitae of Emin Köksal — Associate Professor of Economics (Doç. Dr.), AI consultant, Routledge author, SAGE editor.*

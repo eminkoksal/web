@@ -200,7 +200,7 @@ function AboutHero() {
           <Eyebrow>About</Eyebrow>
           <h1 className="display"
           style={{ margin: '28px 0 0', maxWidth: 1180, fontSize: 'clamp(40px, 5.6vw, 92px)' }}>
-            Academic economist and AI strategist.
+            Academic economist and AI consultant.
           </h1>
         </div>
 
@@ -211,7 +211,7 @@ function AboutHero() {
           <div className="prose" style={{ maxWidth: 600 }}>
             <p>
               I&rsquo;m <strong>Emin Köksal</strong> — Associate Professor of Economics,
-              Routledge author, and AI strategist. Twenty years of my work
+              Routledge author, and AI consultant. Twenty years of my work
               has been inside competition economics and digital regulation; the last few
               have been about rebuilding that same work around AI. I design AI workflows
               for competition and regulation teams at leading international law firms,
@@ -295,7 +295,7 @@ function TwoIdentities() {
           <div>
             <Eyebrow>One identity, two tracks</Eyebrow>
             <h2 className="display--mid" style={{ margin: '20px 0 0', maxWidth: 460 }}>
-              Academic economist <em>and</em> AI strategist — in that order.
+              Academic economist <em>and</em> AI consultant — in that order.
             </h2>
           </div>
 

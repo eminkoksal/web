@@ -9,7 +9,7 @@
 ## Professional Identity
 
 **Name:** Emin Köksal
-**Headline:** Academic Economist & AI Strategist
+**Headline:** Academic Economist & AI Consultant
 **Subhead:** Associate Professor (Doç. Dr.) · Researcher · Consultant
 
 **Tagline (primary):** Where economic rigor meets AI fluency.
@@ -120,17 +120,17 @@ Three lengths, all reflecting the new positioning. Drop-in copy for the new webs
 
 ### Short (≈60 words)
 
-> Emin Köksal is an academic economist (Doç. Dr.) and AI strategist with twenty years in competition economics and digital regulation. He designs AI workflows for competition and regulation teams at leading international law firms, trains practitioners on next-generation legal AI platforms, and uses AI to extend economic and competition-law research — including ongoing work on the citation structure of regulatory case law.
+> Emin Köksal is an academic economist (Doç. Dr.) and AI consultant with twenty years in competition economics and digital regulation. He designs AI workflows for competition and regulation teams at leading international law firms, trains practitioners on next-generation legal AI platforms, and uses AI to extend economic and competition-law research — including ongoing work on the citation structure of regulatory case law.
 
 ### Medium (≈150 words)
 
-> Emin Köksal is an associate professor of economics (Doç. Dr.), Routledge author, and AI strategist whose research, teaching, and consultancy all run on AI. He has spent two decades in competition economics and digital regulation across electricity, banking, telecoms, retail, and digital platforms, with 50+ publications and Associate Editor-in-Chief duties at *Competition and Regulation in Network Industries* (SAGE).
+> Emin Köksal is an associate professor of economics (Doç. Dr.), Routledge author, and AI consultant whose research, teaching, and consultancy all run on AI. He has spent two decades in competition economics and digital regulation across electricity, banking, telecoms, retail, and digital platforms, with 50+ publications and Associate Editor-in-Chief duties at *Competition and Regulation in Network Industries* (SAGE).
 >
 > In practice, he is embedded inside the competition and regulation team of a leading international law firm, where he designs AI workflows, complex prompts, and playbooks for a leading European legal AI platform. In research, he uses AI to ask new questions of the regulatory record — most recently, mapping the citation network and "intellectual DNA" of a national competition authority's case law. He teaches graduate courses on AI for economic analysis, climate economics, and digital competition policy.
 
 ### Long (≈300 words)
 
-> Emin Köksal is an academic economist and AI strategist working at the intersection of competition policy, regulation, and applied artificial intelligence. He holds the Associate Professorship in Economics (Doçentlik) — the formal Turkish academic title earned through the national examination — and has spent twenty years in competition economics and digital regulation, with expert work spanning electricity, banking, telecoms, retail, and digital platforms.
+> Emin Köksal is an academic economist and AI consultant working at the intersection of competition policy, regulation, and applied artificial intelligence. He holds the Associate Professorship in Economics (Doçentlik) — the formal Turkish academic title earned through the national examination — and has spent twenty years in competition economics and digital regulation, with expert work spanning electricity, banking, telecoms, retail, and digital platforms.
 >
 > His academic record includes 50+ publications in peer-reviewed journals and book chapters, co-editorship of a Routledge volume on the economics of digitalisation in Türkiye (2024), and Associate Editor-in-Chief responsibilities at *Competition and Regulation in Network Industries* (SAGE Publishing). He teaches graduate courses — including *Generative AI for Economic Analysis*, *Economics of Climate Change*, and *Innovation & Competition Policy in Digital Markets* — at Bahçeşehir University and other institutions.
 >
@@ -146,7 +146,7 @@ LinkedIn's headline field accepts up to 220 characters. The headline appears in 
 
 ### Option A — Identity-led (recommended default)
 
-> **Academic Economist & AI Strategist | Associate Professor (Doç. Dr.) | AI workflows for competition & regulation teams | AI-native research on regulatory case law**
+> **Academic Economist & AI Consultant | Associate Professor (Doç. Dr.) | AI workflows for competition & regulation teams | AI-native research on regulatory case law**
 
 (*~190 characters. Leads with the dual identity, names the academic title, gives both consulting and research one beat each. Strongest match for the new positioning.*)
 
@@ -219,6 +219,6 @@ The brand shows up across three primary surfaces. The verbal elements (headline,
 
 **Why one audience.** Focus is the simplest premium signal. Speaking to organizations only — not also to individual coaching clients — sharpens every page. The brand becomes legible: *this is who I work with, this is what I do, this is what it costs you not to.* Within that focus, the work runs on two reinforcing tracks (AI strategy for organizations + AI-native research), which together explain why the same person does both.
 
-**Why headline both identities equally.** "Academic Economist & AI Strategist" is intentionally balanced rather than ordered. An academic identity alone reads as historic; an AI identity alone reads as opportunistic. The pairing — and the order of *academic credibility first, then AI fluency* in every supporting text — signals a researcher whose work is contemporary, not a consultant who once published.
+**Why headline both identities equally.** "Academic Economist & AI Consultant" is intentionally balanced rather than ordered. An academic identity alone reads as historic; an AI identity alone reads as opportunistic. The pairing — and the order of *academic credibility first, then AI fluency* in every supporting text — signals a researcher whose work is contemporary, not a consultant who once published.
 
-**Why semi-academic, enthusiastic voice.** The "Academic Economist" half of the identity asks for rigor and citation. The "AI Strategist" half asks for momentum and conviction. The mix — careful but spirited — is the actual differentiator: most consultants undersell rigor; most academics undersell urgency. This brand does both, and in a deliberate order: academic credibility first, AI fluency layered on top.
+**Why semi-academic, enthusiastic voice.** The "Academic Economist" half of the identity asks for rigor and citation. The "AI Consultant" half asks for momentum and conviction. The mix — careful but spirited — is the actual differentiator: most consultants undersell rigor; most academics undersell urgency. This brand does both, and in a deliberate order: academic credibility first, AI fluency layered on top.
