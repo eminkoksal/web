@@ -11,6 +11,7 @@ const { useState } = React;
 const ABOUT_STATS = [
 { value: '20+', label: 'years in competition economics' },
 { value: '50+', label: 'publications' },
+{ value: '1000s', label: 'legal documents analyzed with AI' },
 { value: '11+', label: 'graduate courses taught' }];
 
 
@@ -19,25 +20,25 @@ const ABOUT_PILLARS = [
   id: 'academic',
   title: 'Academic Economics & Teaching',
   intro:
-  'The original ground. A formal academic record in economics, sustained ' +
-  'alongside active graduate-level teaching.',
+  'Where it all started: a formal academic record in economics, kept current by ' +
+  'teaching every year.',
   bullets: [
   {
-    lead: 'Associate Professorship in Economics',
+    lead: 'Associate Professorship (Do\u00e7entlik) in Economics',
     body:
-    'earned through the national associate professorship examination; the formal title ' +
+    ' \u2014 earned through T\u00fcrkiye\u2019s national associate professorship examination; the title ' +
     'that would enter a full university post at full Professor rank.'
   },
   {
     lead: '50+ publications',
     body:
-    'across peer-reviewed journals and book chapters in economics, competition, and regulation.'
+    ' across peer-reviewed journals and book chapters in economics, competition, and regulation.'
   },
   {
     lead: 'Routledge co-editor',
     body:
-    '\u2014 The Economics and Regulation of Digitalisation: The Case of Türkiye (Routledge, 2024), ' +
-    'with M. Eroğlu and M. Finger.'
+    ' \u2014 The Economics and Regulation of Digitalisation: The Case of T\u00fcrkiye (Routledge, 2024), ' +
+    'with M. Ero\u011flu and M. Finger.'
   },
   {
     lead: 'Associate Editor-in-Chief',
@@ -47,15 +48,9 @@ const ABOUT_PILLARS = [
   {
     lead: 'Graduate-level teaching',
     body:
-    ' at Bahçeşehir University and other institutions: Generative AI for Economic Analysis, ' +
+    ' at Bah\u00e7e\u015fehir University and other institutions: Generative AI for Economic Analysis, ' +
     'Managerial Economics, Platform Business and Economics, Industrial Organization, ' +
     'Innovation & Competition Policy in Digital Markets, Economics of Climate Change, Law & Economics.'
-  },
-  {
-    lead: 'Recognised in the field',
-    body:
-    ' as an academic economist working at the intersection of competition policy, regulation, ' +
-    'and AI — particularly within the Turkish and international competition-law community.'
   }]
 
 },
@@ -63,10 +58,10 @@ const ABOUT_PILLARS = [
   id: 'ai-strategy',
   title: 'AI Strategy & Workflow Design (for Organizations)',
   intro:
-  'Translating frontier AI tools into reliable analytical infrastructure for competition, ' +
-  'regulation, and economic-analysis teams. The work distinguishes carefully between ' +
-  'general-purpose AI tools (for non-confidential academic and marketing work) and ' +
-  'confidentiality-grade legal AI platforms (for client work).',
+  'I help competition, regulation, and economic-analysis teams turn frontier AI tools ' +
+  'into infrastructure they can rely on. General-purpose tools for non-confidential work; ' +
+  'confidentiality-grade legal AI platforms for client matters. The distinction matters, ' +
+  'and I hold it strictly.',
   subhead: 'What I deliver',
   bullets: [
   {
@@ -74,72 +69,65 @@ const ABOUT_PILLARS = [
     body: ' for competition cases, regulatory dossiers, and economic analysis.'
   },
   {
-    lead: 'Legal AI platform enablement',
+    lead: 'Practitioner training on legal AI platforms',
     body:
-    ' — practitioner training on next-generation European legal AI platforms: how to use them ' +
-    'at depth, how to design playbooks that compound across matters, and how to integrate them ' +
-    'into existing review and drafting flows.'
+    ' \u2014 how to use them at depth, and how to build playbooks that compound across matters.'
   },
   {
     lead: 'Complex prompt and agent design',
     body:
-    ' — task-specific prompts, multi-step research agents, and reusable templates that raise ' +
-    'output quality while saving time on repetitive analytical work.'
+    ' \u2014 task-specific prompts, multi-step research agents, and reusable templates.'
   },
   {
     lead: 'MCP-based research infrastructure',
     body:
-    ' — custom Model Context Protocol setups that let practitioners run high-quality legal and ' +
-    'academic discovery research from inside their AI tools.'
+    ' \u2014 custom Model Context Protocol setups for legal and academic discovery, run from ' +
+    'inside the tools practitioners already use.'
   },
   {
-    lead: 'Strategic AI adoption advisory',
+    lead: 'AI adoption advisory for senior leadership',
     body:
-    ' for senior leadership — where AI actually moves the needle in a regulatory/economic ' +
-    'practice, and where it doesn\u2019t.'
+    ' \u2014 where AI moves the needle in a regulatory or economic practice, and where it doesn\u2019t.'
   }],
 
   pull: {
     label: 'Where the work happens',
     body:
-    'Embedded inside the competition and regulation practice of a leading international law firm, ' +
-    'designing AI workflows in production. Builds playbooks and trains practitioners on a leading ' +
-    'European legal AI platform. The work is practitioner-built, not slide-deck.'
+    'Since 2015 I\u2019ve worked inside the competition and regulation practice of a leading ' +
+    'international law firm. The workflows I design run there first, on live matters. If a ' +
+    'playbook doesn\u2019t survive contact with a real case, it doesn\u2019t get taught.'
   }
 },
 {
   id: 'research',
   title: 'AI-Native Research',
   intro:
-  'A distinct research program — not a single project. Using AI as a primary method to ask ' +
-  'economic and competition-law questions that were previously infeasible at scale, and to ' +
-  'contribute methodologically to how the literature itself uses these tools.',
+  'What began as one paper has become a research program: using AI to ask competition-law ' +
+  'and economics questions that were too large to ask before.',
   methodSig:
-  'AI-powered analysis of legal corpora — turning regulatory text into research-grade economic ' +
+  'AI-powered analysis of legal corpora \u2014 turning regulatory text into research-grade economic ' +
   'evidence. Pairs large-scale legal-text analysis with citation networks and economic interpretation.',
   subhead: 'Flagship projects',
   projects: [
   {
     title: 'AI analysis of 3,369 Turkish Competition Board decisions',
-    meta: 'Published, SSRN 2025 · with C. Peker and M. Uyer',
+    meta: 'Published, SSRN 2025 \u00b7 with C. Peker and M. Uyer',
     body:
-    'A quarter-century of the Turkish Competition Board\u2019s decisions, treated as a single ' +
-    'coherent dataset. Combines NLP and economic methods to surface patterns invisible to manual review.'
+    'A quarter-century of the Board\u2019s decisions, treated as a single coherent dataset. ' +
+    'Combines NLP and economic methods to find patterns no manual review could.'
   },
   {
     title:
     'The Competition Board\u2019s \u201CIntellectual DNA\u201D: A Citation Network and Case Law Mapping Analysis',
     meta: 'Forthcoming working paper',
     body:
-    'Combining AI analysis of legal texts with citation network analysis to map how authority, ' +
-    'precedent, and reasoning propagate through an agency\u2019s case law over time.'
+    'Maps how authority, precedent, and reasoning move through the agency\u2019s case law over time.'
   }],
 
   closing:
-  'AI doesn\u2019t just speed up what an economist could already do. It changes the questions that ' +
-  'can be asked. Treating the regulatory record as a structured, queryable corpus opens up research ' +
-  'that simply wasn\u2019t feasible a decade ago — and the literature is only beginning to use these ' +
-  'methods seriously.',
+  'The interesting part isn\u2019t the speed. Treating the regulatory record as a structured, ' +
+  'queryable corpus changes which questions are worth asking \u2014 and the literature is only ' +
+  'beginning to use these methods seriously.',
   cta: { label: 'Explore the research', href: 'research.html' }
 },
 {
@@ -147,9 +135,8 @@ const ABOUT_PILLARS = [
   id: null,
   title: 'Public Thought Leadership',
   intro:
-  'The external voice of the three pillars above — essays, conference talks, podcast appearances, ' +
-  'and writing that translates research and practice into accessible writing for both academic and ' +
-  'professional audiences.',
+  'Essays, conference talks, and podcast appearances that carry the other three pillars to ' +
+  'a wider audience, in English and Turkish.',
   cta: { label: 'Read the writing', href: 'blog.html' }
 }];
 
@@ -158,7 +145,7 @@ const AFFILIATIONS = [
 {
   name: 'Istanbul Center for Regulation (IC4R)',
   role: 'Deputy Director',
-  years: '2019 - 2024'
+  years: 'since 2019'
 },
 {
   name: 'Network-Industries.org',
@@ -166,16 +153,16 @@ const AFFILIATIONS = [
   years: 'since 2019'
 },
 {
-  name: 'TÜSİAD (Turkish Industry & Business Association)',
+  name: 'T\u00dcS\u0130AD (Turkish Industry & Business Association)',
   role:
-  'Member of three working groups: Climate Change & Environment, Information and Communication ' +
-  'Technologies, and E-commerce',
-  years: 'since 2018/2019'
+  'Member of three working groups: Climate Change & Environment (since 2019), Information ' +
+  'and Communication Technologies (since 2018), and E-commerce (since 2018)',
+  years: ''
 },
 {
   name: 'US-Turkey Business Council',
   role: 'Member, Digital Economy Advisory Board',
-  years: '2017 - 2018'
+  years: 'since 2017'
 },
 {
   name: 'International Atlantic Economic Society',
@@ -200,7 +187,7 @@ function AboutHero() {
           <Eyebrow>About</Eyebrow>
           <h1 className="display"
           style={{ margin: '28px 0 0', maxWidth: 1180, fontSize: 'clamp(40px, 5.6vw, 92px)' }}>
-            Academic economist and AI consultant.
+            Twenty years an economist | The last few rebuilding the work around AI
           </h1>
         </div>
 
@@ -210,14 +197,14 @@ function AboutHero() {
         }}>
           <div className="prose" style={{ maxWidth: 600 }}>
             <p>
-              I&rsquo;m <strong>Emin Köksal</strong> — Associate Professor of Economics,
-              Routledge author, and AI consultant. Twenty years of my work
-              has been inside competition economics and digital regulation; the last few
-              have been about rebuilding that same work around AI. I design AI workflows
-              for competition and regulation teams at leading international law firms,
-              train practitioners on next-generation legal AI platforms, and use AI to
-              extend what economic and competition-law research can ask. The four pillars
-              below are not four careers — they are one identity, viewed from four angles.
+              I&rsquo;m <strong>Emin Köksal</strong> — Associate Professor of Economics
+              (Doç. Dr.), based in Istanbul. I&rsquo;ve spent twenty years in competition
+              economics and digital regulation: teaching, publishing, editing a journal,
+              and advising law firms on cases. A few years ago I began rebuilding that
+              work around AI. Now I design AI workflows for competition and regulation
+              teams, train practitioners on legal AI platforms, and run a research
+              program that uses AI as its method. This page is the longer version of
+              that story.
             </p>
           </div>
 
@@ -250,7 +237,7 @@ function AtAGlance() {
     <section style={{ padding: '48px 0 96px' }}>
       <div className="container">
         <div style={{
-          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24,
+          display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24,
           borderTop: '1.5px solid #141413',
           borderBottom: '1.5px solid #141413',
           padding: '56px 0'
@@ -295,32 +282,27 @@ function TwoIdentities() {
           <div>
             <Eyebrow>One identity, two tracks</Eyebrow>
             <h2 className="display--mid" style={{ margin: '20px 0 0', maxWidth: 460 }}>
-              Academic economist <em>and</em> AI consultant — in that order.
+              Academic economist <em>and</em> AI consultant — in that order
             </h2>
           </div>
 
           <div className="prose" style={{ maxWidth: 720 }}>
             <p>
-              Most consultants oversell AI and undersell rigor. Most academics undersell
-              urgency. I work the seam between the two.
+              Consultants who talk about AI tend to skip the hard part: knowing which
+              questions matter. Academics who study it often stop short of using it.
+              I&rsquo;ve tried to hold on to both.
             </p>
             <p>
-              The academic identity comes first because it has to. Twenty years inside
-              competition cases, regulatory dossiers, platform economics, and climate
-              policy is what makes the AI work mean anything. Without it, &ldquo;AI
-              workflow for legal teams&rdquo; is generic; with it, every workflow knows
-              what question it&rsquo;s trying to answer.
+              The economics comes first because it has to. Twenty years of competition
+              cases, regulatory dossiers, and platform economics is what tells an AI
+              workflow which question it should answer. Without that, a &ldquo;legal AI
+              workflow&rdquo; is a template anyone could sell.
             </p>
             <p>
-              The AI identity is what makes the academic work current. I don&rsquo;t write
-              about AI from the outside — I use it as a daily research and consulting
-              tool, I design the prompts and playbooks personally before teaching them to
-              anyone else, and my published research uses AI as a primary method, not a topic.
-            </p>
-            <p>
-              The order matters in voice, too: every page on this site leads with academic
-              credibility, then shows the AI fluency on top. It&rsquo;s the inverse of the
-              usual consulting site, and it&rsquo;s deliberate.
+              The AI side keeps the economics current. I use these tools every day, in
+              research and in client work. I write the prompts and playbooks myself
+              before I teach them to anyone. And my recent papers use AI as their
+              method, with the regulatory record itself as the data.
             </p>
           </div>
         </div>
@@ -340,7 +322,7 @@ function PillarsSection() {
         <div style={{ maxWidth: 880, marginBottom: 80 }}>
           <Eyebrow>What I do</Eyebrow>
           <h2 className="display--mid" style={{ margin: '20px 0 0' }}>
-            Four pillars, one body of work.
+            Four pillars, one body of work
           </h2>
         </div>
 
@@ -528,41 +510,39 @@ function Background() {
           <div>
             <Eyebrow>Career story</Eyebrow>
             <h2 className="display--mid" style={{ margin: '20px 0 0', maxWidth: 460 }}>
-              Twenty years inside the questions, then rebuilt around AI.
+              How I got here
             </h2>
           </div>
 
           <div className="prose" style={{ maxWidth: 720 }}>
             <p>
-              My career began at Bahçeşehir University in 2002 as a research assistant.
-              Over the next two decades, I moved through Assistant Professor, Vice Dean of
+              My career began at Bahçeşehir University in 2002, as a research assistant.
+              Over the next two decades I moved through Assistant Professor, Vice Dean of
               the Faculty of Administrative and Economic Sciences, Program Coordinator of
               the Financial Economics Graduate Program, and Associate Professor — earning
-              the formal <em></em> Associate Professorship in Economics along
+              the formal <em>Doçentlik</em> (Associate Professorship in Economics) along
               the way.
             </p>
             <p>
-              Through that period, my academic work centered on industrial economics,
-              competition policy, platform economics, and digital regulation. In 2015, I
-              began working as Economic Consultant at a leading international law firm —
-              providing expert economic analysis in competition law and regulatory matters
-              across electricity, banking, telecoms, retail, cement, petroleum, and digital
-              platforms. In 2018, I became Associate Editor-in-Chief of{' '}
+              The research centered on industrial economics, competition policy, platform
+              economics, and digital regulation. In 2015, I began working as Economic
+              Consultant at Dentons, providing expert economic analysis in competition and
+              regulatory matters across electricity, banking, telecoms, retail, cement,
+              petroleum, and digital platforms. In 2018, I became Associate Editor-in-Chief
+              of{' '}
               <em>Competition and Regulation in Network Industries</em> (SAGE Publishing).
               In 2024, I co-edited <em>The Economics and Regulation of Digitalisation: The
               Case of Türkiye</em> (Routledge).
             </p>
             <p>
-              Then came AI. Not as a topic to write <em>about</em>, but as a tool that
-              genuinely changes how the work is done. I rebuilt my own research and
-              consulting workflows around frontier AI tools — first to save time, then to
-              ask questions that hadn&rsquo;t been askable before. That rebuild is what the
-              AI Strategy and AI-Native Research pillars on this site describe. I now
-              design AI workflows for competition and regulation teams at leading
-              international law firms, train practitioners on a leading European legal AI
-              platform, build MCP-based research infrastructure for legal and academic
-              discovery, and teach a graduate course on <em>Generative AI for Economic
-              Analysis</em> — alongside the older courses I&rsquo;ve been teaching for years.
+              Then came AI. I started with the obvious uses — summarizing, drafting,
+              saving time — and kept going until the tools were doing real analytical
+              work. That rebuild is what the AI Strategy and AI-Native Research pillars on
+              this site describe. These days I design AI workflows for competition and
+              regulation teams, train practitioners on a leading European legal AI
+              platform, build MCP-based research infrastructure, and teach a graduate
+              course on <em>Generative AI for Economic
+              Analysis</em> — alongside the courses I&rsquo;ve been teaching for years.
             </p>
             <p>
               <strong>Education:</strong> PhD in Economics, Marmara University (2008).
@@ -587,7 +567,7 @@ function AffiliationsSection() {
         <div style={{ marginBottom: 56, maxWidth: 720 }}>
           <Eyebrow>Affiliations</Eyebrow>
           <h2 className="display--mid" style={{ margin: '20px 0 0' }}>
-            Where I serve.
+            Where I serve
           </h2>
         </div>
 
@@ -636,14 +616,14 @@ function Personal() {
           <div>
             <Eyebrow>Off the page</Eyebrow>
             <h2 className="display--mid" style={{ margin: '20px 0 0', maxWidth: 460 }}>
-              A few things outside the work.
+              A few things outside the work
             </h2>
           </div>
 
           <div className="prose" style={{ maxWidth: 640 }}>
-            <p style={{ fontSize: 20 }}>Based in Türkiye. Married. Keen gravel cyclist. Amateur astronomer. Available for remote collaboration worldwide.
-
-
+            <p style={{ fontSize: 20 }}>I live in Istanbul with my wife. Off the page,
+            it&rsquo;s gravel cycling and amateur astronomy — two hobbies that reward
+            patience and good instruments. I collaborate remotely worldwide.
             </p>
           </div>
         </div>
@@ -676,8 +656,8 @@ function AboutClosingCTA() {
               margin: '0 0 28px', maxWidth: 460
             }}>
               I&rsquo;m always glad to hear from practitioners in competition and regulation,
-              fellow academics working on AI methods, journal editors, conference organizers,
-              and anyone designing serious AI infrastructure for analytical work.
+              academics working on AI methods, journal editors, conference organizers,
+              and anyone building serious AI infrastructure for analytical work.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <Button variant="primary" href="contact.html">

@@ -1,6 +1,8 @@
 # Blog — eminkoksal.com
 
 > Drop-in content for the Blog index page. Aligned with `brand-guide.md` (verbal identity). Visual design lives in Claude Design. English. The page is a landing for writing — the new site builder will plug in the actual post feed (most builders generate this automatically from posts). What's below is the editorial framing around that feed.
+>
+> **Voice note (2026-06-11 rewrite):** copy revised for a more human register. Facts unchanged.
 
 ---
 
@@ -12,11 +14,11 @@
 
 **H1**
 
-> Notes from the seam between economics, regulation, and AI.
+> Notes from the seam between economics, regulation, and AI
 
 **Lead paragraph**
 
-> Essays, working notes, and shorter posts on what's actually happening at the intersection of academic economics, competition policy, and the use of frontier AI tools in serious analytical work. Some pieces are addressed to academic readers, some to practitioners; most try to speak to both. Written in English; occasional Turkish posts where the audience is primarily Turkish.
+> Essays, working notes, and shorter posts from where economics, competition policy, and AI tools meet in day-to-day analytical work. Some pieces are written for academics, some for practitioners; most try to serve both. Mostly in English, with occasional Turkish posts where the audience is primarily Turkish.
 
 ---
 
@@ -56,7 +58,7 @@
 
 **H2**
 
-> Recent writing.
+> Recent writing
 
 *(Auto-feed: the latest ~9 posts. Each card shows title, date, ~25-word excerpt, topic chip, and a small `Read →` link. Older posts paginate or fall under a `Load more` button.)*
 
@@ -70,7 +72,7 @@
 
 **H2**
 
-> Browse everything.
+> Browse everything
 
 **Body**
 
@@ -94,11 +96,11 @@
 
 **H2**
 
-> Get new writing as it goes out.
+> Get new writing as it goes out
 
 **Body**
 
-> I publish irregularly — usually when there's something genuinely worth saying about AI in economic and legal research. Two ways to keep up:
+> I publish when I have something to say, which makes the schedule irregular by design. Two ways to keep up:
 
 **Two columns:**
 
@@ -115,7 +117,7 @@
 
 **Body**
 
-> I take on a small number of invited essays, podcast appearances, and panel discussions each year, particularly on AI in competition and regulation, AI-native research methods, or the economics of digital platforms. Get in touch.
+> I take on a small number of invited essays, podcast appearances, and panels each year, mostly on AI in competition and regulation, AI-native research methods, or the economics of digital platforms. Get in touch.
 
 **Button:** `Get in touch →` *(to /contact)*
 

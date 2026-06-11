@@ -12,22 +12,21 @@ const METHOD_STEPS = [
   {
     title: 'Large-scale AI analysis of legal texts.',
     body:
-      "Treating a national authority\u2019s full decision record (or another structured " +
-      'regulatory corpus) as a single queryable dataset, then using AI to extract concepts, ' +
-      'parties, holdings, and reasoning patterns at a level of granularity that manual review ' +
-      'cannot reach.',
+      "Treat a national authority\u2019s full decision record as a single queryable dataset, " +
+      'then use AI to extract concepts, parties, holdings, and reasoning patterns at a ' +
+      'granularity manual review can\u2019t reach.',
   },
   {
     title: 'Citation network analysis.',
     body:
-      'Mapping how authority, precedent, and reasoning propagate through a body of decisions ' +
-      'over time — turning a flat case list into a structured intellectual genealogy.',
+      'Map how authority, precedent, and reasoning move through a body of decisions over time, ' +
+      'turning a flat case list into an intellectual genealogy.',
   },
   {
     title: 'Economic interpretation.',
     body:
-      'Using economics — industrial organization, competition theory, regulatory economics — ' +
-      'to make sense of the patterns the first two steps surface, and to ask the next research question.',
+      'Use economics \u2014 industrial organization, competition theory, regulatory economics \u2014 ' +
+      'to make sense of what the first two steps surface, and to find the next question.',
   },
 ];
 
@@ -39,18 +38,20 @@ const FLAGSHIP = [
     title: "A Quarter-Century Analysis of the Turkish Competition Board\u2019s Decisions",
     coauthors: 'with C. Peker and M. Uyer',
     summary: [
-      'An AI-supported examination of 3,369 decisions of the Turkish Competition Board, spanning ' +
-      'roughly twenty-five years. The paper combines NLP and economic analysis to surface patterns ' +
-      '— across industries, decision types, and over time — that would have taken months to identify ' +
-      'manually and that have not, to our knowledge, been mapped at this scale before.',
-      "The dataset itself is part of the contribution: the Turkish Competition Board\u2019s decision " +
-      'record had never been treated as a single coherent corpus for economic research. Building it ' +
-      'that way opens the door to a research program — including the citation network study below.',
+      'We took all 3,369 decisions the Turkish Competition Board published over roughly ' +
+      'twenty-five years and analyzed them as one dataset \u2014 something nobody had done before. ' +
+      'Combining NLP and economic analysis, the paper traces how the Board has reasoned, ruled, ' +
+      'and shifted across industries and decision types over a quarter-century. Patterns that ' +
+      'would take a team months to find by hand show up in days.',
+      'The dataset itself is part of the contribution. Building it opened the door to a ' +
+      'research program, including the citation network study below.',
     ],
     why: [
-      "Demonstrates the feasibility of treating a national agency\u2019s full decision record as a research-grade dataset.",
-      'Surfaces patterns in how the agency has reasoned, ruled, and shifted across industries over a quarter-century.',
-      'Establishes a methodological foundation for follow-up work using citation networks and economic interpretation.',
+      "It shows that a national agency\u2019s full decision record can be treated as a research-grade dataset.",
+      "It maps how the agency\u2019s practice has moved across industries and over time.",
+      'And it makes a larger claim. As we put it in the paper: \u201Cthis research demonstrates ' +
+      'the potential of large language models to open up new avenues of inquiry in ' +
+      'text-intensive disciplines such as law and economics.\u201D',
     ],
     cta: { label: 'Read on SSRN', href: '#', external: true },
   },
@@ -62,20 +63,20 @@ const FLAGSHIP = [
     workingTitle:
       "The Competition Board\u2019s \u201CIntellectual DNA\u201D: A Citation Network and Case Law Mapping Analysis.",
     summary: [
-      'A follow-up to the 2025 SSRN paper, this study combines AI analysis of legal texts with ' +
-      'citation network analysis to map how reasoning, precedent, and authority propagate through ' +
-      "the Turkish Competition Board\u2019s case law over time. The goal is to render the agency\u2019s " +
-      '\u201Cintellectual DNA\u201D — its citation backbone, its conceptual lineages, the points where ' +
-      'doctrine shifts — visible as a graph rather than as an anecdote.',
-      'Methodologically, the paper sits at the intersection of two underused techniques in ' +
-      'competition-law research: (1) AI-assisted extraction of structured information from regulatory ' +
-      'text at scale, and (2) network analysis of the resulting citation web. The combination is, ' +
-      'to our knowledge, novel in the Turkish setting and rare internationally.',
+      'The follow-up to the 2025 paper. This study combines AI analysis of legal texts with ' +
+      'citation network analysis to map how reasoning, precedent, and authority move through ' +
+      "the Board\u2019s case law over time. The goal is to make the agency\u2019s \u201Cintellectual " +
+      'DNA\u201D \u2014 its citation backbone, its conceptual lineages, the points where doctrine ' +
+      'shifts \u2014 visible as a graph rather than an anecdote.',
+      'Methodologically, the paper sits at the crossing of two techniques that competition-law ' +
+      'research rarely uses together: AI-assisted extraction of structured information from ' +
+      'regulatory text at scale, and network analysis of the resulting citation web. Nothing ' +
+      'like it exists for the Turkish setting, and there are few examples anywhere.',
     ],
     why: [
-      "Treats a competition authority\u2019s case law as a system with traceable internal structure, not as a flat list of decisions.",
-      'Provides a methodological template that could be applied to other national competition authorities, sectoral regulators, or court systems.',
-      "Sets up downstream questions: where does the agency\u2019s reasoning calcify, where does it shift, and how do those shifts correlate with leadership, political context, or industry events?",
+      "It treats a competition authority\u2019s case law as a system with traceable internal structure.",
+      'The template travels: other competition authorities, sectoral regulators, and court systems could be mapped the same way.',
+      "It sets up the next questions: where does the agency\u2019s reasoning calcify, where does it shift, and what do those shifts correlate with \u2014 leadership, political context, industry events?",
     ],
     cta: { label: 'Follow the project', href: 'contact.html', external: false },
   },
@@ -258,7 +259,7 @@ function ResearchHero() {
         <div style={{ position: 'relative', zIndex: 1, paddingTop: 96 }}>
           <Eyebrow>Research</Eyebrow>
           <h1 className="display" style={{ margin: '28px 0 32px', maxWidth: 1100 }}>
-            AI-native economic research.
+            AI-native economic research
           </h1>
           <p style={{
             fontFamily: 'var(--font-sans)',
@@ -268,18 +269,17 @@ function ResearchHero() {
             margin: '0 0 32px', maxWidth: 880,
           }}>
             Using AI as a primary method to ask economic and competition-law questions
-            that were previously infeasible at scale.
+            that were previously infeasible at scale
           </p>
           <p style={{
             fontSize: 18, lineHeight: 1.55, color: '#262627',
             maxWidth: 780, margin: 0,
           }}>
-            Most discussions about AI in research treat it as a topic — something to study,
-            regulate, or comment on. I treat it as a method. Over the past few years,
-            I&rsquo;ve been rebuilding parts of my research practice around frontier AI tools:
-            large-scale legal-text analysis, citation network mapping, and AI-assisted economic
-            interpretation of regulatory corpora. The published and forthcoming work below is
-            the result. The older publication record below shows where the questions come from.
+            Plenty of researchers write about AI. I&rsquo;d rather use it. Over the past
+            few years I&rsquo;ve rebuilt part of my research practice around frontier AI
+            tools: large-scale analysis of legal texts, citation-network mapping, and
+            economic interpretation of regulatory corpora. The projects below are the
+            result. The publication record underneath shows where the questions come from.
           </p>
         </div>
       </div>
@@ -306,14 +306,14 @@ function MethodSignature() {
           fontStyle: 'italic',
         }}>
           AI-powered analysis of legal corpora — turning regulatory text into research-grade
-          economic evidence.
+          economic evidence
         </h2>
 
         <p style={{
           fontSize: 18, lineHeight: 1.55, color: 'rgba(243,240,238,.85)',
           margin: '56px 0 48px', maxWidth: 820,
         }}>
-          The signature method pairs three things:
+          The method pairs three things:
         </p>
 
         <ol style={{
@@ -356,7 +356,7 @@ function MethodSignature() {
           margin: '56px 0 0', maxWidth: 880,
         }}>
           The combination is what makes the work AI-native rather than AI-flavored: each step
-          depends on the others, and none of them works as well alone.
+          depends on the others, and none works as well alone.
         </p>
       </div>
     </section>
@@ -370,7 +370,7 @@ function FlagshipProjects() {
         <div style={{ maxWidth: 880, marginBottom: 80 }}>
           <Eyebrow>Flagship projects</Eyebrow>
           <h2 className="display--mid" style={{ margin: '20px 0 0' }}>
-            Two projects, one program.
+            Two projects, one program
           </h2>
         </div>
 
@@ -512,14 +512,14 @@ function SelectedPublications() {
         <div style={{ maxWidth: 880, marginBottom: 56 }}>
           <Eyebrow>Selected publications</Eyebrow>
           <h2 className="display--mid" style={{ margin: '20px 0 24px' }}>
-            Where the questions come from.
+            Where the questions come from
           </h2>
           <p style={{
             fontSize: 18, lineHeight: 1.55, color: '#262627',
             margin: 0, maxWidth: 720,
           }}>
-            The AI-native research above grows out of twenty years of work on competition policy,
-            network industries, and digital regulation. A curated subset of that record is below;
+            The AI-native work above grows out of twenty years of research on competition policy,
+            network industries, and digital regulation. A curated subset is below;
             the full list lives on the <a href="cv.html" style={{
               color: '#141413', textDecoration: 'underline', textUnderlineOffset: 3,
             }}>CV page</a>.
@@ -623,7 +623,7 @@ function ResearchInterests() {
           <div>
             <Eyebrow>Active interests</Eyebrow>
             <h2 className="display--mid" style={{ margin: '20px 0 0', maxWidth: 460 }}>
-              Where the work is going.
+              Active interests
             </h2>
           </div>
           <ul style={{
@@ -675,9 +675,9 @@ function ResearchClosingCTA() {
               fontSize: 17, lineHeight: 1.55, color: '#262627',
               margin: '0 0 28px', maxWidth: 460,
             }}>
-              If you work on AI methods for legal/regulatory text, on citation networks, on
-              competition-policy research, or on building research infrastructure that economists
-              and lawyers can actually use — I&rsquo;d like to hear from you.
+              If you work on AI methods for legal or regulatory text, on citation networks, on
+              competition-policy research, or on research infrastructure for economists
+              and lawyers — send me a note. There aren&rsquo;t many of us yet.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <Button variant="primary" href="contact.html">

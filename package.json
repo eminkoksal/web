@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "eminkoksal.com — personal site for Emin Köksal (academic economist & AI strategist).",
+  "description": "eminkoksal.com — personal site for Emin Köksal (academic economist & AI consultant).",
   "scripts": {
     "dev": "vite",
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-server && node prerender.js",

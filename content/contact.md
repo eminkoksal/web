@@ -1,6 +1,8 @@
 # Contact — eminkoksal.com
 
 > Drop-in content for the Contact page. Aligned with `brand-guide.md` (verbal identity). Visual design lives in Claude Design. English. Short by design — the page is a doorway, not a brochure.
+>
+> **Voice note (2026-06-11 rewrite):** copy revised for a more human register. Facts unchanged.
 
 ---
 
@@ -12,11 +14,11 @@
 
 **H1**
 
-> Get in touch.
+> Get in touch
 
 **Lead paragraph** *(max ~70 words)*
 
-> I read every message. Whether you're working on a competition or regulation matter where AI could change the workflow, designing AI infrastructure for a research or consulting team, writing about AI in legal practice, or planning a course, panel, or talk — I'd like to hear about it. Email is the most reliable way to reach me.
+> Email is the most reliable way to reach me. If you're working on a competition or regulation matter where AI could change the workflow, building AI infrastructure for a research or consulting team, writing about AI in legal practice, or putting together a course, panel, or talk — tell me about it.
 
 ---
 
@@ -28,21 +30,21 @@
 
 - **Label:** Email
 - **Value:** mail@eminkoksal.com
-- **Helper:** The best way to start a conversation. I typically reply within a few business days.
+- **Helper:** The best way to start a conversation. I usually reply within a few business days.
 - **Action:** opens default mail client to `mail@eminkoksal.com`
 
 ### Card 2 — LinkedIn
 
 - **Label:** LinkedIn
 - **Value:** linkedin.com/in/eminkoksal
-- **Helper:** Where I post most short-form writing and where you can see the wider professional context.
+- **Helper:** Where most of my short-form writing goes first, and the wider professional context.
 - **Action:** opens LinkedIn profile in new tab
 
 ### Card 3 — Web
 
 - **Label:** Web
 - **Value:** eminkoksal.com
-- **Helper:** Where you are now. Bookmark `/research` for ongoing project updates and `/blog` for new writing.
+- **Helper:** Where you are now. Bookmark `/research` for project updates and `/blog` for new writing.
 - **Action:** opens homepage (or no link — it's already here)
 
 ---
@@ -55,18 +57,18 @@
 
 **H2**
 
-> Good fits.
+> Good fits
 
 **Body**
 
-> A short, honest list. If your inquiry maps onto one of these, an email is very likely to land well.
+> If your inquiry looks like one of these, we'll probably have something to talk about.
 
 **Two-column list** *(left = consulting/practice; right = research/academic)*
 
 | Consulting & Practice | Research & Academic |
 |----------------------|---------------------|
 | AI workflow audits and playbook design for competition / regulation teams | Co-authored papers on AI methods for legal or regulatory text analysis |
-| Practitioner training on next-generation legal AI platforms | Citation network and case law mapping collaborations |
+| Practitioner training on legal AI platforms | Citation network and case law mapping collaborations |
 | Complex prompt, agent, and MCP design for analytical work | Conference invitations, panels, and keynote talks |
 | Expert economic testimony in competition and regulatory matters | Doctoral committee membership and external thesis examination |
 | Strategic AI adoption advisory for senior leadership | Editorial work, peer review, and special issue invitations |
@@ -81,11 +83,11 @@
 
 **H2**
 
-> For interview, podcast, panel, or keynote inquiries.
+> For interview, podcast, panel, or keynote inquiries
 
 **Body**
 
-> I speak in both English and Turkish. Topics I'm most useful on: AI in legal and economic practice, AI-native research methods for regulatory corpora, citation network analysis, competition policy in digital markets, and the economics of digitalization. For media or programming inquiries, please email with a one-line description of the format, date window, and audience.
+> I speak in both English and Turkish. The topics where I'm most useful: AI in legal and economic practice, AI-native research methods for regulatory corpora, citation network analysis, competition policy in digital markets, and the economics of digitalization. For media or programming inquiries, a one-line description of the format, date window, and audience is all I need to give you a quick answer.
 
 ---
 
@@ -97,7 +99,7 @@
 
 **H2**
 
-> Based in Istanbul, Türkiye.
+> Based in Istanbul, Türkiye
 
 **Body**
 
@@ -111,7 +113,7 @@
 
 **Body**
 
-> All client-side work runs on confidentiality-grade legal AI platforms; non-confidential academic and writing work runs on general-purpose tools. If your inquiry involves sensitive material, please indicate that in your first email so I can route the conversation appropriately.
+> All client-side work runs on confidentiality-grade legal AI platforms; non-confidential academic and writing work runs on general-purpose tools. If your inquiry involves sensitive material, say so in your first email and I'll route the conversation accordingly.
 
 ---
 

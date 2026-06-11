@@ -1,6 +1,7 @@
 /* Home page — brand-correct content. */
 import React from 'react';
 import { IconArrow, IconSearch, IconDownload, IconChevron, Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA, Nav, Footer, OrbitalArc } from './shared.jsx';
+import { POSTS, formatDate, trimWords } from './posts.js';
 
 const { useState, useEffect } = React;
 
@@ -19,35 +20,37 @@ const PILLARS = [
 {
   title: 'Academic Economics & Teaching',
   body:
-  'Two decades inside competition economics and digital regulation, with the academic ' +
-  'record to match: associate professorship, 50+ publications, a Routledge volume, SAGE ' +
-  'editorship, and active graduate-level teaching.',
+  'The foundation. Associate Professor of Economics (Doç. Dr.), with 50+ publications, ' +
+  'a co-edited Routledge volume, and an editorship at Competition and Regulation in ' +
+  'Network Industries (SAGE). I’ve taught graduate courses every year since 2002, ' +
+  'and still do.',
   cta: 'Read more',
   href: 'about.html#academic'
 },
 {
   title: 'AI Strategy & Workflow Design',
   body:
-  'AI workflows, playbooks, complex prompts, and MCP-based research infrastructure — ' +
-  'built for competition and regulation teams at leading international law firms and ' +
-  'trained on next-generation European legal AI platforms.',
+  'I build AI workflows for competition and regulation teams at international law ' +
+  'firms: playbooks, complex prompts, MCP-based research infrastructure. Then I train ' +
+  'the people who use them. Everything I teach, I’ve run on real work first.',
   cta: 'Read more',
   href: 'about.html#ai-strategy'
 },
 {
   title: 'AI-Native Research',
   body:
-  'Using AI as a primary research method, not a topic. A systematic program of ' +
-  "large-scale legal text analysis on the Turkish Competition Board\u2019s quarter-century " +
-  'of decisions, including a forthcoming citation-network study.',
+  'My current research program uses AI to read legal texts at a scale no person could. ' +
+  'The first paper analyzed 3,369 Turkish Competition Board decisions \u2014 twenty-five ' +
+  'years of case law as a single dataset. A citation-network study of the same record ' +
+  'is underway.',
   cta: 'Explore the research',
   href: 'research.html'
 },
 {
   title: 'Public Thought Leadership',
   body:
-  'Essays, talks, and writing for both academic and professional audiences — translating ' +
-  'the three pillars above into accessible writing on AI, competition, and regulation.',
+  'Essays and talks on AI, competition, and regulation, for academic and professional ' +
+  'audiences alike.',
   cta: 'Read the blog',
   href: 'blog.html'
 }];
@@ -58,9 +61,9 @@ const FEATURED = [
   eyebrow: 'Routledge volume · 2024',
   title: 'The Economics and Regulation of Digitalisation: The Case of Türkiye',
   body:
-  'Co-edited Routledge volume (with M. Eroğlu and M. Finger) examining Türkiye\u2019s ' +
-  'digital transformation through an economic-regulatory lens. Includes my chapter on ' +
-  'the Türkiye Digital Society Index (with O. Bakış).',
+  'A co-edited volume on Türkiye\u2019s digital transformation, with M. Eroğlu and ' +
+  'M. Finger. My own chapter, written with O. Bakış, builds the Türkiye Digital ' +
+  'Society Index.',
   meta: 'Routledge, 2024',
   cta: 'Read more',
   href: 'research.html'
@@ -69,8 +72,9 @@ const FEATURED = [
   eyebrow: 'AI-Native Research · Published',
   title: 'A Quarter-Century Analysis of the Turkish Competition Board\u2019s Decisions',
   body:
-  'Large-scale AI analysis of 3,369 Competition Board decisions (with C. Peker and ' +
-  'M. Uyer), combining NLP and economic methods to surface patterns invisible to manual review.',
+  'With C. Peker and M. Uyer, I analyzed all 3,369 decisions the Board published over ' +
+  'twenty-five years. Nobody had treated the full record as one dataset before; the ' +
+  'patterns across industries and time only show up when you do.',
   meta: 'SSRN, 2025',
   cta: 'Read the paper',
   href: 'research.html'
@@ -79,9 +83,9 @@ const FEATURED = [
   eyebrow: 'AI-Native Research · Forthcoming',
   title: 'The Competition Board\u2019s \u201CIntellectual DNA\u201D: A Citation Network and Case Law Mapping Analysis',
   body:
-  'Forthcoming working paper. Combines AI analysis of legal texts with citation network ' +
-  'analysis to map how reasoning, precedent, and authority propagate through a national ' +
-  'competition authority\u2019s case law over time.',
+  'The follow-up. A citation-network study mapping how the Board\u2019s reasoning and ' +
+  'precedent move through its own case law: which decisions everything else leans on, ' +
+  'and where the doctrine quietly shifts.',
   meta: 'Working paper',
   cta: 'Follow the project',
   href: 'research.html'
@@ -91,6 +95,7 @@ const FEATURED = [
 const STATS = [
 { value: '20+', label: 'years in competition economics' },
 { value: '50+', label: 'publications' },
+{ value: '1000s', label: 'legal documents analyzed with AI' },
 { value: '11+', label: 'graduate courses taught' }];
 
 
@@ -138,14 +143,13 @@ function HeroEditorial({ t }) {
               fontSize: 18, lineHeight: 1.55, color: '#262627',
               maxWidth: 560, margin: '0 0 40px'
             }}>
-              An academic economist whose research, teaching, and consultancy
-              all run on AI. Twenty years inside competition economics and digital regulation
-              — 50+ publications, a Routledge volume, an editorship at{' '}
-              <em>Competition and Regulation in Network Industries</em> (SAGE). Today, that
-              same work is being rebuilt around the most capable AI tools available: AI
-              workflows for competition and regulation teams at leading international law
-              firms, training on next-generation legal AI platforms, and AI-native research
-              on the regulatory record itself.
+              I&rsquo;ve spent twenty years in competition economics, as a professor, a
+              journal editor, and a consultant to law firms. A few years ago I started
+              using AI tools in my own research, mostly to save time. They changed the
+              work instead. Today I design AI workflows for competition and regulation
+              teams at international law firms, train practitioners on legal AI
+              platforms, and publish research that uses AI to read a quarter-century of
+              regulatory decisions at once.
             </p>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
               <Button variant="primary" href="research.html">
@@ -224,7 +228,7 @@ function HeroStadium({ t }) {
               fontFamily: 'var(--font-sans)', fontSize: 22, fontWeight: 500,
               letterSpacing: '-.02em', lineHeight: 1.2, maxWidth: 460
             }}>
-              Where economic rigor meets AI fluency.
+              Where economic rigor meets AI fluency
             </div>
             <div style={{ fontSize: 13, opacity: .7 }}>01 / Emin Köksal</div>
           </div>
@@ -242,9 +246,13 @@ function HeroStadium({ t }) {
               fontSize: 17, lineHeight: 1.55, color: '#262627',
               margin: '0 0 24px', maxWidth: 420
             }}>
-              An academic economist whose research, teaching, and consultancy
-              all run on AI. Twenty years inside competition economics and digital regulation —
-              now rebuilt around the most capable AI tools available.
+              I&rsquo;ve spent twenty years in competition economics, as a professor, a
+              journal editor, and a consultant to law firms. A few years ago I started
+              using AI tools in my own research, mostly to save time. They changed the
+              work instead. Today I design AI workflows for competition and regulation
+              teams at international law firms, train practitioners on legal AI
+              platforms, and publish research that uses AI to read a quarter-century of
+              regulatory decisions at once.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <Button variant="primary" href="research.html">
@@ -317,7 +325,7 @@ function HeroTypographic({ t }) {
             lineHeight: 1.18, color: '#141413',
             margin: '40px 0 0', maxWidth: 820
           }}>
-            Where economic rigor meets AI fluency.
+            Where economic rigor meets AI fluency
           </p>
 
           <div style={{
@@ -328,11 +336,13 @@ function HeroTypographic({ t }) {
               fontSize: 17, lineHeight: 1.55, color: '#262627',
               margin: 0, maxWidth: 420
             }}>
-              An academic economist whose research, teaching, and consultancy
-              all run on AI. Twenty years inside competition economics and digital regulation,
-              now rebuilt around frontier AI tools — for competition and regulation teams
-              at leading international law firms, for graduate teaching, and for research
-              on the regulatory record itself.
+              I&rsquo;ve spent twenty years in competition economics, as a professor, a
+              journal editor, and a consultant to law firms. A few years ago I started
+              using AI tools in my own research, mostly to save time. They changed the
+              work instead. Today I design AI workflows for competition and regulation
+              teams at international law firms, train practitioners on legal AI
+              platforms, and publish research that uses AI to read a quarter-century of
+              regulatory decisions at once.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'flex-start' }}>
               <Button variant="primary" href="research.html">
@@ -345,7 +355,7 @@ function HeroTypographic({ t }) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               <Stat label="Years in practice" value="20+" />
               <Stat label="Publications" value="50+" />
-              <Stat label="Decisions analyzed" value="3,369" />
+              <Stat label="Legal documents analyzed" value="1000s" />
             </div>
           </div>
         </div>
@@ -385,17 +395,16 @@ function FourPillars() {
         <div style={{ maxWidth: 880, marginBottom: 80 }}>
           <Eyebrow>What I do</Eyebrow>
           <h2 className="display--mid" style={{ margin: '20px 0 28px' }}>
-            How I work.
+            Four areas of work that feed each other
           </h2>
           <p style={{
             fontSize: 19, lineHeight: 1.55, color: '#262627',
             margin: 0, maxWidth: 720
           }}>
-            Research, teaching, consulting, and writing — four strands of
-            one practice. Each leans on the same habit: reading a hard economic
-            or regulatory problem closely, then using AI to go further than I
-            could on my own. The academic work earns the right to speak; the AI
-            fluency keeps it current.
+            Everything here draws on the same foundation: twenty years of
+            competition economics, and daily hands-on use of the most capable
+            AI tools available. The mix looks unusual on paper. In practice,
+            each part makes the others better.
           </p>
         </div>
 
@@ -490,7 +499,7 @@ function FeaturedWork() {
           <div style={{ maxWidth: 720 }}>
             <Eyebrow>Featured work</Eyebrow>
             <h2 className="display--mid" style={{ margin: '20px 0 0' }}>
-              What I&rsquo;m working on now.
+              What I&rsquo;m working on now
             </h2>
           </div>
           <Button variant="ghost" href="research.html">
@@ -567,7 +576,7 @@ function Numbers() {
     <section style={{ padding: '96px 0' }}>
       <div className="container">
         <div style={{
-          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24,
+          display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24,
           borderTop: '1.5px solid #141413',
           borderBottom: '1.5px solid #141413',
           padding: '56px 0'
@@ -605,14 +614,7 @@ function Numbers() {
 /* ------------------------------------------------------------------ */
 
 function RecentWriting() {
-  /* Auto-fed later from /blog. Single realistic placeholder row for now. */
-  const placeholder = {
-    date: 'October 2025',
-    title: 'On using AI as a research method, not just a research topic.',
-    excerpt:
-    'A short note on what changes when you treat the regulatory record as ' +
-    'a structured corpus rather than a stack of PDFs.'
-  };
+  const recent = POSTS.slice(0, 3);
 
   return (
     <section style={{ padding: '64px 0 128px' }}>
@@ -624,7 +626,7 @@ function RecentWriting() {
           <div>
             <Eyebrow>From the blog</Eyebrow>
             <h2 className="display--mid" style={{ margin: '20px 0 0' }}>
-              Recent writing.
+              Recent writing
             </h2>
           </div>
           <Button variant="ghost" href="blog.html">
@@ -633,27 +635,31 @@ function RecentWriting() {
         </div>
 
         <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-          <li style={{
+          {recent.map((p, i) =>
+          <li key={p.slug} style={{
             display: 'grid',
             gridTemplateColumns: '160px 1fr auto',
             gap: 32, alignItems: 'baseline',
             padding: '32px 0',
             borderTop: '1px solid rgba(20,20,19,.12)',
-            borderBottom: '1px solid rgba(20,20,19,.12)'
+            borderBottom: i === recent.length - 1 ? '1px solid rgba(20,20,19,.12)' : 'none'
           }}>
-            <span style={{ fontSize: 14, color: '#555' }}>{placeholder.date}</span>
+            <span style={{ fontSize: 14, color: '#555' }}>{formatDate(p.date)}</span>
             <div>
               <div style={{
                 fontFamily: 'var(--font-sans)', fontSize: 24, fontWeight: 500,
                 letterSpacing: '-.02em', lineHeight: 1.25, margin: 0
               }}>
-                {placeholder.title}
+                <a href={`blog/${p.slug}.html`}
+                style={{ color: '#141413', textDecoration: 'none' }}>
+                  {p.title}
+                </a>
               </div>
               <div style={{ fontSize: 15, color: '#555', marginTop: 8, maxWidth: 640 }}>
-                {placeholder.excerpt}
+                {trimWords(p.excerpt, 22)}
               </div>
             </div>
-            <a href="blog.html" style={{
+            <a href={`blog/${p.slug}.html`} aria-label={p.title} style={{
               width: 44, height: 44, borderRadius: '50%',
               border: '1px solid rgba(20,20,19,.5)',
               display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
@@ -662,6 +668,7 @@ function RecentWriting() {
               <IconArrow size={14} dir="up-right" />
             </a>
           </li>
+          )}
         </ul>
       </div>
     </section>);
@@ -691,10 +698,10 @@ function ClosingCTA() {
               fontSize: 17, lineHeight: 1.55, color: '#262627',
               margin: '0 0 28px', maxWidth: 460
             }}>
-              I work with competition and regulation teams at leading international law firms,
-              with academic institutions, and on independent research at the intersection of
-              AI and economics. If that overlaps with what you&rsquo;re doing, I&rsquo;d like
-              to hear about it.
+              Most of my work is with competition and regulation teams at international
+              law firms and consultancies, alongside academic collaborations and my own
+              research. If what you&rsquo;re doing overlaps with any of that, send me a
+              note and tell me about it.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <Button variant="primary" href="contact.html">

@@ -37,17 +37,16 @@ function ContactHero() {
           <div>
             <Eyebrow>Contact</Eyebrow>
             <h1 className="display" style={{ margin: '28px 0 0' }}>
-              Get in touch.
+              Get in touch
             </h1>
           </div>
           <p style={{ fontSize: 18, lineHeight: 1.55, color: '#262627',
             margin: 0 }}>
-            I read every message. Whether you're working on a competition or
-            regulation matter where AI could change the workflow, designing
-            AI infrastructure for a research or consulting team, writing
-            about AI in legal practice, or planning a course, panel, or
-            talk — I'd like to hear about it. Email is the most reliable
-            way to reach me.
+            Email is the most reliable way to reach me. If you're working on
+            a competition or regulation matter where AI could change the
+            workflow, building AI infrastructure for a research or consulting
+            team, writing about AI in legal practice, or putting together a
+            course, panel, or talk — tell me about it.
           </p>
         </div>
       </div>
@@ -153,20 +152,20 @@ function ContactChannels() {
             primary
             label="Email"
             value={emailText}
-            helper="The best way to start a conversation. I typically reply within a few business days."
+            helper="The best way to start a conversation. I usually reply within a few business days."
             href={emailHref} />
           
           <ChannelCard
             label="LinkedIn"
             value="linkedin.com/in/eminkoksal"
-            helper="Where I post most short-form writing and where you can see the wider professional context."
+            helper="Where most of my short-form writing goes first, and the wider professional context."
             href="https://www.linkedin.com/in/eminkoksal"
             target="_blank" />
           
           <ChannelCard
             label="Web"
             value="eminkoksal.com"
-            helper={"Where you are now. Bookmark /research for ongoing project updates and /blog for new writing."}
+            helper={"Where you are now. Bookmark /research for project updates and /blog for new writing."}
             href="index.html" />
           
         </div>
@@ -182,7 +181,7 @@ function ContactChannels() {
 const OPEN_TO = {
   practice: [
   'AI workflow audits and playbook design for competition / regulation teams',
-  'Practitioner training on next-generation legal AI platforms',
+  'Practitioner training on legal AI platforms',
   'Complex prompt, agent, and MCP design for analytical work',
   'Expert economic testimony in competition and regulatory matters',
   'Strategic AI adoption advisory for senior leadership'],
@@ -244,13 +243,13 @@ function OpenTo() {
           <div>
             <Eyebrow>What I'm open to</Eyebrow>
             <h2 className="display--mid" style={{ margin: '24px 0 0' }}>
-              Good fits.
+              Good fits
             </h2>
           </div>
           <p style={{ fontSize: 18, lineHeight: 1.55, color: '#262627',
             margin: 0, maxWidth: 640 }}>
-            A short, honest list. If your inquiry maps onto one of these, an
-            email is very likely to land well.
+            If your inquiry looks like one of these, we'll probably have
+            something to talk about.
           </p>
         </div>
         <div style={{
@@ -285,17 +284,18 @@ function SpeakingMedia() {
               fontWeight: 500, lineHeight: 1.1, letterSpacing: '-0.02em',
               margin: '24px 0 0', maxWidth: 480
             }}>
-              For interview, podcast, panel, or keynote inquiries.
+              For interview, podcast, panel, or keynote inquiries
             </h2>
           </div>
           <p style={{ fontSize: 17, lineHeight: 1.55, color: '#262627',
             margin: 0, maxWidth: 620 }}>
-            I speak in both English and Turkish. Topics I'm most useful on:
-            AI in legal and economic practice, AI-native research methods
-            for regulatory corpora, citation network analysis, competition
-            policy in digital markets, and the economics of digitalization.
-            For media or programming inquiries, please email with a one-line
-            description of the format, date window, and audience.
+            I speak in both English and Turkish. The topics where I'm most
+            useful: AI in legal and economic practice, AI-native research
+            methods for regulatory corpora, citation network analysis,
+            competition policy in digital markets, and the economics of
+            digitalization. For media or programming inquiries, a one-line
+            description of the format, date window, and audience is all I
+            need to give you a quick answer.
           </p>
         </div>
       </div>
@@ -320,7 +320,7 @@ function Location() {
         }}>
           <div>
             <Eyebrow>Location</Eyebrow>
-            <h2 className="display--mid" style={{ margin: '24px 0 0' }}>Based in Türkiye.
+            <h2 className="display--mid" style={{ margin: '24px 0 0' }}>Based in Istanbul, Türkiye
 
             </h2>
           </div>
@@ -358,8 +358,8 @@ function Confidentiality() {
             All client-side work runs on confidentiality-grade legal AI
             platforms; non-confidential academic and writing work runs on
             general-purpose tools. If your inquiry involves sensitive
-            material, please indicate that in your first email so I can
-            route the conversation appropriately.
+            material, say so in your first email and I'll route the
+            conversation accordingly.
           </p>
         </div>
       </div>

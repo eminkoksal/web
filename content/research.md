@@ -3,6 +3,8 @@
 > Drop-in content for the Research page. This page belongs to the **AI-Native Research** pillar but also gathers the broader academic research output. Aligned with `brand-guide.md` (verbal identity). Visual design lives in Claude Design. English.
 >
 > The new website does not need a separate "Publications" page if this one absorbs that function — the CV page (`/cv`) carries the comprehensive list; this page curates and contextualizes.
+>
+> **Voice note (2026-06-11 rewrite):** copy revised for a more human register. One "X rather than Y" construction kept deliberately ("AI-native rather than AI-flavored") — it is the site's single allowed instance. Facts unchanged; paper quote in Project 1 supplied by EK.
 
 ---
 
@@ -14,15 +16,15 @@
 
 **H1**
 
-> AI-native economic research.
+> AI-native economic research
 
 **Tagline**
 
-> Using AI as a primary method to ask economic and competition-law questions that were previously infeasible at scale.
+> Using AI as a primary method to ask economic and competition-law questions that were previously infeasible at scale
 
 **Lead paragraph**
 
-> Most discussions about AI in research treat it as a topic — something to study, regulate, or comment on. I treat it as a method. Over the past few years, I've been rebuilding parts of my research practice around frontier AI tools: large-scale legal-text analysis, citation network mapping, and AI-assisted economic interpretation of regulatory corpora. The published and forthcoming work below is the result. The older publication record below shows where the questions come from.
+> Plenty of researchers write about AI. I'd rather use it. Over the past few years I've rebuilt part of my research practice around frontier AI tools: large-scale analysis of legal texts, citation-network mapping, and economic interpretation of regulatory corpora. The projects below are the result. The publication record underneath shows where the questions come from.
 
 ---
 
@@ -36,17 +38,17 @@
 
 **H2**
 
-> *AI-powered analysis of legal corpora — turning regulatory text into research-grade economic evidence.*
+> *AI-powered analysis of legal corpora — turning regulatory text into research-grade economic evidence*
 
 **Body**
 
-> The signature method pairs three things:
+> The method pairs three things:
 >
-> 1. **Large-scale AI analysis of legal texts.** Treating a national authority's full decision record (or another structured regulatory corpus) as a single queryable dataset, then using AI to extract concepts, parties, holdings, and reasoning patterns at a level of granularity that manual review cannot reach.
-> 2. **Citation network analysis.** Mapping how authority, precedent, and reasoning propagate through a body of decisions over time — turning a flat case list into a structured intellectual genealogy.
-> 3. **Economic interpretation.** Using economics — industrial organization, competition theory, regulatory economics — to make sense of the patterns the first two steps surface, and to ask the next research question.
+> 1. **Large-scale AI analysis of legal texts.** Treat a national authority's full decision record as a single queryable dataset, then use AI to extract concepts, parties, holdings, and reasoning patterns at a granularity manual review can't reach.
+> 2. **Citation network analysis.** Map how authority, precedent, and reasoning move through a body of decisions over time, turning a flat case list into an intellectual genealogy.
+> 3. **Economic interpretation.** Use economics — industrial organization, competition theory, regulatory economics — to make sense of what the first two steps surface, and to find the next question.
 >
-> The combination is what makes the work AI-native rather than AI-flavored: each step depends on the others, and none of them works as well alone.
+> The combination is what makes the work AI-native rather than AI-flavored: each step depends on the others, and none works as well alone.
 
 ---
 
@@ -58,7 +60,7 @@
 
 **H2**
 
-> Two projects, one program.
+> Two projects, one program
 
 ---
 
@@ -70,15 +72,15 @@
 
 **Summary**
 
-> An AI-supported examination of **3,369 decisions** of the Turkish Competition Board, spanning roughly twenty-five years. The paper combines NLP and economic analysis to surface patterns — across industries, decision types, and over time — that would have taken months to identify manually and that have not, to our knowledge, been mapped at this scale before.
+> We took all **3,369 decisions** the Turkish Competition Board published over roughly twenty-five years and analyzed them as one dataset — something nobody had done before. Combining NLP and economic analysis, the paper traces how the Board has reasoned, ruled, and shifted across industries and decision types over a quarter-century. Patterns that would take a team months to find by hand show up in days.
 >
-> The dataset itself is part of the contribution: the Turkish Competition Board's decision record had never been treated as a single coherent corpus for economic research. Building it that way opens the door to a research program — including the citation network study below.
+> The dataset itself is part of the contribution. Building it opened the door to a research program, including the citation network study below.
 
 **Why it matters**
 
-- Demonstrates the feasibility of treating a national agency's full decision record as a research-grade dataset.
-- Surfaces patterns in how the agency has reasoned, ruled, and shifted across industries over a quarter-century.
-- Establishes a methodological foundation for follow-up work using citation networks and economic interpretation.
+- It shows that a national agency's full decision record can be treated as a research-grade dataset.
+- It maps how the agency's practice has moved across industries and over time.
+- And it makes a larger claim. As we put it in the paper: *"this research demonstrates the potential of large language models to open up new avenues of inquiry in text-intensive disciplines such as law and economics."*
 
 ---
 
@@ -90,15 +92,15 @@
 
 **Summary**
 
-> A follow-up to the 2025 SSRN paper, this study combines AI analysis of legal texts with citation network analysis to map how reasoning, precedent, and authority propagate through the Turkish Competition Board's case law over time. The goal is to render the agency's "intellectual DNA" — its citation backbone, its conceptual lineages, the points where doctrine shifts — visible as a graph rather than as an anecdote.
+> The follow-up to the 2025 paper. This study combines AI analysis of legal texts with citation network analysis to map how reasoning, precedent, and authority move through the Board's case law over time. The goal is to make the agency's "intellectual DNA" — its citation backbone, its conceptual lineages, the points where doctrine shifts — visible as a graph rather than an anecdote.
 >
-> Methodologically, the paper sits at the intersection of two underused techniques in competition-law research: (1) AI-assisted extraction of structured information from regulatory text at scale, and (2) network analysis of the resulting citation web. The combination is, to our knowledge, novel in the Turkish setting and rare internationally.
+> Methodologically, the paper sits at the crossing of two techniques that competition-law research rarely uses together: AI-assisted extraction of structured information from regulatory text at scale, and network analysis of the resulting citation web. Nothing like it exists for the Turkish setting, and there are few examples anywhere.
 
 **Why it matters**
 
-- Treats a competition authority's case law as a *system* with traceable internal structure, not as a flat list of decisions.
-- Provides a methodological template that could be applied to other national competition authorities, sectoral regulators, or court systems.
-- Sets up downstream questions: where does the agency's reasoning calcify, where does it shift, and how do those shifts correlate with leadership, political context, or industry events?
+- It treats a competition authority's case law as a system with traceable internal structure.
+- The template travels: other competition authorities, sectoral regulators, and court systems could be mapped the same way.
+- It sets up the next questions: where does the agency's reasoning calcify, where does it shift, and what do those shifts correlate with — leadership, political context, industry events?
 
 ---
 
@@ -110,11 +112,11 @@
 
 **H2**
 
-> Where the questions come from.
+> Where the questions come from
 
 **Intro**
 
-> The AI-native research above grows out of twenty years of work on competition policy, network industries, and digital regulation. A curated subset of that record is below; the full list lives on the [CV page](/cv).
+> The AI-native work above grows out of twenty years of research on competition policy, network industries, and digital regulation. A curated subset is below; the full list lives on the [CV page](/cv).
 
 ### Books & edited volumes
 
@@ -152,7 +154,7 @@
 
 **H2**
 
-> Active interests.
+> Active interests
 
 **Body**
 
@@ -172,7 +174,7 @@
 
 **Body**
 
-> If you work on AI methods for legal/regulatory text, on citation networks, on competition-policy research, or on building research infrastructure that economists and lawyers can actually use — I'd like to hear from you.
+> If you work on AI methods for legal or regulatory text, on citation networks, on competition-policy research, or on research infrastructure for economists and lawyers — send me a note. There aren't many of us yet.
 
 **CTA buttons**
 

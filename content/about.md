@@ -1,6 +1,8 @@
 # About — eminkoksal.com
 
 > Drop-in content for the About page. Aligned with `brand-guide.md` (verbal identity). Visual design lives in Claude Design. English. The page is organized to lead with academic credibility, then layer on the AI work — the order matters.
+>
+> **Voice note (2026-06-11 rewrite):** copy revised for a more human register — shorter sentences, varied rhythm, fewer em-dashes, no "X, not Y" constructions, no self-referential brand commentary. Facts unchanged.
 
 ---
 
@@ -12,11 +14,11 @@
 
 **H1**
 
-> Academic economist. AI consultant. Researcher of how AI is changing the questions economic research can ask.
+> Twenty years an economist | The last few rebuilding the work around AI
 
 **Lead paragraph** *(max ~120 words)*
 
-> I'm Emin Köksal — Associate Professor of Economics (Doç. Dr.), Routledge author, and AI consultant. Twenty years of my work has been inside competition economics and digital regulation; the last few have been about rebuilding that same work around AI. I design AI workflows for competition and regulation teams at leading international law firms, train practitioners on next-generation legal AI platforms, and use AI to extend what economic and competition-law research can ask. The four pillars below are not four careers — they are one identity, viewed from four angles.
+> I'm Emin Köksal — Associate Professor of Economics (Doç. Dr.), based in Istanbul. I've spent twenty years in competition economics and digital regulation: teaching, publishing, editing a journal, and advising law firms on cases. A few years ago I began rebuilding that work around AI. Now I design AI workflows for competition and regulation teams, train practitioners on legal AI platforms, and run a research program that uses AI as its method. This page is the longer version of that story.
 
 **Headshot:** single headshot reused across the site; placement and treatment defined in Claude Design.
 
@@ -28,8 +30,8 @@
 
 | | | | |
 |---|---|---|---|
-| **20+** | **50+** | **3,369** | **11+** |
-| years in competition economics | publications | decisions analyzed with AI | graduate courses taught |
+| **20+** | **50+** | **1000s** | **11+** |
+| years in competition economics | publications | legal documents analyzed with AI | graduate courses taught |
 
 ---
 
@@ -41,17 +43,15 @@
 
 **H2**
 
-> Academic economist *and* AI consultant — in that order.
+> Academic economist *and* AI consultant — in that order
 
 **Body**
 
-> Most consultants oversell AI and undersell rigor. Most academics undersell urgency. I work the seam between the two.
+> Consultants who talk about AI tend to skip the hard part: knowing which questions matter. Academics who study it often stop short of using it. I've tried to hold on to both.
 >
-> The academic identity comes first because it has to. Twenty years inside competition cases, regulatory dossiers, platform economics, and climate policy is what makes the AI work mean anything. Without it, "AI workflow for legal teams" is generic; with it, every workflow knows what question it's trying to answer.
+> The economics comes first because it has to. Twenty years of competition cases, regulatory dossiers, and platform economics is what tells an AI workflow which question it should answer. Without that, a "legal AI workflow" is a template anyone could sell.
 >
-> The AI identity is what makes the academic work current. I don't write about AI from the outside — I use it as a daily research and consulting tool, I design the prompts and playbooks personally before teaching them to anyone else, and my published research uses AI as a primary method, not a topic.
->
-> The order matters in voice, too: every page on this site leads with academic credibility, then shows the AI fluency on top. It's the inverse of the usual consulting site, and it's deliberate.
+> The AI side keeps the economics current. I use these tools every day, in research and in client work. I write the prompts and playbooks myself before I teach them to anyone. And my recent papers use AI as their method, with the regulatory record itself as the data.
 
 ---
 
@@ -63,7 +63,7 @@
 
 **H2**
 
-> Four pillars, one body of work.
+> Four pillars, one body of work
 
 ---
 
@@ -71,14 +71,13 @@
 
 **Anchor: `#academic`**
 
-The original ground. A formal academic record in economics, sustained alongside active graduate-level teaching.
+Where it all started: a formal academic record in economics, kept current by teaching every year.
 
-- **Associate Professorship (Doçentlik) in Economics** — earned through the national associate professorship examination; the formal title that would enter a full university post at full Professor rank.
+- **Associate Professorship (Doçentlik) in Economics** — earned through Türkiye's national associate professorship examination; the title that would enter a full university post at full Professor rank.
 - **50+ publications** across peer-reviewed journals and book chapters in economics, competition, and regulation.
 - **Routledge co-editor** — *The Economics and Regulation of Digitalisation: The Case of Türkiye* (Routledge, 2024), with M. Eroğlu and M. Finger.
 - **Associate Editor-in-Chief**, *Competition and Regulation in Network Industries* (SAGE Publishing), since 2018.
 - **Graduate-level teaching** at Bahçeşehir University and other institutions: *Generative AI for Economic Analysis*, *Managerial Economics*, *Platform Business and Economics*, *Industrial Organization*, *Innovation & Competition Policy in Digital Markets*, *Economics of Climate Change*, *Law & Economics*.
-- **Recognised in the field** as an academic economist working at the intersection of competition policy, regulation, and AI — particularly within the Turkish and international competition-law community.
 
 ---
 
@@ -86,19 +85,19 @@ The original ground. A formal academic record in economics, sustained alongside 
 
 **Anchor: `#ai-strategy`**
 
-Translating frontier AI tools into reliable analytical infrastructure for competition, regulation, and economic-analysis teams. The work distinguishes carefully between general-purpose AI tools (for non-confidential academic and marketing work) and confidentiality-grade legal AI platforms (for client work).
+I help competition, regulation, and economic-analysis teams turn frontier AI tools into infrastructure they can rely on. General-purpose tools for non-confidential work; confidentiality-grade legal AI platforms for client matters. The distinction matters, and I hold it strictly.
 
 **What I deliver**
 
 - **AI workflow and playbook design** for competition cases, regulatory dossiers, and economic analysis.
-- **Legal AI platform enablement** — practitioner training on next-generation European legal AI platforms: how to use them at depth, how to design playbooks that compound across matters, and how to integrate them into existing review and drafting flows.
-- **Complex prompt and agent design** — task-specific prompts, multi-step research agents, and reusable templates that raise output quality while saving time on repetitive analytical work.
-- **MCP-based research infrastructure** — custom Model Context Protocol setups that let practitioners run high-quality legal and academic discovery research from inside their AI tools.
-- **Strategic AI adoption** advisory for senior leadership — where AI actually moves the needle in a regulatory/economic practice, and where it doesn't.
+- **Practitioner training on legal AI platforms** — how to use them at depth, and how to build playbooks that compound across matters.
+- **Complex prompt and agent design** — task-specific prompts, multi-step research agents, and reusable templates.
+- **MCP-based research infrastructure** — custom Model Context Protocol setups for legal and academic discovery, run from inside the tools practitioners already use.
+- **AI adoption advisory for senior leadership** — where AI moves the needle in a regulatory or economic practice, and where it doesn't.
 
 **Where the work happens**
 
-> Embedded inside the competition and regulation practice of a leading international law firm, designing AI workflows in production. Builds playbooks and trains practitioners on a leading European legal AI platform. The work is practitioner-built, not slide-deck.
+> Since 2015 I've worked inside the competition and regulation practice of a leading international law firm. The workflows I design run there first, on live matters. If a playbook doesn't survive contact with a real case, it doesn't get taught.
 
 ---
 
@@ -106,22 +105,22 @@ Translating frontier AI tools into reliable analytical infrastructure for compet
 
 **Anchor: `#research`**
 
-A distinct research program — not a single project. Using AI as a primary method to ask economic and competition-law questions that were previously infeasible at scale, and to contribute methodologically to how the literature itself uses these tools.
+What began as one paper has become a research program: using AI to ask competition-law and economics questions that were too large to ask before.
 
 **Method signature**
 
-> *AI-powered analysis of legal corpora — turning regulatory text into research-grade economic evidence.*
+> *AI-powered analysis of legal corpora — turning regulatory text into research-grade economic evidence*
 >
 > Pairs large-scale legal-text analysis with citation networks and economic interpretation.
 
 **Flagship projects**
 
-- **AI analysis of 3,369 Turkish Competition Board decisions** *(published, SSRN 2025; with C. Peker and M. Uyer).* A quarter-century of the Turkish Competition Board's decisions, treated as a single coherent dataset. Combines NLP and economic methods to surface patterns invisible to manual review.
-- **The Competition Board's "Intellectual DNA": A Citation Network and Case Law Mapping Analysis** *(forthcoming working paper).* Combining AI analysis of legal texts with citation network analysis to map how authority, precedent, and reasoning propagate through an agency's case law over time.
+- **AI analysis of 3,369 Turkish Competition Board decisions** *(published, SSRN 2025; with C. Peker and M. Uyer).* A quarter-century of the Board's decisions, treated as a single coherent dataset. Combines NLP and economic methods to find patterns no manual review could.
+- **The Competition Board's "Intellectual DNA": A Citation Network and Case Law Mapping Analysis** *(forthcoming working paper).* Maps how authority, precedent, and reasoning move through the agency's case law over time.
 
 **Why this matters**
 
-> AI doesn't just speed up what an economist could already do. It changes the *questions* that can be asked. Treating the regulatory record as a structured, queryable corpus opens up research that simply wasn't feasible a decade ago — and the literature is only beginning to use these methods seriously.
+> The interesting part isn't the speed. Treating the regulatory record as a structured, queryable corpus changes which questions are worth asking — and the literature is only beginning to use these methods seriously.
 
 `Explore the research →` *(link to /research)*
 
@@ -129,7 +128,7 @@ A distinct research program — not a single project. Using AI as a primary meth
 
 ### Pillar 4 — Public Thought Leadership
 
-The external voice of the three pillars above — essays, conference talks, podcast appearances, and writing that translates research and practice into accessible writing for both academic and professional audiences.
+Essays, conference talks, and podcast appearances that carry the other three pillars to a wider audience, in English and Turkish.
 
 `Read the writing →` *(link to /blog)*
 
@@ -143,15 +142,15 @@ The external voice of the three pillars above — essays, conference talks, podc
 
 **H2**
 
-> Twenty years inside the questions, then rebuilt around AI.
+> How I got here
 
 **Body**
 
-> My career began at Bahçeşehir University in 2002 as a research assistant. Over the next two decades, I moved through Assistant Professor, Vice Dean of the Faculty of Administrative and Economic Sciences, Program Coordinator of the Financial Economics Graduate Program, and Associate Professor — earning the formal *Doçentlik* (Associate Professorship in Economics) along the way.
+> My career began at Bahçeşehir University in 2002, as a research assistant. Over the next two decades I moved through Assistant Professor, Vice Dean of the Faculty of Administrative and Economic Sciences, Program Coordinator of the Financial Economics Graduate Program, and Associate Professor — earning the formal *Doçentlik* (Associate Professorship in Economics) along the way.
 >
-> Through that period, my academic work centered on industrial economics, competition policy, platform economics, and digital regulation. In 2015, I began working as Economic Consultant at Dentons — providing expert economic analysis in competition law and regulatory matters across electricity, banking, telecoms, retail, cement, petroleum, and digital platforms. In 2018, I became Associate Editor-in-Chief of *Competition and Regulation in Network Industries* (SAGE Publishing). In 2024, I co-edited *The Economics and Regulation of Digitalisation: The Case of Türkiye* (Routledge).
+> The research centered on industrial economics, competition policy, platform economics, and digital regulation. In 2015, I began working as Economic Consultant at Dentons, providing expert economic analysis in competition and regulatory matters across electricity, banking, telecoms, retail, cement, petroleum, and digital platforms. In 2018, I became Associate Editor-in-Chief of *Competition and Regulation in Network Industries* (SAGE Publishing). In 2024, I co-edited *The Economics and Regulation of Digitalisation: The Case of Türkiye* (Routledge).
 >
-> Then came AI. Not as a topic to write *about*, but as a tool that genuinely changes how the work is done. I rebuilt my own research and consulting workflows around frontier AI tools — first to save time, then to ask questions that hadn't been askable before. That rebuild is what the AI Strategy and AI-Native Research pillars on this site describe. I now design AI workflows for competition and regulation teams at leading international law firms, train practitioners on a leading European legal AI platform, build MCP-based research infrastructure for legal and academic discovery, and teach a graduate course on *Generative AI for Economic Analysis* — alongside the older courses I've been teaching for years.
+> Then came AI. I started with the obvious uses — summarizing, drafting, saving time — and kept going until the tools were doing real analytical work. That rebuild is what the AI Strategy and AI-Native Research pillars on this site describe. These days I design AI workflows for competition and regulation teams, train practitioners on a leading European legal AI platform, build MCP-based research infrastructure, and teach a graduate course on *Generative AI for Economic Analysis* — alongside the courses I've been teaching for years.
 >
 > Education: PhD in Economics, Marmara University (2008). MA in Public Finance, Galatasaray University (2004). BA in Economics, Galatasaray University (2001).
 
@@ -165,7 +164,7 @@ The external voice of the three pillars above — essays, conference talks, podc
 
 **H2**
 
-> Where I serve.
+> Where I serve
 
 - **Istanbul Center for Regulation (IC4R)** — Deputy Director, since 2019.
 - **Network-Industries.org** — Member, since 2019.
@@ -183,11 +182,11 @@ The external voice of the three pillars above — essays, conference talks, podc
 
 **H2**
 
-> A few things outside the work.
+> A few things outside the work
 
 **Body**
 
-> Based in Istanbul, Türkiye. Married. Keen gravel cyclist. Amateur astronomer. Available for remote collaboration worldwide.
+> I live in Istanbul with my wife. Off the page, it's gravel cycling and amateur astronomy — two hobbies that reward patience and good instruments. I collaborate remotely worldwide.
 
 ---
 
@@ -199,7 +198,7 @@ The external voice of the three pillars above — essays, conference talks, podc
 
 **Body**
 
-> I'm always glad to hear from practitioners in competition and regulation, fellow academics working on AI methods, journal editors, conference organizers, and anyone designing serious AI infrastructure for analytical work.
+> I'm always glad to hear from practitioners in competition and regulation, academics working on AI methods, journal editors, conference organizers, and anyone building serious AI infrastructure for analytical work.
 
 **CTA buttons**
 

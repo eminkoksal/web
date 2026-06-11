@@ -18,6 +18,10 @@ export default defineConfig({
         cv: resolve(root, 'cv.html'),
         blog: resolve(root, 'blog.html'),
         contact: resolve(root, 'contact.html'),
+        /* Template entry for per-post pages. prerender.js stamps this out
+           to dist/blog/<slug>.html for every post in content/posts/index.json,
+           then removes the raw template from dist. */
+        'blog-post': resolve(root, 'blog-post.html'),
       },
     },
   },

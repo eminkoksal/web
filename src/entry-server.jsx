@@ -6,6 +6,7 @@ import Research from './research.jsx';
 import CV from './cv.jsx';
 import Blog from './blog.jsx';
 import Contact from './contact.jsx';
+import Post from './post.jsx';
 
 const pages = {
   home: Home,
@@ -21,6 +22,11 @@ export function render(name) {
   const App = pages[name];
   if (!App) throw new Error(`Unknown page: ${name}`);
   return renderToString(<App />);
+}
+
+/** Render a single blog post (index.json record + bodyHtml) to static HTML. */
+export function renderPost(post) {
+  return renderToString(<Post post={post} />);
 }
 
 export const pageNames = Object.keys(pages);

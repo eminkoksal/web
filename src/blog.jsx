@@ -1,61 +1,32 @@
-/* Blog page — editorial framing only. The post feed will be auto-populated
-   by the site builder after migration; the cards below are intentionally
-   visible placeholders. */
+/* Blog page — real post feed from content/posts/index.json.
+   Featured post pinned at top; topic chips + Turkish-posts filter drive
+   the grid client-side. */
 import React from 'react';
 import { IconArrow, IconSearch, IconDownload, IconChevron, Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA, Nav, Footer, OrbitalArc } from './shared.jsx';
+import { POSTS, TOPICS, FEATURED_POST, formatDate, trimWords } from './posts.js';
 
 const { useState: useBlogState } = React;
 
-const BLOG_TOPICS = [
-  'AI in Economic Research',
-  'AI in Legal Practice',
-  'Competition Policy',
-  'Platform & Digital Regulation',
-  'Climate & Energy Economics',
-  'Workflows & Tooling',
-  'Teaching Notes',
+const PAGE_SIZE = 9;
+
+/* Card cover gradients — assigned by position, brand palette. */
+const CARD_GRADS = [
+  'radial-gradient(circle at 30% 30%, #F37338 0%, #CF4500 55%, #9A3A0A 100%)',
+  'radial-gradient(circle at 60% 30%, #E8E2DA 0%, #D1CDC7 60%, #9A3A0A 110%)',
+  'radial-gradient(circle at 40% 30%, #F79E1B 0%, #F37338 40%, #CF4500 100%)',
+  'radial-gradient(circle at 30% 30%, #CF4500 0%, #9A3A0A 60%, #2B2B2B 100%)',
+  'radial-gradient(circle at 70% 30%, #F37338 0%, #CF4500 50%, #555555 100%)',
+  'radial-gradient(circle at 30% 60%, #F79E1B 0%, #F37338 40%, #9A3A0A 100%)',
 ];
 
-/* Placeholder cards — deliberately marked as placeholders so they are not
-   mistaken for real Emin writing. Titles and excerpts are obviously dummy. */
-const BLOG_PLACEHOLDERS = [
-  {
-    topic: 'AI in Economic Research',
-    date: 'Date · EN',
-    read: '8 min read',
-    grad: 'radial-gradient(circle at 30% 30%, #F37338 0%, #CF4500 55%, #9A3A0A 100%)',
-  },
-  {
-    topic: 'Competition Policy',
-    date: 'Date · EN',
-    read: '6 min read',
-    grad: 'radial-gradient(circle at 60% 30%, #E8E2DA 0%, #D1CDC7 60%, #9A3A0A 110%)',
-  },
-  {
-    topic: 'AI in Legal Practice',
-    date: 'Date · EN',
-    read: '5 min read',
-    grad: 'radial-gradient(circle at 40% 30%, #F79E1B 0%, #F37338 40%, #CF4500 100%)',
-  },
-  {
-    topic: 'Workflows & Tooling',
-    date: 'Date · EN',
-    read: '4 min read',
-    grad: 'radial-gradient(circle at 30% 30%, #CF4500 0%, #9A3A0A 60%, #2B2B2B 100%)',
-  },
-  {
-    topic: 'Platform & Digital Regulation',
-    date: 'Date · TR',
-    read: '7 min read',
-    grad: 'radial-gradient(circle at 70% 30%, #F37338 0%, #CF4500 50%, #555555 100%)',
-  },
-  {
-    topic: 'Teaching Notes',
-    date: 'Date · EN',
-    read: '3 min read',
-    grad: 'radial-gradient(circle at 30% 60%, #F79E1B 0%, #F37338 40%, #9A3A0A 100%)',
-  },
-];
+function postHref(p) {
+  return `blog/${p.slug}.html`;
+}
+
+function scrollToId(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
 /* ------------------------------------------------------------------ */
 /*  Hero                                                               */
@@ -74,16 +45,15 @@ function BlogHero() {
           <div>
             <Eyebrow>Writing</Eyebrow>
             <h1 className="display" style={{ margin: '28px 0 0' }}>
-              Notes from the seam between economics, regulation, and AI.
+              Notes from the seam between economics, regulation, and AI
             </h1>
           </div>
           <p style={{ fontSize: 18, lineHeight: 1.55, color: '#262627',
                       margin: 0 }}>
-            Essays, working notes, and shorter posts on what's actually
-            happening at the intersection of academic economics, competition
-            policy, and the use of frontier AI tools in serious analytical
-            work. Some pieces are addressed to academic readers, some to
-            practitioners; most try to speak to both. Written in English;
+            Essays, working notes, and shorter posts from where economics,
+            competition policy, and AI tools meet in day-to-day analytical
+            work. Some pieces are written for academics, some for
+            practitioners; most try to serve both. Mostly in English, with
             occasional Turkish posts where the audience is primarily Turkish.
           </p>
         </div>
@@ -96,17 +66,16 @@ function BlogHero() {
 /*  Topic chips                                                        */
 /* ------------------------------------------------------------------ */
 
-function TopicChips() {
-  const [active, setActive] = useBlogState('All');
-  const all = ['All', ...BLOG_TOPICS];
+function TopicChips({ topic, trOnly, onTopic }) {
+  const all = ['All', ...TOPICS];
   return (
-    <section style={{ padding: '24px 0 16px' }}>
+    <section id="topics" style={{ padding: '24px 0 16px', scrollMarginTop: 120 }}>
       <div className="container">
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
           {all.map((t) => {
-            const on = active === t;
+            const on = topic === t && !(t === 'All' && trOnly);
             return (
-              <button key={t} type="button" onClick={() => setActive(t)}
+              <button key={t} type="button" onClick={() => onTopic(t)}
                 style={{
                   fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
                   letterSpacing: '-0.02em', lineHeight: 1,
@@ -128,10 +97,12 @@ function TopicChips() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Featured Post (placeholder slot)                                   */
+/*  Featured post (pinned)                                             */
 /* ------------------------------------------------------------------ */
 
-function FeaturedSlot() {
+function FeaturedPost() {
+  const p = FEATURED_POST;
+  if (!p) return null;
   return (
     <section className="section" style={{ paddingTop: 48, paddingBottom: 48 }}>
       <div className="container">
@@ -142,43 +113,47 @@ function FeaturedSlot() {
           borderBottom: '1px solid rgba(20,20,19,.12)',
         }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20, flexWrap: 'wrap' }}>
               <Eyebrow>Featured</Eyebrow>
-              <span style={{ fontSize: 13, color: '#555' }}>Slot reserved · to be selected</span>
+              <span style={{ fontSize: 13, color: '#555' }}>
+                {formatDate(p.date)} · {p.readingMin} min read · {p.topic}
+              </span>
             </div>
-            <h2 className="display--mid" style={{ margin: '0 0 20px', color: 'rgba(20,20,19,.55)' }}>
-              Featured post — placeholder for migration.
+            <h2 className="display--mid" style={{ margin: '0 0 20px' }}>
+              <a href={postHref(p)} style={{ color: 'inherit', textDecoration: 'none' }}>
+                {p.title}
+              </a>
             </h2>
             <p style={{ fontSize: 18, lineHeight: 1.5, color: '#555',
                         margin: '0 0 28px', maxWidth: 560 }}>
-              One post pinned at the top. The site builder will pull the most
-              representative current piece from the archive after the
-              WordPress migration; for now this slot is intentionally empty.
+              {trimWords(p.excerpt, 45)}
             </p>
-            <span style={{
+            <a href={postHref(p)} style={{
               display: 'inline-flex', alignItems: 'center', gap: 10,
+              fontFamily: 'var(--font-sans)',
               fontSize: 16, fontWeight: 500, letterSpacing: '-.02em',
-              color: 'rgba(20,20,19,.45)',
+              color: '#141413', textDecoration: 'none',
             }}>
-              Read the post →
-            </span>
+              Read the post <IconArrow size={14} />
+            </a>
           </div>
           <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-            <div style={{ position: 'relative' }}>
+            <a href={postHref(p)} style={{ position: 'relative', display: 'block', textDecoration: 'none' }}>
               <Portrait
                 size={360}
-                gradient="radial-gradient(circle at 35% 35%, #E8E2DA 0%, #D1CDC7 55%, #B8B1A8 100%)"
+                gradient="radial-gradient(circle at 35% 35%, #F79E1B 0%, #F37338 45%, #CF4500 100%)"
               />
-              <div style={{
-                position: 'absolute', inset: 0, display: 'flex',
-                alignItems: 'center', justifyContent: 'center',
-                fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 700,
-                letterSpacing: '0.06em', textTransform: 'uppercase',
-                color: 'rgba(20,20,19,.55)', pointerEvents: 'none',
+              <span style={{
+                position: 'absolute', left: '50%', bottom: 34, transform: 'translateX(-50%)',
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                background: '#FFFFFF', color: '#141413',
+                padding: '8px 14px', borderRadius: 999,
+                fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 500,
+                letterSpacing: '-.02em', whiteSpace: 'nowrap',
               }}>
-                Featured image
-              </div>
-            </div>
+                {p.topic} · {p.lang.toUpperCase()}
+              </span>
+            </a>
           </div>
         </div>
       </div>
@@ -187,67 +162,73 @@ function FeaturedSlot() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Recent posts grid (placeholder cards)                              */
+/*  Post cards grid                                                    */
 /* ------------------------------------------------------------------ */
 
-function PlaceholderCard({ p, n }) {
+function PostCard({ p, n }) {
   return (
     <article style={{
       display: 'flex', flexDirection: 'column', gap: 22,
     }}>
-      <div style={{ position: 'relative', width: '100%', aspectRatio: '1.05/1' }}>
-        <div style={{
-          width: '100%', height: '100%',
-          borderRadius: 40, background: p.grad,
-        }} />
-        <div style={{ position: 'absolute', left: 20, top: 20 }}>
-          <span style={{
-            display: 'inline-flex', alignItems: 'center', gap: 8,
-            background: '#FFFFFF', padding: '8px 14px', borderRadius: 999,
-            fontSize: 12, fontWeight: 500, letterSpacing: '-.02em',
+      <a href={postHref(p)} style={{ display: 'block', textDecoration: 'none' }}>
+        <div style={{ position: 'relative', width: '100%', aspectRatio: '1.05/1' }}>
+          <div style={{
+            width: '100%', height: '100%',
+            borderRadius: 40, background: CARD_GRADS[n % CARD_GRADS.length],
+          }} />
+          <div style={{ position: 'absolute', left: 20, top: 20 }}>
+            <span style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              background: '#FFFFFF', color: '#141413',
+              padding: '8px 14px', borderRadius: 999,
+              fontFamily: 'var(--font-sans)',
+              fontSize: 12, fontWeight: 500, letterSpacing: '-.02em',
+            }}>
+              {p.topic}
+            </span>
+          </div>
+          <div style={{
+            position: 'absolute', right: 20, bottom: 20,
+            fontFamily: 'var(--font-sans)', fontSize: 11, fontWeight: 700,
+            letterSpacing: '0.08em', textTransform: 'uppercase',
+            color: '#FFFFFF', opacity: 0.78,
           }}>
-            {p.topic}
-          </span>
+            {p.lang.toUpperCase()}
+          </div>
         </div>
-        <div style={{
-          position: 'absolute', right: 20, bottom: 20,
-          fontFamily: 'var(--font-sans)', fontSize: 11, fontWeight: 700,
-          letterSpacing: '0.08em', textTransform: 'uppercase',
-          color: '#FFFFFF', opacity: 0.78,
-        }}>
-          Placeholder · 0{n}
-        </div>
-      </div>
+      </a>
       <div>
         <div style={{ fontSize: 13, color: '#555', marginBottom: 10 }}>
-          {p.date} · {p.read}
+          {formatDate(p.date)} · {p.readingMin} min read
         </div>
-        <h3 style={{ fontSize: 24, fontWeight: 500, letterSpacing: '-.02em',
-                     lineHeight: 1.2, margin: '0 0 12px',
-                     color: 'rgba(20,20,19,.7)' }}>
-          Sample post title — placeholder for migration.
+        <h3 style={{ fontFamily: 'var(--font-sans)',
+                     fontSize: 24, fontWeight: 500, letterSpacing: '-.02em',
+                     lineHeight: 1.2, margin: '0 0 12px' }}>
+          <a href={postHref(p)} style={{ color: '#141413', textDecoration: 'none' }}>
+            {p.title}
+          </a>
         </h3>
-        <p style={{ fontSize: 15, lineHeight: 1.55, color: '#666',
+        <p style={{ fontSize: 15, lineHeight: 1.55, color: '#555',
                     margin: '0 0 14px' }}>
-          Excerpt placeholder. The site builder will populate this card with
-          the post's first ~25 words once the archive is migrated; the layout
-          below demonstrates the card pattern only.
+          {trimWords(p.excerpt, 25)}
         </p>
-        <span style={{
+        <a href={postHref(p)} style={{
           display: 'inline-flex', alignItems: 'center', gap: 6,
+          fontFamily: 'var(--font-sans)',
           fontSize: 14, fontWeight: 500, letterSpacing: '-.02em',
-          color: 'rgba(20,20,19,.5)',
+          color: '#141413', textDecoration: 'none',
         }}>
-          Read →
-        </span>
+          Read <IconArrow size={12} />
+        </a>
       </div>
     </article>
   );
 }
 
-function RecentPosts() {
+function RecentPosts({ posts, total, trOnly, limit, onMore }) {
+  const visible = posts.slice(0, limit);
   return (
-    <section className="section" style={{ paddingTop: 64 }}>
+    <section id="feed" className="section" style={{ paddingTop: 64, scrollMarginTop: 120 }}>
       <div className="container">
         <div style={{ display: 'flex', alignItems: 'baseline',
                       justifyContent: 'space-between', marginBottom: 48,
@@ -255,27 +236,34 @@ function RecentPosts() {
           <div>
             <Eyebrow>Recent</Eyebrow>
             <h2 className="display--mid" style={{ margin: '24px 0 0' }}>
-              Recent writing.
+              Recent writing
             </h2>
           </div>
           <span style={{ fontSize: 14, color: '#555', maxWidth: 380 }}>
-            Auto-feed once migrated. Each card shows title, date, a short
-            excerpt, topic chip, and a Read link.
+            {posts.length} of {total} posts{trOnly ? ' · Turkish' : ''}
           </span>
         </div>
-        <div style={{
-          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: 56,
-        }}>
-          {BLOG_PLACEHOLDERS.map((p, i) => (
-            <PlaceholderCard key={i} p={p} n={i + 1} />
-          ))}
-        </div>
-        <div style={{ marginTop: 56, display: 'flex', justifyContent: 'center' }}>
-          <Button variant="secondary">
-            Load more <IconArrow size={14} />
-          </Button>
-        </div>
+        {posts.length === 0 ? (
+          <p style={{ fontSize: 16, color: '#555', margin: 0 }}>
+            Nothing under this filter yet — try another topic.
+          </p>
+        ) : (
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: 56,
+          }}>
+            {visible.map((p, i) => (
+              <PostCard key={p.slug} p={p} n={i} />
+            ))}
+          </div>
+        )}
+        {visible.length < posts.length && (
+          <div style={{ marginTop: 56, display: 'flex', justifyContent: 'center' }}>
+            <Button variant="secondary" onClick={onMore}>
+              Load more <IconArrow size={14} dir="down" />
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -285,11 +273,11 @@ function RecentPosts() {
 /*  Archive                                                            */
 /* ------------------------------------------------------------------ */
 
-function Archive() {
+function Archive({ onByYear, onByTopic, onTurkish }) {
   const items = [
-    { label: 'By year', href: '#' },
-    { label: 'By topic', href: '#' },
-    { label: 'Turkish posts', href: '#' },
+    { label: 'By year', onClick: onByYear },
+    { label: 'By topic', onClick: onByTopic },
+    { label: 'Turkish posts', onClick: onTurkish },
   ];
   return (
     <section className="section" style={{ paddingTop: 96, paddingBottom: 96 }}>
@@ -299,7 +287,7 @@ function Archive() {
           <div>
             <Eyebrow>Archive</Eyebrow>
             <h2 className="display--mid" style={{ margin: '24px 0 0' }}>
-              Browse everything.
+              Browse everything
             </h2>
             <p style={{ fontSize: 18, lineHeight: 1.5, color: '#262627',
                         margin: '24px 0 0', maxWidth: 460 }}>
@@ -313,7 +301,8 @@ function Archive() {
             borderBottom: '1px solid rgba(20,20,19,.18)',
           }}>
             {items.map((it, i) => (
-              <a key={it.label} href={it.href}
+              <a key={it.label} href="#feed"
+                 onClick={(e) => { e.preventDefault(); it.onClick(); }}
                  style={{
                    padding: '40px 28px',
                    borderLeft: i === 0 ? 'none' : '1px solid rgba(20,20,19,.18)',
@@ -370,13 +359,12 @@ function Subscribe() {
                 letterSpacing: '-0.025em',
                 margin: '24px 0 0',
               }}>
-                Get new writing as it goes out.
+                Get new writing as it goes out
               </h2>
               <p style={{ fontSize: 17, lineHeight: 1.5, color: '#262627',
                           margin: '24px 0 0', maxWidth: 400 }}>
-                I publish irregularly — usually when there's something
-                genuinely worth saying about AI in economic and legal
-                research. Two ways to keep up:
+                I publish when I have something to say, which makes the
+                schedule irregular by design. Two ways to keep up:
               </p>
             </div>
 
@@ -445,7 +433,7 @@ function ClosingCTA() {
             <p style={{ fontSize: 18, lineHeight: 1.5, color: '#262627',
                         margin: '24px 0 0', maxWidth: 640 }}>
               I take on a small number of invited essays, podcast
-              appearances, and panel discussions each year, particularly on
+              appearances, and panels each year, mostly on
               AI in competition and regulation, AI-native research methods,
               or the economics of digital platforms. Get in touch.
             </p>
@@ -466,15 +454,40 @@ function ClosingCTA() {
 /* ------------------------------------------------------------------ */
 
 function BlogApp() {
+  const [topic, setTopic] = useBlogState('All');
+  const [trOnly, setTrOnly] = useBlogState(false);
+  const [limit, setLimit] = useBlogState(PAGE_SIZE);
+
+  /* The featured post is pinned above the grid, so the grid carries
+     the rest; topic and language filters apply to the grid. */
+  const gridPosts = POSTS.filter((p) => !p.featured);
+  const filtered = gridPosts.filter((p) =>
+    (topic === 'All' || p.topic === topic) &&
+    (!trOnly || p.lang === 'tr'));
+
+  const pickTopic = (t) => {
+    setTopic(t);
+    if (t === 'All') setTrOnly(false);
+    setLimit(PAGE_SIZE);
+  };
+
   return (
     <>
       <Nav active="Blog" />
       <main>
         <BlogHero />
-        <TopicChips />
-        <FeaturedSlot />
-        <RecentPosts />
-        <Archive />
+        <TopicChips topic={topic} trOnly={trOnly} onTopic={pickTopic} />
+        <FeaturedPost />
+        <RecentPosts
+          posts={filtered}
+          total={gridPosts.length}
+          trOnly={trOnly}
+          limit={limit}
+          onMore={() => setLimit(limit + PAGE_SIZE)} />
+        <Archive
+          onByYear={() => { setTopic('All'); setTrOnly(false); setLimit(gridPosts.length); scrollToId('feed'); }}
+          onByTopic={() => { scrollToId('topics'); }}
+          onTurkish={() => { setTopic('All'); setTrOnly(true); setLimit(gridPosts.length); scrollToId('feed'); }} />
         <Subscribe />
         <ClosingCTA />
       </main>
