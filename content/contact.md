@@ -99,7 +99,7 @@
 
 **H2**
 
-> Based in Istanbul, Türkiye
+> Based in Türkiye
 
 **Body**
 

@@ -320,7 +320,7 @@ function Location() {
         }}>
           <div>
             <Eyebrow>Location</Eyebrow>
-            <h2 className="display--mid" style={{ margin: '24px 0 0' }}>Based in Istanbul, Türkiye
+            <h2 className="display--mid" style={{ margin: '24px 0 0' }}>Based in Türkiye
 
             </h2>
           </div>

@@ -20,7 +20,7 @@ const PILLARS = [
 {
   title: 'Academic Economics & Teaching',
   body:
-  'The foundation. Associate Professor of Economics (Doç. Dr.), with 50+ publications, ' +
+  'The foundation. Associate Professor of Economics, with 50+ publications, ' +
   'a co-edited Routledge volume, and an editorship at Competition and Regulation in ' +
   'Network Industries (SAGE). I’ve taught graduate courses every year since 2002, ' +
   'and still do.',
@@ -184,7 +184,7 @@ function HeroStadium({ t }) {
         }}>
           <Eyebrow>Economist · Associate Professor · AI Consultant</Eyebrow>
           <span style={{ fontSize: 14, color: '#555' }}>
-            Istanbul&nbsp;·&nbsp;Türkiye
+            Türkiye
           </span>
         </div>
 
@@ -297,7 +297,7 @@ function HeroTypographic({ t }) {
             fontSize: 13, fontWeight: 500, letterSpacing: '.04em',
             textTransform: 'uppercase', color: '#555'
           }}>
-            Istanbul → Worldwide
+            Türkiye → Worldwide
           </span>
         </div>
 

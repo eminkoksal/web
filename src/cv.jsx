@@ -701,7 +701,7 @@ function CVHero() {
           <Meta label="Email" value={<a href="mailto:mail@eminkoksal.com" style={{ color: '#141413', textDecoration: 'underline', textUnderlineOffset: 3 }}>mail@eminkoksal.com</a>} />
           <Meta label="Web" value={<a href="https://eminkoksal.com" target="_blank" rel="noopener noreferrer" style={{ color: '#141413', textDecoration: 'underline', textUnderlineOffset: 3 }}>eminkoksal.com</a>} />
           <Meta label="LinkedIn" value={<a href="https://linkedin.com/in/eminkoksal" target="_blank" rel="noopener noreferrer" style={{ color: '#141413', textDecoration: 'underline', textUnderlineOffset: 3 }}>linkedin.com/in/eminkoksal</a>} />
-          <Meta label="Based in" value="Istanbul, Türkiye" />
+          <Meta label="Based in" value="Türkiye" />
         </div>
       </div>
     </section>);

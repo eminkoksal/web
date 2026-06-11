@@ -198,7 +198,7 @@ function AboutHero() {
           <div className="prose" style={{ maxWidth: 600 }}>
             <p>
               I&rsquo;m <strong>Emin Köksal</strong> — Associate Professor of Economics
-              (Doç. Dr.), based in Istanbul. I&rsquo;ve spent twenty years in competition
+             , based in Türkiye. I&rsquo;ve spent twenty years in competition
               economics and digital regulation: teaching, publishing, editing a journal,
               and advising law firms on cases. A few years ago I began rebuilding that
               work around AI. Now I design AI workflows for competition and regulation

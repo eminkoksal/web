@@ -49,7 +49,7 @@
 
 ### Card 1 — Academic Economics & Teaching
 
-> The foundation. Associate Professor of Economics (Doç. Dr.), with 50+ publications, a co-edited Routledge volume, and an editorship at *Competition and Regulation in Network Industries* (SAGE). I've taught graduate courses every year since 2002, and still do.
+> The foundation. Associate Professor of Economics, with 50+ publications, a co-edited Routledge volume, and an editorship at *Competition and Regulation in Network Industries* (SAGE). I've taught graduate courses every year since 2002, and still do.
 
 **Card link:** `Read more →` *(to /about#academic)*
 
@@ -157,4 +157,4 @@
 
 ## SEO meta description (≤155 chars)
 
-> *Academic economist (Doç. Dr.) and AI consultant. Twenty years in competition economics. AI workflows, practitioner training, and AI-native research.*
+> *Academic economist and AI consultant. Twenty years in competition economics. AI workflows, practitioner training, and AI-native research.*

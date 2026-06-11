@@ -10,7 +10,7 @@
 
 **Name:** Emin Köksal
 **Headline:** Academic Economist & AI Consultant
-**Subhead:** Associate Professor (Doç. Dr.) · Researcher · Consultant
+**Subhead:** Associate Professor · Researcher · Consultant
 
 **Tagline (primary):** Where economic rigor meets AI fluency.
 
@@ -28,7 +28,7 @@ One person. Two reinforcing identities. The brand reads as a single voice — an
 
 Two reinforcing tracks under one identity: **AI-native economic research** and **AI strategy for organizations whose work depends on regulatory and economic analysis**.
 
-I bring twenty years of competition economics, regulatory expertise, and a formal academic record (Doç. Dr., 50+ publications, Routledge author) into work where AI is genuinely changing how analysis gets done — both inside research and inside practice.
+I bring twenty years of competition economics, regulatory expertise, and a formal academic record (50+ publications, Routledge author) into work where AI is genuinely changing how analysis gets done — both inside research and inside practice.
 
 ### For organizations
 
@@ -79,7 +79,7 @@ The brand operates across four reinforcing pillars. Use these as the top-level n
 
 The original ground. A formal academic record in economics — associate professorship, peer-reviewed publications, an edited Routledge volume, and SAGE journal editorship — sustained alongside active graduate-level teaching.
 
-- **Proof points:** Doç. Dr. (Associate Professorship in Economics, by national examination); 50+ publications; Routledge co-editor (2024); Associate Editor-in-Chief at *Competition and Regulation in Network Industries* (SAGE); graduate courses at Bahçeşehir University and other institutions, including *Generative AI for Economic Analysis*, *Economics of Climate Change*, *Innovation & Competition Policy in Digital Markets*.
+- **Proof points:** Associate Professorship in Economics (earned by national examination); 50+ publications; Routledge co-editor (2024); Associate Editor-in-Chief at *Competition and Regulation in Network Industries* (SAGE); graduate courses at Bahçeşehir University and other institutions, including *Generative AI for Economic Analysis*, *Economics of Climate Change*, *Innovation & Competition Policy in Digital Markets*.
 - **Voice cue:** "Twenty years inside the literature."
 - **Example deliverables:** peer-reviewed papers, book chapters, edited volumes, course design, guest lectures, doctoral committee work.
 
@@ -120,11 +120,11 @@ Three lengths, all reflecting the new positioning. Drop-in copy for the new webs
 
 ### Short (≈60 words)
 
-> Emin Köksal is an academic economist (Doç. Dr.) and AI consultant with twenty years in competition economics and digital regulation. He designs AI workflows for competition and regulation teams at leading international law firms, trains practitioners on next-generation legal AI platforms, and uses AI to extend economic and competition-law research — including ongoing work on the citation structure of regulatory case law.
+> Emin Köksal is an academic economist and AI consultant with twenty years in competition economics and digital regulation. He designs AI workflows for competition and regulation teams at leading international law firms, trains practitioners on next-generation legal AI platforms, and uses AI to extend economic and competition-law research — including ongoing work on the citation structure of regulatory case law.
 
 ### Medium (≈150 words)
 
-> Emin Köksal is an associate professor of economics (Doç. Dr.), Routledge author, and AI consultant whose research, teaching, and consultancy all run on AI. He has spent two decades in competition economics and digital regulation across electricity, banking, telecoms, retail, and digital platforms, with 50+ publications and Associate Editor-in-Chief duties at *Competition and Regulation in Network Industries* (SAGE).
+> Emin Köksal is an associate professor of economics, Routledge author, and AI consultant whose research, teaching, and consultancy all run on AI. He has spent two decades in competition economics and digital regulation across electricity, banking, telecoms, retail, and digital platforms, with 50+ publications and Associate Editor-in-Chief duties at *Competition and Regulation in Network Industries* (SAGE).
 >
 > In practice, he is embedded inside the competition and regulation team of a leading international law firm, where he designs AI workflows, complex prompts, and playbooks for a leading European legal AI platform. In research, he uses AI to ask new questions of the regulatory record — most recently, mapping the citation network and "intellectual DNA" of a national competition authority's case law. He teaches graduate courses on AI for economic analysis, climate economics, and digital competition policy.
 
@@ -146,19 +146,19 @@ LinkedIn's headline field accepts up to 220 characters. The headline appears in 
 
 ### Option A — Identity-led (recommended default)
 
-> **Academic Economist & AI Consultant | Associate Professor (Doç. Dr.) | AI workflows for competition & regulation teams | AI-native research on regulatory case law**
+> **Academic Economist & AI Consultant | Associate Professor | AI workflows for competition & regulation teams | AI-native research on regulatory case law**
 
 (*~190 characters. Leads with the dual identity, names the academic title, gives both consulting and research one beat each. Strongest match for the new positioning.*)
 
 ### Option B — Outcome-led
 
-> **Helping competition & regulation teams turn AI into reliable analytical infrastructure | Associate Professor of Economics (Doç. Dr.) | Routledge author | AI-native research**
+> **Helping competition & regulation teams turn AI into reliable analytical infrastructure | Associate Professor of Economics | Routledge author | AI-native research**
 
 (*~180 characters. Leads with what organizations get; academic credentials anchor the back half. Good for an outreach phase.*)
 
 ### Option C — Research-forward
 
-> **Academic Economist (Doç. Dr.) using AI to expand competition & regulation research | Associate Editor-in-Chief, Competition and Regulation in Network Industries (SAGE) | Routledge author**
+> **Academic Economist using AI to expand competition & regulation research | Associate Editor-in-Chief, Competition and Regulation in Network Industries (SAGE) | Routledge author**
 
 (*~205 characters. For periods when you want inbound from researchers, editors, and conference programs rather than practitioners.*)
 

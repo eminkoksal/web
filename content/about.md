@@ -18,7 +18,7 @@
 
 **Lead paragraph** *(max ~120 words)*
 
-> I'm Emin Köksal — Associate Professor of Economics (Doç. Dr.), based in Istanbul. I've spent twenty years in competition economics and digital regulation: teaching, publishing, editing a journal, and advising law firms on cases. A few years ago I began rebuilding that work around AI. Now I design AI workflows for competition and regulation teams, train practitioners on legal AI platforms, and run a research program that uses AI as its method. This page is the longer version of that story.
+> I'm Emin Köksal — Associate Professor of Economics, based in Türkiye. I've spent twenty years in competition economics and digital regulation: teaching, publishing, editing a journal, and advising law firms on cases. A few years ago I began rebuilding that work around AI. Now I design AI workflows for competition and regulation teams, train practitioners on legal AI platforms, and run a research program that uses AI as its method. This page is the longer version of that story.
 
 **Headshot:** single headshot reused across the site; placement and treatment defined in Claude Design.
 
@@ -214,4 +214,4 @@ The four pillar sections use `#academic`, `#ai-strategy`, `#research`. The homep
 
 ## SEO meta description (≤155 chars)
 
-> *About Emin Köksal — Associate Professor of Economics (Doç. Dr.), AI consultant, and researcher using AI to extend competition and regulation research.*
+> *About Emin Köksal — Associate Professor of Economics, AI consultant, and researcher using AI to extend competition and regulation research.*

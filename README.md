@@ -1,7 +1,7 @@
 # eminkoksal.com
 
 Personal website for **Emin Köksal** — Academic Economist & AI Consultant
-(Associate Professor, Doç. Dr.). Tagline: *Where economic rigor meets AI fluency.*
+(Associate Professor). Tagline: *Where economic rigor meets AI fluency.*
 
 Built from a [Claude Design](https://claude.ai/design) prototype, productionized as a
 **static, prerendered React multi-page site** and deployed to **GitHub Pages**.
