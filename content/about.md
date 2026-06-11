@@ -186,7 +186,7 @@ Essays, conference talks, and podcast appearances that carry the other three pil
 
 **Body**
 
-> I live in Istanbul with my wife. Off the page, it's gravel cycling and amateur astronomy — two hobbies that reward patience and good instruments. I collaborate remotely worldwide.
+> I live at the intersection of the Aegean and the Mediterranean. Off the page, it's gravel cycling and amateur astronomy — two hobbies that reward patience and good instruments. I collaborate remotely worldwide.
 
 ---
 

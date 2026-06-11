@@ -621,7 +621,7 @@ function Personal() {
           </div>
 
           <div className="prose" style={{ maxWidth: 640 }}>
-            <p style={{ fontSize: 20 }}>I live in Istanbul with my wife. Off the page,
+            <p style={{ fontSize: 20 }}>I live at the intersection of the Aegean and the Mediterranean. Off the page,
             it&rsquo;s gravel cycling and amateur astronomy — two hobbies that reward
             patience and good instruments. I collaborate remotely worldwide.
             </p>
