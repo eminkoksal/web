@@ -195,7 +195,8 @@
 
 ### Reports & Working Papers
 
-- **Köksal, E., Peker, C. & Uyer, M.** (2025). *A Quarter-Century Analysis of the Turkish Competition Board's Decisions: An AI-Supported Examination.* **SSRN.** *(in Turkish)*
+- **Köksal, E., Peker, C. & Üyer, M.** (2026). *The Intellectual DNA of the Turkish Competition Board.* **SSRN.**
+- **Köksal, E., Peker, C. & Uyer, M.** (2025). *A Quarter-Century Analysis of the Turkish Competition Board's Decisions: An AI-Supported Examination.* **SSRN.**
 - Köksal, E. & Bakış, O. (2023). *Türkiye Digital Society Index.* Betam Research Note, 23/269. SSRN. *(in Turkish)*
 - Bakış, O. & Köksal, E. (2022). *ICT Expenditures and Digitalization in Turkey.* Betam Research Report. SSRN. *(in Turkish)*
 - Bakış, O., Tetikol-Dalgıç, D. E., Deniz, P., Finger, M., Gümüş, İ., & Köksal, E. (2022). *Assessment of a Carbon Tax as a Tool to Decarbonize Turkey's Energy Supply 2050.* IC4R Report Series No. 1. SSRN.
@@ -203,10 +204,6 @@
 - Köksal, E., Ardıyok, Ş. & İkiler, B. (2021). *Charging Infrastructure for Electric Vehicles — Opportunities and Suggestions for Turkey.* SSRN. *(in Turkish)*
 - Köksal, E. & Ardıyok, Ş. (2019). *Assessing Buyer Power in Syndicated Loans.* SSRN.
 - Köksal, E. & Ardıyok, Ş. (2019). *Necessity of a Broader Market Definition in the Analysis of Syndicated Loans.* SSRN. *(in Turkish)*
-
-### Forthcoming
-
-- **Köksal, E., Peker, C. & Uyer, M.** *The Competition Board's "Intellectual DNA": A Citation Network and Case Law Mapping Analysis.* Working paper.
 
 ---
 

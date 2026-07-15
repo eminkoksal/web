@@ -118,10 +118,10 @@ const ABOUT_PILLARS = [
   },
   {
     title:
-    'The Competition Board\u2019s \u201CIntellectual DNA\u201D: A Citation Network and Case Law Mapping Analysis',
-    meta: 'Forthcoming working paper',
+    'The Intellectual DNA of the Turkish Competition Board',
+    meta: 'Published, SSRN 2026 \u00b7 with C. Peker and M. Üyer',
     body:
-    'Maps how authority, precedent, and reasoning move through the agency\u2019s case law over time.'
+    'Maps the 18,513 citations connecting all 9,995 published decisions \u2014 thirty years of case law as a network.'
   }],
 
   closing:

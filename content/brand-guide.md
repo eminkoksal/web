@@ -97,7 +97,7 @@ A distinct research program, not a single project. Using AI as a primary method 
 
 - **Flagship projects:**
   - **AI analysis of 3,369 Turkish Competition Board decisions.** Large-scale legal text analysis combining NLP and economic methods; demonstrates feasibility of running a quarter-century of agency output as a single coherent dataset.
-  - **The Competition Board's "Intellectual DNA": A Citation Network and Case Law Mapping Analysis** *(forthcoming working paper).* Combining AI analysis of legal texts with citation network analysis to map how authority, precedent, and reasoning propagate through an agency's case law over time.
+  - **The Intellectual DNA of the Turkish Competition Board** *(published, SSRN 2026; with C. Peker and M. Üyer).* An AI model extracted the 18,513 citations connecting all 9,995 published decisions; network analysis maps how authority, precedent, and reasoning propagate through the agency's case law.
 - **Method signature:** *AI-powered analysis of legal corpora — turning regulatory text into research-grade economic evidence.* Pairs large-scale legal-text analysis with citation networks and economic interpretation.
 - **Voice cue:** "AI changes the questions an economist can ask, not just the time it takes to answer them."
 - **Example deliverables:** working papers, SSRN postings, peer-reviewed methodological articles, datasets, conference presentations on AI-native legal/economic analysis.

@@ -116,7 +116,7 @@ What began as one paper has become a research program: using AI to ask competiti
 **Flagship projects**
 
 - **AI analysis of 3,369 Turkish Competition Board decisions** *(published, SSRN 2025; with C. Peker and M. Uyer).* A quarter-century of the Board's decisions, treated as a single coherent dataset. Combines NLP and economic methods to find patterns no manual review could.
-- **The Competition Board's "Intellectual DNA": A Citation Network and Case Law Mapping Analysis** *(forthcoming working paper).* Maps how authority, precedent, and reasoning move through the agency's case law over time.
+- **The Intellectual DNA of the Turkish Competition Board** *(published, SSRN 2026; with C. Peker and M. Üyer).* Maps the 18,513 citations connecting all 9,995 published decisions — thirty years of case law as a network.
 
 **Why this matters**
 

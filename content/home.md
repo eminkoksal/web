@@ -61,7 +61,7 @@
 
 ### Card 3 — AI-Native Research
 
-> My current research program uses AI to read legal texts at a scale no person could. The first paper analyzed 3,369 Turkish Competition Board decisions — twenty-five years of case law as a single dataset. A citation-network study of the same record is underway.
+> My current research program uses AI to read legal texts at a scale no person could. The first paper analyzed 3,369 Turkish Competition Board decisions as a single dataset. The second maps the 18,513 citations connecting all 9,995 published decisions.
 
 **Card link:** `Explore the research →` *(to /research)*
 
@@ -101,13 +101,13 @@
 >
 > *SSRN, 2025.* `Read the paper →`
 
-### Card 3 — AI-Native Research (forthcoming)
+### Card 3 — AI-Native Research (published)
 
-> **The Competition Board's "Intellectual DNA": A Citation Network and Case Law Mapping Analysis**
+> **The Intellectual DNA of the Turkish Competition Board**
 >
-> The follow-up. A citation-network study mapping how the Board's reasoning and precedent move through its own case law: which decisions everything else leans on, and where the doctrine quietly shifts.
+> With C. Peker and M. Üyer, we mapped the 18,513 citations connecting all 9,995 published decisions of the Board: which decisions everything else leans on, and where the doctrine quietly shifts.
 >
-> *Working paper.* `Follow the project →`
+> *SSRN, 2026.* `Read the paper →`
 
 ---
 

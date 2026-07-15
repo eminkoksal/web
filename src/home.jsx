@@ -40,9 +40,8 @@ const PILLARS = [
   title: 'AI-Native Research',
   body:
   'My current research program uses AI to read legal texts at a scale no person could. ' +
-  'The first paper analyzed 3,369 Turkish Competition Board decisions \u2014 twenty-five ' +
-  'years of case law as a single dataset. A citation-network study of the same record ' +
-  'is underway.',
+  'The first paper analyzed 3,369 Turkish Competition Board decisions as a single dataset. ' +
+  'The second maps the 18,513 citations connecting all 9,995 published decisions.',
   cta: 'Explore the research',
   href: 'research.html'
 },
@@ -80,14 +79,14 @@ const FEATURED = [
   href: 'research.html'
 },
 {
-  eyebrow: 'AI-Native Research · Forthcoming',
-  title: 'The Competition Board\u2019s \u201CIntellectual DNA\u201D: A Citation Network and Case Law Mapping Analysis',
+  eyebrow: 'AI-Native Research · Published',
+  title: 'The Intellectual DNA of the Turkish Competition Board',
   body:
-  'The follow-up. A citation-network study mapping how the Board\u2019s reasoning and ' +
-  'precedent move through its own case law: which decisions everything else leans on, ' +
-  'and where the doctrine quietly shifts.',
-  meta: 'Working paper',
-  cta: 'Follow the project',
+  'With C. Peker and M. Üyer, we mapped the 18,513 citations connecting all 9,995 ' +
+  'published decisions of the Board: which decisions everything else leans on, and ' +
+  'where the doctrine quietly shifts.',
+  meta: 'SSRN, 2026',
+  cta: 'Read the paper',
   href: 'research.html'
 }];
 

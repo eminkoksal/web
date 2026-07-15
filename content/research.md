@@ -84,23 +84,23 @@
 
 ---
 
-### Project 2 — The Competition Board's "Intellectual DNA"
+### Project 2 — The Intellectual DNA of the Turkish Competition Board
 
-**Status:** *Forthcoming working paper.* `Follow the project →`
+**Status:** *Published. SSRN, 2026.* `Read on SSRN →` *(https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258)*
 
-**Working title:** *The Competition Board's "Intellectual DNA": A Citation Network and Case Law Mapping Analysis.*
+**Co-authors:** C. Peker, M. Üyer.
 
 **Summary**
 
-> The follow-up to the 2025 paper. This study combines AI analysis of legal texts with citation network analysis to map how reasoning, precedent, and authority move through the Board's case law over time. The goal is to make the agency's "intellectual DNA" — its citation backbone, its conceptual lineages, the points where doctrine shifts — visible as a graph rather than an anecdote.
+> The follow-up to the 2025 paper. An AI model read all **9,995 published decisions** of the Turkish Competition Board — roughly thirty years of case law — and extracted the **18,513 citations** connecting them. Network analysis did the rest: the paper makes the Board's "intellectual DNA" — its citation backbone, its conceptual lineages, the points where doctrine shifts — visible as a graph rather than an anecdote.
 >
-> Methodologically, the paper sits at the crossing of two techniques that competition-law research rarely uses together: AI-assisted extraction of structured information from regulatory text at scale, and network analysis of the resulting citation web. Nothing like it exists for the Turkish setting, and there are few examples anywhere.
+> Methodologically, the paper combines two techniques that competition-law research rarely uses together: AI-assisted extraction of structured information from regulatory text at scale, and network analysis of the resulting citation web. Nothing like it exists for the Turkish setting, and there are few examples anywhere.
 
-**Why it matters**
+**What we found**
 
-- It treats a competition authority's case law as a system with traceable internal structure.
-- The template travels: other competition authorities, sectoral regulators, and court systems could be mapped the same way.
-- It sets up the next questions: where does the agency's reasoning calcify, where does it shift, and what do those shifts correlate with — leadership, political context, industry events?
+- The Board's most influential decision attracts just ten direct citations.
+- Reliance on EU case law follows a U-curve: early dependence, then autonomization, then re-engagement.
+- Doctrine-shifting decisions become the canon within three years. How fast a decision gets cited predicts its staying power.
 
 ---
 
@@ -142,6 +142,7 @@
 
 ### Selected reports & working papers
 
+- Köksal, E., Peker, C. & Üyer, M. (2026). *The Intellectual DNA of the Turkish Competition Board.* **SSRN.**
 - Köksal, E., Peker, C. & Uyer, M. (2025). *A Quarter-Century Analysis of the Turkish Competition Board's Decisions: An AI-Supported Examination.* **SSRN.**
 - Köksal, E. & Bakış, O. (2023). *Türkiye Digital Society Index.* Betam Research Note, 23/269.
 - Bakış, O., Tetikol-Dalgıç, D. E., Deniz, P., Finger, M., Gümüş, İ., & Köksal, E. (2022). *Assessment of a Carbon Tax as a Tool to Decarbonize Türkiye's Energy Supply 2050.* IC4R Report Series No. 1.

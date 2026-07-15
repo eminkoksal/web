@@ -438,6 +438,13 @@ const PUB_OTHER_JOURNAL = [
 
 const PUB_REPORTS = [
 {
+  authors: 'Köksal, E., Peker, C. & Üyer, M.', year: '2026',
+  title: 'The Intellectual DNA of the Turkish Competition Board.',
+  venue: 'SSRN.',
+  venueItalic: 'SSRN',
+  href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258'
+},
+{
   authors: 'Köksal, E., Peker, C. & Uyer, M.', year: '2025',
   title: "A Quarter-Century Analysis of the Turkish Competition Board\u2019s Decisions: An AI-Supported Examination.",
   venue: 'SSRN.',
@@ -498,14 +505,6 @@ const PUB_REPORTS = [
   href: '#'
 }];
 
-
-const PUB_FORTHCOMING = [
-{
-  authors: 'Köksal, E., Peker, C. & Uyer, M.',
-  title: "The Competition Board\u2019s \u201CIntellectual DNA\u201D: A Citation Network and Case Law Mapping Analysis.",
-  venue: 'Working paper.',
-  href: '#'
-}];
 
 
 /* ------------------------------------------------------------------ */
@@ -805,25 +804,25 @@ function CVApp() {
         <CVHero />
         <CVTOC />
 
-        <CVSection id="current" index="01" eyebrow="Current Positions" title="Where I am now.">
+        <CVSection id="current" index="01" eyebrow="Current Positions" title="Where I am now">
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {CURRENT_POSITIONS.map((p, i) => <PositionRow key={i} {...p} />)}
           </ul>
         </CVSection>
 
-        <CVSection id="previous" index="02" eyebrow="Previous Positions" title="Where I have been." alt>
+        <CVSection id="previous" index="02" eyebrow="Previous Positions" title="Where I have been" alt>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {PREVIOUS_POSITIONS.map((p, i) => <PositionRow key={i} {...p} />)}
           </ul>
         </CVSection>
 
-        <CVSection id="affiliations" index="03" eyebrow="Other Positions & Affiliations" title="Where I serve.">
+        <CVSection id="affiliations" index="03" eyebrow="Other Positions & Affiliations" title="Where I serve">
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             {AFFILIATIONS.map((p, i) => <PositionRow key={i} {...p} />)}
           </ul>
         </CVSection>
 
-        <CVSection id="education" index="04" eyebrow="Education" title="Degrees & qualifications." alt>
+        <CVSection id="education" index="04" eyebrow="Education" title="Degrees & qualifications" alt>
           <table style={{
             width: '100%', borderCollapse: 'collapse',
             fontFamily: 'var(--font-sans)'
@@ -858,7 +857,7 @@ function CVApp() {
         </CVSection>
 
         <CVSection id="ai-strategy" index="05" eyebrow="AI Strategy & Consultancy"
-        title="Turning frontier AI tools into reliable analytical infrastructure.">
+        title="Turning frontier AI tools into reliable analytical infrastructure">
           <div className="prose" style={{ maxWidth: 820 }}>
             <p>
               I work with organizations across different sectors to identify opportunities where
@@ -880,7 +879,7 @@ function CVApp() {
         </CVSection>
 
         <CVSection id="economic" index="06" eyebrow="Economic Consultancy"
-        title="Expert economic analysis in competition law and regulation." alt>
+        title="Expert economic analysis in competition law and regulation" alt>
           <div className="prose" style={{ maxWidth: 820 }}>
             <p>
               I provide expert economic analysis in competition law and regulatory matters, with
@@ -894,7 +893,7 @@ function CVApp() {
           </div>
         </CVSection>
 
-        <CVSection id="interests" index="07" eyebrow="Research Interests" title="Active areas of inquiry.">
+        <CVSection id="interests" index="07" eyebrow="Research Interests" title="Active areas of inquiry">
           <ul style={{
             listStyle: 'none', padding: 0, margin: 0,
             display: 'flex', flexWrap: 'wrap', gap: 12
@@ -913,7 +912,7 @@ function CVApp() {
           </ul>
         </CVSection>
 
-        <CVSection id="teaching" index="08" eyebrow="Teaching" title="Courses, current and recent." alt>
+        <CVSection id="teaching" index="08" eyebrow="Teaching" title="Courses, current and recent" alt>
           <h3 style={subheadStyle}>Bahçeşehir University</h3>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 40px' }}>
             {TEACHING_BAU.map((c, i) =>
@@ -963,7 +962,7 @@ function CVApp() {
         </CVSection>
 
         <CVSection id="service" index="09" eyebrow="Additional Professional Activities"
-        title="Editorial, refereeing, advisory.">
+        title="Editorial, refereeing, advisory">
           <h3 style={subheadStyle}>Referee for</h3>
           <ul style={{
             listStyle: 'none', padding: 0, margin: 0,
@@ -983,55 +982,16 @@ function CVApp() {
         </CVSection>
 
         <CVSection id="publications" index="10" eyebrow="Publications"
-        title="The full record." alt pageBreak>
+        title="The full record" alt pageBreak>
           <PubGroup title="Books & Edited Volumes" items={PUB_BOOKS} />
           <PubGroup title="Book Chapters" items={PUB_CHAPTERS} />
           <PubGroup title="Selected Peer-Reviewed Journal Articles" items={PUB_ARTICLES_SELECTED} />
           <PubGroup title="Other Peer-Reviewed Articles" items={PUB_ARTICLES_OTHER} />
           <PubGroup title="Other Journal Articles" items={PUB_OTHER_JOURNAL} />
           <PubGroup title="Reports & Working Papers" items={PUB_REPORTS} />
-
-          <div style={{ marginTop: 16 }}>
-            <h4 style={{
-              fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 700,
-              letterSpacing: '.04em', textTransform: 'uppercase',
-              color: '#141413', margin: '0 0 12px'
-            }}>
-              Forthcoming
-            </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              {PUB_FORTHCOMING.map((p, i) =>
-              <li key={i} style={{
-                display: 'grid', gridTemplateColumns: '64px 1fr',
-                gap: 16, alignItems: 'baseline',
-                padding: '18px 0',
-                borderTop: '1px solid rgba(20,20,19,.1)'
-              }}>
-                  <span style={{
-                  fontSize: 12, fontWeight: 700, letterSpacing: '.06em',
-                  textTransform: 'uppercase', color: '#9A3A0A'
-                }}>
-                    Forthcoming
-                  </span>
-                  <p style={{
-                  fontSize: 15, lineHeight: 1.5, color: '#141413', margin: 0
-                }}>
-                    <strong style={{ fontWeight: 500 }}>{p.authors}</strong>{' '}
-                    <a href={p.href} target="_blank" rel="noopener noreferrer" style={{
-                    color: '#141413', textDecoration: 'none', fontStyle: 'italic',
-                    borderBottom: '1px solid rgba(20,20,19,.3)'
-                  }}>
-                      {p.title}
-                    </a>{' '}
-                    {p.venue}
-                  </p>
-                </li>
-              )}
-            </ul>
-          </div>
         </CVSection>
 
-        <CVSection id="personal" index="11" eyebrow="Personal" title="A few details for the record.">
+        <CVSection id="personal" index="11" eyebrow="Personal" title="A few details for the record">
           <p style={{
             fontFamily: 'var(--font-sans)', fontSize: 'clamp(20px, 2vw, 28px)',
             fontWeight: 500, letterSpacing: '-.018em', lineHeight: 1.3,

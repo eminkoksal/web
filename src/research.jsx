@@ -57,28 +57,28 @@ const FLAGSHIP = [
   },
   {
     id: 'intellectual-dna',
-    status: 'Forthcoming',
-    statusMeta: 'Working paper',
-    title: "The Competition Board\u2019s \u201CIntellectual DNA\u201D",
-    workingTitle:
-      "The Competition Board\u2019s \u201CIntellectual DNA\u201D: A Citation Network and Case Law Mapping Analysis.",
+    status: 'Published',
+    statusMeta: 'SSRN, 2026',
+    title: 'The Intellectual DNA of the Turkish Competition Board',
+    coauthors: 'with C. Peker and M. Üyer',
     summary: [
-      'The follow-up to the 2025 paper. This study combines AI analysis of legal texts with ' +
-      'citation network analysis to map how reasoning, precedent, and authority move through ' +
-      "the Board\u2019s case law over time. The goal is to make the agency\u2019s \u201Cintellectual " +
-      'DNA\u201D \u2014 its citation backbone, its conceptual lineages, the points where doctrine ' +
-      'shifts \u2014 visible as a graph rather than an anecdote.',
-      'Methodologically, the paper sits at the crossing of two techniques that competition-law ' +
+      'The follow-up to the 2025 paper. An AI model read all 9,995 published decisions of ' +
+      'the Turkish Competition Board \u2014 roughly thirty years of case law \u2014 and extracted ' +
+      "the 18,513 citations connecting them. Network analysis did the rest: the paper makes the Board\u2019s " +
+      '\u201Cintellectual DNA\u201D \u2014 its citation backbone, its conceptual lineages, the points ' +
+      'where doctrine shifts \u2014 visible as a graph rather than an anecdote.',
+      'Methodologically, the paper combines two techniques that competition-law ' +
       'research rarely uses together: AI-assisted extraction of structured information from ' +
       'regulatory text at scale, and network analysis of the resulting citation web. Nothing ' +
       'like it exists for the Turkish setting, and there are few examples anywhere.',
     ],
+    whyLabel: 'What we found',
     why: [
-      "It treats a competition authority\u2019s case law as a system with traceable internal structure.",
-      'The template travels: other competition authorities, sectoral regulators, and court systems could be mapped the same way.',
-      "It sets up the next questions: where does the agency\u2019s reasoning calcify, where does it shift, and what do those shifts correlate with \u2014 leadership, political context, industry events?",
+      "The Board\u2019s most influential decision attracts just ten direct citations.",
+      'Reliance on EU case law follows a U-curve: early dependence, then autonomization, then re-engagement.',
+      'Doctrine-shifting decisions become the canon within three years. How fast a decision gets cited predicts its staying power.',
     ],
-    cta: { label: 'Follow the project', href: 'contact.html', external: false },
+    cta: { label: 'Read on SSRN', href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258', external: true },
   },
 ];
 
@@ -197,6 +197,15 @@ const PUBS_CHAPTERS = [
 ];
 
 const PUBS_REPORTS = [
+  {
+    authors: 'Köksal, E., Peker, C. & Üyer, M.',
+    year: '2026',
+    title: 'The Intellectual DNA of the Turkish Competition Board.',
+    venue: 'SSRN.',
+    venueItalic: 'SSRN',
+    href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258',
+    highlight: true,
+  },
   {
     authors: 'Köksal, E., Peker, C. & Uyer, M.',
     year: '2025',
@@ -449,7 +458,7 @@ function FlagshipCard({ project }) {
           letterSpacing: '.04em', textTransform: 'uppercase',
           margin: '0 0 20px',
         }}>
-          Why it matters
+          {project.whyLabel || 'Why it matters'}
         </h4>
         <ul style={{
           listStyle: 'none', padding: 0, margin: 0,
