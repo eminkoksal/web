@@ -66,9 +66,9 @@
 
 ### Project 1 — A Quarter-Century Analysis of the Turkish Competition Board's Decisions
 
-**Status:** *Published. SSRN, 2025.* `Read on SSRN →`
+**Status:** *Published. SSRN, 2025.* `Read on SSRN →` *(https://ssrn.com/abstract=5731282)*
 
-**Co-authors:** C. Peker, M. Uyer.
+**Co-authors:** C. Peker, M. Üyer.
 
 **Summary**
 
@@ -142,8 +142,8 @@
 
 ### Selected reports & working papers
 
-- Köksal, E., Peker, C. & Üyer, M. (2026). *The Intellectual DNA of the Turkish Competition Board.* **SSRN.**
-- Köksal, E., Peker, C. & Uyer, M. (2025). *A Quarter-Century Analysis of the Turkish Competition Board's Decisions: An AI-Supported Examination.* **SSRN.**
+- Köksal, E., Peker, C. & Üyer, M. (2026). *The Intellectual DNA of the Turkish Competition Board: Mapping Three Decades of Case Law Through Citation Networks.* **SSRN.**
+- Köksal, E., Peker, C. & Üyer, M. (2025). *A Quarter-Century Analysis of the Turkish Competition Board's Decisions: An AI-Supported Examination.* **SSRN.**
 - Köksal, E. & Bakış, O. (2023). *Türkiye Digital Society Index.* Betam Research Note, 23/269.
 - Bakış, O., Tetikol-Dalgıç, D. E., Deniz, P., Finger, M., Gümüş, İ., & Köksal, E. (2022). *Assessment of a Carbon Tax as a Tool to Decarbonize Türkiye's Energy Supply 2050.* IC4R Report Series No. 1.
 

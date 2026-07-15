@@ -36,7 +36,7 @@ const FLAGSHIP = [
     status: 'Published',
     statusMeta: 'SSRN, 2025',
     title: "A Quarter-Century Analysis of the Turkish Competition Board\u2019s Decisions",
-    coauthors: 'with C. Peker and M. Uyer',
+    coauthors: 'with C. Peker and M. Üyer',
     summary: [
       'We took all 3,369 decisions the Turkish Competition Board published over roughly ' +
       'twenty-five years and analyzed them as one dataset \u2014 something nobody had done before. ' +
@@ -53,7 +53,7 @@ const FLAGSHIP = [
       'the potential of large language models to open up new avenues of inquiry in ' +
       'text-intensive disciplines such as law and economics.\u201D',
     ],
-    cta: { label: 'Read on SSRN', href: '#', external: true },
+    cta: { label: 'Read on SSRN', href: 'https://ssrn.com/abstract=5731282', external: true },
   },
   {
     id: 'intellectual-dna',
@@ -200,19 +200,19 @@ const PUBS_REPORTS = [
   {
     authors: 'Köksal, E., Peker, C. & Üyer, M.',
     year: '2026',
-    title: 'The Intellectual DNA of the Turkish Competition Board.',
+    title: 'The Intellectual DNA of the Turkish Competition Board: Mapping Three Decades of Case Law Through Citation Networks.',
     venue: 'SSRN.',
     venueItalic: 'SSRN',
     href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258',
     highlight: true,
   },
   {
-    authors: 'Köksal, E., Peker, C. & Uyer, M.',
+    authors: 'Köksal, E., Peker, C. & Üyer, M.',
     year: '2025',
     title: "A Quarter-Century Analysis of the Turkish Competition Board\u2019s Decisions: An AI-Supported Examination.",
     venue: 'SSRN.',
     venueItalic: 'SSRN',
-    href: '#',
+    href: 'https://ssrn.com/abstract=5731282',
     highlight: true,
   },
   {

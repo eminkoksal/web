@@ -111,7 +111,7 @@ const ABOUT_PILLARS = [
   projects: [
   {
     title: 'AI analysis of 3,369 Turkish Competition Board decisions',
-    meta: 'Published, SSRN 2025 \u00b7 with C. Peker and M. Uyer',
+    meta: 'Published, SSRN 2025 \u00b7 with C. Peker and M. Üyer',
     body:
     'A quarter-century of the Board\u2019s decisions, treated as a single coherent dataset. ' +
     'Combines NLP and economic methods to find patterns no manual review could.'

@@ -195,8 +195,8 @@
 
 ### Reports & Working Papers
 
-- **Köksal, E., Peker, C. & Üyer, M.** (2026). *The Intellectual DNA of the Turkish Competition Board.* **SSRN.**
-- **Köksal, E., Peker, C. & Uyer, M.** (2025). *A Quarter-Century Analysis of the Turkish Competition Board's Decisions: An AI-Supported Examination.* **SSRN.**
+- **Köksal, E., Peker, C. & Üyer, M.** (2026). *The Intellectual DNA of the Turkish Competition Board: Mapping Three Decades of Case Law Through Citation Networks.* **SSRN.**
+- **Köksal, E., Peker, C. & Üyer, M.** (2025). *A Quarter-Century Analysis of the Turkish Competition Board's Decisions: An AI-Supported Examination.* **SSRN.**
 - Köksal, E. & Bakış, O. (2023). *Türkiye Digital Society Index.* Betam Research Note, 23/269. SSRN. *(in Turkish)*
 - Bakış, O. & Köksal, E. (2022). *ICT Expenditures and Digitalization in Turkey.* Betam Research Report. SSRN. *(in Turkish)*
 - Bakış, O., Tetikol-Dalgıç, D. E., Deniz, P., Finger, M., Gümüş, İ., & Köksal, E. (2022). *Assessment of a Carbon Tax as a Tool to Decarbonize Turkey's Energy Supply 2050.* IC4R Report Series No. 1. SSRN.

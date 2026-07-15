@@ -439,18 +439,17 @@ const PUB_OTHER_JOURNAL = [
 const PUB_REPORTS = [
 {
   authors: 'Köksal, E., Peker, C. & Üyer, M.', year: '2026',
-  title: 'The Intellectual DNA of the Turkish Competition Board.',
+  title: 'The Intellectual DNA of the Turkish Competition Board: Mapping Three Decades of Case Law Through Citation Networks.',
   venue: 'SSRN.',
   venueItalic: 'SSRN',
   href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258'
 },
 {
-  authors: 'Köksal, E., Peker, C. & Uyer, M.', year: '2025',
+  authors: 'Köksal, E., Peker, C. & Üyer, M.', year: '2025',
   title: "A Quarter-Century Analysis of the Turkish Competition Board\u2019s Decisions: An AI-Supported Examination.",
   venue: 'SSRN.',
   venueItalic: 'SSRN',
-  note: '(in Turkish)',
-  href: '#',
+  href: 'https://ssrn.com/abstract=5731282',
   highlight: true
 },
 {

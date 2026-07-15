@@ -97,7 +97,7 @@
 
 > **A Quarter-Century Analysis of the Turkish Competition Board's Decisions**
 >
-> With C. Peker and M. Uyer, I analyzed all 3,369 decisions the Board published over twenty-five years. Nobody had treated the full record as one dataset before; the patterns across industries and time only show up when you do.
+> With C. Peker and M. Üyer, I analyzed all 3,369 decisions the Board published over twenty-five years. Nobody had treated the full record as one dataset before; the patterns across industries and time only show up when you do.
 >
 > *SSRN, 2025.* `Read the paper →`
 

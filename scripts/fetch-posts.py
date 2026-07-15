@@ -21,7 +21,7 @@ MEDIA_DIR.mkdir(parents=True, exist_ok=True)
 
 # id: (topic, lang, featured)
 SELECTION = {
-    1170: ("AI in Economic Research", "tr", True),
+    1170: ("AI in Economic Research", "tr", False),  # featured slot now held by the native 2026 post
     1149: ("Teaching Notes", "en", False),
     1156: ("Platform & Digital Regulation", "tr", False),
     1143: ("Platform & Digital Regulation", "en", False),
@@ -124,6 +124,12 @@ for p in sorted(posts, key=lambda x: x["date"], reverse=True):
         "readingMin": max(1, round(words / 200)),
         "words": words,
     })
+
+# preserve native (non-WordPress) posts already in index.json
+existing = POSTS_DIR / "index.json"
+if existing.exists():
+    native = [p for p in json.loads(existing.read_text()) if p.get("native")]
+    index = sorted(native + index, key=lambda p: p["date"], reverse=True)
 
 (POSTS_DIR / "index.json").write_text(
     json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
