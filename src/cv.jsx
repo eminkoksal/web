@@ -1,6 +1,6 @@
 /* CV page — full curriculum vitae, web version of the February 2026 PDF. */
 import React from 'react';
-import { IconArrow, IconSearch, IconDownload, IconChevron, Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA, Nav, Footer, OrbitalArc } from './shared.jsx';
+import { CV_PDF, IconArrow, IconSearch, IconDownload, IconChevron, Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA, Nav, Footer, OrbitalArc } from './shared.jsx';
 
 const { useState, useEffect, useRef } = React;
 
@@ -109,7 +109,7 @@ const PUB_BOOKS = [
   authors: 'Eroğlu, M., Finger, M., & Köksal, E. (Eds.).', year: '2024',
   title: 'The Economics and Regulation of Digitalisation: The Case of Türkiye.',
   venue: 'Routledge.',
-  href: '#'
+  href: 'https://doi.org/10.4324/9781032692937'
 }];
 
 
@@ -119,91 +119,83 @@ const PUB_CHAPTERS = [
   title: 'Digitalization of Society — Türkiye Digital Society Index.',
   venue: 'In The Economics and Regulation of Digitalisation (pp. 136–154). Routledge.',
   venueItalic: 'The Economics and Regulation of Digitalisation',
-  href: '#'
+  href: 'https://doi.org/10.4324/9781032692937'
 },
 {
   authors: 'Finger, M., Köksal, E., & Eroğlu, M.', year: '2024',
   title: 'Setting the Scene.',
   venue: 'In The Economics and Regulation of Digitalisation (pp. 1–20). Routledge.',
   venueItalic: 'The Economics and Regulation of Digitalisation',
-  href: '#'
+  href: 'https://doi.org/10.4324/9781032692937'
 },
 {
   authors: 'Köksal, E. & Ak, A.', year: '2024',
   title: 'Neo-Brandeisian Traces in the New E-Commerce Act.',
   venue: 'In K. C. Sanlı, D. Alma, & D. Tanlı (Eds.), Uygulamalı Rekabet Hukuku Seminerleri 2023 (pp. 381–410). On İki Levha.',
   venueItalic: 'Uygulamalı Rekabet Hukuku Seminerleri 2023',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Köksal, E., İkiler, B., & Canbeyli, A.', year: '2023',
   title: 'Law and Economics of the 2021 Retail Decision: Price Transitions, Buyer Power, Price Leadership and Hub-And-Spoke Cartel Allegations in an Inflationary Environment.',
   venue: 'In Sanlı, Alma & Tanlı (Eds.), Uygulamalı Rekabet Hukuku Seminerleri 2022 (pp. 23–78). On İki Levha.',
   venueItalic: 'Uygulamalı Rekabet Hukuku Seminerleri 2022',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Köksal, E. & İkiler, B.', year: '2022',
   title: "Turkish Competition Board\u2019s Fuel Decision: Critics on the Approach Taken for Resale Price Maintenance and Employed Methodology for Data Analysis.",
   venue: 'In Sanlı, Alma & Tanlı (Eds.), Uygulamalı Rekabet Hukuku Seminerleri 2021 (pp. 311–326). On İki Levha.',
-  venueItalic: 'Uygulamalı Rekabet Hukuku Seminerleri 2021',
-  href: '#'
+  venueItalic: 'Uygulamalı Rekabet Hukuku Seminerleri 2021'
 },
 {
   authors: 'Köksal, E.', year: '2021',
   title: 'Regulation of Fiber and the Internet.',
   venue: 'In M. Finger & M. Eroğlu (Eds.), Regulation of Turkish Network Industries (pp. 383–401). Springer.',
   venueItalic: 'Regulation of Turkish Network Industries',
-  href: '#'
+  href: 'https://doi.org/10.1007/978-3-030-81720-6_19'
 },
 {
   authors: 'Köksal, E.', year: '2021',
   title: 'Public Interventions Towards Platform Industries in Turkey.',
   venue: 'In O. Kent et al. (Eds.), Türkiye Ekonomisinde Büyüme, Kalkınma ve Eşitsizlik (pp. 282–303). Efil Yayınevi.',
   venueItalic: 'Türkiye Ekonomisinde Büyüme, Kalkınma ve Eşitsizlik',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Köksal, E. & Sesli, E.', year: '2021',
   title: 'Concerted Practice Decisions of the Turkish Competition Board.',
   venue: 'In Sanlı & Alma (Eds.), Uygulamalı Rekabet Hukuku Seminerleri 2020 (pp. 85–114). On İki Levha.',
   venueItalic: 'Uygulamalı Rekabet Hukuku Seminerleri 2020',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Köksal, E. & İkiler, B.', year: '2020',
   title: 'Current Competition Policies Towards Digital Platforms: Amex, Sahibinden, and Google Shopping.',
   venue: 'In Sanlı & Alma (Eds.), Uygulamalı Rekabet Hukuku Seminerleri 2019 (pp. 477–492). On İki Levha.',
   venueItalic: 'Uygulamalı Rekabet Hukuku Seminerleri 2019',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Köksal, E.', year: '2019',
   title: "Why Can\u2019t We Choose the Best Mobile Phone Tariff for Us?",
   venue: 'In N. E. Aydınonat & Ü. B. Urhan (Eds.), Economics In Everyday Life (pp. 19–26). İletişim Yayınları.',
   venueItalic: 'Economics In Everyday Life',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Köksal, E.', year: '2019',
   title: 'An Economic Assessment on E-commerce and Vertical Restrictions.',
   venue: 'In K. C. Sanlı (Ed.), Rekabet Hukukunda Dikey Anlaşmaların Son 10 Yılı (pp. 108–131). On İki Levha.',
   venueItalic: 'Rekabet Hukukunda Dikey Anlaşmaların Son 10 Yılı',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Köksal, E.', year: '2012',
   title: 'Welfare Implications of Deviation from Network Neutrality: A Price Discrimination Application.',
   venue: 'In M. Bartolacci & S. Powell (Eds.), Research, Practice, and Educational Advancements in Telecommunications and Networking (pp. 108–131).',
   venueItalic: 'Research, Practice, and Educational Advancements in Telecommunications and Networking',
-  href: '#'
+  href: 'https://doi.org/10.4018/978-1-4666-0050-8.ch006'
 }];
 
 
@@ -213,49 +205,49 @@ const PUB_ARTICLES_SELECTED = [
   title: "Turkish Competition Authority\u2019s First Hub-and-Spoke Cartel Decision.",
   venue: 'Journal of European Competition Law & Practice, 13(8), 566–570.',
   venueItalic: 'Journal of European Competition Law & Practice',
-  href: '#'
+  href: 'https://doi.org/10.1093/jeclap/lpac045'
 },
 {
   authors: 'Dalgic-Tetikol, D. E., Guloglu, B., & Köksal, E.', year: '2022',
   title: 'Determinants of Internet Adoption in Turkey and the Need For a More Coherent Vision on ICT Policy.',
   venue: 'Competition and Regulation in Network Industries, 23(4), 311–336.',
   venueItalic: 'Competition and Regulation in Network Industries',
-  href: '#'
+  href: 'https://doi.org/10.1177/17835917221143060'
 },
 {
   authors: 'Aydınonat, N. E. & Köksal, E.', year: '2019',
   title: "Explanatory Value in Context: The Curious Case of Hotelling\u2019s Location Model.",
   venue: 'The European Journal of the History of Economic Thought, 26(5), 879–910.',
   venueItalic: 'The European Journal of the History of Economic Thought',
-  href: '#'
+  href: 'https://doi.org/10.1080/09672567.2019.1626460'
 },
 {
   authors: 'Köksal, E. & Ardıyok, Ş.', year: '2018',
   title: 'Regulatory and Market Disharmony in the Turkish Electricity Industry.',
   venue: 'Utilities Policy, 55, 90–98.',
   venueItalic: 'Utilities Policy',
-  href: '#'
+  href: 'https://doi.org/10.1016/j.jup.2018.10.001'
 },
 {
   authors: 'Köksal, E. & Ardıyok, Ş.', year: '2018',
   title: 'Diverging Approaches in Europe for the Most Favoured-Customer Clauses.',
   venue: 'Journal of European Competition Law & Practice, 9(2), 119–123.',
   venueItalic: 'Journal of European Competition Law & Practice',
-  href: '#'
+  href: 'https://doi.org/10.1093/jeclap/lpx091'
 },
 {
   authors: 'Gürakar, E. & Köksal, E.', year: '2016',
   title: 'Institutional Evolution and Economic Development in Iran and Turkey.',
   venue: 'Middle East Development Journal, 8(1), 32–64.',
   venueItalic: 'Middle East Development Journal',
-  href: '#'
+  href: 'https://doi.org/10.1080/17938120.2016.1150008'
 },
 {
   authors: 'Köksal, E. & Ardıyok, Ş.', year: '2015',
   title: 'Reviewing Regulatory Policy for Broadband in Turkey.',
   venue: 'Competition and Regulation in Network Industries, 16(4), 354–377.',
   venueItalic: 'Competition and Regulation in Network Industries',
-  href: '#'
+  href: 'https://doi.org/10.1177/178359171501600403'
 }];
 
 
@@ -265,37 +257,34 @@ const PUB_ARTICLES_OTHER = [
   title: 'How Can Charging Infrastructure for Electric Vehicles Be Expanded in Turkey?',
   venue: 'Ekonomi-Tek, 13(1), 84–121.',
   venueItalic: 'Ekonomi-Tek',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Dalgic-Tetikol, D. E., Köksal, E., & Guloglu, B.', year: '2023',
   title: 'The Evolution of the Digital Divide in Turkey.',
   venue: 'Journal of Research in Economics, 7(1), 65–83.',
-  venueItalic: 'Journal of Research in Economics',
-  href: '#'
+  venueItalic: 'Journal of Research in Economics'
 },
 {
   authors: 'Köksal, E., & Ardıyok, Ş.', year: '2023',
   title: 'What Did the Turkish Competition Authority Ignore in Its First Hub-and-Spoke Cartel Decision?',
   venue: 'Ekonomi-Tek, 12(1), 21–33.',
   venueItalic: 'Ekonomi-Tek',
-  href: '#'
+  href: 'https://doi.org/10.2139/ssrn.4235201'
 },
 {
   authors: 'Köksal, E. & Ardıyok, Ş.', year: '2021',
   title: 'Analysis of Syndicated Loans from the Perspective of Competition Economics.',
   venue: 'Ekonomi-Tek, 10(1), 41–68.',
   venueItalic: 'Ekonomi-Tek',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Köksal, E. & Ardıyok, Ş.', year: '2019',
   title: 'Necessity of a Broader Market Definition in the Analysis of Syndicated Loans Markets.',
   venue: 'European Competition Law Review, 40(11), 547–555.',
   venueItalic: 'European Competition Law Review',
-  href: '#'
+  href: 'https://doi.org/10.2139/ssrn.3365828'
 },
 {
   authors: 'Köksal, E. & Ardıyok, Ş.', year: '2018',
@@ -303,22 +292,21 @@ const PUB_ARTICLES_OTHER = [
   venue: 'Business & Management Studies, 6(1), 48–62.',
   venueItalic: 'Business & Management Studies',
   note: '(in Turkish)',
-  href: '#'
+  href: 'https://doi.org/10.15295/bmij.v6i1.210'
 },
 {
   authors: 'Köksal, E. & Yurtseven, C.', year: '2018',
   title: 'The Effects of the Increase in the Number of University Students on the Growth of the Movie Industry in Turkey.',
   venue: 'International Review of Economics and Management, 6(3), 103–116.',
   venueItalic: 'International Review of Economics and Management',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Erbil, C., Köksal, E., & Yurtseven, C.', year: '2017',
   title: 'Mall Flicks — The Mall Boom in Turkey with an Unexpected Byproduct: The Movie Sector Expansion.',
   venue: 'Research in World Economy, 8(1), 1–17.',
   venueItalic: 'Research in World Economy',
-  href: '#'
+  href: 'https://doi.org/10.5430/rwe.v8n1p1'
 },
 {
   authors: 'Anıl, B. & Köksal, E.', year: '2016',
@@ -326,59 +314,55 @@ const PUB_ARTICLES_OTHER = [
   venue: 'İktisadi ve İdari Bilimler Dergisi, 38(1), 1–13.',
   venueItalic: 'İktisadi ve İdari Bilimler Dergisi',
   note: '(in Turkish)',
-  href: '#'
+  href: 'https://doi.org/10.14780/iibd.61602'
 },
 {
   authors: 'Akben-Selçuk, E., Köksal, E., & Altıok-Yılmaz, A. D.', year: '2016',
   title: 'The Impact of Merger and Acquisition Transactions at the Company and Industry Level: A Literature Review.',
   venue: 'Business & Management Studies, 4(1), 48–62.',
   venueItalic: 'Business & Management Studies',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Ardıyok, Ş., Demirkan, H., Köksal, E., & Yüksel, B.', year: '2015',
   title: 'Assessment of Net Neutrality Regulations and Traffic Management Activities in Mobile Communications from the Perspective of Competition Law.',
   venue: 'Competition Journal, 16(3), 51–100.',
   venueItalic: 'Competition Journal',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Ardıyok, Ş., Köksal, E., & Yüksel, B.', year: '2015',
   title: 'An Evaluation Concerning the New Ex-Ante Regulations for the Prevention of Margin Squeeze in the Electronic Communication Market in Turkey.',
   venue: 'Competition Journal, 16(2), 3–42.',
   venueItalic: 'Competition Journal',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Köksal, E. & Anıl, B.', year: '2015',
   title: 'The Determinants of Broadband Access and Usage in Turkey: Do Regions Matter?',
   venue: 'Topics in Middle Eastern and African Economies, 17(1), 114–133.',
   venueItalic: 'Topics in Middle Eastern and African Economies',
-  href: '#'
+  href: 'https://doi.org/10.2139/ssrn.2362376'
 },
 {
   authors: 'Köksal, E.', year: '2011',
   title: 'Network Neutrality and Quality of Service: A Two-Sided Market Analysis.',
   venue: 'International Journal of Management and Network Economics, 2(1), 39–57.',
   venueItalic: 'International Journal of Management and Network Economics',
-  href: '#'
+  href: 'https://doi.org/10.1504/ijmne.2011.042579'
 },
 {
   authors: 'Köksal, E.', year: '2010',
   title: 'Welfare Implications of Deviation from Network Neutrality: A Price Discrimination Application.',
   venue: 'International Journal of Interdisciplinary Telecommunications and Networking, 2(2), 27–49.',
   venueItalic: 'International Journal of Interdisciplinary Telecommunications and Networking',
-  href: '#'
+  href: 'https://doi.org/10.4018/jitn.2010040102'
 },
 {
   authors: 'Köksal, E.', year: '2008',
   title: 'An Analysis of Public Expenditures Using the Median Voter Theorem for Turkey.',
   venue: 'Dokuz Eylül Üniversitesi İşletme Fakültesi Dergisi, 9(2), 211–225.',
-  venueItalic: 'Dokuz Eylül Üniversitesi İşletme Fakültesi Dergisi',
-  href: '#'
+  venueItalic: 'Dokuz Eylül Üniversitesi İşletme Fakültesi Dergisi'
 }];
 
 
@@ -389,50 +373,45 @@ const PUB_OTHER_JOURNAL = [
   venue: 'Rekabet Forumu, 154, 1–12.',
   venueItalic: 'Rekabet Forumu',
   note: '(in Turkish)',
-  href: '#'
+  href: 'https://doi.org/10.2139/ssrn.4133001'
 },
 {
   authors: 'Köksal, E.', year: '2021',
   title: 'The Economics of Electric Vehicles and the Need for a Public Policy.',
   venue: 'Network Industries Quarterly Turkey, 1(4), 6–9.',
-  venueItalic: 'Network Industries Quarterly Turkey',
-  href: '#'
+  venueItalic: 'Network Industries Quarterly Turkey'
 },
 {
   authors: 'Ardıyok, Ş., İkiler, B., & Köksal, E.', year: '2021',
   title: 'A Brief Overview of Charging Infrastructure in EU and Turkey.',
   venue: 'Network Industries Quarterly Turkey, 1(4), 14–18.',
-  venueItalic: 'Network Industries Quarterly Turkey',
-  href: '#'
+  venueItalic: 'Network Industries Quarterly Turkey'
 },
 {
   authors: 'Köksal, E.', year: '2020',
   title: 'The COVID-19 Pandemic Shows How Vital the Broadband Internet Infrastructure Is.',
   venue: 'Network Industries Quarterly Turkey, 1(2), 14–17.',
-  venueItalic: 'Network Industries Quarterly Turkey',
-  href: '#'
+  venueItalic: 'Network Industries Quarterly Turkey'
 },
 {
   authors: 'Köksal, E.', year: '2019',
   title: 'Competition Policy Towards Digital Platforms.',
   venue: 'Network Industries Quarterly, 21(4), 7–9.',
   venueItalic: 'Network Industries Quarterly',
-  href: '#'
+  href: 'https://www.network-industries.org/wp-content/uploads/2019/12/Competition-Policy-Towards-Digital-Platforms.pdf'
 },
 {
   authors: 'Köksal, E. & Uçar, B. G.', year: '2019',
   title: 'Public Interventions in Platform Industries: The Role of Interest Groups and Potential Welfare Effects.',
   venue: 'Network Industries Quarterly, 21(2), 3–5.',
-  venueItalic: 'Network Industries Quarterly',
-  href: '#'
+  venueItalic: 'Network Industries Quarterly'
 },
 {
   authors: 'Köksal, E.', year: '2018',
   title: 'Industry 4.0: Innovation, Education and Public Policy.',
   venue: 'Biktisat, 1(3), 46–54.',
   venueItalic: 'Biktisat',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 }];
 
 
@@ -457,43 +436,41 @@ const PUB_REPORTS = [
   title: 'Türkiye Digital Society Index.',
   venue: 'Betam Research Note, 23/269. SSRN.',
   note: '(in Turkish)',
-  href: '#'
+  href: 'https://betam.bahcesehir.edu.tr/2023/03/turkiye-dijital-toplum-endeksi/'
 },
 {
   authors: 'Bakış, O. & Köksal, E.', year: '2022',
   title: 'ICT Expenditures and Digitalization in Turkey.',
   venue: 'Betam Research Report. SSRN.',
   note: '(in Turkish)',
-  href: '#'
+  href: 'https://betam.bahcesehir.edu.tr/2022/07/turkiyede-bilgi-iletisim-harcamalari-ve-dijitallesme/'
 },
 {
   authors: 'Bakış, O., Tetikol-Dalgıç, D. E., Deniz, P., Finger, M., Gümüş, İ., & Köksal, E.', year: '2022',
   title: "Assessment of a Carbon Tax as a Tool to Decarbonize Turkey\u2019s Energy Supply 2050.",
   venue: 'IC4R Report Series No. 1. SSRN.',
-  href: '#'
+  href: 'https://doi.org/10.2139/ssrn.4250459'
 },
 {
   authors: 'Köksal, E. & Ardıyok, Ş.', year: '2021',
   title: 'Decisions of the Competition Board on Resale Price Maintenance.',
   venue: 'SSRN.',
   venueItalic: 'SSRN',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Köksal, E., Ardıyok, Ş. & İkiler, B.', year: '2021',
   title: 'Charging Infrastructure for Electric Vehicles — Opportunities and Suggestions for Turkey.',
   venue: 'SSRN.',
   venueItalic: 'SSRN',
-  note: '(in Turkish)',
-  href: '#'
+  note: '(in Turkish)'
 },
 {
   authors: 'Köksal, E. & Ardıyok, Ş.', year: '2019',
   title: 'Assessing Buyer Power in Syndicated Loans.',
   venue: 'SSRN.',
   venueItalic: 'SSRN',
-  href: '#'
+  href: 'https://doi.org/10.2139/ssrn.3365833'
 },
 {
   authors: 'Köksal, E. & Ardıyok, Ş.', year: '2019',
@@ -501,7 +478,7 @@ const PUB_REPORTS = [
   venue: 'SSRN.',
   venueItalic: 'SSRN',
   note: '(in Turkish)',
-  href: '#'
+  href: 'https://doi.org/10.2139/ssrn.3365828'
 }];
 
 
@@ -526,12 +503,19 @@ function Citation({ pub }) {
       }}>
         <strong style={{ fontWeight: 500 }}>{pub.authors}</strong>
         {pub.year ? ` (${pub.year}). ` : ' '}
-        <a href={pub.href} target="_blank" rel="noopener noreferrer" style={{
-          color: '#141413', textDecoration: 'none', fontStyle: 'italic',
-          borderBottom: '1px solid rgba(20,20,19,.3)'
-        }}>
-          {pub.title}
-        </a>{' '}
+        {/* Many entries — Turkish seminar volumes, working notes — have no DOI
+            or stable publisher page. Those titles render as plain italics
+            rather than as links that go nowhere. */}
+        {pub.href ? (
+          <a href={pub.href} target="_blank" rel="noopener noreferrer" style={{
+            color: '#141413', textDecoration: 'none', fontStyle: 'italic',
+            borderBottom: '1px solid rgba(20,20,19,.3)'
+          }}>
+            {pub.title}
+          </a>
+        ) : (
+          <em>{pub.title}</em>
+        )}{' '}
         {pub.venueItalic ? venuePart(pub.venue, pub.venueItalic) : pub.venue}
         {pub.note && <span style={{ color: '#555' }}> {pub.note}</span>}
       </p>
@@ -682,7 +666,7 @@ function CVHero() {
 
           <div className="cv-hero__actions"
           style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <Button variant="primary" href="#" target="_blank">
+            <Button variant="primary" href={CV_PDF} target="_blank">
               Download PDF <IconDownload size={14} />
             </Button>
             <Button variant="ghost" href="mailto:mail@eminkoksal.com">
@@ -1027,7 +1011,7 @@ function CVApp() {
                 }}>LinkedIn</a>.
               </p>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                <Button variant="inverse" href="#" target="_blank">
+                <Button variant="inverse" href={CV_PDF} target="_blank">
                   Download PDF <IconDownload size={14} />
                 </Button>
                 <Button variant="ghost" href="contact.html"

@@ -98,4 +98,54 @@ for (const meta of posts) {
 // The raw template has served its purpose — don't ship it.
 fs.rmSync(templatePath);
 
+/* ------------------------------------------------------------------ */
+/* RSS 2.0 feed at dist/feed.xml — the only subscribe channel the site
+   offers, so it carries the full post body rather than just an excerpt. */
+
+const SITE = 'https://eminkoksal.com';
+const escText = (s) => s
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+/** RFC-822 date at noon UTC — posts carry a date but no time of day. */
+const rfc822 = (iso) => new Date(`${iso}T12:00:00Z`).toUTCString();
+
+/** Rewrite root-relative asset paths so feed readers resolve images. */
+const absolutize = (html) =>
+  html.replace(/(\s(?:src|href)=")\/(?!\/)/g, `$1${SITE}/`);
+
+const feedItems = [...posts]
+  .sort((a, b) => (a.date < b.date ? 1 : -1))
+  .map((p) => {
+    const url = `${SITE}/blog/${p.slug}.html`;
+    const body = absolutize(
+      fs.readFileSync(path.join(postsDir, `${p.slug}.html`), 'utf8'));
+    return `    <item>
+      <title>${escText(p.title)}</title>
+      <link>${url}</link>
+      <guid isPermaLink="true">${url}</guid>
+      <pubDate>${rfc822(p.date)}</pubDate>
+      <category>${escText(p.topic)}</category>
+      <description>${escText(p.excerpt)}</description>
+      <content:encoded><![CDATA[${body.replace(/]]>/g, ']]&gt;')}]]></content:encoded>
+    </item>`;
+  })
+  .join('\n');
+
+const feed = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emin Köksal</title>
+    <link>${SITE}/blog.html</link>
+    <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Essays and working notes on AI in economic research, competition policy, and legal practice. Mostly English, sometimes Turkish.</description>
+    <language>en</language>
+    <lastBuildDate>${rfc822(posts.map((p) => p.date).sort().at(-1))}</lastBuildDate>
+${feedItems}
+  </channel>
+</rss>
+`;
+fs.writeFileSync(path.join(dist, 'feed.xml'), feed);
+console.log(`wrote feed.xml       ${posts.length} items`);
+
 console.log(`Prerender complete. (${pageNames.length} pages + ${posts.length} posts)`);

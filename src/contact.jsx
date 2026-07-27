@@ -2,22 +2,20 @@
 import React from 'react';
 import { IconArrow, IconSearch, IconDownload, IconChevron, Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA, Nav, Footer, OrbitalArc } from './shared.jsx';
 
-const { useEffect: useContactEffect, useRef: useContactRef,
-  useState: useContactState } = React;
+const { useState: useContactState } = React;
 
-/* Obfuscated email — assembled at runtime to reduce scraper exposure. */
+/* Contact address, used by the channel card and the sticky mail button. */
 const MAIL_USER = 'mail';
 const MAIL_HOST = 'eminkoksal.com';
 
-function useObfuscatedEmail() {
-  /* Returns [text, href]; assembled in an effect so the literal string
-     "mail@eminkoksal.com" never appears in the static HTML source. */
-  const [pair, setPair] = useContactState(['mail [at] eminkoksal.com', '#']);
-  useContactEffect(() => {
-    const txt = MAIL_USER + '\u0040' + MAIL_HOST;
-    setPair([txt, 'mailto:' + txt]);
-  }, []);
-  return pair;
+function contactEmail() {
+  /* Returns [text, href]. The address ships plainly in the static HTML now.
+     An earlier version assembled it in an effect to dodge scrapers, but that
+     left the page's primary CTA pointing at "#" for anyone without JS — and
+     the footer and the CV page emit the plain mailto anyway, so nothing was
+     actually being hidden. */
+  const txt = MAIL_USER + '@' + MAIL_HOST;
+  return [txt, 'mailto:' + txt];
 }
 
 /* ------------------------------------------------------------------ */
@@ -139,7 +137,7 @@ function ChannelCard({ label, value, helper, href, target, primary }) {
 }
 
 function ContactChannels() {
-  const [emailText, emailHref] = useObfuscatedEmail();
+  const [emailText, emailHref] = contactEmail();
   return (
     <section className="section" style={{ paddingTop: 32, paddingBottom: 96 }}>
       <div className="container">
@@ -372,7 +370,7 @@ function Confidentiality() {
 /* ------------------------------------------------------------------ */
 
 function StickyMailto() {
-  const [, emailHref] = useObfuscatedEmail();
+  const [, emailHref] = contactEmail();
   const [hover, setHover] = useContactState(false);
   return (
     <a href={emailHref}

@@ -73,7 +73,7 @@
 
 Where it all started: a formal academic record in economics, kept current by teaching every year.
 
-- **Associate Professorship (Doçentlik) in Economics** — earned through Türkiye's national associate professorship examination; the title that would enter a full university post at full Professor rank.
+- **Associate Professorship (Doçentlik) in Economics** — a national academic title in Türkiye, awarded by a state examination board rather than by an employer, and held independently of any university post. It is the rank between Assistant Professor and full Professor.
 - **50+ publications** across peer-reviewed journals and book chapters in economics, competition, and regulation.
 - **Routledge co-editor** — *The Economics and Regulation of Digitalisation: The Case of Türkiye* (Routledge, 2024), with M. Eroğlu and M. Finger.
 - **Associate Editor-in-Chief**, *Competition and Regulation in Network Industries* (SAGE Publishing), since 2018.

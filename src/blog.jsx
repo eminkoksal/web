@@ -240,7 +240,9 @@ function RecentPosts({ posts, total, trOnly, limit, onMore }) {
             </h2>
           </div>
           <span style={{ fontSize: 14, color: '#555', maxWidth: 380 }}>
-            {posts.length} of {total} posts{trOnly ? ' · Turkish' : ''}
+            Showing {visible.length} of {posts.length}
+            {posts.length < total ? ` matching posts (${total} in all)` : ' posts'}
+            {trOnly ? ' · Turkish' : ''}
           </span>
         </div>
         {posts.length === 0 ? (
@@ -275,9 +277,9 @@ function RecentPosts({ posts, total, trOnly, limit, onMore }) {
 
 function Archive({ onByYear, onByTopic, onTurkish }) {
   const items = [
-    { label: 'By year', onClick: onByYear },
-    { label: 'By topic', onClick: onByTopic },
-    { label: 'Turkish posts', onClick: onTurkish },
+    { label: 'By year', target: 'feed', onClick: onByYear },
+    { label: 'By topic', target: 'topics', onClick: onByTopic },
+    { label: 'Turkish posts', target: 'feed', onClick: onTurkish },
   ];
   return (
     <section className="section" style={{ paddingTop: 96, paddingBottom: 96 }}>
@@ -301,7 +303,7 @@ function Archive({ onByYear, onByTopic, onTurkish }) {
             borderBottom: '1px solid rgba(20,20,19,.18)',
           }}>
             {items.map((it, i) => (
-              <a key={it.label} href="#feed"
+              <a key={it.label} href={`#${it.target}`}
                  onClick={(e) => { e.preventDefault(); it.onClick(); }}
                  style={{
                    padding: '40px 28px',
@@ -374,15 +376,15 @@ function Subscribe() {
               display: 'flex', flexDirection: 'column', gap: 16,
               minHeight: 240,
             }}>
-              <Eyebrow>Email</Eyebrow>
+              <Eyebrow>RSS</Eyebrow>
               <p style={{ fontSize: 16, lineHeight: 1.5, color: '#262627',
                           margin: 0, flex: 1 }}>
-                Optional, low-frequency newsletter. Mostly long-form essays
-                and research updates. No marketing.
+                Every post, full text, in your own reader. No email address,
+                no list, nothing to unsubscribe from.
               </p>
               <div>
-                <Button variant="primary" href="#">
-                  Subscribe <IconArrow size={14} dir="up-right" />
+                <Button variant="primary" href="feed.xml" target="_blank">
+                  Get the feed <IconArrow size={14} dir="up-right" />
                 </Button>
               </div>
             </div>

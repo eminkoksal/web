@@ -76,7 +76,8 @@ const FEATURED = [
   'patterns across industries and time only show up when you do.',
   meta: 'SSRN, 2025',
   cta: 'Read the paper',
-  href: 'research.html'
+  href: 'https://ssrn.com/abstract=5731282',
+  external: true
 },
 {
   eyebrow: 'AI-Native Research · Published',
@@ -87,7 +88,8 @@ const FEATURED = [
   'where the doctrine quietly shifts.',
   meta: 'SSRN, 2026',
   cta: 'Read the paper',
-  href: 'research.html'
+  href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258',
+  external: true
 }];
 
 
@@ -518,10 +520,12 @@ function FeaturedWork() {
 
 }
 
-function FeaturedCard({ eyebrow, title, body, meta, cta, href }) {
+function FeaturedCard({ eyebrow, title, body, meta, cta, href, external }) {
   const [hover, setHover] = useState(false);
   return (
     <a href={href}
+    target={external ? '_blank' : undefined}
+    rel={external ? 'noopener noreferrer' : undefined}
     onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
     style={{
       display: 'flex', flexDirection: 'column',

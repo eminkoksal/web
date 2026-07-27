@@ -104,7 +104,7 @@
 
 **Two columns:**
 
-- **Email** — *Optional, low-frequency newsletter. Mostly long-form essays and research updates. No marketing.* `Subscribe →` *(linked email form or third-party newsletter service)*
+- **RSS** — *Every post, full text, in your own reader. No email address, no list, nothing to unsubscribe from.* `Get the feed →` *(links to /feed.xml, generated at build time by `prerender.js`)*
 - **LinkedIn** — *Where most of the shorter posts go first.* `Follow on LinkedIn →`
 
 ---

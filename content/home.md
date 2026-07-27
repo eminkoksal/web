@@ -91,7 +91,7 @@
 >
 > A co-edited volume on Türkiye's digital transformation, with M. Eroğlu and M. Finger. My own chapter, written with O. Bakış, builds the Türkiye Digital Society Index.
 >
-> *Routledge, 2024.* `Read more →`
+> *Routledge, 2024.* `Read more →` *(to /research)*
 
 ### Card 2 — AI-Native Research (published)
 
@@ -99,7 +99,7 @@
 >
 > With C. Peker and M. Üyer, I analyzed all 3,369 decisions the Board published over twenty-five years. Nobody had treated the full record as one dataset before; the patterns across industries and time only show up when you do.
 >
-> *SSRN, 2025.* `Read the paper →`
+> *SSRN, 2025.* `Read the paper →` *(direct to SSRN: ssrn.com/abstract=5731282)*
 
 ### Card 3 — AI-Native Research (published)
 
@@ -107,7 +107,7 @@
 >
 > With C. Peker and M. Üyer, we mapped the 18,513 citations connecting all 9,995 published decisions of the Board: which decisions everything else leans on, and where the doctrine quietly shifts.
 >
-> *SSRN, 2026.* `Read the paper →`
+> *SSRN, 2026.* `Read the paper →` *(direct to SSRN: papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258)*
 
 ---
 

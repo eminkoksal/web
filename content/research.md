@@ -98,7 +98,7 @@
 
 **What we found**
 
-- The Board's most influential decision attracts just ten direct citations.
+- The Board's most influential decision attracts just ten direct citations — authority in this case law is dispersed across many rulings rather than concentrated in a few landmarks.
 - Reliance on EU case law follows a U-curve: early dependence, then autonomization, then re-engagement.
 - Doctrine-shifting decisions become the canon within three years. How fast a decision gets cited predicts its staying power.
 

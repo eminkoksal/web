@@ -75,7 +75,21 @@ def sanitize(body, slug):
         body = re.sub(rf'\s{attr}="[^"]*"', "", body)
     # drop empty paragraphs
     body = re.sub(r"<p>(\s|&nbsp;)*</p>", "", body)
+    body = fix_footnotes(body)
     return body.strip()
+
+# Word-exported footnotes reach WordPress with their anchors intact but their
+# base URL mangled — either a bare "//<UUID>" (a protocol-relative link to a
+# host that does not exist) or the original rekabetregulasyon.com article. The
+# marker never reaches the note sitting at the bottom of the same page. Rewrite
+# both ends to same-page anchors, and give each end the id the other points at.
+_FTN = re.compile(r'<a\s+href="[^"]*#_ftn(\d+)"')
+_REF = re.compile(r'<a\s+href="[^"]*#_ftnref(\d+)"')
+
+def fix_footnotes(body):
+    body = _REF.sub(lambda m: f'<a id="_ftn{m.group(1)}" href="#_ftnref{m.group(1)}"', body)
+    body = _FTN.sub(lambda m: f'<a id="_ftnref{m.group(1)}" href="#_ftn{m.group(1)}"', body)
+    return body
 
 def extract_byline(text_start, html_start):
     """Heuristic byline/source from the post's opening line. Reviewed by hand after."""

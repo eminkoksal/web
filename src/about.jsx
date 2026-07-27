@@ -26,8 +26,9 @@ const ABOUT_PILLARS = [
   {
     lead: 'Associate Professorship (Do\u00e7entlik) in Economics',
     body:
-    ' \u2014 earned through T\u00fcrkiye\u2019s national associate professorship examination; the title ' +
-    'that would enter a full university post at full Professor rank.'
+    ' \u2014 a national academic title in T\u00fcrkiye, awarded by a state examination board rather ' +
+    'than by an employer, and held independently of any university post. It is the rank between ' +
+    'Assistant Professor and full Professor.'
   },
   {
     lead: '50+ publications',

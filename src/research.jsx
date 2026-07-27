@@ -74,7 +74,8 @@ const FLAGSHIP = [
     ],
     whyLabel: 'What we found',
     why: [
-      "The Board\u2019s most influential decision attracts just ten direct citations.",
+      "The Board\u2019s most influential decision attracts just ten direct citations \u2014 authority in " +
+      "this case law is dispersed across many rulings rather than concentrated in a few landmarks.",
       'Reliance on EU case law follows a U-curve: early dependence, then autonomization, then re-engagement.',
       'Doctrine-shifting decisions become the canon within three years. How fast a decision gets cited predicts its staying power.',
     ],
@@ -89,7 +90,7 @@ const PUBS_BOOKS = [
     year: '2024',
     title: 'The Economics and Regulation of Digitalisation: The Case of Türkiye.',
     venue: 'Routledge.',
-    href: '#',
+    href: 'https://doi.org/10.4324/9781032692937',
   },
   {
     authors: 'Köksal, E., & Bakış, O.',
@@ -97,7 +98,7 @@ const PUBS_BOOKS = [
     title: 'Digitalization of Society — Türkiye Digital Society Index.',
     venue: 'In The Economics and Regulation of Digitalisation (pp. 136–154). Routledge.',
     venueItalic: 'The Economics and Regulation of Digitalisation',
-    href: '#',
+    href: 'https://doi.org/10.4324/9781032692937',
   },
   {
     authors: 'Finger, M., Köksal, E., & Eroğlu, M.',
@@ -105,7 +106,7 @@ const PUBS_BOOKS = [
     title: 'Setting the Scene.',
     venue: 'In The Economics and Regulation of Digitalisation (pp. 1–20). Routledge.',
     venueItalic: 'The Economics and Regulation of Digitalisation',
-    href: '#',
+    href: 'https://doi.org/10.4324/9781032692937',
   },
 ];
 
@@ -116,7 +117,7 @@ const PUBS_ARTICLES = [
     title: "Turkish Competition Authority\u2019s First Hub-and-Spoke Cartel Decision.",
     venue: 'Journal of European Competition Law & Practice, 13(8), 566–570.',
     venueItalic: 'Journal of European Competition Law & Practice',
-    href: '#',
+    href: 'https://doi.org/10.1093/jeclap/lpac045',
   },
   {
     authors: 'Aydınonat, N. E. & Köksal, E.',
@@ -124,7 +125,7 @@ const PUBS_ARTICLES = [
     title: "Explanatory Value in Context: The Curious Case of Hotelling\u2019s Location Model.",
     venue: 'The European Journal of the History of Economic Thought, 26(5), 879–910.',
     venueItalic: 'The European Journal of the History of Economic Thought',
-    href: '#',
+    href: 'https://doi.org/10.1080/09672567.2019.1626460',
   },
   {
     authors: 'Köksal, E. & Ardıyok, Ş.',
@@ -132,7 +133,7 @@ const PUBS_ARTICLES = [
     title: 'Regulatory and Market Disharmony in the Turkish Electricity Industry.',
     venue: 'Utilities Policy, 55, 90–98.',
     venueItalic: 'Utilities Policy',
-    href: '#',
+    href: 'https://doi.org/10.1016/j.jup.2018.10.001',
   },
   {
     authors: 'Köksal, E. & Ardıyok, Ş.',
@@ -141,7 +142,7 @@ const PUBS_ARTICLES = [
       "Diverging Approaches in Europe for the Most Favoured-Customer Clauses: How Turkish Competition Authority\u2019s Decision for the Online Food Ordering Market Contributed.",
     venue: 'Journal of European Competition Law & Practice, 9(2), 119–123.',
     venueItalic: 'Journal of European Competition Law & Practice',
-    href: '#',
+    href: 'https://doi.org/10.1093/jeclap/lpx091',
   },
   {
     authors: 'Gürakar, E. & Köksal, E.',
@@ -149,7 +150,7 @@ const PUBS_ARTICLES = [
     title: 'Institutional Evolution and Economic Development in Iran and Turkey.',
     venue: 'Middle East Development Journal, 8(1), 32–64.',
     venueItalic: 'Middle East Development Journal',
-    href: '#',
+    href: 'https://doi.org/10.1080/17938120.2016.1150008',
   },
   {
     authors: 'Köksal, E. & Ardıyok, Ş.',
@@ -157,7 +158,7 @@ const PUBS_ARTICLES = [
     title: 'Reviewing Regulatory Policy for Broadband in Turkey.',
     venue: 'Competition and Regulation in Network Industries, 16(4), 354–377.',
     venueItalic: 'Competition and Regulation in Network Industries',
-    href: '#',
+    href: 'https://doi.org/10.1177/178359171501600403',
   },
   {
     authors: 'Köksal, E.',
@@ -165,7 +166,7 @@ const PUBS_ARTICLES = [
     title: 'Network Neutrality and Quality of Service: A Two-Sided Market Analysis.',
     venue: 'International Journal of Management and Network Economics, 2(1), 39–57.',
     venueItalic: 'International Journal of Management and Network Economics',
-    href: '#',
+    href: 'https://doi.org/10.1504/ijmne.2011.042579',
   },
 ];
 
@@ -176,7 +177,6 @@ const PUBS_CHAPTERS = [
     title: 'Neo-Brandeisian Traces in the New E-Commerce Act.',
     venue: 'On İki Levha.',
     note: '(in Turkish)',
-    href: '#',
   },
   {
     authors: 'Köksal, E., İkiler, B., & Canbeyli, A.',
@@ -184,7 +184,6 @@ const PUBS_CHAPTERS = [
     title: 'Law and Economics of the 2021 Retail Decision.',
     venue: 'On İki Levha.',
     note: '(in Turkish)',
-    href: '#',
   },
   {
     authors: 'Köksal, E.',
@@ -192,7 +191,7 @@ const PUBS_CHAPTERS = [
     title: 'Regulation of Fiber and the Internet.',
     venue: 'In Finger & Eroğlu (Eds.), Regulation of Turkish Network Industries (pp. 383–401). Springer.',
     venueItalic: 'Regulation of Turkish Network Industries',
-    href: '#',
+    href: 'https://doi.org/10.1007/978-3-030-81720-6_19',
   },
 ];
 
@@ -220,14 +219,14 @@ const PUBS_REPORTS = [
     year: '2023',
     title: 'Türkiye Digital Society Index.',
     venue: 'Betam Research Note, 23/269.',
-    href: '#',
+    href: 'https://betam.bahcesehir.edu.tr/2023/03/turkiye-dijital-toplum-endeksi/',
   },
   {
     authors: 'Bakış, O., Tetikol-Dalgıç, D. E., Deniz, P., Finger, M., Gümüş, İ., & Köksal, E.',
     year: '2022',
     title: "Assessment of a Carbon Tax as a Tool to Decarbonize Türkiye\u2019s Energy Supply 2050.",
     venue: 'IC4R Report Series No. 1.',
-    href: '#',
+    href: 'https://www.ic4r.net/2022/04/27/assesment-of-a-carbon-tax-as-a-tool-to-decorbonize-turkeys-energy-supply-2050/',
   },
 ];
 
@@ -586,14 +585,20 @@ function PubGroup({ title, items }) {
                 {p.note && <span style={{ color: '#555' }}> {p.note}</span>}
               </p>
             </div>
-            <a href={p.href} target="_blank" rel="noopener noreferrer" style={{
-              width: 40, height: 40, borderRadius: '50%',
-              border: '1px solid rgba(20,20,19,.4)',
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-              color: '#141413', textDecoration: 'none', flexShrink: 0,
-            }}>
-              <IconArrow size={12} dir="up-right" />
-            </a>
+            {/* A few Turkish-language chapters have no stable public URL; those
+                rows render without an arrow rather than with a dead link. */}
+            {p.href ? (
+              <a href={p.href} target="_blank" rel="noopener noreferrer"
+                 aria-label={`Open “${p.title.replace(/\.$/, '')}” at the publisher`}
+                 style={{
+                   width: 40, height: 40, borderRadius: '50%',
+                   border: '1px solid rgba(20,20,19,.4)',
+                   display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                   color: '#141413', textDecoration: 'none', flexShrink: 0,
+                 }}>
+                <IconArrow size={12} dir="up-right" />
+              </a>
+            ) : <span style={{ width: 40, flexShrink: 0 }} />}
           </li>
         ))}
       </ul>

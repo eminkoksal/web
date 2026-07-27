@@ -3,6 +3,10 @@ import React from 'react';
 
 const { useState, useEffect, useRef } = React;
 
+/* Downloadable CV. Lives in public/, copied verbatim into dist/ at build time.
+   Update the filename here and in public/ together when a new CV ships. */
+const CV_PDF = 'assets/Emin-Koksal-CV.pdf';
+
 /* ------- Icons ------- */
 function IconArrow({ size = 16, dir = 'right' }) {
   const r = { right: 0, up: -45, 'up-right': -45, left: 180, down: 90 }[dir] || 0;
@@ -256,11 +260,13 @@ function Footer() {
       ],
     },
     {
-      title: 'Elsewhere',
+      title: 'Research profiles',
       links: [
+        { label: 'Google Scholar', ext: true, href: 'https://scholar.google.com/citations?user=nt6BrEEAAAAJ' },
+        { label: 'ORCID', ext: true, href: 'https://orcid.org/0000-0003-4232-3193' },
+        { label: 'SSRN', ext: true, href: 'https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1656111' },
         { label: 'LinkedIn', ext: true, href: 'https://www.linkedin.com/in/eminkoksal' },
-        { label: 'X / Twitter', ext: true, href: 'https://x.com/eminkoksal' },
-        { label: 'Instagram', ext: true, href: 'https://instagram.com/emnkksl' },
+        { label: 'RSS feed', ext: true, href: 'feed.xml' },
       ],
     },
     {
@@ -295,8 +301,9 @@ function Footer() {
           <Button variant="inverse" href="mailto:mail@eminkoksal.com">
             mail@eminkoksal.com <IconArrow size={14} dir="up-right" />
           </Button>
-          <Button variant="ghost" href="cv.html" style={{ borderColor: 'rgba(255,255,255,.4)', color: '#FFFFFF' }}>
-            Download CV <IconDownload size={14} />
+          <Button variant="ghost" href={CV_PDF} target="_blank"
+                  style={{ borderColor: 'rgba(255,255,255,.4)', color: '#FFFFFF' }}>
+            Download CV (PDF) <IconDownload size={14} />
           </Button>
         </div>
 
@@ -324,14 +331,13 @@ function Footer() {
         }}>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', fontSize: 13, color: 'rgba(255,255,255,.7)' }}>
             <span>© 2026 Emin Köksal</span>
-            <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Privacy</a>
-            <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Imprint</a>
-            <a href="#" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Colophon</a>
+            <span>No trackers, no analytics, no cookies</span>
           </div>
           <div style={{ display: 'flex', gap: 14 }}>
-            <SocialIcon kind="linkedin" href="https://www.linkedin.com/in/eminkoksal" />
-            <SocialIcon kind="x" href="https://x.com/eminkoksal" />
-            <SocialIcon kind="instagram" href="https://instagram.com/emnkksl" />
+            <SocialIcon kind="scholar" label="Google Scholar" href="https://scholar.google.com/citations?user=nt6BrEEAAAAJ" />
+            <SocialIcon kind="linkedin" label="LinkedIn" href="https://www.linkedin.com/in/eminkoksal" />
+            <SocialIcon kind="x" label="X / Twitter" href="https://x.com/eminkoksal" />
+            <SocialIcon kind="instagram" label="Instagram" href="https://instagram.com/emnkksl" />
           </div>
         </div>
       </div>
@@ -375,7 +381,7 @@ function FooterColumn({ title, links }) {
   );
 }
 
-function SocialIcon({ kind, href }) {
+function SocialIcon({ kind, href, label }) {
   const paths = {
     linkedin:  'M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z',
     x:         'M4 4l16 16M20 4L4 20',
@@ -383,7 +389,7 @@ function SocialIcon({ kind, href }) {
     scholar:   'M12 14l-9-5 9-5 9 5-9 5zm0 0v6m-5-3.5a5 5 0 0 0 10 0',
   };
   return (
-    <a href={href || '#'} target="_blank" rel="noopener noreferrer" aria-label={kind}
+    <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label || kind}
        style={{ width: 36, height: 36, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#FFFFFF' }}>
       <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor"
            strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
@@ -401,6 +407,7 @@ function OrbitalArc() {
 
 /* ES module exports — consumed by every page module */
 export {
+  CV_PDF,
   IconArrow, IconSearch, IconDownload, IconChevron,
   Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA,
   Nav, Footer, OrbitalArc,

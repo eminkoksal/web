@@ -213,3 +213,7 @@ main { animation: pageIn .42s var(--ease-standard) both; }
     padding-bottom: 48px !important;
   }
 }
+
+/* Footnote jumps in migrated posts: the nav pill is sticky, so a bare anchor
+   lands the target underneath it. */
+[id^="_ftn"] { scroll-margin-top: 120px; }
