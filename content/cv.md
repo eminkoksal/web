@@ -104,7 +104,7 @@
 
 ### Bahçeşehir University
 
-- Generative AI in Economic Analysis & Research *(undergraduate)*
+- Generative AI for Economic Analysis *(undergraduate)*
 - Managerial Economics *(MBA, PhD)*
 - Platform Business and Economics *(MBA)*
 - Industrial Organization *(undergraduate)*

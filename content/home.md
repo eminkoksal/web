@@ -49,7 +49,7 @@
 
 ### Card 1 — Academic Economics & Teaching
 
-> The foundation. Associate Professor of Economics, with 50+ publications, a co-edited Routledge volume, and the Associate Editor-in-Chief role at *Competition and Regulation in Network Industries* (SAGE). I've taught graduate courses every year since 2002, and still do.
+> The foundation. Associate Professor of Economics, with 50+ publications, a co-edited Routledge volume, and the Associate Editor-in-Chief role at *Competition and Regulation in Network Industries* (SAGE). I've taught every year since 2002, and still do.
 
 **Card link:** `Read more →` *(to /about#academic)*
 
@@ -118,7 +118,7 @@
 | | | | |
 |---|---|---|---|
 | **20+** | **50+** | **1000s** | **11+** |
-| years in competition economics | publications | legal documents analyzed with AI | graduate courses taught |
+| years in competition economics | publications | legal documents analyzed with AI | courses taught |
 
 ---
 

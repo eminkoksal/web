@@ -31,7 +31,7 @@
 | | | | |
 |---|---|---|---|
 | **20+** | **50+** | **1000s** | **11+** |
-| years in competition economics | publications | legal documents analyzed with AI | graduate courses taught |
+| years in competition economics | publications | legal documents analyzed with AI | courses taught |
 
 ---
 
@@ -77,7 +77,7 @@ Where it all started: a formal academic record in economics, kept current by tea
 - **50+ publications** across peer-reviewed journals and book chapters in economics, competition, and regulation.
 - **Routledge co-editor** — *The Economics and Regulation of Digitalisation: The Case of Türkiye* (Routledge, 2024), with M. Eroğlu and M. Finger.
 - **Associate Editor-in-Chief**, *Competition and Regulation in Network Industries* (SAGE Publishing), since 2018.
-- **Graduate-level teaching** at Bahçeşehir University and other institutions: *Generative AI for Economic Analysis*, *Managerial Economics*, *Platform Business and Economics*, *Industrial Organization*, *Innovation & Competition Policy in Digital Markets*, *Economics of Climate Change*, *Law & Economics*.
+- **University teaching** at Bahçeşehir University and other institutions, from undergraduate to MBA and PhD: *Generative AI for Economic Analysis*, *Managerial Economics*, *Platform Business and Economics*, *Industrial Organization*, *Innovation & Competition Policy in Digital Markets*, *Economics of Climate Change*, *Law & Economics*.
 
 ---
 
@@ -150,7 +150,7 @@ Essays, conference talks, and podcast appearances that carry the other three pil
 >
 > The research centered on industrial economics, competition policy, platform economics, and digital regulation. In 2015, I began working as Economic Consultant at Dentons, providing expert economic analysis in competition and regulatory matters across electricity, banking, telecoms, retail, cement, petroleum, and digital platforms. In 2018, I became Associate Editor-in-Chief of *Competition and Regulation in Network Industries* (SAGE Publishing). In 2024, I co-edited *The Economics and Regulation of Digitalisation: The Case of Türkiye* (Routledge).
 >
-> Then came AI. I started with the obvious uses — summarizing, drafting, saving time — and kept going until the tools were doing real analytical work. That rebuild is what the AI Strategy and AI-Native Research pillars on this site describe. These days I design AI workflows for competition and regulation teams, train practitioners on a leading European legal AI platform, build MCP-based research infrastructure, and teach a graduate course on *Generative AI for Economic Analysis* — alongside the courses I've been teaching for years.
+> Then came AI. I started with the obvious uses — summarizing, drafting, saving time — and kept going until the tools were doing real analytical work. That rebuild is what the AI Strategy and AI-Native Research pillars on this site describe. These days I design AI workflows for competition and regulation teams, train practitioners on a leading European legal AI platform, build MCP-based research infrastructure, and teach an undergraduate course on *Generative AI for Economic Analysis* — alongside the courses I've been teaching for years.
 >
 > Education: PhD in Economics, Marmara University (2008). MA in Public Finance, Galatasaray University (2004). BA in Economics, Galatasaray University (2001).
 

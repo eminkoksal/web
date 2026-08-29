@@ -32,6 +32,7 @@
 - `Platform & Digital Regulation`
 - `Law & Economics`
 - `AI in Economic Research`
+- `AI in Legal Practice`
 - `Climate & Energy Economics`
 - `Teaching Notes`
 

@@ -12,7 +12,7 @@ const ABOUT_STATS = [
 { value: '20+', label: 'years in competition economics' },
 { value: '50+', label: 'publications' },
 { value: '1000s', label: 'legal documents analyzed with AI' },
-{ value: '11+', label: 'graduate courses taught' }];
+{ value: '11+', label: 'courses taught' }];
 
 
 const ABOUT_PILLARS = [
@@ -26,8 +26,8 @@ const ABOUT_PILLARS = [
   {
     lead: 'Associate Professorship (Do\u00e7entlik) in Economics',
     body:
-    ' \u2014 a national academic title in T\u00fcrkiye, awarded by a state examination board rather ' +
-    'than by an employer, and held independently of any university post. It is the rank between ' +
+    ' \u2014 a national academic title in T\u00fcrkiye, awarded by a state examination board and held ' +
+    'independently of any employer or university post. It is the rank between ' +
     'Assistant Professor and full Professor.'
   },
   {
@@ -47,9 +47,10 @@ const ABOUT_PILLARS = [
     ', Competition and Regulation in Network Industries (SAGE Publishing), since 2018.'
   },
   {
-    lead: 'Graduate-level teaching',
+    lead: 'University teaching',
     body:
-    ' at Bah\u00e7e\u015fehir University and other institutions: Generative AI for Economic Analysis, ' +
+    ' at Bah\u00e7e\u015fehir University and other institutions, from undergraduate to MBA and PhD: ' +
+    'Generative AI for Economic Analysis, ' +
     'Managerial Economics, Platform Business and Economics, Industrial Organization, ' +
     'Innovation & Competition Policy in Digital Markets, Economics of Climate Change, Law & Economics.'
   }]
@@ -541,7 +542,7 @@ function Background() {
               work. That rebuild is what the AI Strategy and AI-Native Research pillars on
               this site describe. These days I design AI workflows for competition and
               regulation teams, train practitioners on a leading European legal AI
-              platform, build MCP-based research infrastructure, and teach a graduate
+              platform, build MCP-based research infrastructure, and teach an undergraduate
               course on <em>Generative AI for Economic
               Analysis</em> — alongside the courses I&rsquo;ve been teaching for years.
             </p>

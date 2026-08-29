@@ -55,7 +55,7 @@ const EDUCATION = [
 
 
 const TEACHING_BAU = [
-{ title: 'Generative AI in Economic Analysis & Research', level: 'undergraduate' },
+{ title: 'Generative AI for Economic Analysis', level: 'undergraduate' },
 { title: 'Managerial Economics', level: 'MBA, PhD' },
 { title: 'Platform Business and Economics', level: 'MBA' },
 { title: 'Industrial Organization', level: 'undergraduate' },

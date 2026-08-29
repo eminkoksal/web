@@ -22,7 +22,7 @@ const PILLARS = [
   body:
   'The foundation. Associate Professor of Economics, with 50+ publications, ' +
   'a co-edited Routledge volume, and the Associate Editor-in-Chief role at Competition ' +
-  'and Regulation in Network Industries (SAGE). I’ve taught graduate courses every year since 2002, ' +
+  'and Regulation in Network Industries (SAGE). I’ve taught every year since 2002, ' +
   'and still do.',
   cta: 'Read more',
   href: 'about.html#academic'
@@ -98,7 +98,7 @@ const STATS = [
 { value: '20+', label: 'years in competition economics' },
 { value: '50+', label: 'publications' },
 { value: '1000s', label: 'legal documents analyzed with AI' },
-{ value: '11+', label: 'graduate courses taught' }];
+{ value: '11+', label: 'courses taught' }];
 
 
 /* ------------------------------------------------------------------ */
