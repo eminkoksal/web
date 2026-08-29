@@ -10,20 +10,20 @@ const { useState } = React;
 
 const METHOD_STEPS = [
   {
-    title: 'Large-scale AI analysis of legal texts.',
+    title: 'Large-scale AI analysis of legal texts',
     body:
       "Treat a national authority\u2019s full decision record as a single queryable dataset, " +
       'then use AI to extract concepts, parties, holdings, and reasoning patterns at a ' +
       'granularity manual review can\u2019t reach.',
   },
   {
-    title: 'Citation network analysis.',
+    title: 'Citation network analysis',
     body:
       'Map how authority, precedent, and reasoning move through a body of decisions over time, ' +
       'turning a flat case list into an intellectual genealogy.',
   },
   {
-    title: 'Economic interpretation.',
+    title: 'Economic interpretation',
     body:
       'Use economics \u2014 industrial organization, competition theory, regulatory economics \u2014 ' +
       'to make sense of what the first two steps surface, and to find the next question.',
@@ -66,7 +66,7 @@ const FLAGSHIP = [
       'the Turkish Competition Board \u2014 roughly thirty years of case law \u2014 and extracted ' +
       "the 18,513 citations connecting them. Network analysis did the rest: the paper makes the Board\u2019s " +
       '\u201Cintellectual DNA\u201D \u2014 its citation backbone, its conceptual lineages, the points ' +
-      'where doctrine shifts \u2014 visible as a graph rather than an anecdote.',
+      'where doctrine shifts \u2014 visible as a graph instead of an anecdote.',
       'Methodologically, the paper combines two techniques that competition-law ' +
       'research rarely uses together: AI-assisted extraction of structured information from ' +
       'regulatory text at scale, and network analysis of the resulting citation web. Nothing ' +
@@ -74,8 +74,8 @@ const FLAGSHIP = [
     ],
     whyLabel: 'What we found',
     why: [
-      "The Board\u2019s most influential decision attracts just ten direct citations \u2014 authority in " +
-      "this case law is dispersed across many rulings rather than concentrated in a few landmarks.",
+      "The Board\u2019s most influential decision attracts just 10 direct citations \u2014 authority in " +
+      "this case law is dispersed across many rulings; no small set of landmarks dominates.",
       'Reliance on EU case law follows a U-curve: early dependence, then autonomization, then re-engagement.',
       'Doctrine-shifting decisions become the canon within three years. How fast a decision gets cited predicts its staying power.',
     ],
@@ -224,7 +224,7 @@ const PUBS_REPORTS = [
   {
     authors: 'Bakış, O., Tetikol-Dalgıç, D. E., Deniz, P., Finger, M., Gümüş, İ., & Köksal, E.',
     year: '2022',
-    title: "Assessment of a Carbon Tax as a Tool to Decarbonize Türkiye\u2019s Energy Supply 2050.",
+    title: "Assessment of a Carbon Tax as a Tool to Decarbonize Turkey\u2019s Energy Supply 2050.",
     venue: 'IC4R Report Series No. 1.',
     href: 'https://www.ic4r.net/2022/04/27/assesment-of-a-carbon-tax-as-a-tool-to-decorbonize-turkeys-energy-supply-2050/',
   },
@@ -635,7 +635,7 @@ function ResearchInterests() {
           alignItems: 'start',
         }}>
           <div>
-            <Eyebrow>Active interests</Eyebrow>
+            <Eyebrow>Research interests</Eyebrow>
             <h2 className="display--mid" style={{ margin: '20px 0 0', maxWidth: 460 }}>
               Active interests
             </h2>

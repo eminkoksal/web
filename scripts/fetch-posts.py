@@ -43,6 +43,13 @@ SELECTION = {
     668:  ("Competition Policy", "tr", False),
 }
 
+def trim_excerpt(text, limit):
+    """Cap at `limit` chars on a word boundary, adding an ellipsis when cut."""
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0].rstrip(" ,;:—-")
+    return cut + "…"
+
 def get(url):
     r = subprocess.run(["curl", "-sfL", "--max-time", "30", "-A", "Mozilla/5.0", url],
                        capture_output=True)
@@ -131,7 +138,7 @@ for p in sorted(posts, key=lambda x: x["date"], reverse=True):
         "lang": lang,
         "topic": topic,
         "featured": featured,
-        "excerpt": excerpt[:220],
+        "excerpt": trim_excerpt(excerpt, 220),
         "byline": byline,
         "sourceName": source_name,
         "sourceUrl": source_url,

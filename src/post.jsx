@@ -66,7 +66,7 @@ function PostHeader({ post }) {
       }}>
         <span>{formatDate(post.date)}</span>
         <span aria-hidden="true">·</span>
-        <span>{post.readingMin} min read</span>
+        <span>{post.readingMin} {tr ? 'dk okuma' : 'min read'}</span>
         <span aria-hidden="true">·</span>
         <span style={{
           fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 700,

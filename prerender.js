@@ -78,7 +78,8 @@ for (const meta of posts) {
   let html = template
     .replaceAll('__POST_TITLE__', escAttr(meta.title))
     .replaceAll('__POST_DESC__', escAttr(metaDesc(meta.excerpt)))
-    .replaceAll('__POST_SLUG__', meta.slug);
+    .replaceAll('__POST_SLUG__', meta.slug)
+    .replaceAll('__POST_LANG__', meta.lang || 'en');
 
   if (!html.includes(ROOT_DIV)) {
     throw new Error(`Could not find ${ROOT_DIV} in blog-post template.`);
@@ -147,5 +148,20 @@ ${feedItems}
 `;
 fs.writeFileSync(path.join(dist, 'feed.xml'), feed);
 console.log(`wrote feed.xml       ${posts.length} items`);
+
+/* ------------------------------------------------------------------ */
+/* sitemap.xml — every prerendered page plus every blog post. */
+
+const pageUrls = Object.values(htmlFor).map((f) =>
+  f === 'index.html' ? `${SITE}/` : `${SITE}/${f}`);
+const postUrls = posts.map((p) => `${SITE}/blog/${p.slug}.html`);
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${[...pageUrls, ...postUrls].map((u) => `  <url><loc>${u}</loc></url>`).join('\n')}
+</urlset>
+`;
+fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap);
+console.log(`wrote sitemap.xml    ${pageUrls.length + postUrls.length} URLs`);
 
 console.log(`Prerender complete. (${pageNames.length} pages + ${posts.length} posts)`);

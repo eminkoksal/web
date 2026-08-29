@@ -92,13 +92,13 @@
 
 **Summary**
 
-> The follow-up to the 2025 paper. An AI model read all **9,995 published decisions** of the Turkish Competition Board — roughly thirty years of case law — and extracted the **18,513 citations** connecting them. Network analysis did the rest: the paper makes the Board's "intellectual DNA" — its citation backbone, its conceptual lineages, the points where doctrine shifts — visible as a graph rather than an anecdote.
+> The follow-up to the 2025 paper. An AI model read all **9,995 published decisions** of the Turkish Competition Board — roughly thirty years of case law — and extracted the **18,513 citations** connecting them. Network analysis did the rest: the paper makes the Board's "intellectual DNA" — its citation backbone, its conceptual lineages, the points where doctrine shifts — visible as a graph instead of an anecdote.
 >
 > Methodologically, the paper combines two techniques that competition-law research rarely uses together: AI-assisted extraction of structured information from regulatory text at scale, and network analysis of the resulting citation web. Nothing like it exists for the Turkish setting, and there are few examples anywhere.
 
 **What we found**
 
-- The Board's most influential decision attracts just ten direct citations — authority in this case law is dispersed across many rulings rather than concentrated in a few landmarks.
+- The Board's most influential decision attracts just 10 direct citations — authority in this case law is dispersed across many rulings; no small set of landmarks dominates.
 - Reliance on EU case law follows a U-curve: early dependence, then autonomization, then re-engagement.
 - Doctrine-shifting decisions become the canon within three years. How fast a decision gets cited predicts its staying power.
 
@@ -145,7 +145,7 @@
 - Köksal, E., Peker, C. & Üyer, M. (2026). *The Intellectual DNA of the Turkish Competition Board: Mapping Three Decades of Case Law Through Citation Networks.* **SSRN.**
 - Köksal, E., Peker, C. & Üyer, M. (2025). *A Quarter-Century Analysis of the Turkish Competition Board's Decisions: An AI-Supported Examination.* **SSRN.**
 - Köksal, E. & Bakış, O. (2023). *Türkiye Digital Society Index.* Betam Research Note, 23/269.
-- Bakış, O., Tetikol-Dalgıç, D. E., Deniz, P., Finger, M., Gümüş, İ., & Köksal, E. (2022). *Assessment of a Carbon Tax as a Tool to Decarbonize Türkiye's Energy Supply 2050.* IC4R Report Series No. 1.
+- Bakış, O., Tetikol-Dalgıç, D. E., Deniz, P., Finger, M., Gümüş, İ., & Köksal, E. (2022). *Assessment of a Carbon Tax as a Tool to Decarbonize Turkey's Energy Supply 2050.* IC4R Report Series No. 1.
 
 > Full publication list: [/cv](/cv).
 

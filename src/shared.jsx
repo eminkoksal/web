@@ -125,7 +125,7 @@ function Portrait({ size = 280, src, gradient, children, style }) {
   const bg = src ? `url(${src}) center 25%/cover` :
     gradient || 'radial-gradient(circle at 35% 35%, #F37338 0%, #CF4500 50%, #9A3A0A 100%)';
   return (
-    <div className="portrait" style={{
+    <div className="portrait" role="img" aria-label="Portrait of Emin Köksal" style={{
       position: 'relative', width: size, height: size,
       borderRadius: '50%', background: bg, overflow: 'visible', ...style,
     }}>
@@ -293,7 +293,7 @@ function Footer() {
           fontWeight: 500, lineHeight: 1, letterSpacing: '-0.025em',
           color: '#FFFFFF', margin: '24px 0 0', maxWidth: 880,
         }}>
-          Working at the seam of<br/>economics and machine intelligence.
+          Working at the seam of<br/>economics and machine intelligence
         </h2>
         <div style={{
           marginTop: 40, display: 'flex', gap: 14, flexWrap: 'wrap',

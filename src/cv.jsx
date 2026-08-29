@@ -314,7 +314,7 @@ const PUB_ARTICLES_OTHER = [
   venue: 'İktisadi ve İdari Bilimler Dergisi, 38(1), 1–13.',
   venueItalic: 'İktisadi ve İdari Bilimler Dergisi',
   note: '(in Turkish)',
-  href: 'https://doi.org/10.14780/iibd.61602'
+  href: 'https://dergipark.org.tr/tr/pub/muiibd/article/255329'
 },
 {
   authors: 'Akben-Selçuk, E., Köksal, E., & Altıok-Yılmaz, A. D.', year: '2016',
@@ -421,7 +421,8 @@ const PUB_REPORTS = [
   title: 'The Intellectual DNA of the Turkish Competition Board: Mapping Three Decades of Case Law Through Citation Networks.',
   venue: 'SSRN.',
   venueItalic: 'SSRN',
-  href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258'
+  href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258',
+  highlight: true
 },
 {
   authors: 'Köksal, E., Peker, C. & Üyer, M.', year: '2025',

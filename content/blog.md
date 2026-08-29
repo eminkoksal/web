@@ -24,16 +24,15 @@
 
 ## Section 2 — Topics
 
-*(A horizontal row of pill-shaped topic tags — clickable filters that narrow the post feed. Use the topic taxonomy below as a starting set.)*
+*(A horizontal row of pill-shaped topic tags — clickable filters that narrow the post feed. Chips are derived from the topics actually present in `content/posts/index.json`; the current set is below.)*
 
 **Topic chips:**
 
-- `AI in Economic Research`
-- `AI in Legal Practice`
 - `Competition Policy`
 - `Platform & Digital Regulation`
+- `Law & Economics`
+- `AI in Economic Research`
 - `Climate & Energy Economics`
-- `Workflows & Tooling`
 - `Teaching Notes`
 
 ---
