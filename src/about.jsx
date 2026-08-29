@@ -114,7 +114,7 @@ const ABOUT_PILLARS = [
     title: 'AI analysis of 3,369 Turkish Competition Board decisions',
     meta: 'Published, SSRN 2025 \u00b7 with C. Peker and M. Üyer',
     body:
-    'A quarter-century of the Board\u2019s decisions, treated as a single coherent dataset. ' +
+    'A quarter-century of the Board\u2019s infringement decisions, treated as a single coherent dataset. ' +
     'Combines NLP and economic methods to find patterns no manual review could.'
   },
   {
@@ -126,8 +126,8 @@ const ABOUT_PILLARS = [
   }],
 
   closing:
-  'The interesting part isn\u2019t the speed. Treating the regulatory record as a structured, ' +
-  'queryable corpus changes which questions are worth asking \u2014 and the literature is only ' +
+  'Treating the regulatory record as a structured, queryable corpus does more than save ' +
+  'time: it changes which questions are worth asking. The literature is only ' +
   'beginning to use these methods seriously.',
   cta: { label: 'Explore the research', href: 'research.html' }
 },

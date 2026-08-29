@@ -21,8 +21,8 @@ const PILLARS = [
   title: 'Academic Economics & Teaching',
   body:
   'The foundation. Associate Professor of Economics, with 50+ publications, ' +
-  'a co-edited Routledge volume, and an editorship at Competition and Regulation in ' +
-  'Network Industries (SAGE). I’ve taught graduate courses every year since 2002, ' +
+  'a co-edited Routledge volume, and the Associate Editor-in-Chief role at Competition ' +
+  'and Regulation in Network Industries (SAGE). I’ve taught graduate courses every year since 2002, ' +
   'and still do.',
   cta: 'Read more',
   href: 'about.html#academic'
@@ -40,8 +40,9 @@ const PILLARS = [
   title: 'AI-Native Research',
   body:
   'My current research program uses AI to read legal texts at a scale no person could. ' +
-  'The first paper analyzed 3,369 Turkish Competition Board decisions as a single dataset. ' +
-  'The second maps the 18,513 citations connecting all 9,995 published decisions.',
+  'The first paper analyzed all 3,369 infringement decisions of the Turkish Competition ' +
+  'Board as a single dataset. The second maps the 18,513 citations connecting all 9,995 ' +
+  'of its published decisions.',
   cta: 'Explore the research',
   href: 'research.html'
 },
@@ -71,8 +72,8 @@ const FEATURED = [
   eyebrow: 'AI-Native Research · Published',
   title: 'A Quarter-Century Analysis of the Turkish Competition Board\u2019s Decisions',
   body:
-  'With C. Peker and M. Üyer, we analyzed all 3,369 decisions the Board published over ' +
-  'twenty-five years. Nobody had treated the full record as one dataset before; the ' +
+  'With C. Peker and M. Üyer, we analyzed all 3,369 infringement decisions the Board ' +
+  'published over twenty-five years. Nobody had treated that record as one dataset before; the ' +
   'patterns across industries and time only show up when you do.',
   meta: 'SSRN, 2025',
   cta: 'Read the paper',
@@ -146,8 +147,8 @@ function HeroEditorial({ t }) {
             }}>
               I&rsquo;ve spent twenty years in competition economics, as a professor, a
               journal editor, and a consultant to law firms. A few years ago I started
-              using AI tools in my own research, mostly to save time. They changed the
-              work instead. Today I design AI workflows for competition and regulation
+              using AI tools in my own research to save time, and they ended up changing
+              how I work. Today I design AI workflows for competition and regulation
               teams at international law firms, train practitioners on legal AI
               platforms, and publish research that uses AI to read a quarter-century of
               regulatory decisions at once.
@@ -214,8 +215,8 @@ function FourPillars() {
           }}>
             Everything here draws on the same foundation: twenty years of
             competition economics, and daily hands-on use of the most capable
-            AI tools available. The mix looks unusual on paper. In practice,
-            each part makes the others better.
+            AI tools available. It&rsquo;s an odd pairing on paper, but each part
+            makes the others better.
           </p>
         </div>
 
@@ -439,7 +440,7 @@ function RecentWriting() {
           <div>
             <Eyebrow>From the blog</Eyebrow>
             <h2 className="display--mid" style={{ margin: '20px 0 0' }}>
-              Recent writing
+              Essays &amp; working notes
             </h2>
           </div>
           <Button variant="ghost" href="blog.html">

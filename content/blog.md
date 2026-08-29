@@ -49,15 +49,15 @@
 
 ---
 
-## Section 4 — Recent Posts
+## Section 4 — All Posts
 
 **Eyebrow**
 
-> RECENT
+> POSTS
 
 **H2**
 
-> Recent writing
+> All writing
 
 *(Auto-feed: the latest ~9 posts. Each card shows title, date, ~25-word excerpt, topic chip, and a small `Read →` link. Older posts paginate or fall under a `Load more` button.)*
 

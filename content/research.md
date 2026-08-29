@@ -72,7 +72,7 @@
 
 **Summary**
 
-> We took all **3,369 decisions** the Turkish Competition Board published over roughly twenty-five years and analyzed them as one dataset — something nobody had done before. Combining NLP and economic analysis, the paper traces how the Board has reasoned, ruled, and shifted across industries and decision types over a quarter-century. Patterns that would take a team months to find by hand show up in days.
+> We took all **3,369 infringement decisions** the Turkish Competition Board published over roughly twenty-five years and analyzed them as one dataset — something nobody had done before. Combining NLP and economic analysis, the paper traces how the Board has reasoned, ruled, and shifted across industries and decision types over a quarter-century. Patterns that would take a team months to find by hand show up in days.
 >
 > The dataset itself is part of the contribution. Building it opened the door to a research program, including the citation network study below.
 

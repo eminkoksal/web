@@ -234,9 +234,9 @@ function RecentPosts({ posts, total, trOnly, limit, onMore }) {
                       justifyContent: 'space-between', marginBottom: 48,
                       flexWrap: 'wrap', gap: 24 }}>
           <div>
-            <Eyebrow>Recent</Eyebrow>
+            <Eyebrow>Posts</Eyebrow>
             <h2 className="display--mid" style={{ margin: '24px 0 0' }}>
-              Recent writing
+              All writing
             </h2>
           </div>
           <span style={{ fontSize: 14, color: '#555', maxWidth: 380 }}>

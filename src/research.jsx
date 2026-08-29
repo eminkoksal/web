@@ -38,7 +38,7 @@ const FLAGSHIP = [
     title: "A Quarter-Century Analysis of the Turkish Competition Board\u2019s Decisions",
     coauthors: 'with C. Peker and M. Üyer',
     summary: [
-      'We took all 3,369 decisions the Turkish Competition Board published over roughly ' +
+      'We took all 3,369 infringement decisions the Turkish Competition Board published over roughly ' +
       'twenty-five years and analyzed them as one dataset \u2014 something nobody had done before. ' +
       'Combining NLP and economic analysis, the paper traces how the Board has reasoned, ruled, ' +
       'and shifted across industries and decision types over a quarter-century. Patterns that ' +

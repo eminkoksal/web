@@ -115,12 +115,12 @@ What began as one paper has become a research program: using AI to ask competiti
 
 **Flagship projects**
 
-- **AI analysis of 3,369 Turkish Competition Board decisions** *(published, SSRN 2025; with C. Peker and M. Üyer).* A quarter-century of the Board's decisions, treated as a single coherent dataset. Combines NLP and economic methods to find patterns no manual review could.
+- **AI analysis of 3,369 Turkish Competition Board decisions** *(published, SSRN 2025; with C. Peker and M. Üyer).* A quarter-century of the Board's infringement decisions, treated as a single coherent dataset. Combines NLP and economic methods to find patterns no manual review could.
 - **The Intellectual DNA of the Turkish Competition Board** *(published, SSRN 2026; with C. Peker and M. Üyer).* Maps the 18,513 citations connecting all 9,995 published decisions — thirty years of case law as a network.
 
 **Why this matters**
 
-> The interesting part isn't the speed. Treating the regulatory record as a structured, queryable corpus changes which questions are worth asking — and the literature is only beginning to use these methods seriously.
+> Treating the regulatory record as a structured, queryable corpus does more than save time: it changes which questions are worth asking. The literature is only beginning to use these methods seriously.
 
 `Explore the research →` *(link to /research)*
 

@@ -22,7 +22,7 @@
 
 **Lead paragraph** *(max ~95 words)*
 
-> I've spent twenty years in competition economics, as a professor, a journal editor, and a consultant to law firms. A few years ago I started using AI tools in my own research, mostly to save time. They changed the work instead. Today I design AI workflows for competition and regulation teams at international law firms, train practitioners on legal AI platforms, and publish research that uses AI to read a quarter-century of regulatory decisions at once.
+> I've spent twenty years in competition economics, as a professor, a journal editor, and a consultant to law firms. A few years ago I started using AI tools in my own research to save time, and they ended up changing how I work. Today I design AI workflows for competition and regulation teams at international law firms, train practitioners on legal AI platforms, and publish research that uses AI to read a quarter-century of regulatory decisions at once.
 
 **Primary CTA buttons** *(two, side by side)*
 
@@ -43,13 +43,13 @@
 
 **Intro paragraph**
 
-> Everything here draws on the same foundation: twenty years of competition economics, and daily hands-on use of the most capable AI tools available. The mix looks unusual on paper. In practice, each part makes the others better.
+> Everything here draws on the same foundation: twenty years of competition economics, and daily hands-on use of the most capable AI tools available. It's an odd pairing on paper, but each part makes the others better.
 
 **Pillar grid** *(four cards)*
 
 ### Card 1 — Academic Economics & Teaching
 
-> The foundation. Associate Professor of Economics, with 50+ publications, a co-edited Routledge volume, and an editorship at *Competition and Regulation in Network Industries* (SAGE). I've taught graduate courses every year since 2002, and still do.
+> The foundation. Associate Professor of Economics, with 50+ publications, a co-edited Routledge volume, and the Associate Editor-in-Chief role at *Competition and Regulation in Network Industries* (SAGE). I've taught graduate courses every year since 2002, and still do.
 
 **Card link:** `Read more →` *(to /about#academic)*
 
@@ -61,7 +61,7 @@
 
 ### Card 3 — AI-Native Research
 
-> My current research program uses AI to read legal texts at a scale no person could. The first paper analyzed 3,369 Turkish Competition Board decisions as a single dataset. The second maps the 18,513 citations connecting all 9,995 published decisions.
+> My current research program uses AI to read legal texts at a scale no person could. The first paper analyzed all 3,369 infringement decisions of the Turkish Competition Board as a single dataset. The second maps the 18,513 citations connecting all 9,995 of its published decisions.
 
 **Card link:** `Explore the research →` *(to /research)*
 
@@ -97,7 +97,7 @@
 
 > **A Quarter-Century Analysis of the Turkish Competition Board's Decisions**
 >
-> With C. Peker and M. Üyer, we analyzed all 3,369 decisions the Board published over twenty-five years. Nobody had treated the full record as one dataset before; the patterns across industries and time only show up when you do.
+> With C. Peker and M. Üyer, we analyzed all 3,369 infringement decisions the Board published over twenty-five years. Nobody had treated that record as one dataset before; the patterns across industries and time only show up when you do.
 >
 > *SSRN, 2025.* `Read the paper →` *(direct to SSRN: ssrn.com/abstract=5731282)*
 
@@ -122,7 +122,7 @@
 
 ---
 
-## Section 5 — Recent Writing
+## Section 5 — From the Blog
 
 **Eyebrow**
 
@@ -130,7 +130,7 @@
 
 **H2**
 
-> Recent writing
+> Essays & working notes
 
 *(Auto-feed: latest three posts from /blog, with date and ~25-word excerpt each. Below the list, a single link.)*
 
