@@ -133,16 +133,16 @@ function HeroEditorial({ t }) {
               Emin Köksal
             </h1>
             <p style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 'clamp(22px, 2.2vw, 32px)',
-              fontWeight: 500, letterSpacing: '-.022em',
-              lineHeight: 1.18, color: '#141413',
+              fontFamily: 'var(--font-prose)',
+              fontSize: 'clamp(22px, 2.2vw, 30px)',
+              fontWeight: 400, letterSpacing: '0',
+              lineHeight: 1.3, color: '#2E2E29',
               margin: '0 0 32px', maxWidth: 620
             }}>Where economic rigor meets AI fluency
 
             </p>
             <p style={{
-              fontSize: 18, lineHeight: 1.55, color: '#262627',
+              fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
               maxWidth: 560, margin: '0 0 40px'
             }}>
               I&rsquo;ve spent twenty years in competition economics, as a professor, a
@@ -184,9 +184,9 @@ function Stat({ label, value }) {
   return (
     <div style={{
       display: 'flex', alignItems: 'baseline', justifyContent: 'space-between',
-      borderTop: '1px solid rgba(20,20,19,.15)', paddingTop: 14
+      borderTop: '1px solid rgba(22,21,15,.15)', paddingTop: 14
     }}>
-      <span style={{ fontSize: 14, color: '#555' }}>{label}</span>
+      <span style={{ fontSize: 14, color: '#56554F' }}>{label}</span>
       <span style={{
         fontFamily: 'var(--font-sans)', fontSize: 28, fontWeight: 500, letterSpacing: '-.02em'
       }}>
@@ -210,7 +210,7 @@ function FourPillars() {
             Four areas of work that feed each other
           </h2>
           <p style={{
-            fontSize: 19, lineHeight: 1.55, color: '#262627',
+            fontFamily: 'var(--font-prose)', fontSize: 19, lineHeight: 1.55, color: '#2E2E29',
             margin: 0, maxWidth: 720
           }}>
             Everything here draws on the same foundation: twenty years of
@@ -248,7 +248,7 @@ function PillarCard({ index, title, body, cta, href }) {
     style={{
       display: 'flex', flexDirection: 'column', gap: 18,
       padding: '36px 0 28px',
-      borderTop: '1.5px solid #141413',
+      borderTop: '1.5px solid #16150F',
       textDecoration: 'none', color: 'inherit',
       position: 'relative'
     }}>
@@ -256,15 +256,15 @@ function PillarCard({ index, title, body, cta, href }) {
         display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 24
       }}>
         <span style={{
-          fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 700,
-          letterSpacing: '.04em', textTransform: 'uppercase', color: '#555'
+          fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
+          letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)', color: '#56554F'
         }}>
           {String(index).padStart(2, '0')}
         </span>
         <span style={{
           width: 44, height: 44, borderRadius: '50%',
-          background: hover ? '#141413' : '#FFFFFF',
-          color: hover ? '#FFFFFF' : '#141413',
+          background: hover ? '#16150F' : '#FFFFFF',
+          color: hover ? '#FFFFFF' : '#16150F',
           display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
           transition: 'background 180ms cubic-bezier(0.4,0,0.2,1), color 180ms',
           boxShadow: '0 8px 18px rgba(0,0,0,.06)'
@@ -280,14 +280,14 @@ function PillarCard({ index, title, body, cta, href }) {
         {title}
       </h3>
       <p style={{
-        fontSize: 16, lineHeight: 1.55, color: '#262627',
+        fontSize: 16, lineHeight: 1.55, color: '#2E2E29',
         margin: 0, maxWidth: 520
       }}>
         {body}
       </p>
       <span style={{
         fontFamily: 'var(--font-sans)', fontSize: 15, fontWeight: 500,
-        letterSpacing: '-.02em', color: '#141413',
+        letterSpacing: '-.02em', color: '#16150F',
         display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 4
       }}>
         {cta} <IconArrow size={13} />
@@ -340,16 +340,16 @@ function FeaturedCard({ eyebrow, title, body, meta, cta, href, external }) {
     onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
     style={{
       display: 'flex', flexDirection: 'column',
-      borderRadius: 40,
+      borderRadius: 24,
       padding: 36, gap: 20,
       minHeight: 420,
-      textDecoration: 'none', color: '#141413',
+      textDecoration: 'none', color: '#16150F',
       transition: 'background 180ms cubic-bezier(0.4,0,0.2,1)',
-      background: hover ? '#FFFFFF' : '#FCFBFA'
+      background: hover ? '#FFFFFF' : '#FBFAF6'
     }}>
       <span style={{
-        fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 700,
-        letterSpacing: '.04em', textTransform: 'uppercase', color: '#9A3A0A'
+        fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 500,
+        letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)', color: '#BC4527'
       }}>
         {eyebrow}
       </span>
@@ -360,15 +360,15 @@ function FeaturedCard({ eyebrow, title, body, meta, cta, href, external }) {
         {title}
       </h3>
       <p style={{
-        fontSize: 15, lineHeight: 1.55, color: '#555', margin: 0, flex: 1
+        fontSize: 15, lineHeight: 1.55, color: '#56554F', margin: 0, flex: 1
       }}>
         {body}
       </p>
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        paddingTop: 8, borderTop: '1px solid rgba(20,20,19,.12)'
+        paddingTop: 8, borderTop: '1px solid rgba(22,21,15,.12)'
       }}>
-        <span style={{ fontSize: 13, color: '#555', fontStyle: 'italic' }}>{meta}</span>
+        <span style={{ fontSize: 13, color: '#56554F', fontStyle: 'italic' }}>{meta}</span>
         <span style={{
           fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
           letterSpacing: '-.02em',
@@ -391,26 +391,26 @@ function Numbers() {
       <div className="container">
         <div style={{
           display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24,
-          borderTop: '1.5px solid #141413',
-          borderBottom: '1.5px solid #141413',
+          borderTop: '1.5px solid #16150F',
+          borderBottom: '1.5px solid #16150F',
           padding: '56px 0'
         }}>
           {STATS.map((s, i) =>
           <div key={i} style={{
             display: 'flex', flexDirection: 'column', gap: 18,
             paddingLeft: i === 0 ? 0 : 32,
-            borderLeft: i === 0 ? 'none' : '1px solid rgba(20,20,19,.15)'
+            borderLeft: i === 0 ? 'none' : '1px solid rgba(22,21,15,.15)'
           }}>
               <span style={{
               fontFamily: 'var(--font-sans)',
               fontSize: 'clamp(56px, 6vw, 96px)',
               fontWeight: 500, letterSpacing: '-.03em',
-              lineHeight: 1, color: '#141413'
+              lineHeight: 1, color: '#16150F'
             }}>
                 {s.value}
               </span>
               <span style={{
-              fontSize: 15, lineHeight: 1.4, color: '#555',
+              fontSize: 15, lineHeight: 1.4, color: '#56554F',
               maxWidth: 220
             }}>
                 {s.label}
@@ -455,29 +455,29 @@ function RecentWriting() {
             gridTemplateColumns: '160px 1fr auto',
             gap: 32, alignItems: 'baseline',
             padding: '32px 0',
-            borderTop: '1px solid rgba(20,20,19,.12)',
-            borderBottom: i === recent.length - 1 ? '1px solid rgba(20,20,19,.12)' : 'none'
+            borderTop: '1px solid rgba(22,21,15,.12)',
+            borderBottom: i === recent.length - 1 ? '1px solid rgba(22,21,15,.12)' : 'none'
           }}>
-            <span style={{ fontSize: 14, color: '#555' }}>{formatDate(p.date)}</span>
+            <span style={{ fontSize: 14, color: '#56554F' }}>{formatDate(p.date)}</span>
             <div>
               <div style={{
                 fontFamily: 'var(--font-sans)', fontSize: 24, fontWeight: 500,
                 letterSpacing: '-.02em', lineHeight: 1.25, margin: 0
               }}>
                 <a href={`blog/${p.slug}.html`}
-                style={{ color: '#141413', textDecoration: 'none' }}>
+                style={{ color: '#16150F', textDecoration: 'none' }}>
                   {p.title}
                 </a>
               </div>
-              <div style={{ fontSize: 15, color: '#555', marginTop: 8, maxWidth: 640 }}>
+              <div style={{ fontSize: 15, color: '#56554F', marginTop: 8, maxWidth: 640 }}>
                 {trimWords(p.excerpt, 22)}
               </div>
             </div>
             <a href={`blog/${p.slug}.html`} aria-label={p.title} style={{
               width: 44, height: 44, borderRadius: '50%',
-              border: '1px solid rgba(20,20,19,.5)',
+              border: '1px solid rgba(22,21,15,.5)',
               display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-              color: '#141413', textDecoration: 'none'
+              color: '#16150F', textDecoration: 'none'
             }}>
               <IconArrow size={14} dir="up-right" />
             </a>
@@ -496,8 +496,8 @@ function RecentWriting() {
 function ClosingCTA() {
   return (
     <section style={{
-      background: '#FCFBFA', padding: '128px 0',
-      borderTop: '1px solid rgba(20,20,19,.08)'
+      background: '#FBFAF6', padding: '128px 0',
+      borderTop: '1px solid rgba(22,21,15,.08)'
     }}>
       <div className="container">
         <div style={{
@@ -509,7 +509,7 @@ function ClosingCTA() {
           </h2>
           <div>
             <p style={{
-              fontSize: 17, lineHeight: 1.55, color: '#262627',
+              fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55, color: '#2E2E29',
               margin: '0 0 28px', maxWidth: 460
             }}>
               Most of my work is with competition and regulation teams at international
@@ -543,20 +543,20 @@ function HomeTweaksPanel({ open, onClose, t, setT }) {
   return (
     <div style={{
       position: 'fixed', right: 24, bottom: 24, zIndex: 100,
-      width: 320, background: '#FCFBFA', color: '#141413',
-      borderRadius: 20, boxShadow: '0 24px 48px rgba(0,0,0,.18)',
-      border: '1px solid rgba(20,20,19,.1)',
+      width: 320, background: '#FBFAF6', color: '#16150F',
+      borderRadius: 24, boxShadow: '0 12px 32px rgba(22,21,15,.10)',
+      border: '1px solid rgba(22,21,15,.1)',
       padding: 22, fontFamily: 'var(--font-sans)'
     }}>
       <div style={{
         display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 18
       }}>
-        <strong style={{ fontSize: 14, letterSpacing: '.04em', textTransform: 'uppercase' }}>
+        <strong style={{ fontSize: 14, letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>
           Tweaks
         </strong>
         <button onClick={onClose} style={{
           width: 28, height: 28, borderRadius: '50%', border: 0,
-          background: '#141413', color: '#FFFFFF', cursor: 'pointer',
+          background: '#16150F', color: '#FFFFFF', cursor: 'pointer',
           display: 'inline-flex', alignItems: 'center', justifyContent: 'center'
         }}>×</button>
       </div>
@@ -576,8 +576,8 @@ function HomeTweaksPanel({ open, onClose, t, setT }) {
           onChange={(e) => setT({ ghostWord: e.target.value })}
           style={{
             width: '100%', padding: '10px 12px', borderRadius: 12,
-            border: '1px solid rgba(20,20,19,.15)', fontFamily: 'inherit',
-            fontSize: 14, background: '#FFFFFF', color: '#141413'
+            border: '1px solid rgba(22,21,15,.15)', fontFamily: 'inherit',
+            fontSize: 14, background: '#FFFFFF', color: '#16150F'
           }} />
       </Field>
 
@@ -597,7 +597,7 @@ function Field({ label, children }) {
     <label style={{ display: 'block', marginBottom: 16 }}>
       <div style={{
         fontSize: 12, fontWeight: 700, letterSpacing: '.04em',
-        textTransform: 'uppercase', color: '#555', marginBottom: 8
+        textTransform: 'uppercase', color: '#56554F', marginBottom: 8
       }}>
         {label}
       </div>
@@ -607,13 +607,13 @@ function Field({ label, children }) {
 }
 function Segmented({ value, onChange, options }) {
   return (
-    <div style={{ display: 'flex', background: '#F3F0EE', borderRadius: 999, padding: 3 }}>
+    <div style={{ display: 'flex', background: '#F5F2EB', borderRadius: 999, padding: 3 }}>
       {options.map((o) =>
       <button key={o.value} onClick={() => onChange(o.value)}
       style={{
         flex: 1, padding: '8px 0', borderRadius: 999, border: 0,
-        background: value === o.value ? '#141413' : 'transparent',
-        color: value === o.value ? '#F3F0EE' : '#141413',
+        background: value === o.value ? '#16150F' : 'transparent',
+        color: value === o.value ? '#F5F2EB' : '#16150F',
         fontFamily: 'inherit', fontSize: 13, fontWeight: 500,
         cursor: 'pointer'
       }}>{o.label}</button>
@@ -625,7 +625,7 @@ function Toggle({ value, onChange }) {
   return (
     <button onClick={() => onChange(!value)} style={{
       width: 44, height: 26, borderRadius: 999,
-      background: value ? '#141413' : 'rgba(20,20,19,.2)',
+      background: value ? '#16150F' : 'rgba(22,21,15,.2)',
       border: 0, padding: 0, cursor: 'pointer', position: 'relative',
       transition: 'background 180ms'
     }}>

@@ -11,12 +11,12 @@ const PAGE_SIZE = 9;
 
 /* Card cover gradients — assigned by position, brand palette. */
 const CARD_GRADS = [
-  'radial-gradient(circle at 30% 30%, #F37338 0%, #CF4500 55%, #9A3A0A 100%)',
-  'radial-gradient(circle at 60% 30%, #E8E2DA 0%, #D1CDC7 60%, #9A3A0A 110%)',
-  'radial-gradient(circle at 40% 30%, #F79E1B 0%, #F37338 40%, #CF4500 100%)',
-  'radial-gradient(circle at 30% 30%, #CF4500 0%, #9A3A0A 60%, #2B2B2B 100%)',
-  'radial-gradient(circle at 70% 30%, #F37338 0%, #CF4500 50%, #555555 100%)',
-  'radial-gradient(circle at 30% 60%, #F79E1B 0%, #F37338 40%, #9A3A0A 100%)',
+  'radial-gradient(circle at 30% 30%, #F4C0B2 0%, #E75C39 55%, #BC4527 100%)',
+  'radial-gradient(circle at 60% 30%, #EAE8DF 0%, #DAD8CD 60%, #CB6951 110%)',
+  'radial-gradient(circle at 40% 30%, #FFE5DE 0%, #F37338 45%, #E75C39 100%)',
+  'radial-gradient(circle at 30% 30%, #E75C39 0%, #BC4527 60%, #2E2E29 100%)',
+  'radial-gradient(circle at 70% 30%, #F37338 0%, #E75C39 50%, #56554F 100%)',
+  'radial-gradient(circle at 30% 60%, #F4C0B2 0%, #E8A493 40%, #B9482C 100%)',
 ];
 
 function postHref(p) {
@@ -48,7 +48,7 @@ function BlogHero() {
               Notes from the seam between economics, regulation, and AI
             </h1>
           </div>
-          <p style={{ fontSize: 18, lineHeight: 1.55, color: '#262627',
+          <p style={{ fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
                       margin: 0 }}>
             Essays, working notes, and shorter posts from where economics,
             competition policy, and AI tools meet in day-to-day analytical
@@ -80,9 +80,9 @@ function TopicChips({ topic, trOnly, onTopic }) {
                   fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
                   letterSpacing: '-0.02em', lineHeight: 1,
                   padding: '12px 18px', borderRadius: 999,
-                  border: '1.5px solid ' + (on ? '#141413' : 'rgba(20,20,19,.22)'),
-                  background: on ? '#141413' : 'transparent',
-                  color: on ? '#F3F0EE' : '#141413',
+                  border: '1.5px solid ' + (on ? '#16150F' : 'rgba(22,21,15,.22)'),
+                  background: on ? '#16150F' : 'transparent',
+                  color: on ? '#F5F2EB' : '#16150F',
                   cursor: 'pointer', whiteSpace: 'nowrap',
                   transition: 'background 180ms cubic-bezier(0.4,0,0.2,1), color 180ms, border-color 180ms',
                 }}>
@@ -109,13 +109,13 @@ function FeaturedPost() {
         <div style={{
           display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 56,
           alignItems: 'center', padding: '64px 0',
-          borderTop: '1px solid rgba(20,20,19,.12)',
-          borderBottom: '1px solid rgba(20,20,19,.12)',
+          borderTop: '1px solid rgba(22,21,15,.12)',
+          borderBottom: '1px solid rgba(22,21,15,.12)',
         }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20, flexWrap: 'wrap' }}>
               <Eyebrow>Featured</Eyebrow>
-              <span style={{ fontSize: 13, color: '#555' }}>
+              <span style={{ fontSize: 13, color: '#56554F' }}>
                 {formatDate(p.date)} · {p.readingMin} min read · {p.topic}
               </span>
             </div>
@@ -124,7 +124,7 @@ function FeaturedPost() {
                 {p.title}
               </a>
             </h2>
-            <p style={{ fontSize: 18, lineHeight: 1.5, color: '#555',
+            <p style={{ fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.5, color: '#56554F',
                         margin: '0 0 28px', maxWidth: 560 }}>
               {trimWords(p.excerpt, 45)}
             </p>
@@ -132,7 +132,7 @@ function FeaturedPost() {
               display: 'inline-flex', alignItems: 'center', gap: 10,
               fontFamily: 'var(--font-sans)',
               fontSize: 16, fontWeight: 500, letterSpacing: '-.02em',
-              color: '#141413', textDecoration: 'none',
+              color: '#16150F', textDecoration: 'none',
             }}>
               Read the post <IconArrow size={14} />
             </a>
@@ -142,18 +142,18 @@ function FeaturedPost() {
               {p.image ? (
                 <div aria-hidden="true" style={{
                   width: 360, height: 360, borderRadius: '50%',
-                  background: `#E8E2DA url(${p.image}) center/cover`,
+                  background: `#EAE8DF url(${p.image}) center/cover`,
                 }} />
               ) : (
                 <Portrait
                   size={360}
-                  gradient="radial-gradient(circle at 35% 35%, #F79E1B 0%, #F37338 45%, #CF4500 100%)"
+                  gradient="radial-gradient(circle at 35% 35%, #F4C0B2 0%, #F37338 45%, #E75C39 100%)"
                 />
               )}
               <span style={{
                 position: 'absolute', left: '50%', bottom: 34, transform: 'translateX(-50%)',
                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                background: '#FFFFFF', color: '#141413',
+                background: '#FFFFFF', color: '#16150F',
                 padding: '8px 14px', borderRadius: 999,
                 fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 500,
                 letterSpacing: '-.02em', whiteSpace: 'nowrap',
@@ -184,18 +184,18 @@ function PostCard({ p, n }) {
                  width={p.imageWidth || undefined} height={p.imageHeight || undefined}
                  style={{
                    width: '100%', height: '100%', objectFit: 'cover', display: 'block',
-                   borderRadius: 40, background: '#E8E2DA',
+                   borderRadius: 24, background: '#EAE8DF',
                  }} />
           ) : (
             <div style={{
               width: '100%', height: '100%',
-              borderRadius: 40, background: CARD_GRADS[n % CARD_GRADS.length],
+              borderRadius: 24, background: CARD_GRADS[n % CARD_GRADS.length],
             }} />
           )}
           <div style={{ position: 'absolute', left: 20, top: 20 }}>
             <span style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
-              background: '#FFFFFF', color: '#141413',
+              background: '#FFFFFF', color: '#16150F',
               padding: '8px 14px', borderRadius: 999,
               fontFamily: 'var(--font-sans)',
               fontSize: 12, fontWeight: 500, letterSpacing: '-.02em',
@@ -205,9 +205,9 @@ function PostCard({ p, n }) {
           </div>
           <div style={{
             position: 'absolute', right: 20, bottom: 20,
-            fontFamily: 'var(--font-sans)', fontSize: 11, fontWeight: 700,
-            letterSpacing: '0.08em', textTransform: 'uppercase',
-            color: '#F3F0EE', background: 'rgba(20,20,19,.72)',
+            fontFamily: 'var(--font-sans)', fontSize: 11, fontWeight: 500,
+            letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
+            color: '#F5F2EB', background: 'rgba(22,21,15,.72)',
             padding: '6px 10px', borderRadius: 999, lineHeight: 1,
           }}>
             {p.lang.toUpperCase()}
@@ -215,17 +215,17 @@ function PostCard({ p, n }) {
         </div>
       </a>
       <div>
-        <div style={{ fontSize: 13, color: '#555', marginBottom: 10 }}>
+        <div style={{ fontSize: 13, color: '#56554F', marginBottom: 10 }}>
           {formatDate(p.date)} · {p.readingMin} min read
         </div>
         <h3 style={{ fontFamily: 'var(--font-sans)',
                      fontSize: 24, fontWeight: 500, letterSpacing: '-.02em',
                      lineHeight: 1.2, margin: '0 0 12px' }}>
-          <a href={postHref(p)} style={{ color: '#141413', textDecoration: 'none' }}>
+          <a href={postHref(p)} style={{ color: '#16150F', textDecoration: 'none' }}>
             {p.title}
           </a>
         </h3>
-        <p style={{ fontSize: 15, lineHeight: 1.55, color: '#555',
+        <p style={{ fontSize: 15, lineHeight: 1.55, color: '#56554F',
                     margin: '0 0 14px' }}>
           {trimWords(p.excerpt, 25)}
         </p>
@@ -233,7 +233,7 @@ function PostCard({ p, n }) {
           display: 'inline-flex', alignItems: 'center', gap: 6,
           fontFamily: 'var(--font-sans)',
           fontSize: 14, fontWeight: 500, letterSpacing: '-.02em',
-          color: '#141413', textDecoration: 'none',
+          color: '#16150F', textDecoration: 'none',
         }}>
           Read <IconArrow size={12} />
         </a>
@@ -256,14 +256,14 @@ function RecentPosts({ posts, total, trOnly, limit, onMore }) {
               All writing
             </h2>
           </div>
-          <span style={{ fontSize: 14, color: '#555', maxWidth: 380 }}>
+          <span style={{ fontSize: 14, color: '#56554F', maxWidth: 380 }}>
             Showing {visible.length} of {posts.length}
             {posts.length < total ? ` matching posts (${total} in all)` : ' posts'}
             {trOnly ? ' · Turkish' : ''}
           </span>
         </div>
         {posts.length === 0 ? (
-          <p style={{ fontSize: 16, color: '#555', margin: 0 }}>
+          <p style={{ fontSize: 16, color: '#56554F', margin: 0 }}>
             Nothing under this filter yet — try another topic.
           </p>
         ) : (
@@ -308,7 +308,7 @@ function Archive({ onByYear, onByTopic, onTurkish }) {
             <h2 className="display--mid" style={{ margin: '24px 0 0' }}>
               Browse everything
             </h2>
-            <p style={{ fontSize: 18, lineHeight: 1.5, color: '#262627',
+            <p style={{ fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.5, color: '#2E2E29',
                         margin: '24px 0 0', maxWidth: 460 }}>
               Or browse the full archive by year, by topic, or by language.
             </p>
@@ -316,19 +316,19 @@ function Archive({ onByYear, onByTopic, onTurkish }) {
           <div style={{
             display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
             gap: 0,
-            borderTop: '1px solid rgba(20,20,19,.18)',
-            borderBottom: '1px solid rgba(20,20,19,.18)',
+            borderTop: '1px solid rgba(22,21,15,.18)',
+            borderBottom: '1px solid rgba(22,21,15,.18)',
           }}>
             {items.map((it, i) => (
               <a key={it.label} href={`#${it.target}`}
                  onClick={(e) => { e.preventDefault(); it.onClick(); }}
                  style={{
                    padding: '40px 28px',
-                   borderLeft: i === 0 ? 'none' : '1px solid rgba(20,20,19,.18)',
+                   borderLeft: i === 0 ? 'none' : '1px solid rgba(22,21,15,.18)',
                    display: 'flex', flexDirection: 'column',
                    justifyContent: 'space-between',
                    gap: 32, minHeight: 200,
-                   textDecoration: 'none', color: '#141413',
+                   textDecoration: 'none', color: '#16150F',
                  }}>
                 <span style={{
                   fontFamily: 'var(--font-sans)', fontSize: 26, fontWeight: 500,
@@ -338,7 +338,7 @@ function Archive({ onByYear, onByTopic, onTurkish }) {
                 </span>
                 <span style={{
                   width: 44, height: 44, borderRadius: '50%',
-                  border: '1.5px solid #141413',
+                  border: '1.5px solid #16150F',
                   display: 'inline-flex', alignItems: 'center',
                   justifyContent: 'center',
                 }}>
@@ -362,7 +362,7 @@ function Subscribe() {
     <section className="section" style={{ paddingTop: 0, paddingBottom: 96 }}>
       <div className="container">
         <div style={{
-          background: '#FCFBFA', borderRadius: 40,
+          background: '#FBFAF6', borderRadius: 24,
           padding: '72px 64px',
         }}>
           <div style={{
@@ -380,7 +380,7 @@ function Subscribe() {
               }}>
                 Get new writing as it goes out
               </h2>
-              <p style={{ fontSize: 17, lineHeight: 1.5, color: '#262627',
+              <p style={{ fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.5, color: '#2E2E29',
                           margin: '24px 0 0', maxWidth: 400 }}>
                 I publish when I have something to say, which makes the
                 schedule irregular by design. Two ways to keep up:
@@ -389,12 +389,12 @@ function Subscribe() {
 
             <div style={{
               padding: '32px 32px 32px 32px',
-              borderLeft: '1px solid rgba(20,20,19,.14)',
+              borderLeft: '1px solid rgba(22,21,15,.14)',
               display: 'flex', flexDirection: 'column', gap: 16,
               minHeight: 240,
             }}>
               <Eyebrow>RSS</Eyebrow>
-              <p style={{ fontSize: 16, lineHeight: 1.5, color: '#262627',
+              <p style={{ fontSize: 16, lineHeight: 1.5, color: '#2E2E29',
                           margin: 0, flex: 1 }}>
                 Every post, full text, in your own reader. No email address,
                 no list, nothing to unsubscribe from.
@@ -408,12 +408,12 @@ function Subscribe() {
 
             <div style={{
               padding: '32px 32px 32px 32px',
-              borderLeft: '1px solid rgba(20,20,19,.14)',
+              borderLeft: '1px solid rgba(22,21,15,.14)',
               display: 'flex', flexDirection: 'column', gap: 16,
               minHeight: 240,
             }}>
               <Eyebrow>LinkedIn</Eyebrow>
-              <p style={{ fontSize: 16, lineHeight: 1.5, color: '#262627',
+              <p style={{ fontSize: 16, lineHeight: 1.5, color: '#2E2E29',
                           margin: 0, flex: 1 }}>
                 Where most of the shorter posts go first.
               </p>
@@ -443,13 +443,13 @@ function ClosingCTA() {
           display: 'grid', gridTemplateColumns: '1.3fr 1fr',
           gap: 64, alignItems: 'center',
           padding: '64px 0',
-          borderTop: '1px solid rgba(20,20,19,.12)',
+          borderTop: '1px solid rgba(22,21,15,.12)',
         }}>
           <div>
             <h2 className="display--mid" style={{ margin: 0, maxWidth: 720 }}>
               Have a piece in mind for a guest essay, podcast, or panel?
             </h2>
-            <p style={{ fontSize: 18, lineHeight: 1.5, color: '#262627',
+            <p style={{ fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.5, color: '#2E2E29',
                         margin: '24px 0 0', maxWidth: 640 }}>
               I take on a small number of invited essays, podcast
               appearances, and panels each year, mostly on

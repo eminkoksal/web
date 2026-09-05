@@ -47,32 +47,27 @@ function IconChevron({ dir = 'down', size = 14 }) {
   );
 }
 
-/* ------- Monogram — replaces Mastercard mark; "EK" inside a dual circle ------- */
-function Monogram({ size = 44 }) {
+/* ------- Mark — two nodes, one edge (Emin Style) ------- */
+function Monogram({ size = 44, ink = '#16150F', accent = '#F37338' }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64" aria-label="Emin Köksal"
          xmlns="http://www.w3.org/2000/svg">
-      {/* Two overlapping discs — orange covers ~70% of black */}
-      <circle cx="24" cy="32" r="22" fill="#141413" />
-      <circle cx="37" cy="32" r="22" fill="#F37338" />
-      <path d="M30.5 11 a22 22 0 0 1 0 42 a22 22 0 0 1 0 -42 Z" fill="#CF4500" />
-      <text x="30.5" y="32" textAnchor="middle" dominantBaseline="central"
-            fontFamily="'Sofia Sans', 'MarkForMC', Arial, sans-serif"
-            fontSize="19" fontWeight="700"
-            letterSpacing="-0.5" fill="#F3F0EE">EK</text>
+      <line x1="19" y1="45" x2="45" y2="19" stroke={ink} strokeWidth="2" strokeLinecap="round" />
+      <circle cx="19" cy="45" r="8" fill={ink} />
+      <circle cx="45" cy="19" r="8" fill={accent} />
     </svg>
   );
 }
 
-/* ------- Eyebrow ------- */
-function Eyebrow({ children, color = '#141413', dotColor = '#F37338' }) {
+/* ------- Eyebrow: node + mono label ------- */
+function Eyebrow({ children, color = '#56554F', dotColor = '#F37338' }) {
   return (
     <span style={{
-      fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 700,
-      letterSpacing: '0.04em', textTransform: 'uppercase',
-      color, display: 'inline-flex', alignItems: 'center', gap: 10, lineHeight: 1,
+      fontFamily: 'var(--font-mono)', fontSize: 12, fontWeight: 500,
+      letterSpacing: '0.08em', textTransform: 'uppercase',
+      color, display: 'inline-flex', alignItems: 'center', gap: 14, lineHeight: 1,
     }}>
-      <span style={{ width: 6, height: 6, borderRadius: '50%', background: dotColor, flexShrink: 0 }} />
+      <span style={{ width: 8, height: 8, borderRadius: '50%', background: dotColor, flexShrink: 0 }} />
       {children}
     </span>
   );
@@ -89,25 +84,25 @@ function Button({ children, variant = 'primary', href, onClick, style, target, r
   const base = {
     display: 'inline-flex', alignItems: 'center', gap: 10,
     fontFamily: 'var(--font-sans)', fontSize: 16, fontWeight: 500,
-    letterSpacing: '-0.03em', lineHeight: 1,
-    padding: '14px 26px', borderRadius: 20,
-    border: '1.5px solid #141413', cursor: 'pointer',
+    letterSpacing: '-0.01em', lineHeight: 1,
+    padding: '14px 24px', borderRadius: 999,
+    border: '1.5px solid #16150F', cursor: 'pointer',
     textDecoration: 'none',
     transition: 'background 180ms cubic-bezier(0.4,0,0.2,1), color 180ms, border-color 180ms',
   };
   const variants = {
-    primary:   { background: '#141413', color: '#F3F0EE' },
-    secondary: { background: '#FCFBFA', color: '#141413', fontWeight: 450 },
-    ghost:     { background: 'transparent', color: '#141413', fontWeight: 450 },
-    inverse:   { background: '#FCFBFA', color: '#141413', border: '1.5px solid #FCFBFA' },
+    primary:   { background: '#16150F', color: '#F5F2EB' },
+    secondary: { background: '#FBFAF6', color: '#16150F', fontWeight: 450 },
+    ghost:     { background: 'transparent', color: '#16150F', fontWeight: 450 },
+    inverse:   { background: '#FBFAF6', color: '#16150F', border: '1.5px solid #FBFAF6' },
   };
   const [hover, setHover] = useState(false);
   const merged = { ...base, ...variants[variant], ...style };
   if (hover) {
-    if (variant === 'primary')   { merged.background = '#1f1f1e'; merged.borderColor = '#1f1f1e'; }
-    if (variant === 'secondary') { merged.background = '#F3F0EE'; }
-    if (variant === 'ghost')     { merged.background = '#141413'; merged.color = '#F3F0EE'; }
-    if (variant === 'inverse')   { merged.background = 'transparent'; merged.color = '#FCFBFA'; }
+    if (variant === 'primary')   { merged.background = '#BC4527'; merged.borderColor = '#BC4527'; }
+    if (variant === 'secondary') { merged.background = '#F5F2EB'; }
+    if (variant === 'ghost')     { merged.background = '#16150F'; merged.color = '#F5F2EB'; }
+    if (variant === 'inverse')   { merged.background = 'transparent'; merged.color = '#FBFAF6'; }
   }
   const Tag = href ? 'a' : 'button';
   const extraRel = target === '_blank' && !rel ? 'noopener noreferrer' : rel;
@@ -123,7 +118,7 @@ function Button({ children, variant = 'primary', href, onClick, style, target, r
 /* ------- Portrait circle ------- */
 function Portrait({ size = 280, src, gradient, children, style }) {
   const bg = src ? `url(${src}) center 25%/cover` :
-    gradient || 'radial-gradient(circle at 35% 35%, #F37338 0%, #CF4500 50%, #9A3A0A 100%)';
+    gradient || 'radial-gradient(circle at 35% 35%, #F4C0B2 0%, #E8A493 45%, #CB6951 100%)';
   return (
     <div className="portrait" role="img" aria-label="Portrait of Emin Köksal" style={{
       position: 'relative', width: size, height: size,
@@ -145,8 +140,8 @@ function SatelliteCTA({ onClick, href, size = 60, anchor = { right: -6, bottom: 
          style={{
            position: 'absolute', width: size, height: size,
            borderRadius: '50%',
-           background: hover ? '#141413' : '#FFFFFF',
-           color: hover ? '#FFFFFF' : '#141413',
+           background: hover ? '#16150F' : '#FFFFFF',
+           color: hover ? '#FFFFFF' : '#16150F',
            border: 0, cursor: 'pointer', textDecoration: 'none',
            display: 'flex', alignItems: 'center', justifyContent: 'center',
            boxShadow: '0 8px 18px rgba(0,0,0,.07)',
@@ -176,15 +171,15 @@ function Nav({ active = 'Home' }) {
       pointerEvents: 'none',
     }}>
       <div className="nav-pill" style={{
-        background: '#FFFFFF', borderRadius: 999,
-        boxShadow: '0 4px 24px rgba(0,0,0,.06)',
+        background: '#FBFAF6', borderRadius: 999,
+        boxShadow: '0 12px 32px rgba(22,21,15,.10)',
         padding: '12px 14px 12px 22px',
         display: 'flex', alignItems: 'center', gap: 28,
         pointerEvents: 'auto', maxWidth: 1100, width: '100%',
       }}>
-        <a href="index.html" style={{ display: 'flex', alignItems: 'center', gap: 16, textDecoration: 'none', color: '#141413' }}>
-          <Monogram size={42} />
-          <span style={{ fontFamily: 'var(--font-sans)', fontSize: 18, fontWeight: 500, letterSpacing: '-0.02em' }}>
+        <a href="index.html" style={{ display: 'flex', alignItems: 'center', gap: 16, textDecoration: 'none', color: '#16150F' }}>
+          <Monogram size={40} />
+          <span style={{ fontFamily: 'var(--font-sans)', fontSize: 18, fontWeight: 600, letterSpacing: '-0.02em' }}>
             Emin Köksal
           </span>
         </a>
@@ -194,7 +189,7 @@ function Nav({ active = 'Home' }) {
             display: 'none', marginLeft: 'auto', width: 42, height: 42,
             alignItems: 'center', justifyContent: 'center',
             background: 'transparent', border: 0, borderRadius: 999, cursor: 'pointer',
-            color: '#141413',
+            color: '#16150F',
           }}>
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
             {open
@@ -207,7 +202,7 @@ function Nav({ active = 'Home' }) {
             <a key={l.label} href={l.href}
                style={{
                  fontFamily: 'var(--font-sans)', fontSize: 15, fontWeight: 500,
-                 letterSpacing: '-0.02em', color: '#141413', textDecoration: 'none',
+                 letterSpacing: '-0.02em', color: '#16150F', textDecoration: 'none',
                  padding: '8px 4px', position: 'relative', lineHeight: 1,
                }}>
               {l.label}
@@ -225,7 +220,7 @@ function Nav({ active = 'Home' }) {
             fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
             letterSpacing: '-0.02em',
             padding: '10px 18px', borderRadius: 999,
-            background: '#141413', color: '#F3F0EE', textDecoration: 'none',
+            background: '#16150F', color: '#F5F2EB', textDecoration: 'none',
             whiteSpace: 'nowrap', flexShrink: 0,
           }}>
             Get in touch <IconArrow size={13} dir="up-right" />
@@ -281,7 +276,7 @@ function Footer() {
 
   return (
     <footer style={{
-      background: '#141413', color: '#FFFFFF',
+      background: '#16150F', color: '#FFFFFF',
       padding: '120px 32px 56px',
       position: 'relative', marginTop: 96,
     }}>
@@ -317,8 +312,8 @@ function Footer() {
         </div>
 
         <div style={{ marginTop: 96, display: 'flex', alignItems: 'center', gap: 16 }}>
-          <Monogram size={42} />
-          <span style={{ fontFamily: 'var(--font-sans)', fontSize: 18, fontWeight: 500, letterSpacing: '-.02em' }}>
+          <Monogram size={40} ink="#F5F2EB" />
+          <span style={{ fontFamily: 'var(--font-sans)', fontSize: 18, fontWeight: 600, letterSpacing: '-.02em' }}>
             Emin Köksal
           </span>
         </div>
@@ -349,8 +344,8 @@ function FooterColumn({ title, links }) {
   return (
     <div>
       <h4 style={{
-        fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 700,
-        letterSpacing: '0.04em', textTransform: 'uppercase',
+        fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 500,
+        letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
         color: 'rgba(255,255,255,.6)', margin: '0 0 20px',
       }}>{title}</h4>
       <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>

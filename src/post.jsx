@@ -7,29 +7,29 @@ import { IconArrow, Eyebrow, Button, Nav, Footer } from './shared.jsx';
 import { formatDate } from './posts.js';
 
 /* Scoped long-form typography for the sanitized WordPress body HTML.
-   Tokens match the rest of the site: ink #141413, body #262627, muted #555,
-   accent #F37338 / #CF4500, hairline rgba(20,20,19,.12). */
+   Tokens match the rest of the site: ink #16150F, body #2E2E29, muted #555,
+   accent #F37338 / #E75C39, hairline rgba(22,21,15,.12). */
 const POST_CSS = `
-.post-body { max-width: 70ch; font-size: 18px; line-height: 1.7; color: #262627; }
+.post-body { max-width: 66ch; font-family: var(--font-prose); font-size: 18px; line-height: 1.6; color: #2E2E29; }
 .post-body p { margin: 0 0 1.5em; }
 .post-body h2, .post-body h3, .post-body h4 {
   font-family: var(--font-sans); font-weight: 500; letter-spacing: -.022em;
-  line-height: 1.15; color: #141413; margin: 2.2em 0 .7em;
+  line-height: 1.15; color: #16150F; margin: 2.2em 0 .7em;
 }
 .post-body h2 { font-size: clamp(26px, 2.6vw, 34px); }
 .post-body h3 { font-size: clamp(22px, 2.2vw, 27px); }
 .post-body h4 { font-size: 19px; }
 .post-body a {
-  color: #141413; text-decoration: underline;
-  text-decoration-color: #F37338; text-decoration-thickness: 1.5px;
+  color: #16150F; text-decoration: underline;
+  text-decoration-color: #E75C39; text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
-.post-body a:hover { color: #CF4500; }
+.post-body a:hover { color: #BC4527; }
 .post-body ul, .post-body ol { margin: 0 0 1.5em; padding-left: 1.3em; }
 .post-body li { margin: 0 0 .6em; }
 .post-body blockquote {
   margin: 2em 0; padding: 2px 0 2px 26px;
-  border-left: 3px solid #F37338; color: #141413; font-size: 19px;
+  border-left: 1.5px solid #E75C39; color: #16150F; font-size: 19px;
 }
 .post-body blockquote p { margin-bottom: 1em; }
 .post-body blockquote p:last-child { margin-bottom: 0; }
@@ -38,10 +38,10 @@ const POST_CSS = `
   max-width: 100%; height: auto; display: block;
   border-radius: 24px; box-shadow: 0 8px 28px rgba(0,0,0,.07);
 }
-.post-body figcaption { font-size: 14px; color: #555; margin-top: 12px; }
+.post-body figcaption { font-family: var(--font-mono); font-size: 12px; color: #56554F; margin-top: 12px; }
 .post-body iframe { width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; border-radius: 24px; }
-.post-body strong { color: #141413; }
-.post-body hr { border: 0; border-top: 1px solid rgba(20,20,19,.12); margin: 2.5em 0; }
+.post-body strong { color: #16150F; }
+.post-body hr { border: 0; border-top: 1px solid rgba(22,21,15,.12); margin: 2.5em 0; }
 .post-body sup { font-size: .7em; }
 `;
 
@@ -62,7 +62,7 @@ function PostHeader({ post }) {
 
       <div style={{
         display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap',
-        fontSize: 15, color: '#555',
+        fontSize: 15, color: '#56554F',
       }}>
         <span>{formatDate(post.date)}</span>
         <span aria-hidden="true">·</span>
@@ -70,8 +70,8 @@ function PostHeader({ post }) {
         <span aria-hidden="true">·</span>
         <span style={{
           fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 700,
-          letterSpacing: '.06em', color: '#141413',
-          border: '1px solid rgba(20,20,19,.25)', borderRadius: 999,
+          letterSpacing: '.06em', color: '#16150F',
+          border: '1px solid rgba(22,21,15,.25)', borderRadius: 999,
           padding: '4px 10px', lineHeight: 1,
         }}>
           {post.lang.toUpperCase()}
@@ -79,14 +79,14 @@ function PostHeader({ post }) {
       </div>
 
       {(bylineText || post.sourceName) &&
-      <p style={{ fontSize: 16, lineHeight: 1.5, color: '#262627', margin: '20px 0 0' }}>
+      <p style={{ fontSize: 16, lineHeight: 1.5, color: '#2E2E29', margin: '20px 0 0' }}>
         {bylineText}
         {bylineText && post.sourceName && <span aria-hidden="true"> · </span>}
         {post.sourceName && <>
           {tr ? 'İlk yayın: ' : 'Originally published at '}
           {post.sourceUrl ?
           <a href={post.sourceUrl} target="_blank" rel="noopener noreferrer" style={{
-            color: '#141413', textDecoration: 'underline',
+            color: '#16150F', textDecoration: 'underline',
             textDecorationColor: '#F37338', textUnderlineOffset: 3,
           }}>
               {post.sourceName}
@@ -111,7 +111,7 @@ function PostCover({ post }) {
            width={post.imageWidth || undefined} height={post.imageHeight || undefined}
            style={{
              display: 'block', width: '100%', height: 'auto', maxHeight: 560,
-             objectFit: 'cover', borderRadius: 24, background: '#E8E2DA',
+             objectFit: 'cover', borderRadius: 24, background: '#EAE8DF',
              boxShadow: '0 8px 28px rgba(0,0,0,.07)',
            }} />
     </figure>
@@ -134,7 +134,7 @@ function PostFooterCTA() {
   return (
     <section style={{ padding: '8px 0 64px' }}>
       <div style={{
-        borderTop: '1px solid rgba(20,20,19,.12)', paddingTop: 40,
+        borderTop: '1px solid rgba(22,21,15,.12)', paddingTop: 40,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         gap: 14, flexWrap: 'wrap',
       }}>

@@ -240,25 +240,25 @@ function AtAGlance() {
       <div className="container">
         <div style={{
           display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24,
-          borderTop: '1.5px solid #141413',
-          borderBottom: '1.5px solid #141413',
+          borderTop: '1.5px solid #16150F',
+          borderBottom: '1.5px solid #16150F',
           padding: '56px 0'
         }}>
           {ABOUT_STATS.map((s, i) =>
           <div key={i} style={{
             display: 'flex', flexDirection: 'column', gap: 16,
             paddingLeft: i === 0 ? 0 : 32,
-            borderLeft: i === 0 ? 'none' : '1px solid rgba(20,20,19,.15)'
+            borderLeft: i === 0 ? 'none' : '1px solid rgba(22,21,15,.15)'
           }}>
               <span style={{
               fontFamily: 'var(--font-sans)',
               fontSize: 'clamp(48px, 5vw, 80px)',
               fontWeight: 500, letterSpacing: '-.03em',
-              lineHeight: 1, color: '#141413'
+              lineHeight: 1, color: '#16150F'
             }}>
                 {s.value}
               </span>
-              <span style={{ fontSize: 14, lineHeight: 1.4, color: '#555', maxWidth: 220 }}>
+              <span style={{ fontSize: 14, lineHeight: 1.4, color: '#56554F', maxWidth: 220 }}>
                 {s.label}
               </span>
             </div>
@@ -275,7 +275,7 @@ function AtAGlance() {
 
 function TwoIdentities() {
   return (
-    <section style={{ background: '#FCFBFA', padding: '128px 0' }}>
+    <section style={{ background: '#FBFAF6', padding: '128px 0' }}>
       <div className="container">
         <div style={{
           display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 80,
@@ -344,7 +344,7 @@ function PillarBlock({ index, pillar }) {
     style={{
       display: 'grid', gridTemplateColumns: '160px 1fr',
       gap: 48, paddingTop: 48,
-      borderTop: '1.5px solid #141413',
+      borderTop: '1.5px solid #16150F',
       scrollMarginTop: 120
     }}>
       <div>
@@ -352,15 +352,15 @@ function PillarBlock({ index, pillar }) {
           fontFamily: 'var(--font-sans)',
           fontSize: 'clamp(56px, 6vw, 96px)',
           fontWeight: 500, letterSpacing: '-.03em',
-          lineHeight: 1, color: '#F37338'
+          lineHeight: 1, color: '#E75C39'
         }}>
           {String(index).padStart(2, '0')}
         </span>
         {pillar.id &&
         <div style={{
           marginTop: 14, fontFamily: 'var(--font-sans)', fontSize: 12,
-          fontWeight: 700, letterSpacing: '.04em', textTransform: 'uppercase',
-          color: '#555'
+          fontWeight: 500, letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
+          color: '#56554F'
         }}>
             #{pillar.id}
           </div>
@@ -377,7 +377,7 @@ function PillarBlock({ index, pillar }) {
           {pillar.title}
         </h3>
         <p style={{
-          fontSize: 18, lineHeight: 1.55, color: '#262627', margin: '0 0 28px'
+          fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29', margin: '0 0 28px'
         }}>
           {pillar.intro}
         </p>
@@ -389,7 +389,7 @@ function PillarBlock({ index, pillar }) {
           background: 'transparent',
           fontFamily: 'var(--font-sans)',
           fontSize: 17, fontStyle: 'italic',
-          lineHeight: 1.5, color: '#141413'
+          lineHeight: 1.5, color: '#16150F'
         }}>
             {pillar.methodSig}
           </blockquote>
@@ -397,9 +397,9 @@ function PillarBlock({ index, pillar }) {
 
         {pillar.subhead &&
         <h4 style={{
-          fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 700,
-          letterSpacing: '.04em', textTransform: 'uppercase',
-          color: '#141413', margin: '0 0 16px'
+          fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 500,
+          letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
+          color: '#16150F', margin: '0 0 16px'
         }}>
             {pillar.subhead}
           </h4>
@@ -412,14 +412,14 @@ function PillarBlock({ index, pillar }) {
         }}>
             {pillar.bullets.map((b, i) =>
           <li key={i} style={{
-            display: 'flex', gap: 14, fontSize: 16, lineHeight: 1.55, color: '#262627'
+            display: 'flex', gap: 14, fontSize: 16, lineHeight: 1.55, color: '#2E2E29'
           }}>
                 <span style={{
               flexShrink: 0, marginTop: 9, width: 6, height: 6,
               borderRadius: '50%', background: '#F37338'
             }} />
                 <span>
-                  <strong style={{ fontWeight: 500, color: '#141413' }}>{b.lead}</strong>
+                  <strong style={{ fontWeight: 500, color: '#16150F' }}>{b.lead}</strong>
                   {b.body}
                 </span>
               </li>
@@ -433,23 +433,23 @@ function PillarBlock({ index, pillar }) {
         }}>
             {pillar.projects.map((p, i) =>
           <div key={i} style={{
-            padding: 28, background: '#FCFBFA', borderRadius: 40
+            padding: 28, background: '#FBFAF6', borderRadius: 24
           }}>
                 <div style={{
-              fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 700,
-              letterSpacing: '.04em', textTransform: 'uppercase',
-              color: '#9A3A0A', marginBottom: 10
+              fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 500,
+              letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
+              color: '#BC4527', marginBottom: 10
             }}>
                   {p.meta}
                 </div>
                 <div style={{
               fontFamily: 'var(--font-sans)', fontSize: 22, fontWeight: 500,
               letterSpacing: '-.022em', lineHeight: 1.25, marginBottom: 12,
-              color: '#141413'
+              color: '#16150F'
             }}>
                   {p.title}
                 </div>
-                <p style={{ fontSize: 15, lineHeight: 1.55, color: '#555', margin: 0 }}>
+                <p style={{ fontSize: 15, lineHeight: 1.55, color: '#56554F', margin: 0 }}>
                   {p.body}
                 </p>
               </div>
@@ -460,18 +460,18 @@ function PillarBlock({ index, pillar }) {
         {pillar.pull &&
         <div style={{
           padding: '24px 28px',
-          background: '#141413', color: '#F3F0EE',
+          background: '#16150F', color: '#F5F2EB',
           borderRadius: 24, marginBottom: 28
         }}>
             <div style={{
-            fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 700,
-            letterSpacing: '.04em', textTransform: 'uppercase',
-            color: 'rgba(243,240,238,.6)', marginBottom: 10
+            fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 500,
+            letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
+            color: 'rgba(245,242,235,.6)', marginBottom: 10
           }}>
               {pillar.pull.label}
             </div>
             <p style={{
-            fontSize: 16, lineHeight: 1.55, margin: 0, color: '#F3F0EE'
+            fontSize: 16, lineHeight: 1.55, margin: 0, color: '#F5F2EB'
           }}>
               {pillar.pull.body}
             </p>
@@ -480,7 +480,7 @@ function PillarBlock({ index, pillar }) {
 
         {pillar.closing &&
         <p style={{
-          fontSize: 16, lineHeight: 1.55, color: '#262627',
+          fontSize: 16, lineHeight: 1.55, color: '#2E2E29',
           margin: '0 0 24px'
         }}>
             {pillar.closing}
@@ -503,7 +503,7 @@ function PillarBlock({ index, pillar }) {
 
 function Background() {
   return (
-    <section style={{ background: '#FCFBFA', padding: '128px 0' }}>
+    <section style={{ background: '#FBFAF6', padding: '128px 0' }}>
       <div className="container">
         <div style={{
           display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 80,
@@ -580,8 +580,8 @@ function AffiliationsSection() {
             gridTemplateColumns: '1.4fr 1.6fr 0.6fr',
             gap: 32, alignItems: 'baseline',
             padding: '32px 0',
-            borderTop: '1px solid rgba(20,20,19,.12)',
-            borderBottom: i === AFFILIATIONS.length - 1 ? '1px solid rgba(20,20,19,.12)' : 'none'
+            borderTop: '1px solid rgba(22,21,15,.12)',
+            borderBottom: i === AFFILIATIONS.length - 1 ? '1px solid rgba(22,21,15,.12)' : 'none'
           }}>
               <div style={{
               fontFamily: 'var(--font-sans)', fontSize: 22, fontWeight: 500,
@@ -589,10 +589,10 @@ function AffiliationsSection() {
             }}>
                 {it.name}
               </div>
-              <div style={{ fontSize: 16, lineHeight: 1.5, color: '#262627' }}>
+              <div style={{ fontSize: 16, lineHeight: 1.5, color: '#2E2E29' }}>
                 {it.role}
               </div>
-              <div style={{ fontSize: 14, color: '#555', textAlign: 'right' }}>
+              <div style={{ fontSize: 14, color: '#56554F', textAlign: 'right' }}>
                 {it.years}
               </div>
             </li>
@@ -641,8 +641,8 @@ function Personal() {
 function AboutClosingCTA() {
   return (
     <section style={{
-      background: '#FCFBFA', padding: '128px 0',
-      borderTop: '1px solid rgba(20,20,19,.08)'
+      background: '#FBFAF6', padding: '128px 0',
+      borderTop: '1px solid rgba(22,21,15,.08)'
     }}>
       <div className="container">
         <div style={{
@@ -654,7 +654,7 @@ function AboutClosingCTA() {
           </h2>
           <div>
             <p style={{
-              fontSize: 17, lineHeight: 1.55, color: '#262627',
+              fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55, color: '#2E2E29',
               margin: '0 0 28px', maxWidth: 460
             }}>
               I&rsquo;m always glad to hear from practitioners in competition and regulation,

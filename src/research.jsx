@@ -271,16 +271,16 @@ function ResearchHero() {
           </h1>
           <p style={{
             fontFamily: 'var(--font-sans)',
-            fontSize: 'clamp(20px, 2vw, 28px)',
+            fontFamily: 'var(--font-prose)', fontSize: 'clamp(20px, 2vw, 28px)',
             fontWeight: 500, letterSpacing: '-.02em',
-            lineHeight: 1.22, color: '#141413',
+            lineHeight: 1.22, color: '#16150F',
             margin: '0 0 32px', maxWidth: 880,
           }}>
             Using AI as a primary method to ask economic and competition-law questions
             that were previously infeasible at scale
           </p>
           <p style={{
-            fontSize: 18, lineHeight: 1.55, color: '#262627',
+            fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
             maxWidth: 780, margin: 0,
           }}>
             Plenty of researchers write about AI. I&rsquo;d rather use it. Over the past
@@ -298,7 +298,7 @@ function ResearchHero() {
 function MethodSignature() {
   return (
     <section style={{
-      background: '#141413', color: '#F3F0EE',
+      background: '#16150F', color: '#F5F2EB',
       padding: '128px 0', position: 'relative', overflow: 'hidden',
       marginTop: 48,
     }}>
@@ -309,16 +309,15 @@ function MethodSignature() {
           fontFamily: 'var(--font-sans)',
           fontSize: 'clamp(34px, 4.6vw, 76px)',
           fontWeight: 500, letterSpacing: '-.025em',
-          lineHeight: 1.08, color: '#F3F0EE',
+          lineHeight: 1.08, color: '#F5F2EB',
           margin: '28px 0 0', maxWidth: 1100,
-          fontStyle: 'italic',
         }}>
           AI-powered analysis of legal corpora — turning regulatory text into research-grade
           economic evidence
         </h2>
 
         <p style={{
-          fontSize: 18, lineHeight: 1.55, color: 'rgba(243,240,238,.85)',
+          fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: 'rgba(245,242,235,.85)',
           margin: '56px 0 48px', maxWidth: 820,
         }}>
           The method pairs three things:
@@ -337,20 +336,20 @@ function MethodSignature() {
                 fontFamily: 'var(--font-sans)',
                 fontSize: 48, fontWeight: 500,
                 letterSpacing: '-.02em', lineHeight: 1,
-                color: '#F37338', marginBottom: 24,
+                color: '#E75C39', marginBottom: 24,
               }}>
                 {String(i + 1).padStart(2, '0')}
               </div>
               <h3 style={{
                 fontFamily: 'var(--font-sans)', fontSize: 22, fontWeight: 500,
                 letterSpacing: '-.022em', lineHeight: 1.2,
-                color: '#F3F0EE', margin: '0 0 14px',
+                color: '#F5F2EB', margin: '0 0 14px',
               }}>
                 {step.title}
               </h3>
               <p style={{
                 fontSize: 15, lineHeight: 1.55,
-                color: 'rgba(243,240,238,.78)', margin: 0,
+                color: 'rgba(245,242,235,.78)', margin: 0,
               }}>
                 {step.body}
               </p>
@@ -359,8 +358,8 @@ function MethodSignature() {
         </ol>
 
         <p style={{
-          fontSize: 17, lineHeight: 1.55,
-          color: 'rgba(243,240,238,.85)',
+          fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55,
+          color: 'rgba(245,242,235,.85)',
           margin: '56px 0 0', maxWidth: 880,
         }}>
           The combination is what makes the work AI-native rather than AI-flavored: each step
@@ -394,8 +393,8 @@ function FlagshipCard({ project }) {
   const isForthcoming = project.status === 'Forthcoming';
   return (
     <article style={{
-      background: '#FCFBFA',
-      borderRadius: 40,
+      background: '#FBFAF6',
+      borderRadius: 24,
       padding: 48,
       display: 'grid',
       gridTemplateColumns: '1.4fr 1fr',
@@ -409,21 +408,21 @@ function FlagshipCard({ project }) {
           fontWeight: 500, letterSpacing: '-.022em', lineHeight: 1.1,
           margin: '20px 0 12px',
         }}>
-          <em>{project.title}</em>
+          {project.title}
         </h3>
         {project.workingTitle && (
           <p style={{
-            fontSize: 15, color: '#555', margin: '0 0 16px',
+            fontSize: 15, color: '#56554F', margin: '0 0 16px',
             lineHeight: 1.4,
           }}>
-            <span style={{ fontWeight: 500, color: '#141413' }}>Working title: </span>
-            <em>{project.workingTitle}</em>
+            <span style={{ fontWeight: 500, color: '#16150F' }}>Working title: </span>
+            {project.workingTitle}
           </p>
         )}
         {project.coauthors && (
           <p style={{
             fontSize: 14, fontWeight: 700, letterSpacing: '.04em',
-            textTransform: 'uppercase', color: '#9A3A0A',
+            textTransform: 'uppercase', color: '#BC4527',
             margin: '0 0 24px',
           }}>
             Co-authors · {project.coauthors}
@@ -433,7 +432,7 @@ function FlagshipCard({ project }) {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           {project.summary.map((para, i) => (
             <p key={i} style={{
-              fontSize: 16, lineHeight: 1.55, color: '#262627', margin: 0,
+              fontSize: 16, lineHeight: 1.55, color: '#2E2E29', margin: 0,
             }}>
               {para}
             </p>
@@ -450,11 +449,11 @@ function FlagshipCard({ project }) {
 
       <div style={{
         padding: '32px 0 0',
-        borderTop: '1.5px solid #141413',
+        borderTop: '1.5px solid #16150F',
       }}>
         <h4 style={{
-          fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 700,
-          letterSpacing: '.04em', textTransform: 'uppercase',
+          fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 500,
+          letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
           margin: '0 0 20px',
         }}>
           {project.whyLabel || 'Why it matters'}
@@ -466,7 +465,7 @@ function FlagshipCard({ project }) {
           {project.why.map((w, i) => (
             <li key={i} style={{
               display: 'flex', gap: 14,
-              fontSize: 15, lineHeight: 1.55, color: '#262627',
+              fontSize: 15, lineHeight: 1.55, color: '#2E2E29',
             }}>
               <span style={{
                 flexShrink: 0, marginTop: 9, width: 6, height: 6,
@@ -487,15 +486,15 @@ function StatusPill({ status, meta }) {
     <div style={{
       display: 'inline-flex', alignItems: 'center', gap: 12,
       padding: '8px 18px', borderRadius: 999,
-      background: isPublished ? '#141413' : 'transparent',
-      color: isPublished ? '#F3F0EE' : '#141413',
-      border: isPublished ? 'none' : '1.5px dashed rgba(20,20,19,.55)',
+      background: isPublished ? '#16150F' : 'transparent',
+      color: isPublished ? '#F5F2EB' : '#16150F',
+      border: isPublished ? 'none' : '1.5px dashed rgba(22,21,15,.55)',
       fontSize: 12, fontWeight: 700, letterSpacing: '.06em',
       textTransform: 'uppercase',
     }}>
       <span style={{
         width: 7, height: 7, borderRadius: '50%',
-        background: isPublished ? '#F37338' : '#9A3A0A',
+        background: isPublished ? '#F37338' : '#BC4527',
       }} />
       {status}
       {meta && (
@@ -523,13 +522,13 @@ function SelectedPublications() {
             Where the questions come from
           </h2>
           <p style={{
-            fontSize: 18, lineHeight: 1.55, color: '#262627',
+            fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
             margin: 0, maxWidth: 720,
           }}>
             The AI-native work above grows out of twenty years of research on competition policy,
             network industries, and digital regulation. A curated subset is below;
             the full list lives on the <a href="cv.html" style={{
-              color: '#141413', textDecoration: 'underline', textUnderlineOffset: 3,
+              color: '#16150F', textDecoration: 'underline', textUnderlineOffset: 3,
             }}>CV page</a>.
           </p>
         </div>
@@ -540,10 +539,10 @@ function SelectedPublications() {
         <PubGroup title="Selected reports & working papers" items={PUBS_REPORTS} />
 
         <p style={{
-          fontSize: 15, color: '#555', margin: '24px 0 0',
+          fontSize: 15, color: '#56554F', margin: '24px 0 0',
         }}>
           Full publication list: <a href="cv.html" style={{
-            color: '#141413', textDecoration: 'underline', textUnderlineOffset: 3,
+            color: '#16150F', textDecoration: 'underline', textUnderlineOffset: 3,
           }}>/cv</a>.
         </p>
       </div>
@@ -555,9 +554,9 @@ function PubGroup({ title, items }) {
   return (
     <div style={{ marginBottom: 56 }}>
       <h3 style={{
-        fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 700,
-        letterSpacing: '.04em', textTransform: 'uppercase',
-        color: '#141413', margin: '0 0 8px',
+        fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
+        letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
+        color: '#16150F', margin: '0 0 8px',
       }}>
         {title}
       </h3>
@@ -567,13 +566,13 @@ function PubGroup({ title, items }) {
             display: 'grid', gridTemplateColumns: '80px 1fr auto',
             gap: 24, alignItems: 'baseline',
             padding: '22px 0',
-            borderTop: '1px solid rgba(20,20,19,.12)',
-            borderBottom: i === items.length - 1 ? '1px solid rgba(20,20,19,.12)' : 'none',
+            borderTop: '1px solid rgba(22,21,15,.12)',
+            borderBottom: i === items.length - 1 ? '1px solid rgba(22,21,15,.12)' : 'none',
           }}>
-            <span style={{ fontSize: 14, color: '#555', whiteSpace: 'nowrap' }}>{p.year}</span>
+            <span style={{ fontSize: 14, color: '#56554F', whiteSpace: 'nowrap' }}>{p.year}</span>
             <div>
               <p style={{
-                fontSize: 17, lineHeight: 1.5, color: '#141413', margin: 0,
+                fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.5, color: '#16150F', margin: 0,
               }}>
                 <strong style={{ fontWeight: 500 }}>{p.authors}</strong>{' '}
                 ({p.year}). <em>{p.title}</em>{' '}
@@ -582,7 +581,7 @@ function PubGroup({ title, items }) {
                 ) : (
                   <span>{p.venue}</span>
                 )}
-                {p.note && <span style={{ color: '#555' }}> {p.note}</span>}
+                {p.note && <span style={{ color: '#56554F' }}> {p.note}</span>}
               </p>
             </div>
             {/* A few Turkish-language chapters have no stable public URL; those
@@ -592,9 +591,9 @@ function PubGroup({ title, items }) {
                  aria-label={`Open “${p.title.replace(/\.$/, '')}” at the publisher`}
                  style={{
                    width: 40, height: 40, borderRadius: '50%',
-                   border: '1px solid rgba(20,20,19,.4)',
+                   border: '1px solid rgba(22,21,15,.4)',
                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                   color: '#141413', textDecoration: 'none', flexShrink: 0,
+                   color: '#16150F', textDecoration: 'none', flexShrink: 0,
                  }}>
                 <IconArrow size={12} dir="up-right" />
               </a>
@@ -626,7 +625,7 @@ function RenderVenue({ text, italic }) {
 function ResearchInterests() {
   return (
     <section id="interests" style={{
-      background: '#FCFBFA', padding: '128px 0',
+      background: '#FBFAF6', padding: '128px 0',
       scrollMarginTop: 120,
     }}>
       <div className="container">
@@ -648,16 +647,16 @@ function ResearchInterests() {
               <li key={i} style={{
                 display: 'flex', gap: 18,
                 paddingBottom: 20,
-                borderBottom: i === INTERESTS.length - 1 ? 'none' : '1px solid rgba(20,20,19,.12)',
+                borderBottom: i === INTERESTS.length - 1 ? 'none' : '1px solid rgba(22,21,15,.12)',
               }}>
                 <span style={{
                   flexShrink: 0, marginTop: 11, width: 6, height: 6,
                   borderRadius: '50%', background: '#F37338',
                 }} />
                 <p style={{
-                  fontSize: 17, lineHeight: 1.55, color: '#262627', margin: 0,
+                  fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55, color: '#2E2E29', margin: 0,
                 }}>
-                  <strong style={{ fontWeight: 500, color: '#141413' }}>{it.lead}</strong>{' '}
+                  <strong style={{ fontWeight: 500, color: '#16150F' }}>{it.lead}</strong>{' '}
                   {it.body}
                 </p>
               </li>
@@ -686,7 +685,7 @@ function ResearchClosingCTA() {
           </h2>
           <div>
             <p style={{
-              fontSize: 17, lineHeight: 1.55, color: '#262627',
+              fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55, color: '#2E2E29',
               margin: '0 0 28px', maxWidth: 460,
             }}>
               If you work on AI methods for legal or regulatory text, on citation networks, on

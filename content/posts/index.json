@@ -27,7 +27,9 @@
     "sourceUrl": null,
     "readingMin": 1,
     "words": 250,
-    "native": true
+    "native": true,
+    "image": "/blog-media/intellectual-dna-network.jpg",
+    "coverInBody": true
   },
   {
     "slug": "yapay-zeka-ile-binlerce-rekabet-kurulu-kararini-inceledik",

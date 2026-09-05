@@ -38,7 +38,7 @@ function ContactHero() {
               Get in touch
             </h1>
           </div>
-          <p style={{ fontSize: 18, lineHeight: 1.55, color: '#262627',
+          <p style={{ fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
             margin: 0 }}>
             Email is the most reliable way to reach me. If you're working on
             a competition or regulation matter where AI could change the
@@ -58,9 +58,9 @@ function ContactHero() {
 
 function ChannelCard({ label, value, helper, href, target, primary }) {
   const [hover, setHover] = useContactState(false);
-  const bg = primary ? '#141413' : '#FCFBFA';
-  const fg = primary ? '#F3F0EE' : '#141413';
-  const mutedFg = primary ? 'rgba(243,240,238,.72)' : '#555';
+  const bg = primary ? '#16150F' : '#FBFAF6';
+  const fg = primary ? '#F5F2EB' : '#16150F';
+  const mutedFg = primary ? 'rgba(245,242,235,.72)' : '#56554F';
   return (
     <a href={href} target={target}
     rel={target === '_blank' ? 'noopener noreferrer' : undefined}
@@ -68,8 +68,8 @@ function ChannelCard({ label, value, helper, href, target, primary }) {
     style={{
       position: 'relative',
       background: bg, color: fg,
-      borderRadius: 40,
-      border: primary ? '1.5px solid #141413' : '1px solid rgba(20,20,19,.12)',
+      borderRadius: 24,
+      border: primary ? '1.5px solid #16150F' : '1px solid rgba(22,21,15,.12)',
       padding: primary ? '40px 36px 36px' : '36px 32px 32px',
       minHeight: primary ? 320 : 280,
       display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
@@ -79,9 +79,9 @@ function ChannelCard({ label, value, helper, href, target, primary }) {
     }}>
       <div>
         <span style={{
-          fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 700,
-          letterSpacing: '0.04em', textTransform: 'uppercase',
-          color: primary ? '#F3F0EE' : '#141413',
+          fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
+          letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
+          color: primary ? '#F5F2EB' : '#16150F',
           display: 'inline-flex', alignItems: 'center', gap: 10, lineHeight: 1
         }}>
           <span style={{ width: 6, height: 6, borderRadius: '50%',
@@ -90,7 +90,7 @@ function ChannelCard({ label, value, helper, href, target, primary }) {
           {primary &&
           <span style={{
             marginLeft: 8, padding: '4px 10px', borderRadius: 999,
-            background: '#F37338', color: '#141413',
+            background: '#F37338', color: '#16150F',
             fontSize: 11, letterSpacing: '0.08em'
           }}>
               Primary
@@ -113,14 +113,14 @@ function ChannelCard({ label, value, helper, href, target, primary }) {
         </p>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12,
-        color: primary ? '#F3F0EE' : '#141413',
+        color: primary ? '#F5F2EB' : '#16150F',
         fontFamily: 'var(--font-sans)',
         fontSize: 14, fontWeight: 500, letterSpacing: '-.02em' }}>
         <span style={{
           width: primary ? 52 : 44, height: primary ? 52 : 44,
           borderRadius: '50%',
-          background: primary ? '#FCFBFA' : '#141413',
-          color: primary ? '#141413' : '#F3F0EE',
+          background: primary ? '#FBFAF6' : '#16150F',
+          color: primary ? '#16150F' : '#F5F2EB',
           display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
           transform: hover ? 'translateX(2px)' : 'none',
           transition: 'transform 180ms cubic-bezier(0.4,0,0.2,1)'
@@ -205,17 +205,17 @@ function OpenToColumn({ heading, items }) {
         {items.map((it, i) =>
         <li key={i} style={{
           padding: '20px 0',
-          borderTop: '1px solid rgba(20,20,19,.14)',
-          borderBottom: i === items.length - 1 ? '1px solid rgba(20,20,19,.14)' : 'none',
+          borderTop: '1px solid rgba(22,21,15,.14)',
+          borderBottom: i === items.length - 1 ? '1px solid rgba(22,21,15,.14)' : 'none',
           display: 'grid', gridTemplateColumns: '20px 1fr', gap: 16,
           alignItems: 'start',
-          fontSize: 16, lineHeight: 1.45, color: '#141413'
+          fontSize: 16, lineHeight: 1.45, color: '#16150F'
         }}>
             <span style={{
             display: 'inline-flex', alignItems: 'center',
             justifyContent: 'center',
             width: 18, height: 18, borderRadius: '50%',
-            background: '#F37338', color: '#141413',
+            background: '#F37338', color: '#16150F',
             marginTop: 3
           }}>
               <svg width="9" height="9" viewBox="0 0 24 24" fill="none"
@@ -244,7 +244,7 @@ function OpenTo() {
               Good fits
             </h2>
           </div>
-          <p style={{ fontSize: 18, lineHeight: 1.55, color: '#262627',
+          <p style={{ fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
             margin: 0, maxWidth: 640 }}>
             If your inquiry looks like one of these, we'll probably have
             something to talk about.
@@ -270,7 +270,7 @@ function SpeakingMedia() {
     <section className="section" style={{ paddingTop: 16, paddingBottom: 96 }}>
       <div className="container">
         <div style={{
-          background: '#FCFBFA', borderRadius: 40, padding: '64px 56px',
+          background: '#FBFAF6', borderRadius: 24, padding: '64px 56px',
           display: 'grid', gridTemplateColumns: '1fr 1.4fr',
           gap: 64, alignItems: 'start'
         }}>
@@ -285,7 +285,7 @@ function SpeakingMedia() {
               For interview, podcast, panel, or keynote inquiries
             </h2>
           </div>
-          <p style={{ fontSize: 17, lineHeight: 1.55, color: '#262627',
+          <p style={{ fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55, color: '#2E2E29',
             margin: 0, maxWidth: 620 }}>
             I speak in both English and Turkish. The topics where I'm most
             useful: AI in legal and economic practice, AI-native research
@@ -313,8 +313,8 @@ function Location() {
           display: 'grid', gridTemplateColumns: '1fr 1.6fr',
           gap: 64, alignItems: 'center',
           padding: '64px 0',
-          borderTop: '1px solid rgba(20,20,19,.12)',
-          borderBottom: '1px solid rgba(20,20,19,.12)'
+          borderTop: '1px solid rgba(22,21,15,.12)',
+          borderBottom: '1px solid rgba(22,21,15,.12)'
         }}>
           <div>
             <Eyebrow>Location</Eyebrow>
@@ -322,7 +322,7 @@ function Location() {
 
             </h2>
           </div>
-          <p style={{ fontSize: 18, lineHeight: 1.55, color: '#262627',
+          <p style={{ fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
             margin: 0, maxWidth: 620 }}>
             Available for remote collaboration worldwide; able to travel
             within Europe for selected engagements.
@@ -351,7 +351,7 @@ function Confidentiality() {
             fontSize: 'clamp(20px, 1.8vw, 26px)',
             fontWeight: 450, lineHeight: 1.35,
             letterSpacing: '-0.015em',
-            color: '#141413', margin: 0, maxWidth: 760
+            color: '#16150F', margin: 0, maxWidth: 760
           }}>
             All client-side work runs on confidentiality-grade legal AI
             platforms; non-confidential academic and writing work runs on
@@ -381,8 +381,8 @@ function StickyMailto() {
       display: 'inline-flex', alignItems: 'center', gap: 10,
       padding: '14px 22px 14px 18px',
       borderRadius: 999,
-      background: hover ? '#1f1f1e' : '#141413',
-      color: '#F3F0EE',
+      background: hover ? '#BC4527' : '#16150F',
+      color: '#F5F2EB',
       fontFamily: 'var(--font-sans)', fontSize: 15, fontWeight: 500,
       letterSpacing: '-0.02em',
       boxShadow: '0 14px 32px rgba(0,0,0,.18)',
@@ -391,7 +391,7 @@ function StickyMailto() {
     }}>
       <span style={{
         width: 28, height: 28, borderRadius: '50%',
-        background: '#F37338', color: '#141413',
+        background: '#F37338', color: '#16150F',
         display: 'inline-flex', alignItems: 'center', justifyContent: 'center'
       }}>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"

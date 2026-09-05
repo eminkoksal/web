@@ -494,13 +494,13 @@ function Citation({ pub }) {
       display: 'grid', gridTemplateColumns: '64px 1fr auto',
       gap: 16, alignItems: 'baseline',
       padding: '18px 0',
-      borderTop: '1px solid rgba(20,20,19,.1)'
+      borderTop: '1px solid rgba(22,21,15,.1)'
     }}>
-      <span style={{ fontSize: 13, color: '#555', whiteSpace: 'nowrap' }}>
+      <span style={{ fontSize: 13, color: '#56554F', whiteSpace: 'nowrap' }}>
         {pub.year || ''}
       </span>
       <p style={{
-        fontSize: 15, lineHeight: 1.5, color: '#141413', margin: 0
+        fontSize: 15, lineHeight: 1.5, color: '#16150F', margin: 0
       }}>
         <strong style={{ fontWeight: 500 }}>{pub.authors}</strong>
         {pub.year ? ` (${pub.year}). ` : ' '}
@@ -509,8 +509,8 @@ function Citation({ pub }) {
             rather than as links that go nowhere. */}
         {pub.href ? (
           <a href={pub.href} target="_blank" rel="noopener noreferrer" style={{
-            color: '#141413', textDecoration: 'none', fontStyle: 'italic',
-            borderBottom: '1px solid rgba(20,20,19,.3)'
+            color: '#16150F', textDecoration: 'none', fontStyle: 'italic',
+            borderBottom: '1px solid rgba(22,21,15,.3)'
           }}>
             {pub.title}
           </a>
@@ -518,11 +518,11 @@ function Citation({ pub }) {
           <em>{pub.title}</em>
         )}{' '}
         {pub.venueItalic ? venuePart(pub.venue, pub.venueItalic) : pub.venue}
-        {pub.note && <span style={{ color: '#555' }}> {pub.note}</span>}
+        {pub.note && <span style={{ color: '#56554F' }}> {pub.note}</span>}
       </p>
       <span className="cv-cite__ext" style={{
-        fontSize: 12, color: '#9A3A0A', fontWeight: 700,
-        letterSpacing: '.04em', textTransform: 'uppercase'
+        fontSize: 12, color: '#BC4527', fontWeight: 500,
+        letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)'
       }}>
         {pub.highlight ? 'AI-native' : ''}
       </span>
@@ -534,9 +534,9 @@ function PubGroup({ id, title, items }) {
   return (
     <div style={{ marginBottom: 48 }}>
       <h4 className="cv-pub-group" style={{
-        fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 700,
-        letterSpacing: '.04em', textTransform: 'uppercase',
-        color: '#141413', margin: '0 0 12px'
+        fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
+        letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
+        color: '#16150F', margin: '0 0 12px'
       }}>
         {title}
       </h4>
@@ -558,7 +558,7 @@ function CVHeader({ index, eyebrow, title }) {
       <div style={{
         fontFamily: 'var(--font-sans)',
         fontSize: 16, fontWeight: 500,
-        letterSpacing: '.04em', color: '#F37338'
+        letterSpacing: '.08em', color: '#BC4527'
       }}>
         {index}
       </div>
@@ -583,7 +583,7 @@ function CVSection({ id, index, eyebrow, title, children, pageBreak, alt }) {
     style={{
       padding: '96px 0',
       scrollMarginTop: 140,
-      background: alt ? '#FCFBFA' : 'transparent'
+      background: alt ? '#FBFAF6' : 'transparent'
     }}>
       <div className="container">
         <CVHeader index={index} eyebrow={eyebrow} title={title} />
@@ -606,21 +606,21 @@ function PositionRow({ role, org, years }) {
       display: 'grid', gridTemplateColumns: '1.2fr 1.6fr 0.6fr',
       gap: 24, alignItems: 'baseline',
       padding: '22px 0',
-      borderTop: '1px solid rgba(20,20,19,.12)'
+      borderTop: '1px solid rgba(22,21,15,.12)'
     }}>
       <div style={{
         fontFamily: 'var(--font-sans)', fontSize: 19, fontWeight: 500,
-        letterSpacing: '-.015em', lineHeight: 1.3, color: '#141413'
+        letterSpacing: '-.015em', lineHeight: 1.3, color: '#16150F'
       }}>
         {role}
       </div>
       <div style={{
-        fontSize: 16, color: '#262627', lineHeight: 1.5, fontStyle: 'italic'
+        fontSize: 16, color: '#2E2E29', lineHeight: 1.5, fontStyle: 'italic'
       }}>
         {org}
       </div>
       <div style={{
-        fontSize: 14, color: '#555', textAlign: 'right', whiteSpace: 'nowrap'
+        fontSize: 14, color: '#56554F', textAlign: 'right', whiteSpace: 'nowrap'
       }}>
         {years}
       </div>
@@ -652,13 +652,13 @@ function CVHero() {
             </h1>
             <p style={{
               fontFamily: 'var(--font-sans)', fontSize: 'clamp(18px, 1.8vw, 22px)',
-              fontWeight: 500, letterSpacing: '-.018em', color: '#141413',
+              fontWeight: 500, letterSpacing: '-.018em', color: '#16150F',
               margin: 0, lineHeight: 1.35
             }}>Associate Professor of Economics · AI Consultant · Researcher
 
             </p>
             <p style={{
-              fontSize: 14, color: '#555', margin: '12px 0 0',
+              fontSize: 14, color: '#56554F', margin: '12px 0 0',
               letterSpacing: '.02em'
             }}>
               Last updated: February 2026
@@ -678,12 +678,12 @@ function CVHero() {
 
         <div className="cv-contact" style={{
           display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24,
-          borderTop: '1px solid rgba(20,20,19,.15)',
+          borderTop: '1px solid rgba(22,21,15,.15)',
           marginTop: 64, paddingTop: 24
         }}>
-          <Meta label="Email" value={<a href="mailto:mail@eminkoksal.com" style={{ color: '#141413', textDecoration: 'underline', textUnderlineOffset: 3 }}>mail@eminkoksal.com</a>} />
-          <Meta label="Web" value={<a href="https://eminkoksal.com" target="_blank" rel="noopener noreferrer" style={{ color: '#141413', textDecoration: 'underline', textUnderlineOffset: 3 }}>eminkoksal.com</a>} />
-          <Meta label="LinkedIn" value={<a href="https://linkedin.com/in/eminkoksal" target="_blank" rel="noopener noreferrer" style={{ color: '#141413', textDecoration: 'underline', textUnderlineOffset: 3 }}>linkedin.com/in/eminkoksal</a>} />
+          <Meta label="Email" value={<a href="mailto:mail@eminkoksal.com" style={{ color: '#16150F', textDecoration: 'underline', textUnderlineOffset: 3 }}>mail@eminkoksal.com</a>} />
+          <Meta label="Web" value={<a href="https://eminkoksal.com" target="_blank" rel="noopener noreferrer" style={{ color: '#16150F', textDecoration: 'underline', textUnderlineOffset: 3 }}>eminkoksal.com</a>} />
+          <Meta label="LinkedIn" value={<a href="https://linkedin.com/in/eminkoksal" target="_blank" rel="noopener noreferrer" style={{ color: '#16150F', textDecoration: 'underline', textUnderlineOffset: 3 }}>linkedin.com/in/eminkoksal</a>} />
           <Meta label="Based in" value="Türkiye" />
         </div>
       </div>
@@ -696,11 +696,11 @@ function Meta({ label, value }) {
     <div>
       <div style={{
         fontSize: 12, fontWeight: 700, letterSpacing: '.04em',
-        textTransform: 'uppercase', color: '#555', marginBottom: 6
+        textTransform: 'uppercase', color: '#56554F', marginBottom: 6
       }}>
         {label}
       </div>
-      <div style={{ fontSize: 15, color: '#141413' }}>{value}</div>
+      <div style={{ fontSize: 15, color: '#16150F' }}>{value}</div>
     </div>);
 
 }
@@ -732,10 +732,10 @@ function CVTOC() {
   return (
     <nav className="cv-toc" style={{
       position: 'sticky', top: 96, zIndex: 40,
-      background: 'rgba(243,240,238,.92)',
+      background: 'rgba(245,242,235,.92)',
       backdropFilter: 'blur(8px)',
-      borderTop: '1px solid rgba(20,20,19,.12)',
-      borderBottom: '1px solid rgba(20,20,19,.12)',
+      borderTop: '1px solid rgba(22,21,15,.12)',
+      borderBottom: '1px solid rgba(22,21,15,.12)',
       marginBottom: 16
     }}>
       <div className="container" style={{
@@ -744,9 +744,9 @@ function CVTOC() {
         overflowX: 'auto'
       }}>
         <span style={{
-          fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 700,
-          letterSpacing: '.06em', textTransform: 'uppercase',
-          color: '#555', flexShrink: 0
+          fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 500,
+          letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
+          color: '#56554F', flexShrink: 0
         }}>
           On this page
         </span>
@@ -761,8 +761,8 @@ function CVTOC() {
               padding: '8px 14px', borderRadius: 999,
               fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 500,
               letterSpacing: '-.01em', whiteSpace: 'nowrap',
-              color: active === t.id ? '#F3F0EE' : '#141413',
-              background: active === t.id ? '#141413' : 'transparent',
+              color: active === t.id ? '#F5F2EB' : '#16150F',
+              background: active === t.id ? '#16150F' : 'transparent',
               textDecoration: 'none',
               transition: 'background 180ms cubic-bezier(0.4,0,0.2,1), color 180ms'
             }}>
@@ -820,8 +820,8 @@ function CVApp() {
             </thead>
             <tbody>
               {EDUCATION.map((e, i) =>
-              <tr key={i} style={{ borderTop: '1px solid rgba(20,20,19,.12)' }}>
-                  <td style={{ ...tdStyle, color: '#555', whiteSpace: 'nowrap' }}>{e.years}</td>
+              <tr key={i} style={{ borderTop: '1px solid rgba(22,21,15,.12)' }}>
+                  <td style={{ ...tdStyle, color: '#56554F', whiteSpace: 'nowrap' }}>{e.years}</td>
                   <td style={{ ...tdStyle, fontStyle: 'italic' }}>{e.institution}</td>
                   <td style={{ ...tdStyle, fontWeight: 500 }}>{e.degree}</td>
                 </tr>
@@ -829,7 +829,7 @@ function CVApp() {
             </tbody>
           </table>
           <p style={{
-            fontSize: 15, color: '#262627', lineHeight: 1.55,
+            fontSize: 15, color: '#2E2E29', lineHeight: 1.55,
             margin: '24px 0 0', maxWidth: 760
           }}>
             <strong style={{ fontWeight: 500 }}>
@@ -886,9 +886,9 @@ function CVApp() {
             <li key={i} style={{
               display: 'inline-flex', alignItems: 'center',
               padding: '10px 18px', borderRadius: 999,
-              border: '1px solid rgba(20,20,19,.25)',
+              border: '1px solid rgba(22,21,15,.25)',
               fontSize: 15, fontWeight: 500, letterSpacing: '-.015em',
-              background: '#FCFBFA'
+              background: '#FBFAF6'
             }}>
                 {it}
               </li>
@@ -904,7 +904,7 @@ function CVApp() {
               display: 'grid', gridTemplateColumns: '1fr auto',
               gap: 24, alignItems: 'baseline',
               padding: '18px 0',
-              borderTop: '1px solid rgba(20,20,19,.1)'
+              borderTop: '1px solid rgba(22,21,15,.1)'
             }}>
                 <div style={{
                 fontFamily: 'var(--font-sans)', fontSize: 17, fontWeight: 500,
@@ -912,7 +912,7 @@ function CVApp() {
               }}>
                   {c.title}
                 </div>
-                <div style={{ fontSize: 13, color: '#555', fontStyle: 'italic' }}>
+                <div style={{ fontSize: 13, color: '#56554F', fontStyle: 'italic' }}>
                   {c.level}
                 </div>
               </li>
@@ -926,7 +926,7 @@ function CVApp() {
               display: 'grid', gridTemplateColumns: '1.2fr 1.4fr 0.6fr',
               gap: 24, alignItems: 'baseline',
               padding: '18px 0',
-              borderTop: '1px solid rgba(20,20,19,.1)'
+              borderTop: '1px solid rgba(22,21,15,.1)'
             }}>
                 <div style={{
                 fontFamily: 'var(--font-sans)', fontSize: 17, fontWeight: 500,
@@ -934,10 +934,10 @@ function CVApp() {
               }}>
                   {c.title}
                 </div>
-                <div style={{ fontSize: 15, color: '#262627', fontStyle: 'italic' }}>
+                <div style={{ fontSize: 15, color: '#2E2E29', fontStyle: 'italic' }}>
                   {c.org}
                 </div>
-                <div style={{ fontSize: 14, color: '#555', textAlign: 'right' }}>
+                <div style={{ fontSize: 14, color: '#56554F', textAlign: 'right' }}>
                   {c.years}
                 </div>
               </li>
@@ -955,9 +955,9 @@ function CVApp() {
             {REFEREE_FOR.map((j, i) =>
             <li key={i} style={{
               padding: '14px 0',
-              borderTop: '1px solid rgba(20,20,19,.1)',
+              borderTop: '1px solid rgba(22,21,15,.1)',
               fontSize: 16, fontStyle: 'italic',
-              color: '#141413'
+              color: '#16150F'
             }}>
                 {j}
               </li>
@@ -977,9 +977,9 @@ function CVApp() {
 
         <CVSection id="personal" index="11" eyebrow="Personal" title="A few details for the record">
           <p style={{
-            fontFamily: 'var(--font-sans)', fontSize: 'clamp(20px, 2vw, 28px)',
+            fontFamily: 'var(--font-prose)', fontFamily: 'var(--font-prose)', fontSize: 'clamp(20px, 2vw, 28px)',
             fontWeight: 500, letterSpacing: '-.018em', lineHeight: 1.3,
-            color: '#141413', margin: 0, maxWidth: 880
+            color: '#16150F', margin: 0, maxWidth: 880
           }}>
             Turkish citizen · Married · Keen gravel cyclist · Amateur astronomer
           </p>
@@ -992,23 +992,23 @@ function CVApp() {
           <div className="container">
             <div style={{
               padding: '48px',
-              background: '#141413', color: '#F3F0EE',
-              borderRadius: 40,
+              background: '#16150F', color: '#F5F2EB',
+              borderRadius: 24,
               display: 'grid', gridTemplateColumns: '1.4fr 1fr',
               gap: 48, alignItems: 'end'
             }}>
               <p style={{
-                fontSize: 18, lineHeight: 1.55,
-                color: 'rgba(243,240,238,.9)', margin: 0, maxWidth: 640
+                fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55,
+                color: 'rgba(245,242,235,.9)', margin: 0, maxWidth: 640
               }}>
                 The latest PDF version of this CV is available for download above.
                 For collaboration or speaking inquiries, reach out by{' '}
                 <a href="mailto:mail@eminkoksal.com" style={{
-                  color: '#F3F0EE', textDecoration: 'underline', textUnderlineOffset: 3
+                  color: '#F5F2EB', textDecoration: 'underline', textUnderlineOffset: 3
                 }}>email</a>
                 {' '}or{' '}
                 <a href="https://linkedin.com/in/eminkoksal" target="_blank" rel="noopener noreferrer" style={{
-                  color: '#F3F0EE', textDecoration: 'underline', textUnderlineOffset: 3
+                  color: '#F5F2EB', textDecoration: 'underline', textUnderlineOffset: 3
                 }}>LinkedIn</a>.
               </p>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -1016,7 +1016,7 @@ function CVApp() {
                   Download PDF <IconDownload size={14} />
                 </Button>
                 <Button variant="ghost" href="contact.html"
-                style={{ borderColor: 'rgba(255,255,255,.4)', color: '#F3F0EE' }}>
+                style={{ borderColor: 'rgba(255,255,255,.4)', color: '#F5F2EB' }}>
                   Get in touch <IconArrow size={14} dir="up-right" />
                 </Button>
               </div>
@@ -1032,19 +1032,19 @@ function CVApp() {
 /* ---------- inline styles reused ---------- */
 const thStyle = {
   textAlign: 'left', padding: '12px 16px 12px 0',
-  fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 700,
-  letterSpacing: '.04em', textTransform: 'uppercase',
-  color: '#555', borderBottom: '1.5px solid #141413'
+  fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 500,
+  letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
+  color: '#56554F', borderBottom: '1.5px solid #16150F'
 };
 const tdStyle = {
   padding: '20px 16px 20px 0',
   fontFamily: 'var(--font-sans)', fontSize: 17, lineHeight: 1.4,
-  color: '#141413', verticalAlign: 'top'
+  color: '#16150F', verticalAlign: 'top'
 };
 const subheadStyle = {
-  fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 700,
-  letterSpacing: '.04em', textTransform: 'uppercase',
-  color: '#141413', margin: '0 0 12px'
+  fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
+  letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
+  color: '#16150F', margin: '0 0 12px'
 };
 
 export default CVApp;
