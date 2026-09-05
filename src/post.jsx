@@ -69,7 +69,7 @@ function PostHeader({ post }) {
         <span>{post.readingMin} {tr ? 'dk okuma' : 'min read'}</span>
         <span aria-hidden="true">·</span>
         <span style={{
-          fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 700,
+          fontFamily: 'var(--font-mono)', fontSize: 11, fontWeight: 500,
           letterSpacing: '.06em', color: '#16150F',
           border: '1px solid rgba(22,21,15,.25)', borderRadius: 999,
           padding: '4px 10px', lineHeight: 1,

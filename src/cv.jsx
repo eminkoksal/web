@@ -509,7 +509,7 @@ function Citation({ pub }) {
             rather than as links that go nowhere. */}
         {pub.href ? (
           <a href={pub.href} target="_blank" rel="noopener noreferrer" style={{
-            color: '#16150F', textDecoration: 'none', fontStyle: 'italic',
+            color: '#16150F', textDecoration: 'none',
             borderBottom: '1px solid rgba(22,21,15,.3)'
           }}>
             {pub.title}
@@ -615,7 +615,7 @@ function PositionRow({ role, org, years }) {
         {role}
       </div>
       <div style={{
-        fontSize: 16, color: '#2E2E29', lineHeight: 1.5, fontStyle: 'italic'
+        fontSize: 16, color: '#2E2E29', lineHeight: 1.5
       }}>
         {org}
       </div>
@@ -695,7 +695,7 @@ function Meta({ label, value }) {
   return (
     <div>
       <div style={{
-        fontSize: 12, fontWeight: 700, letterSpacing: '.04em',
+        fontSize: 12, fontWeight: 500, letterSpacing: '.08em', fontFamily: 'var(--font-mono)',
         textTransform: 'uppercase', color: '#56554F', marginBottom: 6
       }}>
         {label}
@@ -822,7 +822,7 @@ function CVApp() {
               {EDUCATION.map((e, i) =>
               <tr key={i} style={{ borderTop: '1px solid rgba(22,21,15,.12)' }}>
                   <td style={{ ...tdStyle, color: '#56554F', whiteSpace: 'nowrap' }}>{e.years}</td>
-                  <td style={{ ...tdStyle, fontStyle: 'italic' }}>{e.institution}</td>
+                  <td style={{ ...tdStyle }}>{e.institution}</td>
                   <td style={{ ...tdStyle, fontWeight: 500 }}>{e.degree}</td>
                 </tr>
               )}
@@ -912,7 +912,7 @@ function CVApp() {
               }}>
                   {c.title}
                 </div>
-                <div style={{ fontSize: 13, color: '#56554F', fontStyle: 'italic' }}>
+                <div style={{ fontSize: 13, color: '#56554F' }}>
                   {c.level}
                 </div>
               </li>
@@ -934,7 +934,7 @@ function CVApp() {
               }}>
                   {c.title}
                 </div>
-                <div style={{ fontSize: 15, color: '#2E2E29', fontStyle: 'italic' }}>
+                <div style={{ fontSize: 15, color: '#2E2E29' }}>
                   {c.org}
                 </div>
                 <div style={{ fontSize: 14, color: '#56554F', textAlign: 'right' }}>
@@ -956,7 +956,7 @@ function CVApp() {
             <li key={i} style={{
               padding: '14px 0',
               borderTop: '1px solid rgba(22,21,15,.1)',
-              fontSize: 16, fontStyle: 'italic',
+              fontSize: 16,
               color: '#16150F'
             }}>
                 {j}

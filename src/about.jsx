@@ -385,10 +385,10 @@ function PillarBlock({ index, pillar }) {
         {pillar.methodSig &&
         <blockquote style={{
           margin: '0 0 32px', padding: '20px 28px',
-          borderLeft: '3px solid #F37338',
+          borderLeft: '1.5px solid #E75C39',
           background: 'transparent',
-          fontFamily: 'var(--font-sans)',
-          fontSize: 17, fontStyle: 'italic',
+          fontFamily: 'var(--font-prose)',
+          fontSize: 19,
           lineHeight: 1.5, color: '#16150F'
         }}>
             {pillar.methodSig}
@@ -623,7 +623,7 @@ function Personal() {
           </div>
 
           <div className="prose" style={{ maxWidth: 640 }}>
-            <p style={{ fontSize: 20 }}>I live at the intersection of the Aegean and the Mediterranean. Off the page,
+            <p style={{ fontFamily: 'var(--font-prose)', fontSize: 20 }}>I live at the intersection of the Aegean and the Mediterranean. Off the page,
             it&rsquo;s gravel cycling and amateur astronomy — two hobbies that reward
             patience and good instruments. I collaborate remotely worldwide.
             </p>

@@ -421,7 +421,7 @@ function FlagshipCard({ project }) {
         )}
         {project.coauthors && (
           <p style={{
-            fontSize: 14, fontWeight: 700, letterSpacing: '.04em',
+            fontSize: 14, fontWeight: 500, letterSpacing: '.08em', fontFamily: 'var(--font-mono)',
             textTransform: 'uppercase', color: '#BC4527',
             margin: '0 0 24px',
           }}>
@@ -489,7 +489,7 @@ function StatusPill({ status, meta }) {
       background: isPublished ? '#16150F' : 'transparent',
       color: isPublished ? '#F5F2EB' : '#16150F',
       border: isPublished ? 'none' : '1.5px dashed rgba(22,21,15,.55)',
-      fontSize: 12, fontWeight: 700, letterSpacing: '.06em',
+      fontSize: 12, fontWeight: 500, letterSpacing: '.08em', fontFamily: 'var(--font-mono)',
       textTransform: 'uppercase',
     }}>
       <span style={{
@@ -571,7 +571,7 @@ function PubGroup({ title, items }) {
           }}>
             <span style={{ fontSize: 14, color: '#56554F', whiteSpace: 'nowrap' }}>{p.year}</span>
             <div>
-              <p style={{
+              <p style={{ fontFamily: 'var(--font-prose)',
                 fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.5, color: '#16150F', margin: 0,
               }}>
                 <strong style={{ fontWeight: 500 }}>{p.authors}</strong>{' '}

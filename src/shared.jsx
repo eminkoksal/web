@@ -92,8 +92,8 @@ function Button({ children, variant = 'primary', href, onClick, style, target, r
   };
   const variants = {
     primary:   { background: '#16150F', color: '#F5F2EB' },
-    secondary: { background: '#FBFAF6', color: '#16150F', fontWeight: 450 },
-    ghost:     { background: 'transparent', color: '#16150F', fontWeight: 450 },
+    secondary: { background: '#FBFAF6', color: '#16150F', fontWeight: 400 },
+    ghost:     { background: 'transparent', color: '#16150F', fontWeight: 400 },
     inverse:   { background: '#FBFAF6', color: '#16150F', border: '1.5px solid #FBFAF6' },
   };
   const [hover, setHover] = useState(false);
@@ -356,7 +356,7 @@ function FooterColumn({ title, links }) {
                 target={l.ext ? '_blank' : undefined}
                 rel={l.ext ? 'noopener noreferrer' : undefined}
                 style={{
-                fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 450,
+                fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 400,
                 color: '#FFFFFF', textDecoration: 'none',
                 display: 'inline-flex', alignItems: 'center', gap: 6,
               }}>
@@ -365,7 +365,7 @@ function FooterColumn({ title, links }) {
               </a>
             ) : (
               <span style={{
-                fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 450,
+                fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 400,
                 color: 'rgba(255,255,255,.75)',
               }}>{l.label}</span>
             )}

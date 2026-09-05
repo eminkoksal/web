@@ -349,7 +349,7 @@ function Confidentiality() {
           <p style={{
             fontFamily: 'var(--font-sans)',
             fontSize: 'clamp(20px, 1.8vw, 26px)',
-            fontWeight: 450, lineHeight: 1.35,
+            fontWeight: 400, lineHeight: 1.35,
             letterSpacing: '-0.015em',
             color: '#16150F', margin: 0, maxWidth: 760
           }}>

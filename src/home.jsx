@@ -368,7 +368,7 @@ function FeaturedCard({ eyebrow, title, body, meta, cta, href, external }) {
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         paddingTop: 8, borderTop: '1px solid rgba(22,21,15,.12)'
       }}>
-        <span style={{ fontSize: 13, color: '#56554F', fontStyle: 'italic' }}>{meta}</span>
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: '#56554F' }}>{meta}</span>
         <span style={{
           fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
           letterSpacing: '-.02em',
@@ -596,7 +596,7 @@ function Field({ label, children }) {
   return (
     <label style={{ display: 'block', marginBottom: 16 }}>
       <div style={{
-        fontSize: 12, fontWeight: 700, letterSpacing: '.04em',
+        fontSize: 12, fontWeight: 500, letterSpacing: '.08em', fontFamily: 'var(--font-mono)',
         textTransform: 'uppercase', color: '#56554F', marginBottom: 8
       }}>
         {label}
