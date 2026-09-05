@@ -52,7 +52,7 @@ function PostHeader({ post }) {
 
   return (
     <header style={{ paddingTop: 96 }}>
-      <Eyebrow>{post.topic}</Eyebrow>
+      <Eyebrow><span lang="en">{post.topic}</span></Eyebrow>
       <h1 className="display" style={{
         fontSize: 'clamp(36px, 4.6vw, 72px)',
         margin: '28px 0 24px', maxWidth: 980,
@@ -100,6 +100,24 @@ function PostHeader({ post }) {
 
 }
 
+/* Cover = the WordPress featured image. Natural aspect ratio, capped in
+   height so square and portrait covers don't push the text off-screen;
+   skipped when the same picture already opens the body. */
+function PostCover({ post }) {
+  if (!post.image || post.coverInBody) return null;
+  return (
+    <figure style={{ margin: '48px 0 0', maxWidth: 860 }}>
+      <img src={post.image} alt=""
+           width={post.imageWidth || undefined} height={post.imageHeight || undefined}
+           style={{
+             display: 'block', width: '100%', height: 'auto', maxHeight: 560,
+             objectFit: 'cover', borderRadius: 24, background: '#E8E2DA',
+             boxShadow: '0 8px 28px rgba(0,0,0,.07)',
+           }} />
+    </figure>
+  );
+}
+
 function PostBody({ post }) {
   return (
     <section style={{ padding: '56px 0 48px' }}>
@@ -138,6 +156,7 @@ function PostApp({ post }) {
       <main>
         <div className="container">
           <PostHeader post={post} />
+          <PostCover post={post} />
           <PostBody post={post} />
           <PostFooterCTA />
         </div>

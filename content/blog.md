@@ -18,7 +18,7 @@
 
 **Lead paragraph**
 
-> Essays, working notes, and shorter posts from where economics, competition policy, and AI tools meet in day-to-day analytical work. Some pieces are written for academics, some for practitioners; most try to serve both. Mostly in English, with occasional Turkish posts where the audience is primarily Turkish.
+> Essays, working notes, and shorter posts from where economics, competition policy, and AI tools meet in day-to-day analytical work. Some pieces are written for academics, some for practitioners; most try to serve both. In English or Turkish, depending on who the piece is for. The archive goes back to 2013.
 
 ---
 

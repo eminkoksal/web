@@ -53,8 +53,8 @@ function BlogHero() {
             Essays, working notes, and shorter posts from where economics,
             competition policy, and AI tools meet in day-to-day analytical
             work. Some pieces are written for academics, some for
-            practitioners; most try to serve both. Mostly in English, with
-            occasional Turkish posts where the audience is primarily Turkish.
+            practitioners; most try to serve both. In English or Turkish,
+            depending on who the piece is for. The archive goes back to 2013.
           </p>
         </div>
       </div>
@@ -139,10 +139,17 @@ function FeaturedPost() {
           </div>
           <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
             <a href={postHref(p)} style={{ position: 'relative', display: 'block', textDecoration: 'none' }}>
-              <Portrait
-                size={360}
-                gradient="radial-gradient(circle at 35% 35%, #F79E1B 0%, #F37338 45%, #CF4500 100%)"
-              />
+              {p.image ? (
+                <div aria-hidden="true" style={{
+                  width: 360, height: 360, borderRadius: '50%',
+                  background: `#E8E2DA url(${p.image}) center/cover`,
+                }} />
+              ) : (
+                <Portrait
+                  size={360}
+                  gradient="radial-gradient(circle at 35% 35%, #F79E1B 0%, #F37338 45%, #CF4500 100%)"
+                />
+              )}
               <span style={{
                 position: 'absolute', left: '50%', bottom: 34, transform: 'translateX(-50%)',
                 display: 'inline-flex', alignItems: 'center', gap: 8,
@@ -172,10 +179,19 @@ function PostCard({ p, n }) {
     }}>
       <a href={postHref(p)} style={{ display: 'block', textDecoration: 'none' }}>
         <div style={{ position: 'relative', width: '100%', aspectRatio: '1.05/1' }}>
-          <div style={{
-            width: '100%', height: '100%',
-            borderRadius: 40, background: CARD_GRADS[n % CARD_GRADS.length],
-          }} />
+          {p.image ? (
+            <img src={p.image} alt="" loading="lazy"
+                 width={p.imageWidth || undefined} height={p.imageHeight || undefined}
+                 style={{
+                   width: '100%', height: '100%', objectFit: 'cover', display: 'block',
+                   borderRadius: 40, background: '#E8E2DA',
+                 }} />
+          ) : (
+            <div style={{
+              width: '100%', height: '100%',
+              borderRadius: 40, background: CARD_GRADS[n % CARD_GRADS.length],
+            }} />
+          )}
           <div style={{ position: 'absolute', left: 20, top: 20 }}>
             <span style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
@@ -191,7 +207,8 @@ function PostCard({ p, n }) {
             position: 'absolute', right: 20, bottom: 20,
             fontFamily: 'var(--font-sans)', fontSize: 11, fontWeight: 700,
             letterSpacing: '0.08em', textTransform: 'uppercase',
-            color: '#FFFFFF', opacity: 0.78,
+            color: '#F3F0EE', background: 'rgba(20,20,19,.72)',
+            padding: '6px 10px', borderRadius: 999, lineHeight: 1,
           }}>
             {p.lang.toUpperCase()}
           </div>

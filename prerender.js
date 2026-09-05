@@ -26,6 +26,7 @@ const htmlFor = {
 };
 
 const ROOT_DIV = '<div id="root"></div>';
+const SITE = 'https://eminkoksal.com';
 
 for (const name of pageNames) {
   const fileName = htmlFor[name];
@@ -79,7 +80,8 @@ for (const meta of posts) {
     .replaceAll('__POST_TITLE__', escAttr(meta.title))
     .replaceAll('__POST_DESC__', escAttr(metaDesc(meta.excerpt)))
     .replaceAll('__POST_SLUG__', meta.slug)
-    .replaceAll('__POST_LANG__', meta.lang || 'en');
+    .replaceAll('__POST_LANG__', meta.lang || 'en')
+    .replaceAll('__POST_IMAGE__', SITE + (meta.image || '/assets/portrait.jpg'));
 
   if (!html.includes(ROOT_DIV)) {
     throw new Error(`Could not find ${ROOT_DIV} in blog-post template.`);
@@ -103,7 +105,6 @@ fs.rmSync(templatePath);
 /* RSS 2.0 feed at dist/feed.xml — the only subscribe channel the site
    offers, so it carries the full post body rather than just an excerpt. */
 
-const SITE = 'https://eminkoksal.com';
 const escText = (s) => s
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
@@ -118,7 +119,9 @@ const feedItems = [...posts]
   .sort((a, b) => (a.date < b.date ? 1 : -1))
   .map((p) => {
     const url = `${SITE}/blog/${p.slug}.html`;
-    const body = absolutize(
+    const cover = p.image && !p.coverInBody ?
+      `<p><img src="${SITE}${p.image}" alt=""></p>\n` : '';
+    const body = cover + absolutize(
       fs.readFileSync(path.join(postsDir, `${p.slug}.html`), 'utf8'));
     return `    <item>
       <title>${escText(p.title)}</title>
