@@ -128,7 +128,7 @@ function HeroEditorial({ t }) {
           position: 'relative', zIndex: 1, paddingTop: 80
         }}>
           <div>
-            <Eyebrow>Economist · Associate Professor · AI Consultant</Eyebrow>
+            <Eyebrow>Economist · AI Consultant · Associate Professor</Eyebrow>
             <h1 className="display" style={{ margin: '28px 0 28px' }}>
               Emin Köksal
             </h1>
