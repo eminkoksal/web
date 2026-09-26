@@ -175,7 +175,7 @@
 - Köksal, E. & Yurtseven, C. (2018). *The Effects of the Increase in the Number of University Students on the Growth of the Movie Industry in Turkey.* *International Review of Economics and Management*, 6(3), 103–116. *(in Turkish)*
 - Erbil, C., Köksal, E., & Yurtseven, C. (2017). *Mall Flicks: The Mall Boom in Turkey with an Unexpected Byproduct: The Movie Sector Expansion.* *Research in World Economy*, 8(1), 1–17.
 - Anıl, B. & Köksal, E. (2016). *Who Uses the Internet in Turkey and For What Purposes?* *İktisadi ve İdari Bilimler Dergisi*, 38(1), 1–13. *(in Turkish)*
-- Akben-Selçuk, E., Köksal, E., & Altıok-Yılmaz, A. D. (2016). *The Impact of Merger and Acquisition Transactions at the Company and Industry Level: A Literature Review.* *Business & Management Studies*, 4(1), 48–62. *(in Turkish)*
+- Akben-Selçuk, E., Köksal, E., & Altıok-Yılmaz, A. D. (2016). *The Impact of Merger and Acquisition Transactions at the Company and Industry Level: A Literature Review.* *Business & Management Studies*, 4(1), 86–106. *(in Turkish)*
 - Ardıyok, Ş., Demirkan, H., Köksal, E., & Yüksel, B. (2015). *Assessment of Net Neutrality Regulations and Traffic Management Activities in Mobile Communications from the Perspective of Competition Law.* *Competition Journal*, 16(3), 51–100. *(in Turkish)*
 - Ardıyok, Ş., Köksal, E., & Yüksel, B. (2015). *An Evaluation Concerning the New Ex-Ante Regulations for the Prevention of Margin Squeeze in the Electronic Communication Market in Turkey.* *Competition Journal*, 16(2), 3–42. *(in Turkish)*
 - Köksal, E. & Anıl, B. (2015). *The Determinants of Broadband Access and Usage in Turkey: Do Regions Matter?* *Topics in Middle Eastern and African Economies*, 17(1), 114–133.

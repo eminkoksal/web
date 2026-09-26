@@ -36,6 +36,19 @@ The build runs three steps: `vite build` (client bundles), `vite build --ssr`
 (server bundle for prerendering), then `node prerender.js` (injects static HTML
 into each page's `#root`). Output is in `dist/`.
 
+## CV PDF
+
+The CV page and the downloadable PDF share one source: `src/cv-data.jsx`.
+`src/cv-print.jsx` is the A4 print edition (styles in `scripts/cv-pdf/cv-print.css`,
+Emin Style fonts in `scripts/cv-pdf/fonts/`). After editing the CV content or
+`CV_UPDATED`, regenerate and commit the PDF:
+
+```bash
+npm run cv-pdf   # build, then headless Chrome -> public/assets/Emin-Koksal-CV.pdf
+```
+
+Needs Google Chrome locally (or `CHROME_PATH`); the deploy workflow does not run it.
+
 ## Deploy
 
 Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds and

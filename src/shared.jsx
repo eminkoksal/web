@@ -7,6 +7,14 @@ const { useState, useEffect, useRef } = React;
    Update the filename here and in public/ together when a new CV ships. */
 const CV_PDF = 'assets/Emin-Koksal-CV.pdf';
 
+/* Research profiles: the footer and the CV PDF both read these. */
+const PROFILES = {
+  scholar: 'https://scholar.google.com/citations?user=nt6BrEEAAAAJ',
+  orcid: 'https://orcid.org/0000-0003-4232-3193',
+  ssrn: 'https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1656111',
+  linkedin: 'https://www.linkedin.com/in/eminkoksal',
+};
+
 /* ------- Icons ------- */
 function IconArrow({ size = 16, dir = 'right' }) {
   const r = { right: 0, up: -45, 'up-right': -45, left: 180, down: 90 }[dir] || 0;
@@ -257,9 +265,9 @@ function Footer() {
     {
       title: 'Research profiles',
       links: [
-        { label: 'Google Scholar', ext: true, href: 'https://scholar.google.com/citations?user=nt6BrEEAAAAJ' },
-        { label: 'ORCID', ext: true, href: 'https://orcid.org/0000-0003-4232-3193' },
-        { label: 'SSRN', ext: true, href: 'https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1656111' },
+        { label: 'Google Scholar', ext: true, href: PROFILES.scholar },
+        { label: 'ORCID', ext: true, href: PROFILES.orcid },
+        { label: 'SSRN', ext: true, href: PROFILES.ssrn },
         { label: 'LinkedIn', ext: true, href: 'https://www.linkedin.com/in/eminkoksal' },
         { label: 'RSS feed', ext: true, href: 'feed.xml' },
       ],
@@ -329,7 +337,7 @@ function Footer() {
             <span>No trackers, no analytics, no cookies</span>
           </div>
           <div style={{ display: 'flex', gap: 14 }}>
-            <SocialIcon kind="scholar" label="Google Scholar" href="https://scholar.google.com/citations?user=nt6BrEEAAAAJ" />
+            <SocialIcon kind="scholar" label="Google Scholar" href={PROFILES.scholar} />
             <SocialIcon kind="linkedin" label="LinkedIn" href="https://www.linkedin.com/in/eminkoksal" />
             <SocialIcon kind="x" label="X / Twitter" href="https://x.com/eminkoksal" />
             <SocialIcon kind="instagram" label="Instagram" href="https://instagram.com/emnkksl" />
@@ -402,7 +410,7 @@ function OrbitalArc() {
 
 /* ES module exports — consumed by every page module */
 export {
-  CV_PDF,
+  CV_PDF, PROFILES,
   IconArrow, IconSearch, IconDownload, IconChevron,
   Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA,
   Nav, Footer, OrbitalArc,

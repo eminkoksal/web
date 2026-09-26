@@ -7,6 +7,9 @@ import CV from './cv.jsx';
 import Blog from './blog.jsx';
 import Contact from './contact.jsx';
 import Post from './post.jsx';
+import CvPrint from './cv-print.jsx';
+
+export { CV_UPDATED } from './cv-data.jsx';
 
 const pages = {
   home: Home,
@@ -27,6 +30,11 @@ export function render(name) {
 /** Render a single blog post (index.json record + bodyHtml) to static HTML. */
 export function renderPost(post) {
   return renderToString(<Post post={post} />);
+}
+
+/** Render the A4 print edition of the CV (scripts/cv-pdf.mjs turns it into the PDF). */
+export function renderCvPrint() {
+  return renderToString(<CvPrint />);
 }
 
 export const pageNames = Object.keys(pages);

@@ -5,3 +5,4 @@ dist-server/
 .DS_Store
 .vite/
 __pycache__/
+dist-cv/
