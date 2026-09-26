@@ -3,6 +3,8 @@
 > Drop-in content for the Blog index page. Aligned with `brand-guide.md` (verbal identity). Visual design lives in Claude Design. English. The page is a landing for writing — the new site builder will plug in the actual post feed (most builders generate this automatically from posts). What's below is the editorial framing around that feed.
 >
 > **Voice note (2026-06-11 rewrite):** copy revised for a more human register. Facts unchanged.
+>
+> **Voice note (2026-09-26 pass):** copy revised to the `emin-english-voice` register: verdict first, one aphorism and one vivid example per page at most, no em-dashes, no contractions in prose, American spelling except published titles, no consultancy phrasing. Facts unchanged.
 
 ---
 
@@ -18,7 +20,7 @@
 
 **Lead paragraph**
 
-> Essays, working notes, and shorter posts from where economics, competition policy, and AI tools meet in day-to-day analytical work. Some pieces are written for academics, some for practitioners; most try to serve both. In English or Turkish, depending on who the piece is for. The archive goes back to 2013.
+> Essays, working notes, and shorter posts from where economics, competition policy, and AI meet in day-to-day analytical work. Some pieces are written for academics and some for practitioners; most try to serve both. The language follows the reader, which is why two posts in three are in Turkish. The archive goes back to 2013.
 
 ---
 
@@ -132,4 +134,4 @@
 
 ## SEO meta description (≤155 chars)
 
-> *Writing by Emin Köksal — essays and notes on AI in economic research, competition policy, and legal practice.*
+> *Writing by Emin Köksal: essays and notes on AI in economic research, competition policy, and legal practice.*

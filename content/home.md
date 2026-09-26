@@ -2,7 +2,7 @@
 
 > Drop-in content for the homepage of the new site. Aligned with `brand-guide.md` (verbal identity). Visual design (colors, typography, spacing, components) is handled in Claude Design. English. Each section is a self-contained block; the new site builder can split or reorder as needed.
 >
-> **Voice note (2026-06-11 rewrite):** copy revised for a more human register — shorter sentences, varied rhythm, fewer em-dashes, no "X, not Y" constructions, no self-referential brand commentary. Facts unchanged.
+> **Voice note (2026-09-26 pass):** copy revised to the `emin-english-voice` register (the Turkish Emin in fluent English): verdict first, concede then rule, one aphorism and one vivid example per page at most, no em-dashes, no contractions in prose, American spelling except published titles, no consultancy phrasing. Builds on the 2026-06-11 humanizing rewrite. Facts unchanged.
 
 ---
 
@@ -22,7 +22,7 @@
 
 **Lead paragraph** *(max ~95 words)*
 
-> I've spent twenty years in competition economics, as a professor, a journal editor, and a consultant to law firms. A few years ago I started using AI tools in my own research to save time, and they ended up changing how I work. Today I design AI workflows for competition and regulation teams at international law firms, train practitioners on legal AI platforms, and publish research that uses AI to read a quarter-century of regulatory decisions at once.
+> I have spent twenty years in competition economics, as an academic and, since 2015, as an economist working inside a law firm's competition team. I started using AI to save time on my own research. It ended up changing how I do the work. Today I design AI workflows for competition and regulation teams and train the lawyers and economists who use them. My latest paper had an AI model read all 9,995 published decisions of the Turkish Competition Board.
 
 **Primary CTA buttons** *(two, side by side)*
 
@@ -43,19 +43,19 @@
 
 **Intro paragraph**
 
-> Everything here draws on the same foundation: twenty years of competition economics, and daily hands-on use of the most capable AI tools available. It's an odd pairing on paper, but each part makes the others better.
+> On paper it is an odd pairing: twenty years of competition economics and daily use of the newest AI tools. In practice each feeds the other. The economics decides which question a workflow should answer, and the workflows let my research ask questions that were too large to ask by hand.
 
 **Pillar grid** *(four cards)*
 
 ### Card 1 — Academic Economics & Teaching
 
-> The foundation. Associate Professor of Economics, with 50+ publications, a co-edited Routledge volume, and the Associate Editor-in-Chief role at *Competition and Regulation in Network Industries* (SAGE). I've taught every year since 2002, and still do.
+> Where the rest comes from. I am an Associate Professor of Economics, with 50+ publications, a co-edited Routledge volume, and the Associate Editor-in-Chief role at *Competition and Regulation in Network Industries* (SAGE). I have taught every year since 2002, and still do.
 
 **Card link:** `Read more →` *(to /about#academic)*
 
 ### Card 2 — AI Strategy & Workflow Design
 
-> I build AI workflows for competition and regulation teams at international law firms: playbooks, complex prompts, MCP-based research infrastructure. Then I train the people who use them. Everything I teach, I've run on real work first.
+> I build AI workflows for competition and regulation teams at international law firms: playbooks, complex prompts, MCP-based research infrastructure. Then I train the people who use them. Everything I teach, I have run on a live matter first.
 
 **Card link:** `Read more →` *(to /about#ai-strategy)*
 
@@ -65,9 +65,9 @@
 
 **Card link:** `Explore the research →` *(to /research)*
 
-### Card 4 — Public Thought Leadership
+### Card 4 — Writing & Talks
 
-> Essays and talks on AI, competition, and regulation, for academic and professional audiences alike.
+> I have written for a general audience since 2013, mostly in Turkish, on competition cases, platform regulation, climate policy, and now AI. The whole archive is on this site. I also give talks, to academic and professional audiences alike.
 
 **Card link:** `Read the blog →` *(to /blog)*
 
@@ -105,7 +105,7 @@
 
 > **The Intellectual DNA of the Turkish Competition Board**
 >
-> With C. Peker and M. Üyer, we mapped the 18,513 citations connecting all 9,995 published decisions of the Board: which decisions everything else leans on, and where the doctrine quietly shifts.
+> With C. Peker and M. Üyer, we mapped the 18,513 citations connecting all 9,995 published decisions of the Board: which decisions everything else leans on, and where the doctrine changed course.
 >
 > *SSRN, 2026.* `Read the paper →` *(direct to SSRN: papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258)*
 
@@ -146,7 +146,7 @@
 
 **Body**
 
-> Most of my work is with competition and regulation teams at international law firms and consultancies, alongside academic collaborations and my own research. If what you're doing overlaps with any of that, send me a note and tell me about it.
+> Most of my work is with competition and regulation teams at international law firms and consultancies, alongside academic collaborations and my own research. If what you are doing overlaps with any of that, send me a note about it.
 
 **CTA buttons**
 

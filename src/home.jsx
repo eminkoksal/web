@@ -20,10 +20,10 @@ const PILLARS = [
 {
   title: 'Academic Economics & Teaching',
   body:
-  'The foundation. Associate Professor of Economics, with 50+ publications, ' +
-  'a co-edited Routledge volume, and the Associate Editor-in-Chief role at Competition ' +
-  'and Regulation in Network Industries (SAGE). I’ve taught every year since 2002, ' +
-  'and still do.',
+  'Where the rest comes from. I am an Associate Professor of Economics, with 50+ ' +
+  'publications, a co-edited Routledge volume, and the Associate Editor-in-Chief role at ' +
+  'Competition and Regulation in Network Industries (SAGE). I have taught every year ' +
+  'since 2002, and still do.',
   cta: 'Read more',
   href: 'about.html#academic'
 },
@@ -32,7 +32,7 @@ const PILLARS = [
   body:
   'I build AI workflows for competition and regulation teams at international law ' +
   'firms: playbooks, complex prompts, MCP-based research infrastructure. Then I train ' +
-  'the people who use them. Everything I teach, I’ve run on real work first.',
+  'the people who use them. Everything I teach, I have run on a live matter first.',
   cta: 'Read more',
   href: 'about.html#ai-strategy'
 },
@@ -47,10 +47,11 @@ const PILLARS = [
   href: 'research.html'
 },
 {
-  title: 'Public Thought Leadership',
+  title: 'Writing & Talks',
   body:
-  'Essays and talks on AI, competition, and regulation, for academic and professional ' +
-  'audiences alike.',
+  'I have written for a general audience since 2013, mostly in Turkish, on competition ' +
+  'cases, platform regulation, climate policy, and now AI. The whole archive is on this ' +
+  'site. I also give talks, to academic and professional audiences alike.',
   cta: 'Read the blog',
   href: 'blog.html'
 }];
@@ -86,7 +87,7 @@ const FEATURED = [
   body:
   'With C. Peker and M. Üyer, we mapped the 18,513 citations connecting all 9,995 ' +
   'published decisions of the Board: which decisions everything else leans on, and ' +
-  'where the doctrine quietly shifts.',
+  'where the doctrine changed course.',
   meta: 'SSRN, 2026',
   cta: 'Read the paper',
   href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258',
@@ -145,13 +146,13 @@ function HeroEditorial({ t }) {
               fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
               maxWidth: 560, margin: '0 0 40px'
             }}>
-              I&rsquo;ve spent twenty years in competition economics, as a professor, a
-              journal editor, and a consultant to law firms. A few years ago I started
-              using AI tools in my own research to save time, and they ended up changing
-              how I work. Today I design AI workflows for competition and regulation
-              teams at international law firms, train practitioners on legal AI
-              platforms, and publish research that uses AI to read a quarter-century of
-              regulatory decisions at once.
+              I have spent twenty years in competition economics, as an academic and,
+              since 2015, as an economist working inside a law firm&rsquo;s competition
+              team. I started using AI to save time on my own research. It ended up
+              changing how I do the work. Today I design AI workflows for competition
+              and regulation teams and train the lawyers and economists who use them.
+              My latest paper had an AI model read all 9,995 published decisions of
+              the Turkish Competition Board.
             </p>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
               <Button variant="primary" href="research.html">
@@ -213,10 +214,11 @@ function FourPillars() {
             fontFamily: 'var(--font-prose)', fontSize: 19, lineHeight: 1.55, color: '#2E2E29',
             margin: 0, maxWidth: 720
           }}>
-            Everything here draws on the same foundation: twenty years of
-            competition economics, and daily hands-on use of the most capable
-            AI tools available. It&rsquo;s an odd pairing on paper, but each part
-            makes the others better.
+            On paper it is an odd pairing: twenty years of competition economics
+            and daily use of the newest AI tools. In practice each feeds the other.
+            The economics decides which question a workflow should answer, and the
+            workflows let my research ask questions that were too large to ask by
+            hand.
           </p>
         </div>
 
@@ -514,8 +516,8 @@ function ClosingCTA() {
             }}>
               Most of my work is with competition and regulation teams at international
               law firms and consultancies, alongside academic collaborations and my own
-              research. If what you&rsquo;re doing overlaps with any of that, send me a
-              note and tell me about it.
+              research. If what you are doing overlaps with any of that, send me a
+              note about it.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <Button variant="primary" href="contact.html">

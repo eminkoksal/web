@@ -3,6 +3,8 @@
 > Drop-in content for the Contact page. Aligned with `brand-guide.md` (verbal identity). Visual design lives in Claude Design. English. Short by design — the page is a doorway, not a brochure.
 >
 > **Voice note (2026-06-11 rewrite):** copy revised for a more human register. Facts unchanged.
+>
+> **Voice note (2026-09-26 pass):** copy revised to the `emin-english-voice` register: verdict first, one aphorism and one vivid example per page at most, no em-dashes, no contractions in prose, American spelling except published titles, no consultancy phrasing. Facts unchanged.
 
 ---
 
@@ -18,7 +20,7 @@
 
 **Lead paragraph** *(max ~70 words)*
 
-> Email is the most reliable way to reach me. If you're working on a competition or regulation matter where AI could change the workflow, building AI infrastructure for a research or consulting team, writing about AI in legal practice, or putting together a course, panel, or talk — tell me about it.
+> Email is the most reliable way to reach me. Write if you have a competition or regulation matter where AI could change the workflow, if you are building AI infrastructure for a research or consulting team, or if you are writing about AI in legal practice. The same goes for courses, panels, and talks. A few lines on what you are working on are enough to start.
 
 ---
 
@@ -61,17 +63,17 @@
 
 **Body**
 
-> If your inquiry looks like one of these, we'll probably have something to talk about.
+> If your inquiry looks like one of these, we will probably have something to talk about.
 
 **Two-column list** *(left = consulting/practice; right = research/academic)*
 
 | Consulting & Practice | Research & Academic |
 |----------------------|---------------------|
-| AI workflow audits and playbook design for competition / regulation teams | Co-authored papers on AI methods for legal or regulatory text analysis |
+| AI workflow audits and playbook design for competition and regulation teams | Co-authored papers on AI methods for legal or regulatory text analysis |
 | Practitioner training on legal AI platforms | Citation network and case law mapping collaborations |
 | Complex prompt, agent, and MCP design for analytical work | Conference invitations, panels, and keynote talks |
 | Expert economic testimony in competition and regulatory matters | Doctoral committee membership and external thesis examination |
-| Strategic AI adoption advisory for senior leadership | Editorial work, peer review, and special issue invitations |
+| Advice to partners and senior management on AI adoption | Editorial work, peer review, and special issue invitations |
 
 ---
 
@@ -87,7 +89,7 @@
 
 **Body**
 
-> I speak in both English and Turkish. The topics where I'm most useful: AI in legal and economic practice, AI-native research methods for regulatory corpora, citation network analysis, competition policy in digital markets, and the economics of digitalization. For media or programming inquiries, a one-line description of the format, date window, and audience is all I need to give you a quick answer.
+> I speak in English and Turkish. I am most useful on AI in legal and economic practice, AI-native research methods for regulatory corpora, citation network analysis, competition policy in digital markets, and the economics of digitalization. For media or programming inquiries, a line on the format, the date window, and the audience is all I need to give you a quick answer.
 
 ---
 
@@ -113,7 +115,7 @@
 
 **Body**
 
-> All client-side work runs on confidentiality-grade legal AI platforms; non-confidential academic and writing work runs on general-purpose tools. If your inquiry involves sensitive material, say so in your first email and I'll route the conversation accordingly.
+> All client-side work runs on confidentiality-grade legal AI platforms; non-confidential academic and writing work runs on general-purpose tools. If your inquiry involves sensitive material, say so in your first email and I will route the conversation accordingly.
 
 ---
 
@@ -126,4 +128,4 @@
 
 ## SEO meta description (≤155 chars)
 
-> *Contact Emin Köksal — Associate Professor of Economics and AI consultant. Email, LinkedIn, and speaking inquiries.*
+> *Contact Emin Köksal: Associate Professor of Economics and AI consultant. Email, LinkedIn, and speaking inquiries.*

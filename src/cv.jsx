@@ -116,7 +116,7 @@ const PUB_BOOKS = [
 const PUB_CHAPTERS = [
 {
   authors: 'Köksal, E., & Bakış, O.', year: '2024',
-  title: 'Digitalization of Society — Türkiye Digital Society Index.',
+  title: 'Digitalization of Society: Türkiye Digital Society Index.',
   venue: 'In The Economics and Regulation of Digitalisation (pp. 136–154). Routledge.',
   venueItalic: 'The Economics and Regulation of Digitalisation',
   href: 'https://doi.org/10.4324/9781032692937'
@@ -303,7 +303,7 @@ const PUB_ARTICLES_OTHER = [
 },
 {
   authors: 'Erbil, C., Köksal, E., & Yurtseven, C.', year: '2017',
-  title: 'Mall Flicks — The Mall Boom in Turkey with an Unexpected Byproduct: The Movie Sector Expansion.',
+  title: 'Mall Flicks: The Mall Boom in Turkey with an Unexpected Byproduct: The Movie Sector Expansion.',
   venue: 'Research in World Economy, 8(1), 1–17.',
   venueItalic: 'Research in World Economy',
   href: 'https://doi.org/10.5430/rwe.v8n1p1'
@@ -369,7 +369,7 @@ const PUB_ARTICLES_OTHER = [
 const PUB_OTHER_JOURNAL = [
 {
   authors: 'Köksal, E. & Yüksel, B.', year: '2022',
-  title: 'Hub-and-Spoke Cartels — An Economic and Legal Perspective.',
+  title: 'Hub-and-Spoke Cartels: An Economic and Legal Perspective.',
   venue: 'Rekabet Forumu, 154, 1–12.',
   venueItalic: 'Rekabet Forumu',
   note: '(in Turkish)',
@@ -461,7 +461,7 @@ const PUB_REPORTS = [
 },
 {
   authors: 'Köksal, E., Ardıyok, Ş. & İkiler, B.', year: '2021',
-  title: 'Charging Infrastructure for Electric Vehicles — Opportunities and Suggestions for Turkey.',
+  title: 'Charging Infrastructure for Electric Vehicles: Opportunities and Suggestions for Turkey.',
   venue: 'SSRN.',
   venueItalic: 'SSRN',
   note: '(in Turkish)'
@@ -648,7 +648,7 @@ function CVHero() {
           <div style={{ maxWidth: 880 }}>
             <Eyebrow>Curriculum Vitae</Eyebrow>
             <h1 className="display" style={{ margin: '28px 0 24px' }}>
-              Emin Köksal — Curriculum Vitae
+              Emin Köksal · Curriculum Vitae
             </h1>
             <p style={{
               fontFamily: 'var(--font-sans)', fontSize: 'clamp(18px, 1.8vw, 22px)',
@@ -832,24 +832,20 @@ function CVApp() {
             fontSize: 15, color: '#2E2E29', lineHeight: 1.55,
             margin: '24px 0 0', maxWidth: 760
           }}>
-            <strong style={{ fontWeight: 500 }}>
-              Associate Professorship (Doçentlik) in Economics
-            </strong>
-            {' '}— formal Turkish academic title earned through the national associate
-            professorship examination.
+            <strong style={{ fontWeight: 500 }}>Academic rank:</strong> Associate
+            Professor of Economics.
           </p>
         </CVSection>
 
         <CVSection id="ai-strategy" index="05" eyebrow="AI Strategy & Consultancy"
-        title="Turning frontier AI tools into reliable analytical infrastructure">
+        title="AI workflows for analytical and legal work">
           <div className="prose" style={{ maxWidth: 820 }}>
             <p>
-              I work with organizations across different sectors to identify opportunities where
-              generative AI and automation can meaningfully enhance or streamline their workflows.
-              Drawing on my academic background in managerial economics and law & economics, I
-              bring an analytical lens to understanding how complex institutional and business
-              processes can be thoughtfully redesigned with AI tools — balancing efficiency gains
-              with practical constraints.
+              I help organizations decide where generative AI and automation belong in their
+              workflows, and where they do not. That is an economic question before it is a
+              technical one: what a task costs now, what it would cost with AI, and what could
+              go wrong. My background in managerial economics and law and economics is what I
+              bring to it.
             </p>
             <p>
               In practice, I am embedded inside the competition and regulation team of a leading

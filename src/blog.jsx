@@ -51,10 +51,11 @@ function BlogHero() {
           <p style={{ fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
                       margin: 0 }}>
             Essays, working notes, and shorter posts from where economics,
-            competition policy, and AI tools meet in day-to-day analytical
-            work. Some pieces are written for academics, some for
-            practitioners; most try to serve both. In English or Turkish,
-            depending on who the piece is for. The archive goes back to 2013.
+            competition policy, and AI meet in day-to-day analytical work.
+            Some pieces are written for academics and some for practitioners;
+            most try to serve both. The language follows the reader, which is
+            why two posts in three are in Turkish. The archive goes back to
+            2013.
           </p>
         </div>
       </div>
@@ -264,7 +265,7 @@ function RecentPosts({ posts, total, trOnly, limit, onMore }) {
         </div>
         {posts.length === 0 ? (
           <p style={{ fontSize: 16, color: '#56554F', margin: 0 }}>
-            Nothing under this filter yet — try another topic.
+            Nothing under this filter yet. Try another topic.
           </p>
         ) : (
           <div style={{

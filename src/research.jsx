@@ -14,7 +14,7 @@ const METHOD_STEPS = [
     body:
       "Treat a national authority\u2019s full decision record as a single queryable dataset, " +
       'then use AI to extract concepts, parties, holdings, and reasoning patterns at a ' +
-      'granularity manual review can\u2019t reach.',
+      'granularity manual review cannot reach.',
   },
   {
     title: 'Citation network analysis',
@@ -25,7 +25,7 @@ const METHOD_STEPS = [
   {
     title: 'Economic interpretation',
     body:
-      'Use economics \u2014 industrial organization, competition theory, regulatory economics \u2014 ' +
+      'Use economics (industrial organization, competition theory, regulatory economics) ' +
       'to make sense of what the first two steps surface, and to find the next question.',
   },
 ];
@@ -39,15 +39,15 @@ const FLAGSHIP = [
     coauthors: 'with C. Peker and M. Üyer',
     summary: [
       'We took all 3,369 infringement decisions the Turkish Competition Board published over roughly ' +
-      'twenty-five years and analyzed them as one dataset \u2014 something nobody had done before. ' +
-      'Combining NLP and economic analysis, the paper traces how the Board has reasoned, ruled, ' +
-      'and shifted across industries and decision types over a quarter-century. Patterns that ' +
-      'would take a team months to find by hand show up in days.',
+      'twenty-five years and analyzed them as one dataset, which nobody had done before. ' +
+      "Combining NLP with economic analysis, the paper traces how the Board\u2019s reasoning and " +
+      'rulings moved across industries and decision types. Patterns that would have taken a ' +
+      'team months to find by hand showed up in days.',
       'The dataset itself is part of the contribution. Building it opened the door to a ' +
       'research program, including the citation network study below.',
     ],
     why: [
-      "It shows that a national agency\u2019s full decision record can be treated as a research-grade dataset.",
+      "It shows that a national agency\u2019s full decision record can be treated as a research dataset.",
       "It maps how the agency\u2019s practice has moved across industries and over time.",
       'And it makes a larger claim. As we put it in the paper: \u201Cthis research demonstrates ' +
       'the potential of large language models to open up new avenues of inquiry in ' +
@@ -63,10 +63,10 @@ const FLAGSHIP = [
     coauthors: 'with C. Peker and M. Üyer',
     summary: [
       'The follow-up to the 2025 paper. An AI model read all 9,995 published decisions of ' +
-      'the Turkish Competition Board \u2014 roughly thirty years of case law \u2014 and extracted ' +
-      "the 18,513 citations connecting them. Network analysis did the rest: the paper makes the Board\u2019s " +
-      '\u201Cintellectual DNA\u201D \u2014 its citation backbone, its conceptual lineages, the points ' +
-      'where doctrine shifts \u2014 visible as a graph instead of an anecdote.',
+      'the Turkish Competition Board, roughly thirty years of case law, and extracted ' +
+      'the 18,513 citations connecting them. Network analysis did the rest. The paper draws ' +
+      "the Board\u2019s \u201Cintellectual DNA\u201D as a graph: which decisions carry the case " +
+      'law, how its concepts descend from one another, and where the doctrine changed course.',
       'Methodologically, the paper combines two techniques that competition-law ' +
       'research rarely uses together: AI-assisted extraction of structured information from ' +
       'regulatory text at scale, and network analysis of the resulting citation web. Nothing ' +
@@ -74,8 +74,8 @@ const FLAGSHIP = [
     ],
     whyLabel: 'What we found',
     why: [
-      "The Board\u2019s most influential decision attracts just 10 direct citations \u2014 authority in " +
-      "this case law is dispersed across many rulings; no small set of landmarks dominates.",
+      "The Board\u2019s most influential decision attracts just 10 direct citations. Authority in " +
+      'this case law is spread across many rulings, and no small set of landmarks dominates.',
       'Reliance on EU case law follows a U-curve: early dependence, then autonomization, then re-engagement.',
       'Doctrine-shifting decisions become the canon within three years. How fast a decision gets cited predicts its staying power.',
     ],
@@ -95,7 +95,7 @@ const PUBS_BOOKS = [
   {
     authors: 'Köksal, E., & Bakış, O.',
     year: '2024',
-    title: 'Digitalization of Society — Türkiye Digital Society Index.',
+    title: 'Digitalization of Society: Türkiye Digital Society Index.',
     venue: 'In The Economics and Regulation of Digitalisation (pp. 136–154). Routledge.',
     venueItalic: 'The Economics and Regulation of Digitalisation',
     href: 'https://doi.org/10.4324/9781032692937',
@@ -233,23 +233,23 @@ const PUBS_REPORTS = [
 const INTERESTS = [
   {
     lead: 'Generative AI and economics',
-    body: '— research methods, agentic workflows, AI-assisted analysis of legal and regulatory corpora.',
+    body: 'research methods, agentic workflows, AI-assisted analysis of legal and regulatory corpora.',
   },
   {
     lead: 'Industrial economics & competition policy',
-    body: '— competition cases, theory of harm, market definition, cartels, vertical restraints.',
+    body: 'competition cases, theory of harm, market definition, cartels, vertical restraints.',
   },
   {
     lead: 'Platform economics & digital regulation',
-    body: '— multi-sided markets, platform governance, digital market regulation.',
+    body: 'multi-sided markets, platform governance, digital market regulation.',
   },
   {
     lead: 'Digitalization',
-    body: '— measurement, policy, structural change.',
+    body: 'measurement, policy, structural change.',
   },
   {
     lead: 'Climate economics',
-    body: '— carbon pricing, decarbonization, regulation.',
+    body: 'carbon pricing, decarbonization, regulation.',
   },
 ];
 
@@ -276,18 +276,20 @@ function ResearchHero() {
             lineHeight: 1.22, color: '#16150F',
             margin: '0 0 32px', maxWidth: 880,
           }}>
-            Using AI as a primary method to ask economic and competition-law questions
-            that were previously infeasible at scale
+            Using AI as the method to ask economic and competition-law questions too
+            large to ask by hand
           </p>
           <p style={{
             fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
             maxWidth: 780, margin: 0,
           }}>
-            Plenty of researchers write about AI. I&rsquo;d rather use it. Over the past
-            few years I&rsquo;ve rebuilt part of my research practice around frontier AI
-            tools: large-scale analysis of legal texts, citation-network mapping, and
-            economic interpretation of regulatory corpora. The projects below are the
-            result. The publication record underneath shows where the questions come from.
+            Say a careful reader needs half an hour for one decision of the Turkish
+            Competition Board. The Board has published 9,995 of them, so reading the lot
+            once would take some 5,000 hours, two and a half working years, before anyone
+            drew a single conclusion. That arithmetic is why the record had never been
+            studied as a whole, and why I rebuilt part of my research practice around
+            AI. The two projects below are the result. The publications underneath show
+            where the questions come from.
           </p>
         </div>
       </div>
@@ -312,15 +314,15 @@ function MethodSignature() {
           lineHeight: 1.08, color: '#F5F2EB',
           margin: '28px 0 0', maxWidth: 1100,
         }}>
-          AI-powered analysis of legal corpora — turning regulatory text into research-grade
-          economic evidence
+          AI-powered analysis of legal corpora: regulatory text turned into economic
+          evidence
         </h2>
 
         <p style={{
           fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: 'rgba(245,242,235,.85)',
           margin: '56px 0 48px', maxWidth: 820,
         }}>
-          The method pairs three things:
+          The method combines three steps:
         </p>
 
         <ol style={{
@@ -376,9 +378,18 @@ function FlagshipProjects() {
       <div className="container">
         <div style={{ maxWidth: 880, marginBottom: 80 }}>
           <Eyebrow>Flagship projects</Eyebrow>
-          <h2 className="display--mid" style={{ margin: '20px 0 0' }}>
+          <h2 className="display--mid" style={{ margin: '20px 0 24px' }}>
             Two projects, one program
           </h2>
+          <p style={{
+            fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
+            margin: 0, maxWidth: 720,
+          }}>
+            Both papers study the Turkish Competition Board. It is the authority I have
+            worked on for twenty years, and it publishes its decisions with their
+            reasoning, which is what makes a full corpus possible. The method should
+            travel to any authority that does the same.
+          </p>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
@@ -656,7 +667,7 @@ function ResearchInterests() {
                 <p style={{
                   fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55, color: '#2E2E29', margin: 0,
                 }}>
-                  <strong style={{ fontWeight: 500, color: '#16150F' }}>{it.lead}</strong>{' '}
+                  <strong style={{ fontWeight: 500, color: '#16150F' }}>{it.lead}</strong>:{' '}
                   {it.body}
                 </p>
               </li>
@@ -690,7 +701,7 @@ function ResearchClosingCTA() {
             }}>
               If you work on AI methods for legal or regulatory text, on citation networks, on
               competition-policy research, or on research infrastructure for economists
-              and lawyers — send me a note. There aren&rsquo;t many of us yet.
+              and lawyers, send me a note. There are not many of us yet.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <Button variant="primary" href="contact.html">

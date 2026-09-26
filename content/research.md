@@ -4,7 +4,9 @@
 >
 > The new website does not need a separate "Publications" page if this one absorbs that function — the CV page (`/cv`) carries the comprehensive list; this page curates and contextualizes.
 >
-> **Voice note (2026-06-11 rewrite):** copy revised for a more human register. One "X rather than Y" construction kept deliberately ("AI-native rather than AI-flavored") — it is the site's single allowed instance. Facts unchanged; paper quote in Project 1 supplied by EK.
+> **Voice note (2026-06-11 rewrite):** copy revised for a more human register. One "X rather than Y" construction kept deliberately ("AI-native rather than AI-flavored"); it is the site's single allowed instance and the page's one aphorism. Facts unchanged; paper quote in Project 1 supplied by EK.
+>
+> **Voice note (2026-09-26 pass):** copy revised to the `emin-english-voice` register: verdict first, one aphorism and one vivid example per page at most, no em-dashes, no contractions in prose, American spelling except published titles, no consultancy phrasing. Facts unchanged. The hero's reading-time arithmetic (half an hour per decision) is a stated assumption, not a finding.
 
 ---
 
@@ -20,11 +22,11 @@
 
 **Tagline**
 
-> Using AI as a primary method to ask economic and competition-law questions that were previously infeasible at scale
+> Using AI as the method to ask economic and competition-law questions too large to ask by hand
 
 **Lead paragraph**
 
-> Plenty of researchers write about AI. I'd rather use it. Over the past few years I've rebuilt part of my research practice around frontier AI tools: large-scale analysis of legal texts, citation-network mapping, and economic interpretation of regulatory corpora. The projects below are the result. The publication record underneath shows where the questions come from.
+> Say a careful reader needs half an hour for one decision of the Turkish Competition Board. The Board has published 9,995 of them, so reading the lot once would take some 5,000 hours, two and a half working years, before anyone drew a single conclusion. That arithmetic is why the record had never been studied as a whole, and why I rebuilt part of my research practice around AI. The two projects below are the result. The publications underneath show where the questions come from.
 
 ---
 
@@ -38,15 +40,15 @@
 
 **H2**
 
-> *AI-powered analysis of legal corpora — turning regulatory text into research-grade economic evidence*
+> *AI-powered analysis of legal corpora: regulatory text turned into economic evidence*
 
 **Body**
 
-> The method pairs three things:
+> The method combines three steps:
 >
-> 1. **Large-scale AI analysis of legal texts.** Treat a national authority's full decision record as a single queryable dataset, then use AI to extract concepts, parties, holdings, and reasoning patterns at a granularity manual review can't reach.
+> 1. **Large-scale AI analysis of legal texts.** Treat a national authority's full decision record as a single queryable dataset, then use AI to extract concepts, parties, holdings, and reasoning patterns at a granularity manual review cannot reach.
 > 2. **Citation network analysis.** Map how authority, precedent, and reasoning move through a body of decisions over time, turning a flat case list into an intellectual genealogy.
-> 3. **Economic interpretation.** Use economics — industrial organization, competition theory, regulatory economics — to make sense of what the first two steps surface, and to find the next question.
+> 3. **Economic interpretation.** Use economics (industrial organization, competition theory, regulatory economics) to make sense of what the first two steps surface, and to find the next question.
 >
 > The combination is what makes the work AI-native rather than AI-flavored: each step depends on the others, and none works as well alone.
 
@@ -62,6 +64,10 @@
 
 > Two projects, one program
 
+**Intro**
+
+> Both papers study the Turkish Competition Board. It is the authority I have worked on for twenty years, and it publishes its decisions with their reasoning, which is what makes a full corpus possible. The method should travel to any authority that does the same.
+
 ---
 
 ### Project 1 — A Quarter-Century Analysis of the Turkish Competition Board's Decisions
@@ -72,13 +78,13 @@
 
 **Summary**
 
-> We took all **3,369 infringement decisions** the Turkish Competition Board published over roughly twenty-five years and analyzed them as one dataset — something nobody had done before. Combining NLP and economic analysis, the paper traces how the Board has reasoned, ruled, and shifted across industries and decision types over a quarter-century. Patterns that would take a team months to find by hand show up in days.
+> We took all **3,369 infringement decisions** the Turkish Competition Board published over roughly twenty-five years and analyzed them as one dataset, which nobody had done before. Combining NLP with economic analysis, the paper traces how the Board's reasoning and rulings moved across industries and decision types. Patterns that would have taken a team months to find by hand showed up in days.
 >
 > The dataset itself is part of the contribution. Building it opened the door to a research program, including the citation network study below.
 
 **Why it matters**
 
-- It shows that a national agency's full decision record can be treated as a research-grade dataset.
+- It shows that a national agency's full decision record can be treated as a research dataset.
 - It maps how the agency's practice has moved across industries and over time.
 - And it makes a larger claim. As we put it in the paper: *"this research demonstrates the potential of large language models to open up new avenues of inquiry in text-intensive disciplines such as law and economics."*
 
@@ -92,13 +98,13 @@
 
 **Summary**
 
-> The follow-up to the 2025 paper. An AI model read all **9,995 published decisions** of the Turkish Competition Board — roughly thirty years of case law — and extracted the **18,513 citations** connecting them. Network analysis did the rest: the paper makes the Board's "intellectual DNA" — its citation backbone, its conceptual lineages, the points where doctrine shifts — visible as a graph instead of an anecdote.
+> The follow-up to the 2025 paper. An AI model read all **9,995 published decisions** of the Turkish Competition Board, roughly thirty years of case law, and extracted the **18,513 citations** connecting them. Network analysis did the rest. The paper draws the Board's "intellectual DNA" as a graph: which decisions carry the case law, how its concepts descend from one another, and where the doctrine changed course.
 >
 > Methodologically, the paper combines two techniques that competition-law research rarely uses together: AI-assisted extraction of structured information from regulatory text at scale, and network analysis of the resulting citation web. Nothing like it exists for the Turkish setting, and there are few examples anywhere.
 
 **What we found**
 
-- The Board's most influential decision attracts just 10 direct citations — authority in this case law is dispersed across many rulings; no small set of landmarks dominates.
+- The Board's most influential decision attracts just 10 direct citations. Authority in this case law is spread across many rulings, and no small set of landmarks dominates.
 - Reliance on EU case law follows a U-curve: early dependence, then autonomization, then re-engagement.
 - Doctrine-shifting decisions become the canon within three years. How fast a decision gets cited predicts its staying power.
 
@@ -121,7 +127,7 @@
 ### Books & edited volumes
 
 - **Eroğlu, M., Finger, M., & Köksal, E. (Eds.).** (2024). *The Economics and Regulation of Digitalisation: The Case of Türkiye.* Routledge.
-- **Köksal, E., & Bakış, O.** (2024). *Digitalization of Society — Türkiye Digital Society Index.* In *The Economics and Regulation of Digitalisation* (pp. 136–154). Routledge.
+- **Köksal, E., & Bakış, O.** (2024). *Digitalization of Society: Türkiye Digital Society Index.* In *The Economics and Regulation of Digitalisation* (pp. 136–154). Routledge.
 - **Finger, M., Köksal, E., & Eroğlu, M.** (2024). *Setting the Scene.* In *The Economics and Regulation of Digitalisation* (pp. 1–20). Routledge.
 
 ### Selected peer-reviewed journal articles
@@ -159,11 +165,11 @@
 
 **Body**
 
-> - **Generative AI and economics** — research methods, agentic workflows, AI-assisted analysis of legal and regulatory corpora.
-> - **Industrial economics & competition policy** — competition cases, theory of harm, market definition, cartels, vertical restraints.
-> - **Platform economics & digital regulation** — multi-sided markets, platform governance, digital market regulation.
-> - **Digitalization** — measurement, policy, structural change.
-> - **Climate economics** — carbon pricing, decarbonization, regulation.
+> - **Generative AI and economics**: research methods, agentic workflows, AI-assisted analysis of legal and regulatory corpora.
+> - **Industrial economics & competition policy**: competition cases, theory of harm, market definition, cartels, vertical restraints.
+> - **Platform economics & digital regulation**: multi-sided markets, platform governance, digital market regulation.
+> - **Digitalization**: measurement, policy, structural change.
+> - **Climate economics**: carbon pricing, decarbonization, regulation.
 
 ---
 
@@ -175,7 +181,7 @@
 
 **Body**
 
-> If you work on AI methods for legal or regulatory text, on citation networks, on competition-policy research, or on research infrastructure for economists and lawyers — send me a note. There aren't many of us yet.
+> If you work on AI methods for legal or regulatory text, on citation networks, on competition-policy research, or on research infrastructure for economists and lawyers, send me a note. There are not many of us yet.
 
 **CTA buttons**
 
@@ -198,4 +204,4 @@ As the AI-Native Research program grows, this page should evolve from "two flags
 
 ## SEO meta description (≤155 chars)
 
-> *AI-native economic research by Emin Köksal — large-scale AI analysis of competition law, citation networks, and the regulatory record.*
+> *AI-native economic research by Emin Köksal: large-scale AI analysis of competition law, citation networks, and the regulatory record.*

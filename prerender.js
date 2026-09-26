@@ -142,7 +142,7 @@ const feed = `<?xml version="1.0" encoding="UTF-8"?>
     <title>Emin Köksal</title>
     <link>${SITE}/blog.html</link>
     <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml"/>
-    <description>Essays and working notes on AI in economic research, competition policy, and legal practice. Mostly English, sometimes Turkish.</description>
+    <description>Essays and working notes on AI in economic research, competition policy, and legal practice, in English and Turkish.</description>
     <language>en</language>
     <lastBuildDate>${rfc822(posts.map((p) => p.date).sort().at(-1))}</lastBuildDate>
 ${feedItems}

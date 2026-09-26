@@ -14,7 +14,7 @@
 
 **H1**
 
-> Emin Köksal — Curriculum Vitae
+> Emin Köksal · Curriculum Vitae
 
 **Body**
 
@@ -76,13 +76,13 @@
 | 2002–2004 | Galatasaray University | MA in Public Finance |
 | 1995–2001 | Galatasaray University | BA in Economics |
 
-> **Associate Professorship (Doçentlik)** in Economics — formal Turkish academic title earned through the national associate professorship examination.
+> **Academic rank:** Associate Professor of Economics.
 
 ---
 
 ## Section 7 — AI Strategy & Consultancy
 
-> I work with organizations across different sectors to identify opportunities where generative AI and automation can meaningfully enhance or streamline their workflows. Drawing on my academic background in managerial economics and law & economics, I bring an analytical lens to understanding how complex institutional and business processes can be thoughtfully redesigned with AI tools — balancing efficiency gains with practical constraints.
+> I help organizations decide where generative AI and automation belong in their workflows, and where they do not. That is an economic question before it is a technical one: what a task costs now, what it would cost with AI, and what could go wrong. My background in managerial economics and law and economics is what I bring to it.
 >
 > In practice, I am embedded inside the competition and regulation team of a leading international law firm, where I design AI workflows, complex prompts, and reusable playbooks on a leading European legal AI platform. I distinguish carefully between general-purpose AI tools (for non-confidential academic and marketing work) and confidentiality-grade legal AI platforms (for client work), and I build custom MCP-based research infrastructure for legal and academic discovery.
 
@@ -141,7 +141,7 @@
 
 ### Book Chapters
 
-- **Köksal, E., & Bakış, O.** (2024). *Digitalization of Society — Türkiye Digital Society Index.* In *The Economics and Regulation of Digitalisation* (pp. 136–154). Routledge. [Link]
+- **Köksal, E., & Bakış, O.** (2024). *Digitalization of Society: Türkiye Digital Society Index.* In *The Economics and Regulation of Digitalisation* (pp. 136–154). Routledge. [Link]
 - **Finger, M., Köksal, E., & Eroğlu, M.** (2024). *Setting the Scene.* In *The Economics and Regulation of Digitalisation* (pp. 1–20). Routledge. [Link]
 - **Köksal, E. & Ak, A.** (2024). *Neo-Brandeisian Traces in the New E-Commerce Act.* In K. C. Sanlı, D. Alma, & D. Tanlı (Eds.), *Uygulamalı Rekabet Hukuku Seminerleri 2023* (pp. 381–410). On İki Levha. *(in Turkish)*
 - **Köksal, E., İkiler, B., & Canbeyli, A.** (2023). *Law and Economics of the 2021 Retail Decision: Price Transitions, Buyer Power, Price Leadership and Hub-And-Spoke Cartel Allegations in an Inflationary Environment.* In Sanlı, Alma & Tanlı (Eds.), *Uygulamalı Rekabet Hukuku Seminerleri 2022* (pp. 23–78). On İki Levha. *(in Turkish)*
@@ -173,7 +173,7 @@
 - Köksal, E. & Ardıyok, Ş. (2019). *Necessity of a Broader Market Definition in the Analysis of Syndicated Loans Markets.* *European Competition Law Review*, 40(11), 547–555.
 - Köksal, E. & Ardıyok, Ş. (2018). *Sector Specific Regulations and Behavioral Economics: Reflections on the Decision Numbered 149.* *Business & Management Studies*, 6(1), 48–62. *(in Turkish)*
 - Köksal, E. & Yurtseven, C. (2018). *The Effects of the Increase in the Number of University Students on the Growth of the Movie Industry in Turkey.* *International Review of Economics and Management*, 6(3), 103–116. *(in Turkish)*
-- Erbil, C., Köksal, E., & Yurtseven, C. (2017). *Mall Flicks — The Mall Boom in Turkey with an Unexpected Byproduct: The Movie Sector Expansion.* *Research in World Economy*, 8(1), 1–17.
+- Erbil, C., Köksal, E., & Yurtseven, C. (2017). *Mall Flicks: The Mall Boom in Turkey with an Unexpected Byproduct: The Movie Sector Expansion.* *Research in World Economy*, 8(1), 1–17.
 - Anıl, B. & Köksal, E. (2016). *Who Uses the Internet in Turkey and For What Purposes?* *İktisadi ve İdari Bilimler Dergisi*, 38(1), 1–13. *(in Turkish)*
 - Akben-Selçuk, E., Köksal, E., & Altıok-Yılmaz, A. D. (2016). *The Impact of Merger and Acquisition Transactions at the Company and Industry Level: A Literature Review.* *Business & Management Studies*, 4(1), 48–62. *(in Turkish)*
 - Ardıyok, Ş., Demirkan, H., Köksal, E., & Yüksel, B. (2015). *Assessment of Net Neutrality Regulations and Traffic Management Activities in Mobile Communications from the Perspective of Competition Law.* *Competition Journal*, 16(3), 51–100. *(in Turkish)*
@@ -185,7 +185,7 @@
 
 ### Other Journal Articles
 
-- Köksal, E. & Yüksel, B. (2022). *Hub-and-Spoke Cartels — An Economic and Legal Perspective.* *Rekabet Forumu*, 154, 1–12. *(in Turkish)*
+- Köksal, E. & Yüksel, B. (2022). *Hub-and-Spoke Cartels: An Economic and Legal Perspective.* *Rekabet Forumu*, 154, 1–12. *(in Turkish)*
 - Köksal, E. (2021). *The Economics of Electric Vehicles and the Need for a Public Policy.* *Network Industries Quarterly Turkey*, 1(4), 6–9.
 - Ardıyok, Ş., İkiler, B., & Köksal, E. (2021). *A Brief Overview of Charging Infrastructure in EU and Turkey.* *Network Industries Quarterly Turkey*, 1(4), 14–18.
 - Köksal, E. (2020). *The COVID-19 Pandemic Shows How Vital the Broadband Internet Infrastructure Is.* *Network Industries Quarterly Turkey*, 1(2), 14–17.
@@ -201,7 +201,7 @@
 - Bakış, O. & Köksal, E. (2022). *ICT Expenditures and Digitalization in Turkey.* Betam Research Report. SSRN. *(in Turkish)*
 - Bakış, O., Tetikol-Dalgıç, D. E., Deniz, P., Finger, M., Gümüş, İ., & Köksal, E. (2022). *Assessment of a Carbon Tax as a Tool to Decarbonize Turkey's Energy Supply 2050.* IC4R Report Series No. 1. SSRN.
 - Köksal, E. & Ardıyok, Ş. (2021). *Decisions of the Competition Board on Resale Price Maintenance.* SSRN. *(in Turkish)*
-- Köksal, E., Ardıyok, Ş. & İkiler, B. (2021). *Charging Infrastructure for Electric Vehicles — Opportunities and Suggestions for Turkey.* SSRN. *(in Turkish)*
+- Köksal, E., Ardıyok, Ş. & İkiler, B. (2021). *Charging Infrastructure for Electric Vehicles: Opportunities and Suggestions for Turkey.* SSRN. *(in Turkish)*
 - Köksal, E. & Ardıyok, Ş. (2019). *Assessing Buyer Power in Syndicated Loans.* SSRN.
 - Köksal, E. & Ardıyok, Ş. (2019). *Necessity of a Broader Market Definition in the Analysis of Syndicated Loans.* SSRN. *(in Turkish)*
 
