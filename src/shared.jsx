@@ -334,7 +334,7 @@ function Footer() {
         }}>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', fontSize: 13, color: 'rgba(255,255,255,.7)' }}>
             <span>© 2026 Emin Köksal</span>
-            <span>No trackers, no analytics, no cookies</span>
+            <span>No cookies, no ad trackers, only anonymous page counts</span>
           </div>
           <div style={{ display: 'flex', gap: 14 }}>
             <SocialIcon kind="scholar" label="Google Scholar" href={PROFILES.scholar} />
