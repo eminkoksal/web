@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>This Week in the Wiki</title>
+    <link>https://eminkoksal.com</link>
+    <atom:link href="https://eminkoksal.com/wiki-brief/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en</language>
+    <description>A private weekly brief from Emin Köksal's Economics of AI wiki: what entered the wiki this week, which numbers changed, which contradictions moved, and the one source worth reading in full. Written by the wiki's maintaining model, read by a synthetic voice.</description>
+    <itunes:subtitle>The Economics of AI wiki, read aloud once a week</itunes:subtitle>
+    <itunes:author>Emin Köksal</itunes:author>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
+    <itunes:block>Yes</itunes:block>
+    <itunes:category text="Business"/>
+    <itunes:image href="https://eminkoksal.com/wiki-brief/cover.png"/>
+    <lastBuildDate>Thu, 05 Nov 2026 10:41:06 +0000</lastBuildDate>
+    <item>
+      <title>This Week in the Wiki, 5 November 2026</title>
+      <description>This is the first weekly brief from the Economics of AI wiki. It covers two batches of ingests, on the twenty-ninth of October and the fifth of November: thirty-four new source pages, six new entity pages, two new concept pages, and about forty pages updated. It runs a little over ten minutes. At the end, one source to read in full.</description>
+      <itunes:summary>This is the first weekly brief from the Economics of AI wiki. It covers two batches of ingests, on the twenty-ninth of October and the fifth of November: thirty-four new source pages, six new entity pages, two new concept pages, and about forty pages updated. It runs a little over ten minutes. At the end, one source to read in full.</itunes:summary>
+      <enclosure url="https://eminkoksal.com/wiki-brief/2026-11-05-this-week-in-the-wiki.m4a" length="5154997" type="audio/mp4"/>
+      <guid isPermaLink="false">2026-11-05-this-week-in-the-wiki.m4a</guid>
+      <pubDate>Thu, 05 Nov 2026 07:00:00 +0000</pubDate>
+      <itunes:duration>99:25:14</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>
