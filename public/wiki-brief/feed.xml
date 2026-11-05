@@ -13,7 +13,7 @@
     <itunes:block>Yes</itunes:block>
     <itunes:category text="Business"/>
     <itunes:image href="https://eminkoksal.com/wiki-brief/cover.png"/>
-    <lastBuildDate>Thu, 05 Nov 2026 11:12:52 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 11:18:15 +0000</lastBuildDate>
     <item>
       <title>This Week in the Wiki, 5 November 2026</title>
       <description>Welcome to This Week in the Wiki. This is the weekly brief from the Economics of AI wiki, and it is a big one, because it covers two batches of new material: the twenty-ninth of October and the fifth of November. Thirty-four new sources. Where do we start?</description>
@@ -22,6 +22,16 @@
       <guid isPermaLink="false">2026-11-05-this-week-in-the-wiki-dialogue.m4a</guid>
       <pubDate>Thu, 05 Nov 2026 07:00:00 +0000</pubDate>
       <itunes:duration>00:17:32</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
+      <title>The Papers, 5 November 2026</title>
+      <description>Welcome to the papers edition of This Week in the Wiki. This one is built differently. Instead of a tour of what changed in the wiki, we take the week's papers one at a time, three or four minutes each, the shorter items in a minute, and then we try to put it together at the end. Two batches this week, the twenty-ninth of October and the fifth of November, so this is a long one. Nine papers. Let us start with the one in your field.</description>
+      <itunes:summary>Welcome to the papers edition of This Week in the Wiki. This one is built differently. Instead of a tour of what changed in the wiki, we take the week's papers one at a time, three or four minutes each, the shorter items in a minute, and then we try to put it together at the end. Two batches this week, the twenty-ninth of October and the fifth of November, so this is a long one. Nine papers. Let us start with the one in your field.</itunes:summary>
+      <enclosure url="https://eminkoksal.com/wiki-brief/2026-11-05-the-papers.m4a" length="14832706" type="audio/mp4"/>
+      <guid isPermaLink="false">2026-11-05-the-papers.m4a</guid>
+      <pubDate>Thu, 05 Nov 2026 07:00:00 +0000</pubDate>
+      <itunes:duration>00:39:36</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
     </item>
   </channel>

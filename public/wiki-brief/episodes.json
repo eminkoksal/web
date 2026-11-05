@@ -9,5 +9,16 @@
     "description": "Welcome to This Week in the Wiki. This is the weekly brief from the Economics of AI wiki, and it is a big one, because it covers two batches of new material: the twenty-ninth of October and the fifth of November. Thirty-four new sources. Where do we start?",
     "source": "exports/weekly/2026-11-05-this-week-in-the-wiki-dialogue.md",
     "engine": "openai"
+  },
+  {
+    "title": "The Papers, 5 November 2026",
+    "date": "2026-11-05",
+    "file": "2026-11-05-the-papers.m4a",
+    "bytes": 14832706,
+    "seconds": 2375.8,
+    "words": 5132,
+    "description": "Welcome to the papers edition of This Week in the Wiki. This one is built differently. Instead of a tour of what changed in the wiki, we take the week's papers one at a time, three or four minutes each, the shorter items in a minute, and then we try to put it together at the end. Two batches this week, the twenty-ninth of October and the fifth of November, so this is a long one. Nine papers. Let us start with the one in your field.",
+    "source": "exports/weekly/2026-11-05-the-papers.md",
+    "engine": "openai"
   }
 ]
