@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /wiki-brief/
 
 Sitemap: https://eminkoksal.com/sitemap.xml
