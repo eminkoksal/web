@@ -1,0 +1,114 @@
+/* =====================================================================
+   Emin Style v1.2 — shared layer for the pages ported to v1.2 (2026-11-25).
+   Loaded after site.css by index.html and research.html. Type, buttons,
+   cards, the coral closing surface, the citation-network band and the
+   reveal-on-scroll motion. Page-specific rules live in home.css (hm-) and
+   research.css (rs-). The reveal styles apply only while <html> has the
+   "js" class, which an inline script in the page template sets (and
+   removes again if the bundle never runs).
+   ===================================================================== */
+
+/* ---------- shared pieces ---------- */
+.v2-h2 { font-size: clamp(36px, 4.6vw, 68px); font-weight: 500; line-height: 1.02; letter-spacing: -.028em; text-wrap: balance; }
+.v2-prose { font-family: var(--ek-font-prose); font-size: 20px; line-height: 1.5; color: var(--ek-ink-2); }
+.v2-mono { font-family: var(--ek-font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ek-ink-muted); font-weight: 500; }
+.v2-btn {
+  display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; text-decoration: none;
+  font-family: var(--ek-font-display); font-size: 16px; font-weight: 500; letter-spacing: -.01em; line-height: 1;
+  padding: 15px 24px; border-radius: 999px; border: 1.5px solid var(--ek-ink);
+  background: var(--ek-ink); color: var(--ek-paper); cursor: pointer;
+  transition: background .16s var(--ek-ease), color .16s var(--ek-ease), border-color .16s var(--ek-ease);
+}
+.v2-btn svg { transition: transform .16s var(--ek-ease); }
+.v2-btn:hover svg { transform: translate(2px, -2px); }
+.v2-btn:hover { background: var(--ek-coral-700); border-color: var(--ek-coral-700); color: var(--ek-paper); }
+.v2-btn--ghost { background: transparent; color: var(--ek-ink); }
+.v2-btn--ghost:hover { background: var(--ek-ink); border-color: var(--ek-ink); color: var(--ek-paper); }
+.v2-btn--paper { background: var(--ek-paper); border-color: var(--ek-paper); color: var(--ek-ink); }
+.v2-btn--paper:hover { background: var(--ek-coral-arc); border-color: var(--ek-coral-arc); color: var(--ek-ink); }
+.v2-btn--line { background: transparent; border-color: rgba(245,242,235,.4); color: var(--ek-paper); }
+.v2-btn--line:hover { background: var(--ek-paper); border-color: var(--ek-paper); color: var(--ek-ink); }
+.v2-arrow-link { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 500; letter-spacing: -.01em; }
+.v2-arrow-link svg { transition: transform .2s var(--ek-ease); }
+a:hover > * > .v2-arrow-link svg, a:hover > .v2-arrow-link svg { transform: translateX(4px); }
+.v2-card { color: inherit; text-decoration: none; }
+
+/* ---------- motion: reveal on scroll ---------- */
+.js [data-r] { opacity: 0; transform: translateY(20px); transition: opacity .7s var(--ek-ease), transform .8s cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--i, 0) * 90ms); }
+.js .v2-in [data-r], .js [data-r].v2-in { opacity: 1; transform: none; }
+.js .v2-draw { transform: scaleX(0); transform-origin: left center; transition: transform 1s cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--i, 0) * 90ms); }
+.js .v2-in .v2-draw, .js .v2-draw.v2-in { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) {
+  .js [data-r], .js .v2-draw { opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important; }
+}
+
+/* ---------- the network band (ink) ---------- */
+.v2-net { position: relative; background: var(--ek-ink); color: var(--ek-paper); height: clamp(620px, 56vw, 820px); overflow: hidden; }
+.v2-net canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.v2-net__head { position: relative; z-index: 2; display: grid; grid-template-columns: auto minmax(0, 430px); justify-content: space-between; align-items: end; gap: 48px; padding-top: 68px; pointer-events: none; }
+.v2-net__head a { pointer-events: auto; }
+.js .v2-net__num { opacity: 0; transition: opacity .4s var(--ek-ease); }
+.js .v2-net.is-ready .v2-net__num { opacity: 1; }
+.v2-net__num { display: block; margin: 22px 0 0 -.04em; font-size: clamp(92px, 12.6vw, 186px); font-weight: 500; line-height: .84; letter-spacing: -.045em; color: var(--ek-coral-arc); }
+.v2-net__say { font-family: var(--ek-font-prose); font-size: clamp(19px, 1.65vw, 24px); line-height: 1.32; color: var(--ek-paper); }
+.v2-net__cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+.v2-net__axis { position: absolute; left: 0; right: 0; bottom: 46px; height: 18px; z-index: 2; pointer-events: none; }
+.v2-net__axis span { position: absolute; transform: translateX(-50%); font-family: var(--ek-font-mono); font-size: 11px; letter-spacing: .06em; color: #828078; }
+.v2-net__cursor { position: absolute; bottom: 74px; z-index: 2; transform: translateX(-50%); font-family: var(--ek-font-mono); font-size: 12px; font-weight: 500; letter-spacing: .08em; color: var(--ek-coral-arc); opacity: 0; pointer-events: none; }
+.v2-net__note { position: absolute; left: 0; right: 0; bottom: 16px; z-index: 2; pointer-events: none; }
+.v2-net__note p { font-family: var(--ek-font-mono); font-size: 11px; line-height: 1.4; color: #828078; }
+.v2-net__tip { position: absolute; z-index: 3; pointer-events: none; padding: 9px 12px; border-radius: 6px; background: var(--ek-paper); color: var(--ek-ink); font-family: var(--ek-font-mono); font-size: 11px; line-height: 1.5; letter-spacing: .04em; white-space: nowrap; opacity: 0; transition: opacity .12s; }
+.v2-net__tip b { font-weight: 500; display: block; }
+.v2-net__tag { position: absolute; z-index: 2; pointer-events: none; border-left: 1px solid rgba(243,115,56,.8); padding-left: 9px; display: flex; align-items: flex-end; font-family: var(--ek-font-mono); font-size: 11px; line-height: 1; letter-spacing: .06em; text-transform: uppercase; color: #E4E1D8; white-space: nowrap; opacity: 0; transition: opacity .6s var(--ek-ease); }
+.v2-net__tag b { font-weight: 500; color: var(--ek-coral-arc); margin-right: .7em; }
+.v2-net__tag.is-up { align-items: flex-start; }
+.v2-net__tag.is-flip { border-left: 0; border-right: 1px solid rgba(243,115,56,.8); padding: 0 9px 0 0; }
+.v2-net__tag i { font-style: normal; }
+
+/* ---------- cards ---------- */
+.v2-card { border-radius: 24px; padding: 40px; display: flex; flex-direction: column; gap: 20px; min-height: 440px; transition: background .2s var(--ek-ease), transform .4s cubic-bezier(.2,.7,.2,1); }
+.v2-card:hover { transform: translateY(-4px); }
+.v2-card--static:hover { transform: none; }
+.v2-card--sunken.v2-card--static:hover { background: var(--ek-paper-sunken); }
+.v2-card.v2-card--compact { min-height: 0; padding: 32px; gap: 14px; }
+.v2-card.v2-card--compact h3 { font-size: clamp(20px, 1.6vw, 23px); line-height: 1.18; letter-spacing: -.02em; }
+.v2-card.v2-card--compact p { font-size: 16px; line-height: 1.5; }
+.v2-card--sunken { background: var(--ek-paper-sunken); }
+.v2-card--sunken:hover { background: #E3E0D6; }
+.v2-card--line { background: var(--ek-paper-lifted); border: 1px solid var(--ek-paper-edge); }
+.v2-card--line:hover { background: #FFFEFB; }
+.v2-card .v2-mono { color: var(--ek-coral-700); }
+.v2-card h3 { font-size: clamp(24px, 2.2vw, 32px); font-weight: 500; letter-spacing: -.024em; line-height: 1.12; text-wrap: balance; }
+.v2-card p { font-size: 17px; line-height: 1.55; color: var(--ek-ink-2); max-width: 34em; }
+.v2-card__fig { display: flex; align-items: flex-end; gap: 22px; flex-wrap: wrap; margin: 4px 0 6px; }
+.v2-card__fig strong { font-size: clamp(84px, 9.6vw, 148px); font-weight: 500; letter-spacing: -.045em; line-height: .84; color: var(--ek-coral-600); margin-left: -.03em; }
+.v2-card__fig > span { font-family: var(--ek-font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ek-ink-muted); line-height: 1.45; max-width: 22ch; padding-bottom: 6px; }
+.v2-card__foot { margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(22,21,15,.16); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.v2-card__foot .v2-meta { font-family: var(--ek-font-mono); font-size: 12px; color: var(--ek-ink-muted); letter-spacing: .02em; }
+/* ---------- closing: the one coral surface ---------- */
+.v2-close { padding: 0; }
+.v2-close__stone { background: var(--ek-coral-arc); color: var(--ek-ink); border-radius: 24px; padding: 88px 72px; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 56px; align-items: end; }
+.v2-close__stone .v2-h2 { font-size: clamp(34px, 4vw, 58px); text-wrap: pretty; }
+.v2-close__stone p { font-family: var(--ek-font-prose); font-size: 19px; line-height: 1.5; color: var(--ek-ink); }
+.v2-close__cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.v2-close__stone .v2-btn:hover { background: var(--ek-paper); border-color: var(--ek-paper); color: var(--ek-ink); }
+.v2-close__stone .v2-btn--ghost:hover { background: var(--ek-ink); border-color: var(--ek-ink); color: var(--ek-paper); }
+
+/* The band inside a card (Research page): no head row, shorter. */
+.v2-net--card { height: clamp(360px, 38vw, 470px); }
+.v2-net--card .v2-net__head { padding: 0; height: 0; overflow: hidden; }
+.v2-net--card .v2-net__num { display: none; }
+.v2-net--card .container { max-width: none; padding: 0 32px; }
+
+/* ---------- small screens ---------- */
+@media (max-width: 980px) {
+  .v2-net { height: 840px; }
+  .v2-net--card { height: 380px; }
+  .v2-net--card .container { padding: 0 20px; }
+  .v2-net__tag i { display: none; }
+  .v2-net__tag b { margin-right: 0; }
+  .v2-net__head { grid-template-columns: 1fr; gap: 20px; padding-top: 48px; }
+  .v2-net__axis span:not(:nth-child(3n+1)) { display: none; }
+  .v2-close__stone { grid-template-columns: 1fr; gap: 28px; padding: 48px 28px; }
+  .v2-card { padding: 28px; min-height: 0; }
+}

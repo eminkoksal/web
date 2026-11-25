@@ -1,12 +1,12 @@
 /* Home page — Emin Style v1.2 (2026-11-25).
    Copy lives in content/home.md; styles in public/assets/home.css (hm- classes).
-   The reveal-on-scroll and count-up behaviour is wired once in useHomeMotion. */
+   Shared v1.2 pieces (buttons, reveal-on-scroll, coral close) come from v2.jsx and v2.css. */
 import React from 'react';
 import { Eyebrow, Nav, Footer } from './shared.jsx';
+import { useReveal, ArrowUpRight, ArrowRight, Btn, CoralClose } from './v2.jsx';
 import { POSTS, formatDate, trimWords } from './posts.js';
 import CitationNetwork from './citation-network.jsx';
 
-const { useEffect } = React;
 
 /* ------------------------------------------------------------------ */
 /*  Content                                                            */
@@ -64,7 +64,8 @@ const NETWORK = {
 };
 
 /* The first entry is the lead card (wide, with the coral figure); the rest stack beside it.
-   The lead is work in progress: no link, and no pilot numbers until they are verified. */
+   The lead is work in progress: it links to its entry on the Research page, and quotes no
+   pilot numbers until they are verified. */
 const FEATURED = [
 {
   eyebrow: 'AI-Native Research · In progress',
@@ -81,7 +82,9 @@ const FEATURED = [
   'year, is told only the facts of the next year\u2019s cases, and has to call the ' +
   'outcome. Its hit rate, year by year, measures how predictable the case law is. Each ' +
   'miss goes to the lawyers on the team, who check whether the Board changed course.',
-  meta: 'Work in progress · first results expected in 2027'
+  meta: 'Work in progress · first results expected in 2027',
+  cta: 'About the project',
+  href: 'research.html#crystal-ball'
 },
 {
   eyebrow: 'AI-Native Research · Published',
@@ -113,71 +116,6 @@ const STATS = [
 { n: 50, suffix: '+', label: 'publications' },
 { n: 1000, suffix: 's', label: 'legal documents analyzed with AI', hero: true },
 { n: 11, suffix: '+', label: 'courses taught' }];
-
-/* ------------------------------------------------------------------ */
-/*  Motion: reveal on scroll, count-up                                 */
-/* ------------------------------------------------------------------ */
-
-/* A [data-reveal] block gets the class hm-in when it scrolls into view; its
-   [data-r] children fade up (staggered by --i), its .hm-draw rules draw, and
-   its [data-count] figures count up. With reduced motion the CSS shows
-   everything at once and the figures are left as rendered. */
-function useHomeMotion() {
-  useEffect(() => {
-    window.__ekMotion = true;
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const countUp = (el) => {
-      const to = Number(el.getAttribute('data-count'));
-      const comma = el.textContent.includes(',');
-      const show = (v) => { el.textContent = comma ? Math.round(v).toLocaleString('en-US') : String(Math.round(v)); };
-      const start = performance.now();
-      const tick = (now) => {
-        const p = Math.min(1, (now - start) / 1500);
-        show(to * (1 - Math.pow(1 - p, 3)));
-        if (p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    };
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        e.target.classList.add('hm-in');
-        if (!reduce) e.target.querySelectorAll('[data-count]').forEach(countUp);
-        io.unobserve(e.target);
-      });
-    }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
-    document.querySelectorAll('.hm [data-reveal]').forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-}
-
-/* ------------------------------------------------------------------ */
-/*  Small primitives                                                   */
-/* ------------------------------------------------------------------ */
-
-function ArrowUpRight({ size = 13, width = 1.5 }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 14 14" fill="none" stroke="currentColor"
-    strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M3.5 10.5l7-7M5 3.5h5.5V9" />
-    </svg>);
-}
-
-function ArrowRight({ size = 13 }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 14 14" fill="none" stroke="currentColor"
-    strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" />
-    </svg>);
-}
-
-function Btn({ variant, href, external, children }) {
-  return (
-    <a className={'hm-btn' + (variant ? ' hm-btn--' + variant : '')} href={href}
-    target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
-      {children}
-    </a>);
-}
 
 /* ------------------------------------------------------------------ */
 /*  Sections                                                           */
@@ -220,10 +158,10 @@ function NetworkBand() {
     <CitationNetwork
       total={NETWORK.total}
       eyebrow={<Eyebrow color="#B9B6AB">{NETWORK.eyebrow}</Eyebrow>}
-      tag={NETWORK.tag}
+      tags={[{ node: 'top', label: NETWORK.tag }]}
       note={NETWORK.note}>
-      <p className="hm-net__say">{NETWORK.say}</p>
-      <div className="hm-net__cta">
+      <p className="v2-net__say">{NETWORK.say}</p>
+      <div className="v2-net__cta">
         <Btn variant="paper" href={NETWORK.paper} external>Read the paper <ArrowUpRight /></Btn>
         <Btn variant="line" href="research.html">Explore the research</Btn>
       </div>
@@ -237,9 +175,9 @@ function FourPillars() {
         <div className="hm-pillars__head" data-reveal>
           <div data-r>
             <Eyebrow>What I do</Eyebrow>
-            <h2 className="hm-h2">Four areas of work that feed each other</h2>
+            <h2 className="v2-h2">Four areas of work that feed each other</h2>
           </div>
-          <p className="hm-prose" data-r style={{ '--i': 1 }}>
+          <p className="v2-prose" data-r style={{ '--i': 1 }}>
             On paper it is an odd pairing: twenty years of competition economics
             and daily use of the newest AI tools. In practice each feeds the other.
             The economics decides which question a workflow should answer, and the
@@ -250,7 +188,7 @@ function FourPillars() {
         <div className="hm-pillars__grid" data-reveal>
           {PILLARS.map((p, i) =>
           <a className="hm-pillar" href={p.href} key={p.title} data-r style={{ '--i': i }}>
-            <span className="hm-rule hm-draw" style={{ '--i': i }} />
+            <span className="hm-rule v2-draw" style={{ '--i': i }} />
             <div className="hm-pillar__top">
               <h3>{p.title}</h3>
               <span className="hm-pillar__go"><ArrowUpRight size={15} width={1.4} /></span>
@@ -265,23 +203,23 @@ function FourPillars() {
 
 function FeaturedCard({ lead, index, eyebrow, figure, figureSuffix, figureLabel, title, body, meta, cta, href, external }) {
   const Tag = href ? 'a' : 'div';
-  const cls = 'hm-card ' + (lead ? 'hm-card--sunken' : 'hm-card--line hm-card--compact') + (href ? '' : ' hm-card--static');
+  const cls = 'v2-card ' + (lead ? 'v2-card--sunken' : 'v2-card--line v2-card--compact') + (href ? '' : ' v2-card--static');
   return (
     <Tag className={cls} href={href}
     target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}
     data-r style={{ '--i': index }}>
-      <span className="hm-mono">{eyebrow}</span>
+      <span className="v2-mono">{eyebrow}</span>
       {figure &&
-      <div className="hm-card__fig">
+      <div className="v2-card__fig">
         <strong><span data-count={figure}>{figure.toLocaleString('en-US')}</span>{figureSuffix}</strong>
         <span>{figureLabel}</span>
       </div>
       }
       <h3>{title}</h3>
       <p>{body}</p>
-      <div className="hm-card__foot">
-        <span className="hm-meta">{meta}</span>
-        {cta && <span className="hm-arrow-link">{cta} <ArrowRight /></span>}
+      <div className="v2-card__foot">
+        <span className="v2-meta">{meta}</span>
+        {cta && <span className="v2-arrow-link">{cta} <ArrowRight /></span>}
       </div>
     </Tag>);
 }
@@ -294,7 +232,7 @@ function FeaturedWork() {
         <div className="hm-work__head" data-reveal>
           <div data-r>
             <Eyebrow>Featured work</Eyebrow>
-            <h2 className="hm-h2">What I&rsquo;m working on now</h2>
+            <h2 className="v2-h2">What I&rsquo;m working on now</h2>
           </div>
           <div data-r style={{ '--i': 1 }}>
             <Btn variant="ghost" href="research.html">See all research <ArrowUpRight /></Btn>
@@ -315,14 +253,14 @@ function Numbers() {
     <section className="hm-stats">
       <div className="container">
         <div className="hm-stats__row" data-reveal>
-          <span className="hm-rule hm-rule--t hm-draw" />
+          <span className="hm-rule hm-rule--t v2-draw" />
           {STATS.map((s, i) =>
           <div className={'hm-stat' + (s.hero ? ' hm-stat--hero' : '')} key={s.label} data-r style={{ '--i': i }}>
             <strong><span data-count={s.n}>{s.n}</span>{s.suffix}</strong>
             <span>{s.label}</span>
           </div>
           )}
-          <span className="hm-rule hm-rule--b hm-draw" style={{ '--i': 2 }} />
+          <span className="hm-rule hm-rule--b v2-draw" style={{ '--i': 2 }} />
         </div>
       </div>
     </section>);
@@ -336,7 +274,7 @@ function RecentWriting() {
         <div className="hm-writing__head" data-reveal>
           <div data-r>
             <Eyebrow>From the blog</Eyebrow>
-            <h2 className="hm-h2">Essays &amp; working notes</h2>
+            <h2 className="v2-h2">Essays &amp; working notes</h2>
           </div>
           <div data-r style={{ '--i': 1 }}>
             <Btn variant="ghost" href="blog.html">Read all writing <ArrowUpRight /></Btn>
@@ -364,27 +302,14 @@ function RecentWriting() {
 
 function ClosingCTA() {
   return (
-    <section className="hm-close">
-      <div className="container">
-        <div className="hm-close__stone" data-reveal>
-          <h2 className="hm-h2" data-r>
-            Working on something where economics, regulation, and AI meet?
-          </h2>
-          <div data-r style={{ '--i': 1 }}>
-            <p>
-              Most of my work is with competition and regulation teams at international
-              law firms and consultancies, alongside academic collaborations and my own
-              research. If what you are doing overlaps with any of that, send me a
-              note about it.
-            </p>
-            <div className="hm-close__cta">
-              <Btn href="contact.html">Get in touch <ArrowUpRight /></Btn>
-              <Btn variant="ghost" href="https://www.linkedin.com/in/eminkoksal/" external>Connect on LinkedIn</Btn>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>);
+    <CoralClose
+      title="Working on something where economics, regulation, and AI meet?"
+      body={'Most of my work is with competition and regulation teams at international ' +
+      'law firms and consultancies, alongside academic collaborations and my own ' +
+      'research. If what you are doing overlaps with any of that, send me a note about it.'}>
+      <Btn href="contact.html">Get in touch <ArrowUpRight /></Btn>
+      <Btn variant="ghost" href="https://www.linkedin.com/in/eminkoksal/" external>Connect on LinkedIn</Btn>
+    </CoralClose>);
 }
 
 /* ------------------------------------------------------------------ */
@@ -392,7 +317,7 @@ function ClosingCTA() {
 /* ------------------------------------------------------------------ */
 
 function HomeApp() {
-  useHomeMotion();
+  useReveal();
   return (
     <>
       <Nav active="Home" />

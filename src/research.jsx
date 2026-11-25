@@ -1,8 +1,12 @@
-/* Research page — AI-native research program. */
+/* Research page — AI-native research program. Emin Style v1.2 (2026-11-25).
+   Copy lives in content/research.md; styles in public/assets/v2.css (shared) and
+   research.css (rs- classes). Every figure and chart on this page is taken from the
+   papers themselves: the network from the 2026 paper's citation data, the EU-law
+   shares from its Section IV.5. */
 import React from 'react';
-import { IconArrow, IconSearch, IconDownload, IconChevron, Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA, Nav, Footer, OrbitalArc } from './shared.jsx';
-
-const { useState } = React;
+import { Eyebrow, Nav, Footer } from './shared.jsx';
+import { useReveal, ArrowUpRight, Btn, CoralClose } from './v2.jsx';
+import CitationNetwork from './citation-network.jsx';
 
 /* ------------------------------------------------------------------ */
 /*  Content                                                            */
@@ -12,7 +16,7 @@ const METHOD_STEPS = [
   {
     title: 'Large-scale AI analysis of legal texts',
     body:
-      "Treat a national authority\u2019s full decision record as a single queryable dataset, " +
+      "Treat a national authority’s full decision record as a single queryable dataset, " +
       'then use AI to extract concepts, parties, holdings, and reasoning patterns at a ' +
       'granularity manual review cannot reach.',
   },
@@ -30,33 +34,40 @@ const METHOD_STEPS = [
   },
 ];
 
+/* surface: how the card separates from the page (sunken, ink, line).
+   figure: a coral figure with a mono label. network: the card opens with the citation network.
+   chart: the EU-law chart sits under the finding with the same index. */
 const FLAGSHIP = [
   {
     id: 'quarter-century',
+    surface: 'sunken',
     status: 'Published',
     statusMeta: 'SSRN, 2025',
-    title: "A Quarter-Century Analysis of the Turkish Competition Board\u2019s Decisions",
+    figure: { n: 3369, label: 'infringement decisions, twenty-five years, one dataset' },
+    title: "A Quarter-Century Analysis of the Turkish Competition Board’s Decisions",
     coauthors: 'with C. Peker and M. Üyer',
     summary: [
       'We took all 3,369 infringement decisions the Turkish Competition Board published over roughly ' +
       'twenty-five years and analyzed them as one dataset, which nobody had done before. ' +
-      "Combining NLP with economic analysis, the paper traces how the Board\u2019s reasoning and " +
+      "Combining NLP with economic analysis, the paper traces how the Board’s reasoning and " +
       'rulings moved across industries and decision types. Patterns that would have taken a ' +
       'team months to find by hand showed up in days.',
       'The dataset itself is part of the contribution. Building it opened the door to a ' +
       'research program, including the citation network study below.',
     ],
     why: [
-      "It shows that a national agency\u2019s full decision record can be treated as a research dataset.",
-      "It maps how the agency\u2019s practice has moved across industries and over time.",
-      'And it makes a larger claim. As we put it in the paper: \u201Cthis research demonstrates ' +
+      "It shows that a national agency’s full decision record can be treated as a research dataset.",
+      "It maps how the agency’s practice has moved across industries and over time.",
+      'And it makes a larger claim. As we put it in the paper: “this research demonstrates ' +
       'the potential of large language models to open up new avenues of inquiry in ' +
-      'text-intensive disciplines such as law and economics.\u201D',
+      'text-intensive disciplines such as law and economics.”',
     ],
     cta: { label: 'Read on SSRN', href: 'https://ssrn.com/abstract=5731282', external: true },
   },
   {
     id: 'intellectual-dna',
+    surface: 'ink',
+    network: true,
     status: 'Published',
     statusMeta: 'SSRN, 2026',
     title: 'The Intellectual DNA of the Turkish Competition Board',
@@ -65,7 +76,7 @@ const FLAGSHIP = [
       'The follow-up to the 2025 paper. An AI model read all 9,995 published decisions of ' +
       'the Turkish Competition Board, roughly thirty years of case law, and extracted ' +
       'the 18,513 citations connecting them. Network analysis did the rest. The paper draws ' +
-      "the Board\u2019s \u201Cintellectual DNA\u201D as a graph: which decisions carry the case " +
+      "the Board’s “intellectual DNA” as a graph: which decisions carry the case " +
       'law, how its concepts descend from one another, and where the doctrine changed course.',
       'Methodologically, the paper combines two techniques that competition-law ' +
       'research rarely uses together: AI-assisted extraction of structured information from ' +
@@ -74,13 +85,59 @@ const FLAGSHIP = [
     ],
     whyLabel: 'What we found',
     why: [
-      "The Board\u2019s most influential decision attracts just 10 direct citations. Authority in " +
+      "The Board’s most influential decision attracts just 10 direct citations. Authority in " +
       'this case law is spread across many rulings, and no small set of landmarks dominates.',
       'Reliance on EU case law follows a U-curve: early dependence, then autonomization, then re-engagement.',
       'Doctrine-shifting decisions become the canon within three years. How fast a decision gets cited predicts its staying power.',
     ],
+    chartAt: 1,
     cta: { label: 'Read on SSRN', href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258', external: true },
   },
+  {
+    id: 'crystal-ball',
+    surface: 'line',
+    status: 'In progress',
+    statusMeta: '2027',
+    title:
+      'How Predictable Is the Competition Board? A “Crystal Ball” Experiment with ' +
+      'Thirty Years of Case Law and Artificial Intelligence',
+    coauthors: 'with F. G. Bilgin and C. Karataş',
+    summary: [
+      'Predictability is what legal certainty looks like in daily practice. A firm that drafts a ' +
+      'distribution agreement, plans an acquisition, or assesses its own exemption is guessing ' +
+      'how the Board would rule in a similar case, and the guess rests on the case law. How far ' +
+      'that case law can be predicted has, as far as we know, never been measured.',
+      'We turn the question into an experiment. The model is not trained on the decisions; for ' +
+      'every case it finds and reads the relevant precedents again. Each year gets its own run: ' +
+      'the decisions and citation links the model can reach stop at the start of that year, it is ' +
+      'given only the facts of the following year’s cases, and it has to predict what the ' +
+      'Board decided. Set against the real outcomes, the predictions give a predictability ' +
+      'series, year by year.',
+      'Three things can mislead such an experiment. The model may remember a decision instead ' +
+      'of inferring it, so we test on decisions published after its training. Most mergers are ' +
+      'cleared, so a guess of “always cleared” is right most of the time, and the model is ' +
+      'scored against that guess. And a wrong prediction is not always a change of course, so ' +
+      'the lawyers on the team read every miss.',
+    ],
+    whyLabel: 'What we are asking',
+    why: [
+      "Did the 2020 amendment to the Competition Act, new guidelines, and changes in the Board’s " +
+      "membership lower the model’s accuracy?",
+      'Are cartel cases more predictable than mergers?',
+      'Do the decisions that gather citations fastest, the ones that turn the case law, fall in ' +
+      'the periods where the model is most often wrong?',
+    ],
+  },
+];
+
+/* EU-law share of the Board's citations by five-year period, as reported in the 2026 paper
+   (Section IV.5; computed from the citation data, 12.3 percent over the whole record). */
+const EU_SHARE = [
+  { from: 2000, to: 2005, label: '2000–05', value: 22.7 },
+  { from: 2006, to: 2010, label: '2006–10', value: 15.3 },
+  { from: 2011, to: 2015, label: '2011–15', value: 7.1 },
+  { from: 2016, to: 2020, label: '2016–20', value: 12.1 },
+  { from: 2021, to: 2025, label: '2021–25', value: 12.3 },
 ];
 
 /* Citation primitives — authors render bold, titles italic, venue italic where source uses it. */
@@ -259,38 +316,33 @@ const INTERESTS = [
 
 function ResearchHero() {
   return (
-    <section style={{ position: 'relative', padding: '100px 0 80px' }}>
-      <div className="container" style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', right: -30, top: 60, zIndex: 0 }}>
-          <GhostHeadline>Research</GhostHeadline>
+    <section className="rs-hero">
+      <div className="container">
+        <div data-reveal>
+          <div data-r><Eyebrow>Research</Eyebrow></div>
+          <h1 className="rs-display" data-r style={{ '--i': 1 }}>AI-native economic research</h1>
         </div>
-        <div style={{ position: 'relative', zIndex: 1, paddingTop: 96 }}>
-          <Eyebrow>Research</Eyebrow>
-          <h1 className="display" style={{ margin: '28px 0 32px', maxWidth: 1100 }}>
-            AI-native economic research
-          </h1>
-          <p style={{
-            fontFamily: 'var(--font-sans)',
-            fontFamily: 'var(--font-prose)', fontSize: 'clamp(20px, 2vw, 28px)',
-            fontWeight: 500, letterSpacing: '-.02em',
-            lineHeight: 1.22, color: '#16150F',
-            margin: '0 0 32px', maxWidth: 880,
-          }}>
-            Using AI as the method to ask economic and competition-law questions too
-            large to ask by hand
-          </p>
-          <p style={{
-            fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
-            maxWidth: 780, margin: 0,
-          }}>
-            Say a careful reader needs half an hour for one decision of the Turkish
-            Competition Board. The Board has published 9,995 of them, so reading the lot
-            once would take some 5,000 hours, two and a half working years, before anyone
-            drew a single conclusion. That arithmetic is why the record had never been
-            studied as a whole, and why I rebuilt part of my research practice around
-            AI. The two projects below are the result. The publications underneath show
-            where the questions come from.
-          </p>
+        <div className="rs-hero__grid" data-reveal>
+          <div>
+            <p className="rs-lede" data-r style={{ '--i': 2 }}>
+              Using AI as the method to ask economic and competition-law questions too
+              large to ask by hand
+            </p>
+            <p className="rs-body" data-r style={{ '--i': 3 }}>
+              Say a careful reader needs half an hour for one decision of the Turkish
+              Competition Board. The Board has published 9,995 of them, so reading the lot
+              once would take some 5,000 hours, two and a half working years, before anyone
+              drew a single conclusion. That arithmetic is why the record had never been
+              studied as a whole, and why I rebuilt part of my research practice around
+              AI. The two papers below are the result, and a third project is under way. The
+              publications underneath show where the questions come from.
+            </p>
+          </div>
+          <div className="rs-hero__fig" data-r style={{ '--i': 4 }}>
+            <span className="rs-rule v2-draw" style={{ '--i': 4 }} />
+            <strong data-count="5000">5,000</strong>
+            <span>hours to read all 9,995 published decisions once, at half an hour each</span>
+          </div>
         </div>
       </div>
     </section>
@@ -299,73 +351,31 @@ function ResearchHero() {
 
 function MethodSignature() {
   return (
-    <section style={{
-      background: '#16150F', color: '#F5F2EB',
-      padding: '128px 0', position: 'relative', overflow: 'hidden',
-      marginTop: 48,
-    }}>
-
-      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <Eyebrow color="rgba(255,255,255,.85)" dotColor="#F37338">Method</Eyebrow>
-        <h2 style={{
-          fontFamily: 'var(--font-sans)',
-          fontSize: 'clamp(34px, 4.6vw, 76px)',
-          fontWeight: 500, letterSpacing: '-.025em',
-          lineHeight: 1.08, color: '#F5F2EB',
-          margin: '28px 0 0', maxWidth: 1100,
-        }}>
-          AI-powered analysis of legal corpora: regulatory text turned into economic
-          evidence
-        </h2>
-
-        <p style={{
-          fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: 'rgba(245,242,235,.85)',
-          margin: '56px 0 48px', maxWidth: 820,
-        }}>
-          The method combines three steps:
-        </p>
-
-        <ol style={{
-          listStyle: 'none', padding: 0, margin: 0,
-          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32,
-        }}>
+    <section className="rs-method">
+      <div className="container">
+        <div data-reveal>
+          <div data-r><Eyebrow color="#B9B6AB">Method</Eyebrow></div>
+          <h2 data-r style={{ '--i': 1 }}>
+            AI-powered analysis of legal corpora: regulatory text turned into economic
+            evidence
+          </h2>
+          <p className="rs-method__intro" data-r style={{ '--i': 2 }}>The method combines three steps:</p>
+        </div>
+        <ol className="rs-steps" data-reveal>
           {METHOD_STEPS.map((step, i) => (
-            <li key={i} style={{
-              padding: '32px 0 0',
-              borderTop: '1px solid rgba(255,255,255,.3)',
-            }}>
-              <div style={{
-                fontFamily: 'var(--font-sans)',
-                fontSize: 48, fontWeight: 500,
-                letterSpacing: '-.02em', lineHeight: 1,
-                color: '#E75C39', marginBottom: 24,
-              }}>
-                {String(i + 1).padStart(2, '0')}
-              </div>
-              <h3 style={{
-                fontFamily: 'var(--font-sans)', fontSize: 22, fontWeight: 500,
-                letterSpacing: '-.022em', lineHeight: 1.2,
-                color: '#F5F2EB', margin: '0 0 14px',
-              }}>
-                {step.title}
-              </h3>
-              <p style={{
-                fontSize: 15, lineHeight: 1.55,
-                color: 'rgba(245,242,235,.78)', margin: 0,
-              }}>
-                {step.body}
-              </p>
+            <li className="rs-step" key={step.title} data-r style={{ '--i': i }}>
+              <span className="rs-rule v2-draw" style={{ '--i': i }} />
+              <div className="rs-step__n">{String(i + 1).padStart(2, '0')}</div>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
             </li>
           ))}
         </ol>
-
-        <p style={{
-          fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55,
-          color: 'rgba(245,242,235,.85)',
-          margin: '56px 0 0', maxWidth: 880,
-        }}>
-          The combination is what makes the work AI-native rather than AI-flavored: each step
-          depends on the others, and none works as well alone.
+        <p className="rs-method__close" data-reveal>
+          <span data-r>
+            The combination is what makes the work AI-native rather than AI-flavored: each step
+            depends on the others, and none works as well alone.
+          </span>
         </p>
       </div>
     </section>
@@ -374,25 +384,19 @@ function MethodSignature() {
 
 function FlagshipProjects() {
   return (
-    <section id="flagship" style={{ padding: '128px 0 96px', scrollMarginTop: 120 }}>
+    <section id="flagship" className="rs-flagship">
       <div className="container">
-        <div style={{ maxWidth: 880, marginBottom: 80 }}>
-          <Eyebrow>Flagship projects</Eyebrow>
-          <h2 className="display--mid" style={{ margin: '20px 0 24px' }}>
-            Two projects, one program
-          </h2>
-          <p style={{
-            fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
-            margin: 0, maxWidth: 720,
-          }}>
-            Both papers study the Turkish Competition Board. It is the authority I have
+        <div className="rs-head" data-reveal>
+          <div data-r><Eyebrow>Flagship projects</Eyebrow></div>
+          <h2 className="v2-h2" data-r style={{ '--i': 1 }}>Three projects, one program</h2>
+          <p className="v2-prose" data-r style={{ '--i': 2 }}>
+            All three study the Turkish Competition Board. It is the authority I have
             worked on for twenty years, and it publishes its decisions with their
             reasoning, which is what makes a full corpus possible. The method should
             travel to any authority that does the same.
           </p>
         </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+        <div className="rs-flags">
           {FLAGSHIP.map((p) => <FlagshipCard key={p.id} project={p} />)}
         </div>
       </div>
@@ -401,121 +405,101 @@ function FlagshipProjects() {
 }
 
 function FlagshipCard({ project }) {
-  const isForthcoming = project.status === 'Forthcoming';
+  const p = project;
   return (
-    <article style={{
-      background: '#FBFAF6',
-      borderRadius: 24,
-      padding: 48,
-      display: 'grid',
-      gridTemplateColumns: '1.4fr 1fr',
-      gap: 56,
-    }}>
-      <div>
-        <StatusPill status={project.status} meta={project.statusMeta} />
-        <h3 style={{
-          fontFamily: 'var(--font-sans)',
-          fontSize: 'clamp(26px, 2.8vw, 40px)',
-          fontWeight: 500, letterSpacing: '-.022em', lineHeight: 1.1,
-          margin: '20px 0 12px',
-        }}>
-          {project.title}
-        </h3>
-        {project.workingTitle && (
-          <p style={{
-            fontSize: 15, color: '#56554F', margin: '0 0 16px',
-            lineHeight: 1.4,
-          }}>
-            <span style={{ fontWeight: 500, color: '#16150F' }}>Working title: </span>
-            {project.workingTitle}
-          </p>
-        )}
-        {project.coauthors && (
-          <p style={{
-            fontSize: 14, fontWeight: 500, letterSpacing: '.08em', fontFamily: 'var(--font-mono)',
-            textTransform: 'uppercase', color: '#BC4527',
-            margin: '0 0 24px',
-          }}>
-            Co-authors · {project.coauthors}
-          </p>
-        )}
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          {project.summary.map((para, i) => (
-            <p key={i} style={{
-              fontSize: 16, lineHeight: 1.55, color: '#2E2E29', margin: 0,
-            }}>
-              {para}
-            </p>
-          ))}
+    <article id={p.id} className={'rs-flag rs-flag--' + p.surface} data-reveal>
+      {p.network && (
+        <CitationNetwork compact
+          tags={[
+            { node: 'top', label: 'Most cited' },
+            { node: '05-71/981-270', label: 'Most influential' },
+          ]}
+          note={'Each dot is a decision, each line a citation, placed by decision date. Shown: the ' +
+            'largest connected component, 5,359 decisions and 15,689 citations. “Most influential” ' +
+            'is the decision ranked first by PageRank'} />
+      )}
+      <div className="rs-flag__body">
+        <div data-r>
+          <StatusPill status={p.status} meta={p.statusMeta} />
+          {p.figure && (
+            <div className="rs-flag__fig">
+              <strong data-count={p.figure.n}>{p.figure.n.toLocaleString('en-US')}</strong>
+              <span>{p.figure.label}</span>
+            </div>
+          )}
+          <h3>{p.title}</h3>
+          <p className="rs-flag__co">Co-authors · {p.coauthors}</p>
+          <div className="rs-flag__sum">
+            {p.summary.map((para, i) => <p key={i}>{para}</p>)}
+          </div>
+          {p.cta && (
+            <div className="rs-flag__cta">
+              <Btn variant={p.surface === 'ink' ? 'paper' : undefined} href={p.cta.href} external={p.cta.external}>
+                {p.cta.label} <ArrowUpRight />
+              </Btn>
+            </div>
+          )}
         </div>
-
-        <div style={{ marginTop: 32 }}>
-          <Button variant="primary" href={project.cta.href}
-            target={project.cta.external ? '_blank' : undefined}>
-            {project.cta.label} <IconArrow size={14} dir="up-right" />
-          </Button>
+        <div className="rs-flag__side" data-r style={{ '--i': 1 }}>
+          <span className="rs-rule v2-draw" style={{ '--i': 1 }} />
+          <h4>{p.whyLabel || 'Why it matters'}</h4>
+          <ul className="rs-points">
+            {p.why.map((w, i) => (
+              <li key={i}>
+                {w}
+                {p.chartAt === i && <EuShareChart />}
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
-
-      <div style={{
-        padding: '32px 0 0',
-        borderTop: '1.5px solid #16150F',
-      }}>
-        <h4 style={{
-          fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 500,
-          letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
-          margin: '0 0 20px',
-        }}>
-          {project.whyLabel || 'Why it matters'}
-        </h4>
-        <ul style={{
-          listStyle: 'none', padding: 0, margin: 0,
-          display: 'flex', flexDirection: 'column', gap: 16,
-        }}>
-          {project.why.map((w, i) => (
-            <li key={i} style={{
-              display: 'flex', gap: 14,
-              fontSize: 15, lineHeight: 1.55, color: '#2E2E29',
-            }}>
-              <span style={{
-                flexShrink: 0, marginTop: 9, width: 6, height: 6,
-                borderRadius: '50%', background: '#F37338',
-              }} />
-              <span>{w}</span>
-            </li>
-          ))}
-        </ul>
       </div>
     </article>
   );
 }
 
 function StatusPill({ status, meta }) {
-  const isPublished = status === 'Published';
   return (
-    <div style={{
-      display: 'inline-flex', alignItems: 'center', gap: 12,
-      padding: '8px 18px', borderRadius: 999,
-      background: isPublished ? '#16150F' : 'transparent',
-      color: isPublished ? '#F5F2EB' : '#16150F',
-      border: isPublished ? 'none' : '1.5px dashed rgba(22,21,15,.55)',
-      fontSize: 12, fontWeight: 500, letterSpacing: '.08em', fontFamily: 'var(--font-mono)',
-      textTransform: 'uppercase',
-    }}>
-      <span style={{
-        width: 7, height: 7, borderRadius: '50%',
-        background: isPublished ? '#F37338' : '#BC4527',
-      }} />
+    <div className={'rs-pill' + (status === 'Published' ? '' : ' rs-pill--open')}>
+      <span className="rs-pill__node" />
       {status}
-      {meta && (
-        <span style={{
-          fontWeight: 500, letterSpacing: '.04em', opacity: .8,
-        }}>
-          · {meta}
-        </span>
-      )}
+      {meta && <span className="rs-pill__meta">· {meta}</span>}
     </div>
+  );
+}
+
+/* One series, five periods: each period is a bar of its own width in time, set at its share.
+   Drawn for the ink card; values are printed, so the chart reads without colour or hover. */
+function EuShareChart() {
+  const W = 400, H = 196, L = 30, R = 6, T = 26, B = 30;
+  const x = (yr) => L + (yr - 2000) / 26 * (W - L - R);
+  const y = (v) => T + (1 - v / 25) * (H - T - B);
+  return (
+    <figure className="rs-chart">
+      <figcaption>EU-law share of the Board&rsquo;s citations, by five-year period</figcaption>
+      <svg viewBox={`0 0 ${W} ${H}`} role="img"
+        aria-label={'Share of the Board’s citations that go to European Commission and EU court decisions: ' +
+          EU_SHARE.map((d) => `${d.from} to ${d.to}, ${d.value} percent`).join('; ')}>
+        {[0, 10, 20].map((v) => (
+          <g key={v}>
+            <line className="rs-chart__grid" x1={L} x2={W - R} y1={y(v)} y2={y(v)} />
+            <text className="rs-chart__tick" x={L - 8} y={y(v) + 3.5} textAnchor="end">{v}%</text>
+          </g>
+        ))}
+        {EU_SHARE.map((d, i) => {
+          const x1 = x(d.from) + 3, x2 = x(d.to + 1) - 3, mid = (x1 + x2) / 2;
+          return (
+            <g key={d.label} className="rs-chart__period">
+              <title>{`${d.from} to ${d.to}: ${d.value} percent of the Board’s citations go to EU decisions`}</title>
+              <rect className="rs-chart__hit" x={x1 - 3} y={T - 20} width={x2 - x1 + 6} height={H - T - B + 20} />
+              <rect className="rs-chart__mark v2-draw" style={{ '--i': i + 2 }} x={x1} y={y(d.value) - 2} width={x2 - x1} height="4" rx="2" />
+              <text className="rs-chart__value" x={mid} y={y(d.value) - 10} textAnchor="middle">{d.value}%</text>
+              <text className="rs-chart__tick" x={mid} y={H - 10} textAnchor="middle">{d.label}</text>
+            </g>
+          );
+        })}
+      </svg>
+      <p className="rs-chart__src">Köksal, Peker, Üyer, SSRN 2026, Section IV.5 · 12.3% over the whole record</p>
+    </figure>
   );
 }
 
@@ -525,22 +509,15 @@ function StatusPill({ status, meta }) {
 
 function SelectedPublications() {
   return (
-    <section id="publications" style={{ padding: '64px 0 96px', scrollMarginTop: 120 }}>
+    <section id="publications" className="rs-pubs">
       <div className="container">
-        <div style={{ maxWidth: 880, marginBottom: 56 }}>
-          <Eyebrow>Selected publications</Eyebrow>
-          <h2 className="display--mid" style={{ margin: '20px 0 24px' }}>
-            Where the questions come from
-          </h2>
-          <p style={{
-            fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
-            margin: 0, maxWidth: 720,
-          }}>
+        <div className="rs-head" data-reveal>
+          <div data-r><Eyebrow>Selected publications</Eyebrow></div>
+          <h2 className="v2-h2" data-r style={{ '--i': 1 }}>Where the questions come from</h2>
+          <p className="v2-prose" data-r style={{ '--i': 2 }}>
             The AI-native work above grows out of twenty years of research on competition policy,
             network industries, and digital regulation. A curated subset is below;
-            the full list lives on the <a href="cv.html" style={{
-              color: '#16150F', textDecoration: 'underline', textUnderlineOffset: 3,
-            }}>CV page</a>.
+            the full list lives on the <a href="cv.html">CV page</a>.
           </p>
         </div>
 
@@ -549,13 +526,7 @@ function SelectedPublications() {
         <PubGroup title="Selected book chapters" items={PUBS_CHAPTERS} />
         <PubGroup title="Selected reports & working papers" items={PUBS_REPORTS} />
 
-        <p style={{
-          fontSize: 15, color: '#56554F', margin: '24px 0 0',
-        }}>
-          Full publication list: <a href="cv.html" style={{
-            color: '#16150F', textDecoration: 'underline', textUnderlineOffset: 3,
-          }}>/cv</a>.
-        </p>
+        <p className="rs-pubs__more">Full publication list: <a href="cv.html">/cv</a>.</p>
       </div>
     </section>
   );
@@ -563,52 +534,30 @@ function SelectedPublications() {
 
 function PubGroup({ title, items }) {
   return (
-    <div style={{ marginBottom: 56 }}>
-      <h3 style={{
-        fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
-        letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
-        color: '#16150F', margin: '0 0 8px',
-      }}>
-        {title}
-      </h3>
-      <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+    <div className="rs-pubgroup" data-reveal>
+      <h3 data-r>{title}</h3>
+      <ul data-r style={{ '--i': 1 }}>
         {items.map((p, i) => (
-          <li key={i} style={{
-            display: 'grid', gridTemplateColumns: '80px 1fr auto',
-            gap: 24, alignItems: 'baseline',
-            padding: '22px 0',
-            borderTop: '1px solid rgba(22,21,15,.12)',
-            borderBottom: i === items.length - 1 ? '1px solid rgba(22,21,15,.12)' : 'none',
-          }}>
-            <span style={{ fontSize: 14, color: '#56554F', whiteSpace: 'nowrap' }}>{p.year}</span>
-            <div>
-              <p style={{ fontFamily: 'var(--font-prose)',
-                fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.5, color: '#16150F', margin: 0,
-              }}>
-                <strong style={{ fontWeight: 500 }}>{p.authors}</strong>{' '}
-                ({p.year}). <em>{p.title}</em>{' '}
-                {p.venueItalic ? (
-                  <RenderVenue text={p.venue} italic={p.venueItalic} />
-                ) : (
-                  <span>{p.venue}</span>
-                )}
-                {p.note && <span style={{ color: '#56554F' }}> {p.note}</span>}
-              </p>
-            </div>
+          <li className="rs-pub" key={i}>
+            <span className="rs-pub__yr">{p.year}</span>
+            <p>
+              <strong>{p.authors}</strong>{' '}
+              ({p.year}). <em>{p.title}</em>{' '}
+              {p.venueItalic ? (
+                <RenderVenue text={p.venue} italic={p.venueItalic} />
+              ) : (
+                <span>{p.venue}</span>
+              )}
+              {p.note && <span className="rs-pub__note"> {p.note}</span>}
+            </p>
             {/* A few Turkish-language chapters have no stable public URL; those
                 rows render without an arrow rather than with a dead link. */}
             {p.href ? (
-              <a href={p.href} target="_blank" rel="noopener noreferrer"
-                 aria-label={`Open “${p.title.replace(/\.$/, '')}” at the publisher`}
-                 style={{
-                   width: 40, height: 40, borderRadius: '50%',
-                   border: '1px solid rgba(22,21,15,.4)',
-                   display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-                   color: '#16150F', textDecoration: 'none', flexShrink: 0,
-                 }}>
-                <IconArrow size={12} dir="up-right" />
+              <a className="rs-pub__go" href={p.href} target="_blank" rel="noopener noreferrer"
+                 aria-label={`Open “${p.title.replace(/\.$/, '')}” at the publisher`}>
+                <ArrowUpRight size={13} width={1.4} />
               </a>
-            ) : <span style={{ width: 40, flexShrink: 0 }} />}
+            ) : <span className="rs-pub__gap" />}
           </li>
         ))}
       </ul>
@@ -635,83 +584,18 @@ function RenderVenue({ text, italic }) {
 
 function ResearchInterests() {
   return (
-    <section id="interests" style={{
-      background: '#FBFAF6', padding: '128px 0',
-      scrollMarginTop: 120,
-    }}>
+    <section id="interests" className="rs-interests">
       <div className="container">
-        <div style={{
-          display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 80,
-          alignItems: 'start',
-        }}>
-          <div>
+        <div className="rs-interests__grid" data-reveal>
+          <div data-r>
             <Eyebrow>Research interests</Eyebrow>
-            <h2 className="display--mid" style={{ margin: '20px 0 0', maxWidth: 460 }}>
-              Active interests
-            </h2>
+            <h2 className="v2-h2">Active interests</h2>
           </div>
-          <ul style={{
-            listStyle: 'none', padding: 0, margin: 0,
-            display: 'flex', flexDirection: 'column', gap: 20,
-          }}>
-            {INTERESTS.map((it, i) => (
-              <li key={i} style={{
-                display: 'flex', gap: 18,
-                paddingBottom: 20,
-                borderBottom: i === INTERESTS.length - 1 ? 'none' : '1px solid rgba(22,21,15,.12)',
-              }}>
-                <span style={{
-                  flexShrink: 0, marginTop: 11, width: 6, height: 6,
-                  borderRadius: '50%', background: '#F37338',
-                }} />
-                <p style={{
-                  fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55, color: '#2E2E29', margin: 0,
-                }}>
-                  <strong style={{ fontWeight: 500, color: '#16150F' }}>{it.lead}</strong>:{' '}
-                  {it.body}
-                </p>
-              </li>
+          <ul className="rs-nodes" data-r style={{ '--i': 1 }}>
+            {INTERESTS.map((it) => (
+              <li key={it.lead}><strong>{it.lead}</strong>: {it.body}</li>
             ))}
           </ul>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/*  Closing CTA                                                        */
-/* ------------------------------------------------------------------ */
-
-function ResearchClosingCTA() {
-  return (
-    <section style={{ padding: '128px 0' }}>
-      <div className="container">
-        <div style={{
-          display: 'grid', gridTemplateColumns: '1.4fr 1fr',
-          gap: 64, alignItems: 'end',
-        }}>
-          <h2 className="display--mid" style={{ margin: 0, maxWidth: 760 }}>
-            Collaborating on AI-native economic or legal research?
-          </h2>
-          <div>
-            <p style={{
-              fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55, color: '#2E2E29',
-              margin: '0 0 28px', maxWidth: 460,
-            }}>
-              If you work on AI methods for legal or regulatory text, on citation networks, on
-              competition-policy research, or on research infrastructure for economists
-              and lawyers, send me a note. There are not many of us yet.
-            </p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <Button variant="primary" href="contact.html">
-                Get in touch <IconArrow size={14} dir="up-right" />
-              </Button>
-              <Button variant="ghost" href="cv.html">
-                Read the CV
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -723,16 +607,24 @@ function ResearchClosingCTA() {
 /* ------------------------------------------------------------------ */
 
 function ResearchApp() {
+  useReveal();
   return (
     <>
       <Nav active="Research" />
-      <main>
+      <main className="rs">
         <ResearchHero />
         <MethodSignature />
         <FlagshipProjects />
         <SelectedPublications />
         <ResearchInterests />
-        <ResearchClosingCTA />
+        <CoralClose
+          title="Collaborating on AI-native economic or legal research?"
+          body={'If you work on AI methods for legal or regulatory text, on citation networks, on ' +
+            'competition-policy research, or on research infrastructure for economists ' +
+            'and lawyers, send me a note. There are not many of us yet.'}>
+          <Btn href="contact.html">Get in touch <ArrowUpRight /></Btn>
+          <Btn variant="ghost" href="cv.html">Read the CV</Btn>
+        </CoralClose>
       </main>
       <Footer />
     </>

@@ -25,13 +25,17 @@ function mountNetwork(band, D, total) {
   const q = (sel) => band.querySelector(sel);
   const cE = q('[data-layer="edges"]'), cN = q('[data-layer="nodes"]'), cO = q('[data-layer="over"]');
   const gE = cE.getContext('2d'), gN = cN.getContext('2d'), gO = cO.getContext('2d');
-  const tip = q('.hm-net__tip'), tag = q('.hm-net__tag'), axis = q('.hm-net__axis');
-  const cursorEl = q('.hm-net__cursor'), numEl = q('.hm-net__num'), headEl = q('.hm-net__head'), noteEl = q('.hm-net__note');
+  const tip = q('.v2-net__tip'), axis = q('.v2-net__axis');
+  const tagEls = Array.from(band.querySelectorAll('.v2-net__tag'));
+  const cursorEl = q('.v2-net__cursor'), numEl = q('.v2-net__num'), headEl = q('.v2-net__head'), noteEl = q('.v2-net__note');
   const N = D.n, M = D.m, X = D.x, Y = D.y, DEG = D.d, E = D.e;
   const DUR = 4200;
 
   const isTop = new Uint8Array(N);
   D.top.forEach((i) => { isTop[i] = 1; });
+  /* labelled decisions: 'top' is the most cited one, anything else is a decision number */
+  const tagNodes = tagEls.map((el) => { const k = el.getAttribute('data-node'); return k === 'top' ? D.top[0] : D.id.indexOf(k); });
+  tagNodes.forEach((i) => { if (i > -1) isTop[i] = 1; });
   const px = new Float32Array(N), py = new Float32Array(N), pr = new Float32Array(N);
   const adj = Array.from({ length: N }, () => []);
   for (let k = 0; k < M; k++) { adj[E[2 * k]].push(k); adj[E[2 * k + 1]].push(k); }
@@ -58,7 +62,8 @@ function mountNetwork(band, D, total) {
     axis.style.bottom = axisB + 'px';
     cursorEl.style.bottom = (axisB + 28) + 'px';
     lineEnd = h - axisB - 50;
-    const top = head + 30, bottom = h - axisB - 62;
+    const room = 17 * Math.max(0, tagEls.length - 1);
+    const top = head + 30 + room, bottom = h - axisB - 62 - room;
     const half = Math.max(60, (bottom - top) / 2);
     const sy = small ? half / maxAbsY : Math.min(sx * 2.1, half / maxAbsY);
     cy = top + half;
@@ -74,15 +79,22 @@ function mountNetwork(band, D, total) {
       s.style.left = (padX + (yr + 0.5 - D.t0) / (D.t1 - D.t0) * (w - 2 * padX)) + 'px';
       axis.appendChild(s);
     }
-    /* the label on the most cited decision: a leader out of the swarm, text beside it */
-    const m = D.top[0], down = py[m] >= cy, end = down ? bottom + 22 : top - 22;
-    tag.querySelector('i').textContent = Math.floor(D.t0 + X[m] / D.w * (D.t1 - D.t0)) + ' · cited ' + DEG[m] + ' times';
-    const flip = px[m] + tag.offsetWidth + 12 > w;
-    tag.classList.toggle('is-up', !down);
-    tag.classList.toggle('is-flip', flip);
-    tag.style.left = (flip ? px[m] - tag.offsetWidth + 0.5 : px[m] - 0.5) + 'px';
-    tag.style.top = (down ? py[m] + pr[m] + 3 : end) + 'px';
-    tag.style.height = Math.max(12, Math.abs(end - py[m]) - pr[m] - 3) + 'px';
+    /* labels: a leader out of the swarm, text beside it; a second label on the same side sits one line further out */
+    const used = { up: 0, down: 0 };
+    tagEls.forEach((tag, t) => {
+      const m = tagNodes[t];
+      if (m < 0) { tag.style.display = 'none'; return; }
+      const down = py[m] >= cy, side = down ? 'down' : 'up';
+      const end = down ? bottom + 22 + used[side] * 17 : top - 22 - used[side] * 17;
+      used[side]++;
+      tag.querySelector('i').textContent = Math.floor(D.t0 + X[m] / D.w * (D.t1 - D.t0)) + ' · cited ' + DEG[m] + ' times';
+      const flip = px[m] + tag.offsetWidth + 12 > w;
+      tag.classList.toggle('is-up', !down);
+      tag.classList.toggle('is-flip', flip);
+      tag.style.left = (flip ? px[m] - tag.offsetWidth + 0.5 : px[m] - 0.5) + 'px';
+      tag.style.top = (down ? py[m] + pr[m] + 3 : end) + 'px';
+      tag.style.height = Math.max(12, Math.abs(end - py[m]) - pr[m] - 3) + 'px';
+    });
   }
 
   function drawEdges(from, to) {
@@ -92,7 +104,7 @@ function mountNetwork(band, D, total) {
       const k = order[i], a = E[2 * k], b = E[2 * k + 1];
       gE.moveTo(px[a], py[a]); gE.lineTo(px[b], py[b]);
     }
-    gE.strokeStyle = `rgba(${PAPER},${w < 700 ? 0.05 : 0.095})`;
+    gE.strokeStyle = `rgba(${PAPER},${w < 700 ? 0.05 : w < 1250 ? 0.07 : 0.095})`;   /* fewer pixels, lighter edges */
     gE.lineWidth = w < 700 ? 0.4 : 0.6;
     gE.stroke();
   }
@@ -113,7 +125,7 @@ function mountNetwork(band, D, total) {
   function finish() {
     nodeAt = N; edgeAt = M; state = 'done';
     drawAll();
-    cursorEl.style.opacity = 0; tag.style.opacity = 1;
+    cursorEl.style.opacity = 0; tagEls.forEach((el) => { el.style.opacity = 1; });
     numEl.textContent = fmt(total);
   }
 
@@ -224,9 +236,10 @@ function mountNetwork(band, D, total) {
 }
 
 /* total: the headline figure, counted up as the network draws.
-   tag: the label for the most cited decision (its year and count are read from the data).
-   children: the right-hand text and buttons. */
-function CitationNetwork({ src = 'assets/citation-network.json', total, eyebrow, tag, note, children }) {
+   tags: [{ node: 'top' | a decision number, label }]; the year and the citation count of each
+   are read from the data. children: the right-hand text and buttons.
+   compact: the band without its head row, for use inside a card. */
+function CitationNetwork({ src = 'assets/citation-network.json', total = 18513, eyebrow, tags = [], note, compact, children }) {
   const ref = useRef(null);
   useEffect(() => {
     const band = ref.current;
@@ -245,22 +258,24 @@ function CitationNetwork({ src = 'assets/citation-network.json', total, eyebrow,
   }, [src, total]);
 
   return (
-    <section className="hm-net" ref={ref} aria-label="Citation network of the Turkish Competition Board">
+    <section className={'v2-net' + (compact ? ' v2-net--card' : '')} ref={ref} aria-label="Citation network of the Turkish Competition Board">
       <canvas data-layer="edges" aria-hidden="true" />
       <canvas data-layer="nodes" aria-hidden="true" />
       <canvas data-layer="over" aria-hidden="true" />
-      <div className="container hm-net__head">
+      <div className="container v2-net__head">
         <div>
           {eyebrow}
-          <span className="hm-net__num">{total.toLocaleString('en-US')}</span>
+          <span className="v2-net__num">{total.toLocaleString('en-US')}</span>
         </div>
         <div>{children}</div>
       </div>
-      <div className="hm-net__tag" aria-hidden="true"><span><b>{tag}</b><i /></span></div>
-      <div className="hm-net__cursor" aria-hidden="true" />
-      <div className="hm-net__axis" aria-hidden="true" />
-      <div className="hm-net__note"><div className="container"><p>{note}</p></div></div>
-      <div className="hm-net__tip" aria-hidden="true"><b /><span /></div>
+      {tags.map((t) =>
+      <div className="v2-net__tag" data-node={t.node} key={t.node} aria-hidden="true"><span><b>{t.label}</b><i /></span></div>
+      )}
+      <div className="v2-net__cursor" aria-hidden="true" />
+      <div className="v2-net__axis" aria-hidden="true" />
+      <div className="v2-net__note"><div className="container"><p>{note}</p></div></div>
+      <div className="v2-net__tip" aria-hidden="true"><b /><span /></div>
     </section>
   );
 }

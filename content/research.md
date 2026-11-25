@@ -8,6 +8,9 @@
 >
 > **Voice note (2026-09-26 pass):** copy revised to the `emin-english-voice` register: verdict first, one aphorism and one vivid example per page at most, no em-dashes, no contractions in prose, American spelling except published titles, no consultancy phrasing. Facts unchanged. The hero's reading-time arithmetic (half an hour per decision) is a stated assumption, not a finding.
 
+>
+> **Layout note (Emin Style v1.2, 2026-11-25):** the page shows its evidence. Hero: the reading-time arithmetic as a coral figure (5,000 hours). Method: ink band, three steps on rules that draw. Flagship: three cards, each separated from the page in its own way: Project 1 on the sunken surface with its coral figure (3,369); Project 2 on ink, opening with the citation network (two labelled decisions: the most cited, and the most influential by PageRank, TÜPRAŞ 05-71/981-270 with its ten citations) and carrying a small chart of the EU-law shares under the U-curve finding; Project 3, in progress, on an edged card with a dashed status pill. Publications as a ledger, interests as a node list, the closing ask on the coral surface. Every number drawn on the page is the paper's own: the chart values are those of Section IV.5 of the 2026 paper (22.7, 15.3, 7.1, 12.1, 12.3 percent by five-year period; 12.3 percent overall).
+
 ---
 
 ## Section 1 — Hero
@@ -26,7 +29,11 @@
 
 **Lead paragraph**
 
-> Say a careful reader needs half an hour for one decision of the Turkish Competition Board. The Board has published 9,995 of them, so reading the lot once would take some 5,000 hours, two and a half working years, before anyone drew a single conclusion. That arithmetic is why the record had never been studied as a whole, and why I rebuilt part of my research practice around AI. The two projects below are the result. The publications underneath show where the questions come from.
+> Say a careful reader needs half an hour for one decision of the Turkish Competition Board. The Board has published 9,995 of them, so reading the lot once would take some 5,000 hours, two and a half working years, before anyone drew a single conclusion. That arithmetic is why the record had never been studied as a whole, and why I rebuilt part of my research practice around AI. The two papers below are the result, and a third project is under way. The publications underneath show where the questions come from.
+
+**Hero figure** *(coral, with a mono label; restates the arithmetic above)*
+
+> 5,000 · HOURS TO READ ALL 9,995 PUBLISHED DECISIONS ONCE, AT HALF AN HOUR EACH
 
 ---
 
@@ -62,11 +69,11 @@
 
 **H2**
 
-> Two projects, one program
+> Three projects, one program
 
 **Intro**
 
-> Both papers study the Turkish Competition Board. It is the authority I have worked on for twenty years, and it publishes its decisions with their reasoning, which is what makes a full corpus possible. The method should travel to any authority that does the same.
+> All three study the Turkish Competition Board. It is the authority I have worked on for twenty years, and it publishes its decisions with their reasoning, which is what makes a full corpus possible. The method should travel to any authority that does the same.
 
 ---
 
@@ -107,6 +114,42 @@
 - The Board's most influential decision attracts just 10 direct citations. Authority in this case law is spread across many rulings, and no small set of landmarks dominates.
 - Reliance on EU case law follows a U-curve: early dependence, then autonomization, then re-engagement.
 - Doctrine-shifting decisions become the canon within three years. How fast a decision gets cited predicts its staying power.
+
+**Chart under the second finding** *(title, then the source line)*
+
+> EU-LAW SHARE OF THE BOARD'S CITATIONS, BY FIVE-YEAR PERIOD
+>
+> 2000–05: 22.7% · 2006–10: 15.3% · 2011–15: 7.1% · 2016–20: 12.1% · 2021–25: 12.3%
+>
+> Köksal, Peker, Üyer, SSRN 2026, Section IV.5 · 12.3% over the whole record
+
+**Source line under the network**
+
+> Each dot is a decision, each line a citation, placed by decision date. Shown: the largest connected component, 5,359 decisions and 15,689 citations. "Most influential" is the decision ranked first by PageRank
+
+---
+
+### Project 3 — How Predictable Is the Competition Board? A "Crystal Ball" Experiment with Thirty Years of Case Law and Artificial Intelligence
+
+*(Added 2026-11-25. Anchor `#crystal-ball`; the home page's lead Featured Work card links here. Source: `Coding/Bilgi 2027/`, the abstract submitted for the Bilgi 2027 seminar. Until the seminar's decision (due 9 December 2026) the seminar is not named; until the lawyers' check of the pilot ends (4 January 2027) no accuracy figure is quoted. No link: there is no paper yet.)*
+
+**Status:** *In progress. 2027.*
+
+**Co-authors:** F. G. Bilgin, C. Karataş.
+
+**Summary**
+
+> Predictability is what legal certainty looks like in daily practice. A firm that drafts a distribution agreement, plans an acquisition, or assesses its own exemption is guessing how the Board would rule in a similar case, and the guess rests on the case law. How far that case law can be predicted has, as far as we know, never been measured.
+>
+> We turn the question into an experiment. The model is not trained on the decisions; for every case it finds and reads the relevant precedents again. Each year gets its own run: the decisions and citation links the model can reach stop at the start of that year, it is given only the facts of the following year's cases, and it has to predict what the Board decided. Set against the real outcomes, the predictions give a predictability series, year by year.
+>
+> Three things can mislead such an experiment. The model may remember a decision instead of inferring it, so we test on decisions published after its training. Most mergers are cleared, so a guess of "always cleared" is right most of the time, and the model is scored against that guess. And a wrong prediction is not always a change of course, so the lawyers on the team read every miss.
+
+**What we are asking**
+
+- Did the 2020 amendment to the Competition Act, new guidelines, and changes in the Board's membership lower the model's accuracy?
+- Are cartel cases more predictable than mergers?
+- Do the decisions that gather citations fastest, the ones that turn the case law, fall in the periods where the model is most often wrong?
 
 ---
 
@@ -192,7 +235,7 @@
 
 ## Anchors
 
-Consider `#flagship`, `#publications`, `#interests` for in-page navigation if the page gets long enough.
+In use: `#flagship`, `#publications`, `#interests`, and one per project: `#quarter-century`, `#intellectual-dna`, `#crystal-ball`.
 
 ## External links
 

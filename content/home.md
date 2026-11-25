@@ -118,7 +118,7 @@
 
 **Three-card layout** *(v1.2: one wide lead card for the work in progress, two smaller cards stacked beside it. The 2026 paper, "The Intellectual DNA of the Turkish Competition Board", is carried by the network band in Section 1b and does not repeat here)*:
 
-### Card 1 — AI-Native Research (in progress) *(lead card: wide, sunken surface, not a link until there is something to link to)*
+### Card 1 — AI-Native Research (in progress) *(lead card: wide, sunken surface; links to its entry on the Research page, `research.html#crystal-ball`, with "About the project →")*
 
 *(Added 2026-11-25. The project is the Bilgi 2027 seminar proposal; source: `Coding/Bilgi 2027/`. Two limits on this copy until they lapse: the seminar's decision on the abstract is due 9 December 2026, so the card does not name the seminar; and the pilot's accuracy figures are unverified until the lawyers' check ends on 4 January 2027, so no result is quoted. "10,000+" is the corpus: decisions published from 1997 to the end of 2026, a later and larger set than the 9,995 of the 2026 paper.)*
 
