@@ -94,6 +94,20 @@ a:hover > * > .v2-arrow-link svg, a:hover > .v2-arrow-link svg { transform: tran
 .v2-close__stone .v2-btn:hover { background: var(--ek-paper); border-color: var(--ek-paper); color: var(--ek-ink); }
 .v2-close__stone .v2-btn--ghost:hover { background: var(--ek-ink); border-color: var(--ek-ink); color: var(--ek-paper); }
 
+/* ---------- stat row ---------- */
+.v2-stats { padding: 72px 0 96px; }
+.v2-stats__row { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; padding: 56px 0; }
+.v2-stats__row .v2-rule { position: absolute; left: 0; right: 0; height: 1.5px; background: var(--ek-ink); }
+.v2-stats__row .v2-rule--t { top: 0; } .v2-stats__row .v2-rule--b { top: auto; bottom: 0; }
+.v2-stat { display: flex; flex-direction: column; gap: 18px; }
+.v2-stat + .v2-stat { padding-left: 32px; border-left: 1px solid rgba(22,21,15,.16); }
+.v2-stat strong { font-size: clamp(54px, 6.5vw, 100px); font-weight: 500; letter-spacing: -.04em; line-height: .9; }
+.v2-stat--hero strong { color: var(--ek-coral-600); }
+.v2-stat > span { font-family: var(--ek-font-mono); font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; line-height: 1.45; color: var(--ek-ink-muted); max-width: 22ch; }
+
+/* ---------- a rule that draws (position its parent relative) ---------- */
+.v2-rule { position: absolute; left: 0; right: 0; top: 0; height: 1.5px; background: var(--ek-ink); }
+
 /* The band inside a card (Research page): no head row, shorter. */
 .v2-net--card { height: clamp(360px, 38vw, 470px); }
 .v2-net--card .v2-net__head { padding: 0; height: 0; overflow: hidden; }
@@ -111,4 +125,6 @@ a:hover > * > .v2-arrow-link svg, a:hover > .v2-arrow-link svg { transform: tran
   .v2-net__axis span:not(:nth-child(3n+1)) { display: none; }
   .v2-close__stone { grid-template-columns: 1fr; gap: 28px; padding: 48px 28px; }
   .v2-card { padding: 28px; min-height: 0; }
+  .v2-stats__row { grid-template-columns: 1fr 1fr; gap: 40px 20px; }
+  .v2-stat + .v2-stat { padding-left: 0; border-left: 0; }
 }

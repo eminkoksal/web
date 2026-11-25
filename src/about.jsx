@@ -1,19 +1,40 @@
-/* About page — full brand-correct content. */
+/* About page — Emin Style v1.2 (2026-11-25).
+   Copy lives in content/about.md; styles in public/assets/v2.css (shared) and
+   about.css (ab- classes). The timeline's dates are those of the CV (src/cv-data.jsx). */
 import React from 'react';
-import { IconArrow, IconSearch, IconDownload, IconChevron, Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA, Nav, Footer, OrbitalArc } from './shared.jsx';
-
-const { useState } = React;
+import { Eyebrow, Nav, Footer } from './shared.jsx';
+import { useReveal, ArrowUpRight, Btn, CoralClose, StatRow } from './v2.jsx';
 
 /* ------------------------------------------------------------------ */
 /*  Content                                                            */
 /* ------------------------------------------------------------------ */
 
+/* The coral figure is the one the AI work produced. */
 const ABOUT_STATS = [
-{ value: '20+', label: 'years in competition economics' },
-{ value: '50+', label: 'publications' },
-{ value: '1000s', label: 'legal documents analyzed with AI' },
-{ value: '11+', label: 'courses taught' }];
+{ n: 20, suffix: '+', label: 'years in competition economics' },
+{ n: 50, suffix: '+', label: 'publications' },
+{ n: 1000, suffix: 's', label: 'legal documents analyzed with AI', hero: true },
+{ n: 11, suffix: '+', label: 'courses taught' }];
 
+/* The career, in order. side/level/right place a label on the wide layout (above or below
+   the line, one or two rows out, text to the left of its leader near the right edge);
+   ai marks the AI-native work, drawn in coral. Years as in the CV. */
+const TIMELINE = [
+{ year: 2001, text: 'BA in Economics, Galatasaray University', side: 'up' },
+{ year: 2002, text: 'Research Assistant, Bahçeşehir University', side: 'down' },
+{ year: 2008, text: 'PhD in Economics, Marmara University; Assistant Professor', side: 'up' },
+{ year: 2013, text: 'Vice Dean; coordinator of the Financial Economics graduate program', side: 'down' },
+{ year: 2015, text: 'Economic Consultant, Dentons', side: 'up' },
+{ year: 2018, text: 'Associate Professor; Associate Editor-in-Chief of a SAGE journal', side: 'down' },
+{ year: 2024, text: 'Co-editor, Routledge volume on digitalization in Türkiye', side: 'up', right: true },
+{ year: 2025, text: 'First AI-native paper: 3,369 infringement decisions', side: 'down', level: 2, right: true, ai: true },
+{ year: 2026, text: 'Second paper: 18,513 citations mapped as a network', side: 'up', level: 2, right: true, ai: true }];
+const T0 = 2001, T1 = 2027;
+
+const EDUCATION = [
+{ years: '2008', degree: 'PhD in Economics', place: 'Marmara University' },
+{ years: '2004', degree: 'MA in Public Finance', place: 'Galatasaray University' },
+{ years: '2001', degree: 'BA in Economics', place: 'Galatasaray University' }];
 
 const ABOUT_PILLARS = [
 {
@@ -125,6 +146,13 @@ const ABOUT_PILLARS = [
     meta: 'Published, SSRN 2026 \u00b7 with C. Peker and M. Üyer',
     body:
     'Maps the 18,513 citations connecting all 9,995 published decisions: thirty years of case law, drawn as a network.'
+  },
+  {
+    title: 'How Predictable Is the Competition Board?',
+    meta: 'In progress, 2027 \u00b7 with F. G. Bilgin and C. Karataş',
+    body:
+    'An experiment: an AI model reads the Board\u2019s decisions up to a given year, is told only the ' +
+    'facts of the next year\u2019s cases, and has to predict the outcome.'
   }],
 
   closing:
@@ -182,115 +210,61 @@ const AFFILIATIONS = [
 
 function AboutHero() {
   return (
-    <section style={{ position: 'relative', padding: '100px 0 80px' }}>
-      <div className="container" style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', left: -20, top: 40, zIndex: 0 }}>
-          <GhostHeadline>About</GhostHeadline>
-        </div>
-
-        <div style={{ position: 'relative', zIndex: 1, paddingTop: 96 }}>
-          <Eyebrow>About</Eyebrow>
-          <h1 className="display"
-          style={{ margin: '28px 0 0', maxWidth: 1180, fontSize: 'clamp(40px, 5.6vw, 92px)' }}>
-            Twenty years an economist | The last few rebuilding the work around AI
+    <section className="ab-hero">
+      <div className="container">
+        <div data-reveal>
+          <div data-r><Eyebrow>About</Eyebrow></div>
+          <h1 className="ab-display" data-r style={{ '--i': 1 }}>
+            Twenty years an economist |<br />The last few rebuilding the work around AI
           </h1>
         </div>
-
-        <div style={{
-          display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 80,
-          alignItems: 'start', paddingTop: 96, position: 'relative', zIndex: 1
-        }}>
-          <div className="prose" style={{ maxWidth: 600 }}>
-            <p>
-              I am <strong>Emin Köksal</strong>, an economist and Associate Professor
-              based in Türkiye. Competition and regulation have been my subject for
-              twenty years: I teach them, publish on them, edit a journal about them,
-              and since 2015 I have advised on them from inside a law firm. A few years
-              ago I started rebuilding that work around AI. It began in my own research,
-              where the tools saved me time, and spread to the teams I work with, where
-              they now do real analytical work.
-            </p>
-          </div>
-
-          <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-            <div style={{ position: 'relative' }}>
-              <OrbitalArc
-                d="M 30 360 Q 200 120 420 240 Q 600 320 760 80"
-                viewBox="0 0 800 400"
-                stroke="#F37338" strokeWidth={1.4}
-                style={{ position: 'absolute', left: -160, top: -60, width: 800, height: 400, inset: 'auto', zIndex: 0 }} />
-              <div style={{ position: 'relative', zIndex: 1 }}>
-                <Portrait size={420} src="assets/portrait.jpg" />
-                <SatelliteCTA size={62} anchor={{ right: -8, bottom: 40 }}
-                href="cv.html" label="See full CV" />
-              </div>
-            </div>
+        <div className="ab-hero__grid" data-reveal>
+          <p className="ab-hero__lede" data-r>
+            I am <strong>Emin Köksal</strong>, an economist and Associate Professor
+            based in Türkiye. Competition and regulation have been my subject for
+            twenty years: I teach them, publish on them, edit a journal about them,
+            and since 2015 I have advised on them from inside a law firm. A few years
+            ago I started rebuilding that work around AI. It began in my own research,
+            where the tools saved me time, and spread to the teams I work with, where
+            they now do real analytical work.
+          </p>
+          <div className="ab-portrait-wrap" data-r style={{ '--i': 1 }}>
+            <img className="ab-portrait" src="assets/portrait.jpg" alt="Portrait of Emin Köksal" width="380" height="380" />
+            <a className="ab-satellite" href="cv.html" aria-label="See full CV"><ArrowUpRight size={18} width={1.4} /></a>
           </div>
         </div>
       </div>
     </section>);
-
 }
 
 /* ------------------------------------------------------------------ */
-/*  At a glance                                                        */
+/*  One identity, two tracks                                           */
 /* ------------------------------------------------------------------ */
 
-function AtAGlance() {
+/* The mark at full size: the ink node is the economics, the coral node the AI,
+   and the edge between them the work. */
+function MarkDiagram() {
   return (
-    <section style={{ padding: '48px 0 96px' }}>
-      <div className="container">
-        <div style={{
-          display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24,
-          borderTop: '1.5px solid #16150F',
-          borderBottom: '1.5px solid #16150F',
-          padding: '56px 0'
-        }}>
-          {ABOUT_STATS.map((s, i) =>
-          <div key={i} style={{
-            display: 'flex', flexDirection: 'column', gap: 16,
-            paddingLeft: i === 0 ? 0 : 32,
-            borderLeft: i === 0 ? 'none' : '1px solid rgba(22,21,15,.15)'
-          }}>
-              <span style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 'clamp(48px, 5vw, 80px)',
-              fontWeight: 500, letterSpacing: '-.03em',
-              lineHeight: 1, color: '#16150F'
-            }}>
-                {s.value}
-              </span>
-              <span style={{ fontSize: 14, lineHeight: 1.4, color: '#56554F', maxWidth: 220 }}>
-                {s.label}
-              </span>
-            </div>
-          )}
-        </div>
-      </div>
-    </section>);
-
+    <svg className="ab-mark" viewBox="0 0 260 230" role="img" aria-label="Two nodes joined by an edge: economics and AI">
+      <line className="ab-mark__edge" x1="46" y1="176" x2="196" y2="46" />
+      <circle className="ab-mark__ink" cx="46" cy="176" r="24" />
+      <circle className="ab-mark__coral" cx="196" cy="46" r="24" data-r style={{ '--i': 6 }} />
+      <text x="82" y="200">Economics</text>
+      <text x="160" y="50" textAnchor="end">AI</text>
+    </svg>);
 }
-
-/* ------------------------------------------------------------------ */
-/*  Two Identities                                                     */
-/* ------------------------------------------------------------------ */
 
 function TwoIdentities() {
   return (
-    <section style={{ background: '#FBFAF6', padding: '128px 0' }}>
+    <section className="ab-two">
       <div className="container">
-        <div style={{
-          display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 80,
-          alignItems: 'start'
-        }}>
-          <div>
+        <div className="ab-split" data-reveal>
+          <div data-r>
             <Eyebrow>One identity, two tracks</Eyebrow>
-            <h2 className="display--mid" style={{ margin: '20px 0 0', maxWidth: 460 }}>
-              Academic economist <em>and</em> AI consultant, in that order
-            </h2>
+            <h2 className="v2-h2">Academic economist <em>and</em> AI consultant, in that order</h2>
+            <MarkDiagram />
           </div>
-
-          <div className="prose" style={{ maxWidth: 720 }}>
+          <div className="ab-prose" data-r style={{ '--i': 1 }}>
             <p>
               The economics comes first because it has to. An AI tool will answer
               whatever question it is given, quickly and with great confidence.
@@ -309,213 +283,112 @@ function TwoIdentities() {
         </div>
       </div>
     </section>);
-
 }
 
 /* ------------------------------------------------------------------ */
-/*  Four Pillars                                                       */
+/*  Four pillars                                                       */
 /* ------------------------------------------------------------------ */
 
 function PillarsSection() {
   return (
-    <section style={{ padding: '128px 0 64px' }}>
+    <section className="ab-pillars">
       <div className="container">
-        <div style={{ maxWidth: 880, marginBottom: 80 }}>
-          <Eyebrow>What I do</Eyebrow>
-          <h2 className="display--mid" style={{ margin: '20px 0 0' }}>
-            Four pillars, one body of work
-          </h2>
+        <div className="ab-head" data-reveal>
+          <div data-r><Eyebrow>What I do</Eyebrow></div>
+          <h2 className="v2-h2" data-r style={{ '--i': 1 }}>Four pillars, one body of work</h2>
         </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 96 }}>
-          {ABOUT_PILLARS.map((p, i) =>
-          <PillarBlock key={p.title} index={i + 1} pillar={p} />
-          )}
-        </div>
+        {ABOUT_PILLARS.map((p) => <PillarBlock key={p.title} pillar={p} />)}
       </div>
     </section>);
-
 }
 
-function PillarBlock({ index, pillar }) {
+function PillarBlock({ pillar }) {
   return (
-    <article id={pillar.id || undefined}
-    style={{
-      display: 'grid', gridTemplateColumns: '160px 1fr',
-      gap: 48, paddingTop: 48,
-      borderTop: '1.5px solid #16150F',
-      scrollMarginTop: 120
-    }}>
-      <div>
-        <span style={{
-          fontFamily: 'var(--font-sans)',
-          fontSize: 'clamp(56px, 6vw, 96px)',
-          fontWeight: 500, letterSpacing: '-.03em',
-          lineHeight: 1, color: '#E75C39'
-        }}>
-          {String(index).padStart(2, '0')}
-        </span>
-        {pillar.id &&
-        <div style={{
-          marginTop: 14, fontFamily: 'var(--font-sans)', fontSize: 12,
-          fontWeight: 500, letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
-          color: '#56554F'
-        }}>
-            #{pillar.id}
-          </div>
-        }
-      </div>
+    <article id={pillar.id || undefined} className="ab-pillar" data-reveal>
+      <span className="v2-rule v2-draw" />
+      <h3 data-r>{pillar.title}</h3>
+      <div className="ab-pillar__body" data-r style={{ '--i': 1 }}>
+        <p className="ab-pillar__intro">{pillar.intro}</p>
 
-      <div style={{ maxWidth: 820 }}>
-        <h3 style={{
-          fontFamily: 'var(--font-sans)',
-          fontSize: 'clamp(28px, 3vw, 44px)',
-          fontWeight: 500, letterSpacing: '-.022em', lineHeight: 1.1,
-          margin: '0 0 22px'
-        }}>
-          {pillar.title}
-        </h3>
-        <p style={{
-          fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29', margin: '0 0 28px'
-        }}>
-          {pillar.intro}
-        </p>
+        {pillar.methodSig && <blockquote>{pillar.methodSig}</blockquote>}
 
-        {pillar.methodSig &&
-        <blockquote style={{
-          margin: '0 0 32px', padding: '20px 28px',
-          borderLeft: '1.5px solid #E75C39',
-          background: 'transparent',
-          fontFamily: 'var(--font-prose)',
-          fontSize: 19,
-          lineHeight: 1.5, color: '#16150F'
-        }}>
-            {pillar.methodSig}
-          </blockquote>
-        }
-
-        {pillar.subhead &&
-        <h4 style={{
-          fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 500,
-          letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
-          color: '#16150F', margin: '0 0 16px'
-        }}>
-            {pillar.subhead}
-          </h4>
-        }
+        {pillar.subhead && <h4>{pillar.subhead}</h4>}
 
         {pillar.bullets &&
-        <ul style={{
-          listStyle: 'none', padding: 0, margin: '0 0 28px',
-          display: 'flex', flexDirection: 'column', gap: 14
-        }}>
-            {pillar.bullets.map((b, i) =>
-          <li key={i} style={{
-            display: 'flex', gap: 14, fontSize: 16, lineHeight: 1.55, color: '#2E2E29'
-          }}>
-                <span style={{
-              flexShrink: 0, marginTop: 9, width: 6, height: 6,
-              borderRadius: '50%', background: '#F37338'
-            }} />
-                <span>
-                  <strong style={{ fontWeight: 500, color: '#16150F' }}>{b.lead}</strong>
-                  {b.body}
-                </span>
-              </li>
-          )}
-          </ul>
+        <ul className="ab-nodes">
+          {pillar.bullets.map((b) => <li key={b.lead}><strong>{b.lead}</strong>{b.body}</li>)}
+        </ul>
         }
 
         {pillar.projects &&
-        <div style={{
-          display: 'flex', flexDirection: 'column', gap: 24, marginBottom: 28
-        }}>
-            {pillar.projects.map((p, i) =>
-          <div key={i} style={{
-            padding: 28, background: '#FBFAF6', borderRadius: 24
-          }}>
-                <div style={{
-              fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 500,
-              letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
-              color: '#BC4527', marginBottom: 10
-            }}>
-                  {p.meta}
-                </div>
-                <div style={{
-              fontFamily: 'var(--font-sans)', fontSize: 22, fontWeight: 500,
-              letterSpacing: '-.022em', lineHeight: 1.25, marginBottom: 12,
-              color: '#16150F'
-            }}>
-                  {p.title}
-                </div>
-                <p style={{ fontSize: 15, lineHeight: 1.55, color: '#56554F', margin: 0 }}>
-                  {p.body}
-                </p>
-              </div>
-          )}
+        <div className="ab-projects">
+          {pillar.projects.map((p) =>
+          <div className="ab-project" key={p.title}>
+            <div className="v2-mono">{p.meta}</div>
+            <div className="ab-project__title">{p.title}</div>
+            <p>{p.body}</p>
           </div>
+          )}
+        </div>
         }
 
         {pillar.pull &&
-        <div style={{
-          padding: '24px 28px',
-          background: '#16150F', color: '#F5F2EB',
-          borderRadius: 24, marginBottom: 28
-        }}>
-            <div style={{
-            fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 500,
-            letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
-            color: 'rgba(245,242,235,.6)', marginBottom: 10
-          }}>
-              {pillar.pull.label}
-            </div>
-            <p style={{
-            fontSize: 16, lineHeight: 1.55, margin: 0, color: '#F5F2EB'
-          }}>
-              {pillar.pull.body}
-            </p>
-          </div>
+        <div className="ab-pull">
+          <div className="v2-mono">{pillar.pull.label}</div>
+          <p>{pillar.pull.body}</p>
+        </div>
         }
 
-        {pillar.closing &&
-        <p style={{
-          fontSize: 16, lineHeight: 1.55, color: '#2E2E29',
-          margin: '0 0 24px'
-        }}>
-            {pillar.closing}
-          </p>
-        }
+        {pillar.closing && <p className="ab-pillar__closing">{pillar.closing}</p>}
 
-        {pillar.cta &&
-        <Button variant="ghost" href={pillar.cta.href}>
-            {pillar.cta.label} <IconArrow size={14} dir="up-right" />
-          </Button>
-        }
+        {pillar.cta && <Btn variant="ghost" href={pillar.cta.href}>{pillar.cta.label} <ArrowUpRight /></Btn>}
       </div>
     </article>);
-
 }
 
 /* ------------------------------------------------------------------ */
-/*  Background                                                         */
+/*  Career: the timeline band (ink), then the story                    */
 /* ------------------------------------------------------------------ */
+
+function CareerBand() {
+  return (
+    <section className="ab-career">
+      <div className="container">
+        <div data-reveal>
+          <div data-r><Eyebrow color="#B9B6AB">Career story</Eyebrow></div>
+          <h2 className="v2-h2" data-r style={{ '--i': 1 }}>How I got here</h2>
+        </div>
+        <div className="ab-time" data-reveal>
+          <span className="ab-time__line v2-draw" aria-hidden="true" />
+          <ol>
+          {TIMELINE.map((e, i) =>
+          <li key={e.year}
+          className={'is-' + e.side + (e.level === 2 ? ' is-l2' : '') + (e.right ? ' is-right' : '') + (e.ai ? ' is-ai' : '')}
+          style={{ '--t': (e.year - T0) / (T1 - T0), '--i': i + 2 }} data-r>
+            <div className="ab-time__label"><b>{e.year}</b>{e.text}</div>
+          </li>
+          )}
+          </ol>
+        </div>
+      </div>
+    </section>);
+}
 
 function Background() {
   return (
-    <section style={{ background: '#FBFAF6', padding: '128px 0' }}>
+    <section className="ab-story">
       <div className="container">
-        <div style={{
-          display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 80,
-          alignItems: 'start'
-        }}>
-          <div>
-            <Eyebrow>Career story</Eyebrow>
-            <h2 className="display--mid" style={{ margin: '20px 0 0', maxWidth: 460 }}>
-              How I got here
-            </h2>
+        <div className="ab-split" data-reveal>
+          <div className="ab-edu" data-r>
+            <span className="v2-rule v2-draw" />
+            <h3>Education</h3>
+            <ul>
+              {EDUCATION.map((e) =>
+              <li key={e.degree}><span>{e.years}</span><div><strong>{e.degree}</strong>{e.place}</div></li>
+              )}
+            </ul>
           </div>
-
-          <div className="prose" style={{ maxWidth: 720 }}>
+          <div className="ab-prose" data-r style={{ '--i': 1 }}>
             <p>
               My career began at Bahçeşehir University in 2002, as a research assistant.
               Over the next two decades I moved through Assistant Professor, Vice Dean of
@@ -541,16 +414,10 @@ function Background() {
               added an undergraduate course, <em>Generative AI for Economic
               Analysis</em>, to the ones I have taught for years.
             </p>
-            <p>
-              <strong>Education:</strong> PhD in Economics, Marmara University (2008).
-              MA in Public Finance, Galatasaray University (2004). BA in Economics,
-              Galatasaray University (2001).
-            </p>
           </div>
         </div>
       </div>
     </section>);
-
 }
 
 /* ------------------------------------------------------------------ */
@@ -559,43 +426,26 @@ function Background() {
 
 function AffiliationsSection() {
   return (
-    <section style={{ padding: '128px 0 96px' }}>
+    <section className="ab-aff">
       <div className="container">
-        <div style={{ marginBottom: 56, maxWidth: 720 }}>
-          <Eyebrow>Affiliations</Eyebrow>
-          <h2 className="display--mid" style={{ margin: '20px 0 0' }}>
-            Where I serve
-          </h2>
+        <div className="ab-head" data-reveal>
+          <div data-r><Eyebrow>Affiliations</Eyebrow></div>
+          <h2 className="v2-h2" data-r style={{ '--i': 1 }}>Where I serve</h2>
         </div>
-
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+        <div className="ab-ledger" data-reveal>
+          <span className="v2-rule v2-draw" aria-hidden="true" />
+          <ul>
           {AFFILIATIONS.map((it, i) =>
-          <li key={i} style={{
-            display: 'grid',
-            gridTemplateColumns: '1.4fr 1.6fr 0.6fr',
-            gap: 32, alignItems: 'baseline',
-            padding: '32px 0',
-            borderTop: '1px solid rgba(22,21,15,.12)',
-            borderBottom: i === AFFILIATIONS.length - 1 ? '1px solid rgba(22,21,15,.12)' : 'none'
-          }}>
-              <div style={{
-              fontFamily: 'var(--font-sans)', fontSize: 22, fontWeight: 500,
-              letterSpacing: '-.02em', lineHeight: 1.2
-            }}>
-                {it.name}
-              </div>
-              <div style={{ fontSize: 16, lineHeight: 1.5, color: '#2E2E29' }}>
-                {it.role}
-              </div>
-              <div style={{ fontSize: 14, color: '#56554F', textAlign: 'right' }}>
-                {it.years}
-              </div>
-            </li>
+          <li key={it.name} data-r style={{ '--i': i }}>
+            <div className="ab-ledger__name">{it.name}</div>
+            <div className="ab-ledger__role">{it.role}</div>
+            <div className="ab-ledger__years">{it.years}</div>
+          </li>
           )}
-        </ul>
+          </ul>
+        </div>
       </div>
     </section>);
-
 }
 
 /* ------------------------------------------------------------------ */
@@ -604,76 +454,21 @@ function AffiliationsSection() {
 
 function Personal() {
   return (
-    <section style={{ padding: '64px 0 128px' }}>
+    <section className="ab-personal">
       <div className="container">
-        <div style={{
-          display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 80,
-          alignItems: 'start'
-        }}>
-          <div>
+        <div className="ab-split" data-reveal>
+          <div data-r>
             <Eyebrow>Off the page</Eyebrow>
-            <h2 className="display--mid" style={{ margin: '20px 0 0', maxWidth: 460 }}>
-              A few things outside the work
-            </h2>
+            <h2 className="v2-h2">A few things outside the work</h2>
           </div>
-
-          <div className="prose" style={{ maxWidth: 640 }}>
-            <p style={{ fontFamily: 'var(--font-prose)', fontSize: 20 }}>I live at the intersection of the Aegean and the Mediterranean. Away from
+          <p className="ab-personal__text" data-r style={{ '--i': 1 }}>
+            I live at the intersection of the Aegean and the Mediterranean. Away from
             work I ride gravel bikes and do amateur astronomy, two hobbies that reward
             patience and good instruments.
-            </p>
-          </div>
+          </p>
         </div>
       </div>
     </section>);
-
-}
-
-/* ------------------------------------------------------------------ */
-/*  Closing CTA                                                        */
-/* ------------------------------------------------------------------ */
-
-function AboutClosingCTA() {
-  return (
-    <section style={{
-      background: '#FBFAF6', padding: '128px 0',
-      borderTop: '1px solid rgba(22,21,15,.08)'
-    }}>
-      <div className="container">
-        <div style={{
-          display: 'grid', gridTemplateColumns: '1.4fr 1fr',
-          gap: 64, alignItems: 'end'
-        }}>
-          <h2 className="display--mid" style={{ margin: 0, maxWidth: 760 }}>
-            Want to work together, or just compare notes?
-          </h2>
-          <div>
-            <p style={{
-              fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55, color: '#2E2E29',
-              margin: '0 0 28px', maxWidth: 460
-            }}>
-              I am always glad to hear from practitioners in competition and regulation,
-              academics working on AI methods, journal editors, conference organizers,
-              and anyone building serious AI infrastructure for analytical work.
-            </p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <Button variant="primary" href="contact.html">
-                Get in touch <IconArrow size={14} dir="up-right" />
-              </Button>
-              <Button variant="ghost" href="cv.html">
-                Read the CV
-              </Button>
-              <Button variant="ghost"
-              href="https://www.linkedin.com/in/eminkoksal/"
-              target="_blank">
-                Connect on LinkedIn <IconArrow size={14} dir="up-right" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>);
-
 }
 
 /* ------------------------------------------------------------------ */
@@ -681,22 +476,31 @@ function AboutClosingCTA() {
 /* ------------------------------------------------------------------ */
 
 function AboutApp() {
+  useReveal();
   return (
     <>
       <Nav active="About" />
-      <main>
+      <main className="ab">
         <AboutHero />
-        <AtAGlance />
+        <StatRow stats={ABOUT_STATS} />
         <TwoIdentities />
         <PillarsSection />
+        <CareerBand />
         <Background />
         <AffiliationsSection />
         <Personal />
-        <AboutClosingCTA />
+        <CoralClose
+          title="Want to work together, or just compare notes?"
+          body={'I am always glad to hear from practitioners in competition and regulation, ' +
+          'academics working on AI methods, journal editors, conference organizers, ' +
+          'and anyone building serious AI infrastructure for analytical work.'}>
+          <Btn href="contact.html">Get in touch <ArrowUpRight /></Btn>
+          <Btn variant="ghost" href="cv.html">Read the CV</Btn>
+          <Btn variant="ghost" href="https://www.linkedin.com/in/eminkoksal/" external>Connect on LinkedIn</Btn>
+        </CoralClose>
       </main>
       <Footer />
     </>);
-
 }
 
 export default AboutApp;

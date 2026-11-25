@@ -3,7 +3,7 @@
    Shared v1.2 pieces (buttons, reveal-on-scroll, coral close) come from v2.jsx and v2.css. */
 import React from 'react';
 import { Eyebrow, Nav, Footer } from './shared.jsx';
-import { useReveal, ArrowUpRight, ArrowRight, Btn, CoralClose } from './v2.jsx';
+import { useReveal, ArrowUpRight, ArrowRight, Btn, CoralClose, StatRow } from './v2.jsx';
 import { POSTS, formatDate, trimWords } from './posts.js';
 import CitationNetwork from './citation-network.jsx';
 
@@ -248,24 +248,6 @@ function FeaturedWork() {
     </section>);
 }
 
-function Numbers() {
-  return (
-    <section className="hm-stats">
-      <div className="container">
-        <div className="hm-stats__row" data-reveal>
-          <span className="hm-rule hm-rule--t v2-draw" />
-          {STATS.map((s, i) =>
-          <div className={'hm-stat' + (s.hero ? ' hm-stat--hero' : '')} key={s.label} data-r style={{ '--i': i }}>
-            <strong><span data-count={s.n}>{s.n}</span>{s.suffix}</strong>
-            <span>{s.label}</span>
-          </div>
-          )}
-          <span className="hm-rule hm-rule--b v2-draw" style={{ '--i': 2 }} />
-        </div>
-      </div>
-    </section>);
-}
-
 function RecentWriting() {
   const recent = POSTS.slice(0, 3);
   return (
@@ -326,7 +308,7 @@ function HomeApp() {
         <NetworkBand />
         <FourPillars />
         <FeaturedWork />
-        <Numbers />
+        <StatRow stats={STATS} />
         <RecentWriting />
         <ClosingCTA />
       </main>

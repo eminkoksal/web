@@ -4,6 +4,9 @@
 >
 > **Voice note (2026-09-26 pass):** copy revised to the `emin-english-voice` register (the Turkish Emin in fluent English): verdict first, concede then rule, one aphorism and one vivid example per page at most, no em-dashes, no contractions in prose, American spelling except published titles, no consultancy phrasing. Builds on the 2026-06-11 humanizing rewrite. Facts unchanged.
 
+>
+> **Layout note (Emin Style v1.2, 2026-11-25):** the page's image is the career itself. Order: hero (the H1 breaks after the " | "; lede beside the portrait); the stat row with "1000s" in coral; "One identity, two tracks" with the mark drawn large (ink node labelled ECONOMICS, coral node labelled AI); the four pillars as ruled blocks without numbers, the title pinned beside the text; then an ink band that draws the career as a timeline (Section 5, new labels below); the career story with education set out as a small list; affiliations as a ledger; the personal line; the closing ask on the coral surface. Copy is unchanged except where marked "v1.2" below.
+
 ---
 
 ## Section 1 — Hero / Intro
@@ -115,6 +118,7 @@ What began as one paper has become a research program: using AI to ask competiti
 
 - **AI analysis of 3,369 Turkish Competition Board decisions** *(published, SSRN 2025; with C. Peker and M. Üyer).* A quarter-century of the Board's infringement decisions, treated as a single coherent dataset. Combines NLP and economic methods to find patterns no manual review could.
 - **The Intellectual DNA of the Turkish Competition Board** *(published, SSRN 2026; with C. Peker and M. Üyer).* Maps the 18,513 citations connecting all 9,995 published decisions: thirty years of case law, drawn as a network.
+- **How Predictable Is the Competition Board?** *(in progress, 2027; with F. G. Bilgin and C. Karataş; added v1.2).* An experiment: an AI model reads the Board's decisions up to a given year, is told only the facts of the next year's cases, and has to predict the outcome.
 
 **Why this matters**
 
@@ -133,6 +137,20 @@ I have written for a general audience since 2013, mostly in Turkish, on competit
 ---
 
 ## Section 5 — Background
+
+**Timeline** *(v1.2; ink band above the story, under the eyebrow and H2 of this section. Nine dated labels; years as in the CV. The two AI-native papers are drawn in coral. On narrow screens it becomes a list)*
+
+- 2001 · BA in Economics, Galatasaray University
+- 2002 · Research Assistant, Bahçeşehir University
+- 2008 · PhD in Economics, Marmara University; Assistant Professor
+- 2013 · Vice Dean; coordinator of the Financial Economics graduate program
+- 2015 · Economic Consultant, Dentons
+- 2018 · Associate Professor; Associate Editor-in-Chief of a SAGE journal
+- 2024 · Co-editor, Routledge volume on digitalization in Türkiye
+- 2025 · First AI-native paper: 3,369 infringement decisions
+- 2026 · Second paper: 18,513 citations mapped as a network
+
+*(v1.2: the "Education" sentence at the end of the story is set as a three-row list beside the story, same facts.)*
 
 **Eyebrow**
 

@@ -46,17 +46,6 @@
 .hm-work__grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 24px; }
 .hm-work__side { display: grid; gap: 24px; align-content: stretch; }
 
-/* ---------- stats ---------- */
-.hm-stats { padding: 72px 0 96px; }
-.hm-stats__row { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; padding: 56px 0; }
-.hm-stats__row .hm-rule { position: absolute; left: 0; right: 0; height: 1.5px; background: var(--ek-ink); }
-.hm-stats__row .hm-rule--t { top: 0; } .hm-stats__row .hm-rule--b { bottom: 0; }
-.hm-stat { display: flex; flex-direction: column; gap: 18px; }
-.hm-stat + .hm-stat { padding-left: 32px; border-left: 1px solid rgba(22,21,15,.16); }
-.hm-stat strong { font-size: clamp(54px, 6.5vw, 100px); font-weight: 500; letter-spacing: -.04em; line-height: .9; }
-.hm-stat--hero strong { color: var(--ek-coral-600); }
-.hm-stat > span { font-family: var(--ek-font-mono); font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; line-height: 1.45; color: var(--ek-ink-muted); max-width: 22ch; }
-
 /* ---------- writing ---------- */
 .hm-writing { padding: 40px 0 120px; }
 .hm-writing__head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 48px; }
@@ -80,8 +69,6 @@
   .hm-pillars { padding: 80px 0 56px; }
   .hm-pillars__head, .hm-pillars__grid, .hm-work__grid { grid-template-columns: 1fr; gap: 28px; }
   .hm-pillars__grid { gap: 0; }
-  .hm-stats__row { grid-template-columns: 1fr 1fr; gap: 40px 20px; }
-  .hm-stat + .hm-stat { padding-left: 0; border-left: 0; }
   .hm-post { grid-template-columns: 1fr; gap: 12px; }
   .hm-post__date { flex-direction: row; align-items: center; padding-top: 0; }
   .hm-post__go { display: none; }

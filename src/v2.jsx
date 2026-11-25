@@ -80,4 +80,24 @@ function CoralClose({ title, body, children }) {
     </section>);
 }
 
-export { useReveal, ArrowUpRight, ArrowRight, Btn, CoralClose };
+/* The four-figure row, ruled top and bottom. stats: [{ n, suffix, label, hero }];
+   the one with hero: true is set in coral. */
+function StatRow({ stats }) {
+  return (
+    <section className="v2-stats">
+      <div className="container">
+        <div className="v2-stats__row" data-reveal>
+          <span className="v2-rule v2-rule--t v2-draw" />
+          {stats.map((s, i) =>
+          <div className={'v2-stat' + (s.hero ? ' v2-stat--hero' : '')} key={s.label} data-r style={{ '--i': i }}>
+            <strong><span data-count={s.n}>{s.n}</span>{s.suffix}</strong>
+            <span>{s.label}</span>
+          </div>
+          )}
+          <span className="v2-rule v2-rule--b v2-draw" style={{ '--i': 2 }} />
+        </div>
+      </div>
+    </section>);
+}
+
+export { useReveal, ArrowUpRight, ArrowRight, Btn, CoralClose, StatRow };
