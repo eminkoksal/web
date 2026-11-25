@@ -1,16 +1,12 @@
-/* Home page — brand-correct content. */
+/* Home page — Emin Style v1.2 (2026-11-25).
+   Copy lives in content/home.md; styles in public/assets/home.css (hm- classes).
+   The reveal-on-scroll and count-up behaviour is wired once in useHomeMotion. */
 import React from 'react';
-import { IconArrow, IconSearch, IconDownload, IconChevron, Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA, Nav, Footer, OrbitalArc } from './shared.jsx';
+import { Eyebrow, Nav, Footer } from './shared.jsx';
 import { POSTS, formatDate, trimWords } from './posts.js';
+import CitationNetwork from './citation-network.jsx';
 
-const { useState, useEffect } = React;
-
-const HOME_TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "heroVariant": "editorial",
-  "showOrbitalArc": true,
-  "ghostWord": "Rigor",
-  "showPillars": true
-} /*EDITMODE-END*/;
+const { useEffect } = React;
 
 /* ------------------------------------------------------------------ */
 /*  Content                                                            */
@@ -24,7 +20,6 @@ const PILLARS = [
   'publications, a co-edited Routledge volume, and the Associate Editor-in-Chief role at ' +
   'Competition and Regulation in Network Industries (SAGE). I have taught every year ' +
   'since 2002, and still do.',
-  cta: 'Read more',
   href: 'about.html#academic'
 },
 {
@@ -33,7 +28,6 @@ const PILLARS = [
   'I build AI workflows for competition and regulation teams at international law ' +
   'firms: playbooks, complex prompts, MCP-based research infrastructure. Then I train ' +
   'the people who use them. Everything I teach, I have run on a live matter first.',
-  cta: 'Read more',
   href: 'about.html#ai-strategy'
 },
 {
@@ -43,7 +37,6 @@ const PILLARS = [
   'The first paper analyzed all 3,369 infringement decisions of the Turkish Competition ' +
   'Board as a single dataset. The second maps the 18,513 citations connecting all 9,995 ' +
   'of its published decisions.',
-  cta: 'Explore the research',
   href: 'research.html'
 },
 {
@@ -52,26 +45,47 @@ const PILLARS = [
   'I have written for a general audience since 2013, mostly in Turkish, on competition ' +
   'cases, platform regulation, climate policy, and now AI. The whole archive is on this ' +
   'site. I also give talks, to academic and professional audiences alike.',
-  cta: 'Read the blog',
   href: 'blog.html'
 }];
 
+/* The 2026 citation paper is shown by the network band; the featured cards follow it. */
+const NETWORK = {
+  eyebrow: 'AI-Native Research · SSRN 2026',
+  total: 18513,
+  say:
+  'citations connecting all 9,995 published decisions of the Turkish Competition ' +
+  'Board, extracted by an AI model and mapped as one network',
+  paper: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258',
+  tag: 'Most cited decision',
+  note:
+  'Each dot is a decision, each line a citation, placed by decision date. Shown: the ' +
+  'largest connected component, 5,359 decisions and 15,689 citations. Köksal, Peker, ' +
+  'Üyer, SSRN 2026'
+};
 
+/* The first entry is the lead card (wide, with the coral figure); the rest stack beside it.
+   The lead is work in progress: no link, and no pilot numbers until they are verified. */
 const FEATURED = [
 {
-  eyebrow: 'Routledge volume · 2024',
-  title: 'The Economics and Regulation of Digitalisation: The Case of Türkiye',
+  eyebrow: 'AI-Native Research · In progress',
+  figure: 10000,
+  figureSuffix: '+',
+  figureLabel: 'decisions published from 1997 to 2026',
+  title:
+  'How Predictable Is the Competition Board? A \u201CCrystal Ball\u201D Experiment with ' +
+  'Thirty Years of Case Law and Artificial Intelligence',
   body:
-  'A co-edited volume on Türkiye\u2019s digital transformation, with M. Eroğlu and ' +
-  'M. Finger. My own chapter, written with O. Bakış, builds the Türkiye Digital ' +
-  'Society Index.',
-  meta: 'Routledge, 2024',
-  cta: 'Read more',
-  href: 'research.html'
+  'Every firm that drafts a distribution agreement is guessing how the Turkish ' +
+  'Competition Board would rule. With F. G. Bilgin and C. Karataş, we are turning that ' +
+  'guess into an experiment. An AI model reads the Board\u2019s decisions up to a given ' +
+  'year, is told only the facts of the next year\u2019s cases, and has to call the ' +
+  'outcome. Its hit rate, year by year, measures how predictable the case law is. Each ' +
+  'miss goes to the lawyers on the team, who check whether the Board changed course.',
+  meta: 'Work in progress · first results expected in 2027'
 },
 {
   eyebrow: 'AI-Native Research · Published',
-  title: 'A Quarter-Century Analysis of the Turkish Competition Board\u2019s Decisions',
+  title: 'A Quarter-Century Analysis of the Turkish Competition Board’s Decisions',
   body:
   'With C. Peker and M. Üyer, we analyzed all 3,369 infringement decisions the Board ' +
   'published over twenty-five years. Nobody had treated that record as one dataset before; the ' +
@@ -82,138 +96,150 @@ const FEATURED = [
   external: true
 },
 {
-  eyebrow: 'AI-Native Research · Published',
-  title: 'The Intellectual DNA of the Turkish Competition Board',
+  eyebrow: 'Routledge volume · 2024',
+  title: 'The Economics and Regulation of Digitalisation: The Case of Türkiye',
   body:
-  'With C. Peker and M. Üyer, we mapped the 18,513 citations connecting all 9,995 ' +
-  'published decisions of the Board: which decisions everything else leans on, and ' +
-  'where the doctrine changed course.',
-  meta: 'SSRN, 2026',
-  cta: 'Read the paper',
-  href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7094258',
-  external: true
+  'A co-edited volume on Türkiye’s digital transformation, with M. Eroğlu and ' +
+  'M. Finger. My own chapter, written with O. Bakış, builds the Türkiye Digital ' +
+  'Society Index.',
+  meta: 'Routledge, 2024',
+  cta: 'Read more',
+  href: 'research.html'
 }];
 
-
+/* The coral figure is the one the AI work produced. */
 const STATS = [
-{ value: '20+', label: 'years in competition economics' },
-{ value: '50+', label: 'publications' },
-{ value: '1000s', label: 'legal documents analyzed with AI' },
-{ value: '11+', label: 'courses taught' }];
-
+{ n: 20, suffix: '+', label: 'years in competition economics' },
+{ n: 50, suffix: '+', label: 'publications' },
+{ n: 1000, suffix: 's', label: 'legal documents analyzed with AI', hero: true },
+{ n: 11, suffix: '+', label: 'courses taught' }];
 
 /* ------------------------------------------------------------------ */
-/*  Hero variants                                                      */
+/*  Motion: reveal on scroll, count-up                                 */
 /* ------------------------------------------------------------------ */
 
-function HeroEditorial({ t }) {
-  return (
-    <section style={{ position: 'relative', padding: '80px 0 120px' }}>
-      <div className="container" style={{ position: 'relative' }}>
-        {/* Ghost watermark */}
-        <div style={{ position: 'absolute', left: -10, top: -30, zIndex: 0 }}>
-          <GhostHeadline>{t.ghostWord}</GhostHeadline>
-        </div>
-
-        {t.showOrbitalArc &&
-        <OrbitalArc
-          d="M 40 480 Q 320 80 720 260 Q 1020 380 1240 120"
-          viewBox="0 0 1280 600"
-          stroke="#F37338" strokeWidth={1.4}
-          style={{ height: 600, top: 80 }} />
-        }
-
-        <div style={{
-          display: 'grid', gridTemplateColumns: '1.45fr 1fr',
-          gap: 64, alignItems: 'center',
-          position: 'relative', zIndex: 1, paddingTop: 80
-        }}>
-          <div>
-            <Eyebrow>Economist · AI Consultant · Associate Professor</Eyebrow>
-            <h1 className="display" style={{ margin: '28px 0 28px' }}>
-              Emin Köksal
-            </h1>
-            <p style={{
-              fontFamily: 'var(--font-prose)',
-              fontSize: 'clamp(22px, 2.2vw, 30px)',
-              fontWeight: 400, letterSpacing: '0',
-              lineHeight: 1.3, color: '#2E2E29',
-              margin: '0 0 32px', maxWidth: 620
-            }}>Where economic rigor meets AI fluency
-
-            </p>
-            <p style={{
-              fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
-              maxWidth: 560, margin: '0 0 40px'
-            }}>
-              I have spent twenty years in competition economics, as an academic and,
-              since 2015, as an economist working inside a law firm&rsquo;s competition
-              team. I started using AI to save time on my own research. It ended up
-              changing how I do the work. Today I design AI workflows for competition
-              and regulation teams and train the lawyers and economists who use them.
-              My latest paper had an AI model read all 9,995 published decisions of
-              the Turkish Competition Board.
-            </p>
-            <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
-              <Button variant="primary" href="research.html">
-                View Research <IconArrow size={14} dir="up-right" />
-              </Button>
-              <Button variant="ghost" href="cv.html">
-                Read the CV
-              </Button>
-            </div>
-          </div>
-
-          <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
-            <div style={{ position: 'relative' }}>
-              <Portrait size={460} src="assets/portrait.jpg" />
-              <SatelliteCTA size={68} anchor={{ right: -10, bottom: 40 }}
-              href="about.html" label="Read about Emin" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>);
-
+/* A [data-reveal] block gets the class hm-in when it scrolls into view; its
+   [data-r] children fade up (staggered by --i), its .hm-draw rules draw, and
+   its [data-count] figures count up. With reduced motion the CSS shows
+   everything at once and the figures are left as rendered. */
+function useHomeMotion() {
+  useEffect(() => {
+    window.__ekMotion = true;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const countUp = (el) => {
+      const to = Number(el.getAttribute('data-count'));
+      const comma = el.textContent.includes(',');
+      const show = (v) => { el.textContent = comma ? Math.round(v).toLocaleString('en-US') : String(Math.round(v)); };
+      const start = performance.now();
+      const tick = (now) => {
+        const p = Math.min(1, (now - start) / 1500);
+        show(to * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('hm-in');
+        if (!reduce) e.target.querySelectorAll('[data-count]').forEach(countUp);
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.hm [data-reveal]').forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
 }
 
 /* ------------------------------------------------------------------ */
 /*  Small primitives                                                   */
 /* ------------------------------------------------------------------ */
 
-function Stat({ label, value }) {
+function ArrowUpRight({ size = 13, width = 1.5 }) {
   return (
-    <div style={{
-      display: 'flex', alignItems: 'baseline', justifyContent: 'space-between',
-      borderTop: '1px solid rgba(22,21,15,.15)', paddingTop: 14
-    }}>
-      <span style={{ fontSize: 14, color: '#56554F' }}>{label}</span>
-      <span style={{
-        fontFamily: 'var(--font-sans)', fontSize: 28, fontWeight: 500, letterSpacing: '-.02em'
-      }}>
-        {value}
-      </span>
-    </div>);
+    <svg width={size} height={size} viewBox="0 0 14 14" fill="none" stroke="currentColor"
+    strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3.5 10.5l7-7M5 3.5h5.5V9" />
+    </svg>);
+}
 
+function ArrowRight({ size = 13 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 14 14" fill="none" stroke="currentColor"
+    strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" />
+    </svg>);
+}
+
+function Btn({ variant, href, external, children }) {
+  return (
+    <a className={'hm-btn' + (variant ? ' hm-btn--' + variant : '')} href={href}
+    target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
+      {children}
+    </a>);
 }
 
 /* ------------------------------------------------------------------ */
-/*  Section: Four Pillars                                              */
+/*  Sections                                                           */
 /* ------------------------------------------------------------------ */
+
+function Hero() {
+  return (
+    <section className="hm-hero">
+      <div className="container" data-reveal>
+        <div data-r><Eyebrow>Economist · AI Consultant · Associate Professor</Eyebrow></div>
+        <h1 className="hm-name" aria-label="Emin Köksal"><span>Emin&nbsp;</span><span>Köksal</span></h1>
+        <div className="hm-hero__row">
+          <div data-r style={{ '--i': 3 }}>
+            <p className="hm-tagline">Where economic rigor meets AI fluency</p>
+            <div className="hm-hero__cta">
+              <Btn href="research.html">View Research <ArrowUpRight /></Btn>
+              <Btn variant="ghost" href="cv.html">Read the CV</Btn>
+            </div>
+          </div>
+          <p className="hm-hero__lede" data-r style={{ '--i': 4 }}>
+            I have spent twenty years in competition economics, as an academic and,
+            since 2015, as an economist working inside a law firm&rsquo;s competition
+            team. I started using AI to save time on my own research. It ended up
+            changing how I do the work. Today I design AI workflows for competition
+            and regulation teams and train the lawyers and economists who use them.
+            My latest paper had an AI model read all 9,995 published decisions of
+            the Turkish Competition Board.
+          </p>
+          <div className="hm-portrait-wrap" data-r style={{ '--i': 5 }}>
+            <img className="hm-portrait" src="assets/portrait.jpg" alt="Portrait of Emin Köksal" width="296" height="296" />
+            <a className="hm-satellite" href="about.html" aria-label="Read about Emin"><ArrowUpRight size={18} width={1.4} /></a>
+          </div>
+        </div>
+      </div>
+    </section>);
+}
+
+function NetworkBand() {
+  return (
+    <CitationNetwork
+      total={NETWORK.total}
+      eyebrow={<Eyebrow color="#B9B6AB">{NETWORK.eyebrow}</Eyebrow>}
+      tag={NETWORK.tag}
+      note={NETWORK.note}>
+      <p className="hm-net__say">{NETWORK.say}</p>
+      <div className="hm-net__cta">
+        <Btn variant="paper" href={NETWORK.paper} external>Read the paper <ArrowUpRight /></Btn>
+        <Btn variant="line" href="research.html">Explore the research</Btn>
+      </div>
+    </CitationNetwork>);
+}
 
 function FourPillars() {
   return (
-    <section style={{ position: 'relative', padding: '128px 0 96px' }}>
-      <div className="container" style={{ position: 'relative' }}>
-        <div style={{ maxWidth: 880, marginBottom: 80 }}>
-          <Eyebrow>What I do</Eyebrow>
-          <h2 className="display--mid" style={{ margin: '20px 0 28px' }}>
-            Four areas of work that feed each other
-          </h2>
-          <p style={{
-            fontFamily: 'var(--font-prose)', fontSize: 19, lineHeight: 1.55, color: '#2E2E29',
-            margin: 0, maxWidth: 720
-          }}>
+    <section className="hm-pillars">
+      <div className="container">
+        <div className="hm-pillars__head" data-reveal>
+          <div data-r>
+            <Eyebrow>What I do</Eyebrow>
+            <h2 className="hm-h2">Four areas of work that feed each other</h2>
+          </div>
+          <p className="hm-prose" data-r style={{ '--i': 1 }}>
             On paper it is an odd pairing: twenty years of competition economics
             and daily use of the newest AI tools. In practice each feeds the other.
             The economics decides which question a workflow should answer, and the
@@ -221,423 +247,144 @@ function FourPillars() {
             hand.
           </p>
         </div>
-
-        <OrbitalArc
-          d="M 40 380 Q 320 60 700 240 Q 1040 400 1260 100"
-          viewBox="0 0 1280 480"
-          stroke="#F37338" strokeWidth={1.3}
-          style={{ height: 480, top: 240, opacity: .8 }} />
-
-        <div style={{
-          position: 'relative', zIndex: 1,
-          display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)',
-          rowGap: 64, columnGap: 56
-        }}>
+        <div className="hm-pillars__grid" data-reveal>
           {PILLARS.map((p, i) =>
-          <PillarCard key={p.title} index={i + 1} {...p} />
+          <a className="hm-pillar" href={p.href} key={p.title} data-r style={{ '--i': i }}>
+            <span className="hm-rule hm-draw" style={{ '--i': i }} />
+            <div className="hm-pillar__top">
+              <h3>{p.title}</h3>
+              <span className="hm-pillar__go"><ArrowUpRight size={15} width={1.4} /></span>
+            </div>
+            <p>{p.body}</p>
+          </a>
           )}
         </div>
       </div>
     </section>);
-
 }
 
-function PillarCard({ index, title, body, cta, href }) {
-  const [hover, setHover] = useState(false);
+function FeaturedCard({ lead, index, eyebrow, figure, figureSuffix, figureLabel, title, body, meta, cta, href, external }) {
+  const Tag = href ? 'a' : 'div';
+  const cls = 'hm-card ' + (lead ? 'hm-card--sunken' : 'hm-card--line hm-card--compact') + (href ? '' : ' hm-card--static');
   return (
-    <a href={href}
-    onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
-    style={{
-      display: 'flex', flexDirection: 'column', gap: 18,
-      padding: '36px 0 28px',
-      borderTop: '1.5px solid #16150F',
-      textDecoration: 'none', color: 'inherit',
-      position: 'relative'
-    }}>
-      <div style={{
-        display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 24
-      }}>
-        <span style={{
-          fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
-          letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)', color: '#56554F'
-        }}>
-          {String(index).padStart(2, '0')}
-        </span>
-        <span style={{
-          width: 44, height: 44, borderRadius: '50%',
-          background: hover ? '#16150F' : '#FFFFFF',
-          color: hover ? '#FFFFFF' : '#16150F',
-          display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-          transition: 'background 180ms cubic-bezier(0.4,0,0.2,1), color 180ms',
-          boxShadow: '0 8px 18px rgba(0,0,0,.06)'
-        }}>
-          <IconArrow size={15} dir="up-right" />
-        </span>
+    <Tag className={cls} href={href}
+    target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}
+    data-r style={{ '--i': index }}>
+      <span className="hm-mono">{eyebrow}</span>
+      {figure &&
+      <div className="hm-card__fig">
+        <strong><span data-count={figure}>{figure.toLocaleString('en-US')}</span>{figureSuffix}</strong>
+        <span>{figureLabel}</span>
       </div>
-      <h3 style={{
-        fontFamily: 'var(--font-sans)', fontSize: 'clamp(26px, 2.4vw, 36px)',
-        fontWeight: 500, letterSpacing: '-.022em', lineHeight: 1.1,
-        margin: 0, maxWidth: 520
-      }}>
-        {title}
-      </h3>
-      <p style={{
-        fontSize: 16, lineHeight: 1.55, color: '#2E2E29',
-        margin: 0, maxWidth: 520
-      }}>
-        {body}
-      </p>
-      <span style={{
-        fontFamily: 'var(--font-sans)', fontSize: 15, fontWeight: 500,
-        letterSpacing: '-.02em', color: '#16150F',
-        display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 4
-      }}>
-        {cta} <IconArrow size={13} />
-      </span>
-    </a>);
-
+      }
+      <h3>{title}</h3>
+      <p>{body}</p>
+      <div className="hm-card__foot">
+        <span className="hm-meta">{meta}</span>
+        {cta && <span className="hm-arrow-link">{cta} <ArrowRight /></span>}
+      </div>
+    </Tag>);
 }
-
-/* ------------------------------------------------------------------ */
-/*  Section: Featured Work                                             */
-/* ------------------------------------------------------------------ */
 
 function FeaturedWork() {
+  const [lead, ...rest] = FEATURED;
   return (
-    <section style={{ padding: '96px 0 64px' }}>
+    <section className="hm-work">
       <div className="container">
-        <div style={{
-          display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between',
-          flexWrap: 'wrap', gap: 16, marginBottom: 56
-        }}>
-          <div style={{ maxWidth: 720 }}>
+        <div className="hm-work__head" data-reveal>
+          <div data-r>
             <Eyebrow>Featured work</Eyebrow>
-            <h2 className="display--mid" style={{ margin: '20px 0 0' }}>
-              What I&rsquo;m working on now
-            </h2>
+            <h2 className="hm-h2">What I&rsquo;m working on now</h2>
           </div>
-          <Button variant="ghost" href="research.html">
-            See all research <IconArrow size={14} dir="up-right" />
-          </Button>
+          <div data-r style={{ '--i': 1 }}>
+            <Btn variant="ghost" href="research.html">See all research <ArrowUpRight /></Btn>
+          </div>
         </div>
-
-        <div style={{
-          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24
-        }}>
-          {FEATURED.map((f) =>
-          <FeaturedCard key={f.title} {...f} />
-          )}
+        <div className="hm-work__grid" data-reveal>
+          <FeaturedCard {...lead} lead index={0} />
+          <div className="hm-work__side">
+            {rest.map((f, i) => <FeaturedCard key={f.title} {...f} index={i + 1} />)}
+          </div>
         </div>
       </div>
     </section>);
-
 }
-
-function FeaturedCard({ eyebrow, title, body, meta, cta, href, external }) {
-  const [hover, setHover] = useState(false);
-  return (
-    <a href={href}
-    target={external ? '_blank' : undefined}
-    rel={external ? 'noopener noreferrer' : undefined}
-    onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
-    style={{
-      display: 'flex', flexDirection: 'column',
-      borderRadius: 24,
-      padding: 36, gap: 20,
-      minHeight: 420,
-      textDecoration: 'none', color: '#16150F',
-      transition: 'background 180ms cubic-bezier(0.4,0,0.2,1)',
-      background: hover ? '#FFFFFF' : '#FBFAF6'
-    }}>
-      <span style={{
-        fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 500,
-        letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)', color: '#BC4527'
-      }}>
-        {eyebrow}
-      </span>
-      <h3 style={{
-        fontFamily: 'var(--font-sans)', fontSize: 24, fontWeight: 500,
-        letterSpacing: '-.022em', lineHeight: 1.2, margin: 0
-      }}>
-        {title}
-      </h3>
-      <p style={{
-        fontSize: 15, lineHeight: 1.55, color: '#56554F', margin: 0, flex: 1
-      }}>
-        {body}
-      </p>
-      <div style={{
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        paddingTop: 8, borderTop: '1px solid rgba(22,21,15,.12)'
-      }}>
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: 11, color: '#56554F' }}>{meta}</span>
-        <span style={{
-          fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
-          letterSpacing: '-.02em',
-          display: 'inline-flex', alignItems: 'center', gap: 6
-        }}>
-          {cta} <IconArrow size={12} />
-        </span>
-      </div>
-    </a>);
-
-}
-
-/* ------------------------------------------------------------------ */
-/*  Section: Numbers                                                   */
-/* ------------------------------------------------------------------ */
 
 function Numbers() {
   return (
-    <section style={{ padding: '96px 0' }}>
+    <section className="hm-stats">
       <div className="container">
-        <div style={{
-          display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24,
-          borderTop: '1.5px solid #16150F',
-          borderBottom: '1.5px solid #16150F',
-          padding: '56px 0'
-        }}>
+        <div className="hm-stats__row" data-reveal>
+          <span className="hm-rule hm-rule--t hm-draw" />
           {STATS.map((s, i) =>
-          <div key={i} style={{
-            display: 'flex', flexDirection: 'column', gap: 18,
-            paddingLeft: i === 0 ? 0 : 32,
-            borderLeft: i === 0 ? 'none' : '1px solid rgba(22,21,15,.15)'
-          }}>
-              <span style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 'clamp(56px, 6vw, 96px)',
-              fontWeight: 500, letterSpacing: '-.03em',
-              lineHeight: 1, color: '#16150F'
-            }}>
-                {s.value}
-              </span>
-              <span style={{
-              fontSize: 15, lineHeight: 1.4, color: '#56554F',
-              maxWidth: 220
-            }}>
-                {s.label}
-              </span>
-            </div>
+          <div className={'hm-stat' + (s.hero ? ' hm-stat--hero' : '')} key={s.label} data-r style={{ '--i': i }}>
+            <strong><span data-count={s.n}>{s.n}</span>{s.suffix}</strong>
+            <span>{s.label}</span>
+          </div>
           )}
+          <span className="hm-rule hm-rule--b hm-draw" style={{ '--i': 2 }} />
         </div>
       </div>
     </section>);
-
 }
-
-/* ------------------------------------------------------------------ */
-/*  Section: Recent Writing                                            */
-/* ------------------------------------------------------------------ */
 
 function RecentWriting() {
   const recent = POSTS.slice(0, 3);
-
   return (
-    <section style={{ padding: '64px 0 128px' }}>
+    <section className="hm-writing">
       <div className="container">
-        <div style={{
-          display: 'flex', alignItems: 'baseline', justifyContent: 'space-between',
-          flexWrap: 'wrap', gap: 16, marginBottom: 56
-        }}>
-          <div>
+        <div className="hm-writing__head" data-reveal>
+          <div data-r>
             <Eyebrow>From the blog</Eyebrow>
-            <h2 className="display--mid" style={{ margin: '20px 0 0' }}>
-              Essays &amp; working notes
-            </h2>
+            <h2 className="hm-h2">Essays &amp; working notes</h2>
           </div>
-          <Button variant="ghost" href="blog.html">
-            Read all writing <IconArrow size={14} dir="up-right" />
-          </Button>
+          <div data-r style={{ '--i': 1 }}>
+            <Btn variant="ghost" href="blog.html">Read all writing <ArrowUpRight /></Btn>
+          </div>
         </div>
-
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+        <div data-reveal>
           {recent.map((p, i) =>
-          <li key={p.slug} style={{
-            display: 'grid',
-            gridTemplateColumns: '160px 1fr auto',
-            gap: 32, alignItems: 'baseline',
-            padding: '32px 0',
-            borderTop: '1px solid rgba(22,21,15,.12)',
-            borderBottom: i === recent.length - 1 ? '1px solid rgba(22,21,15,.12)' : 'none'
-          }}>
-            <span style={{ fontSize: 14, color: '#56554F' }}>{formatDate(p.date)}</span>
+          <a className="hm-post" href={`blog/${p.slug}.html`} key={p.slug} lang={p.lang || undefined}
+          data-r style={{ '--i': i }}>
+            <span className="hm-post__date">
+              {formatDate(p.date)}
+              {p.lang && <span className="hm-tag">{p.lang.toUpperCase()}</span>}
+            </span>
             <div>
-              <div style={{
-                fontFamily: 'var(--font-sans)', fontSize: 24, fontWeight: 500,
-                letterSpacing: '-.02em', lineHeight: 1.25, margin: 0
-              }}>
-                <a href={`blog/${p.slug}.html`}
-                style={{ color: '#16150F', textDecoration: 'none' }}>
-                  {p.title}
-                </a>
-              </div>
-              <div style={{ fontSize: 15, color: '#56554F', marginTop: 8, maxWidth: 640 }}>
-                {trimWords(p.excerpt, 22)}
-              </div>
+              <h3>{p.title}</h3>
+              <p>{trimWords(p.excerpt, 30)}</p>
             </div>
-            <a href={`blog/${p.slug}.html`} aria-label={p.title} style={{
-              width: 44, height: 44, borderRadius: '50%',
-              border: '1px solid rgba(22,21,15,.5)',
-              display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-              color: '#16150F', textDecoration: 'none'
-            }}>
-              <IconArrow size={14} dir="up-right" />
-            </a>
-          </li>
+            <span className="hm-post__go"><ArrowUpRight size={14} width={1.4} /></span>
+          </a>
           )}
-        </ul>
+        </div>
       </div>
     </section>);
-
 }
-
-/* ------------------------------------------------------------------ */
-/*  Section: Closing CTA                                               */
-/* ------------------------------------------------------------------ */
 
 function ClosingCTA() {
   return (
-    <section style={{
-      background: '#FBFAF6', padding: '128px 0',
-      borderTop: '1px solid rgba(22,21,15,.08)'
-    }}>
+    <section className="hm-close">
       <div className="container">
-        <div style={{
-          display: 'grid', gridTemplateColumns: '1.4fr 1fr',
-          gap: 64, alignItems: 'end'
-        }}>
-          <h2 className="display--mid" style={{ margin: 0, maxWidth: 760 }}>
+        <div className="hm-close__stone" data-reveal>
+          <h2 className="hm-h2" data-r>
             Working on something where economics, regulation, and AI meet?
           </h2>
-          <div>
-            <p style={{
-              fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55, color: '#2E2E29',
-              margin: '0 0 28px', maxWidth: 460
-            }}>
+          <div data-r style={{ '--i': 1 }}>
+            <p>
               Most of my work is with competition and regulation teams at international
               law firms and consultancies, alongside academic collaborations and my own
               research. If what you are doing overlaps with any of that, send me a
               note about it.
             </p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <Button variant="primary" href="contact.html">
-                Get in touch <IconArrow size={14} dir="up-right" />
-              </Button>
-              <Button variant="ghost"
-              href="https://www.linkedin.com/in/eminkoksal/"
-              target="_blank">
-                Connect on LinkedIn <IconArrow size={14} dir="up-right" />
-              </Button>
+            <div className="hm-close__cta">
+              <Btn href="contact.html">Get in touch <ArrowUpRight /></Btn>
+              <Btn variant="ghost" href="https://www.linkedin.com/in/eminkoksal/" external>Connect on LinkedIn</Btn>
             </div>
           </div>
         </div>
       </div>
     </section>);
-
-}
-
-/* ------------------------------------------------------------------ */
-/*  Tweaks panel                                                       */
-/* ------------------------------------------------------------------ */
-
-function HomeTweaksPanel({ open, onClose, t, setT }) {
-  if (!open) return null;
-  return (
-    <div style={{
-      position: 'fixed', right: 24, bottom: 24, zIndex: 100,
-      width: 320, background: '#FBFAF6', color: '#16150F',
-      borderRadius: 24, boxShadow: '0 12px 32px rgba(22,21,15,.10)',
-      border: '1px solid rgba(22,21,15,.1)',
-      padding: 22, fontFamily: 'var(--font-sans)'
-    }}>
-      <div style={{
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 18
-      }}>
-        <strong style={{ fontSize: 14, letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)' }}>
-          Tweaks
-        </strong>
-        <button onClick={onClose} style={{
-          width: 28, height: 28, borderRadius: '50%', border: 0,
-          background: '#16150F', color: '#FFFFFF', cursor: 'pointer',
-          display: 'inline-flex', alignItems: 'center', justifyContent: 'center'
-        }}>×</button>
-      </div>
-
-      <Field label="Hero variant">
-        <Segmented value={t.heroVariant} onChange={(v) => setT({ heroVariant: v })}
-        options={[
-        { value: 'editorial', label: 'Editorial' },
-        { value: 'stadium', label: 'Stadium' },
-        { value: 'typographic', label: 'Type' }]
-        } />
-      </Field>
-
-      <Field label="Ghost word">
-        <input
-          value={t.ghostWord}
-          onChange={(e) => setT({ ghostWord: e.target.value })}
-          style={{
-            width: '100%', padding: '10px 12px', borderRadius: 12,
-            border: '1px solid rgba(22,21,15,.15)', fontFamily: 'inherit',
-            fontSize: 14, background: '#FFFFFF', color: '#16150F'
-          }} />
-      </Field>
-
-      <Field label="Orbital arc">
-        <Toggle value={t.showOrbitalArc} onChange={(v) => setT({ showOrbitalArc: v })} />
-      </Field>
-
-      <Field label="Show Four Pillars section">
-        <Toggle value={t.showPillars} onChange={(v) => setT({ showPillars: v })} />
-      </Field>
-    </div>);
-
-}
-
-function Field({ label, children }) {
-  return (
-    <label style={{ display: 'block', marginBottom: 16 }}>
-      <div style={{
-        fontSize: 12, fontWeight: 500, letterSpacing: '.08em', fontFamily: 'var(--font-mono)',
-        textTransform: 'uppercase', color: '#56554F', marginBottom: 8
-      }}>
-        {label}
-      </div>
-      {children}
-    </label>);
-
-}
-function Segmented({ value, onChange, options }) {
-  return (
-    <div style={{ display: 'flex', background: '#F5F2EB', borderRadius: 999, padding: 3 }}>
-      {options.map((o) =>
-      <button key={o.value} onClick={() => onChange(o.value)}
-      style={{
-        flex: 1, padding: '8px 0', borderRadius: 999, border: 0,
-        background: value === o.value ? '#16150F' : 'transparent',
-        color: value === o.value ? '#F5F2EB' : '#16150F',
-        fontFamily: 'inherit', fontSize: 13, fontWeight: 500,
-        cursor: 'pointer'
-      }}>{o.label}</button>
-      )}
-    </div>);
-
-}
-function Toggle({ value, onChange }) {
-  return (
-    <button onClick={() => onChange(!value)} style={{
-      width: 44, height: 26, borderRadius: 999,
-      background: value ? '#16150F' : 'rgba(22,21,15,.2)',
-      border: 0, padding: 0, cursor: 'pointer', position: 'relative',
-      transition: 'background 180ms'
-    }}>
-      <span style={{
-        position: 'absolute', top: 3, left: value ? 21 : 3,
-        width: 20, height: 20, borderRadius: '50%', background: '#FFFFFF',
-        transition: 'left 180ms cubic-bezier(0.4,0,0.2,1)'
-      }} />
-    </button>);
-
 }
 
 /* ------------------------------------------------------------------ */
@@ -645,13 +392,14 @@ function Toggle({ value, onChange }) {
 /* ------------------------------------------------------------------ */
 
 function HomeApp() {
-  const t = HOME_TWEAK_DEFAULTS;
+  useHomeMotion();
   return (
     <>
       <Nav active="Home" />
-      <main>
-        <HeroEditorial t={t} />
-        {t.showPillars && <FourPillars />}
+      <main className="hm">
+        <Hero />
+        <NetworkBand />
+        <FourPillars />
         <FeaturedWork />
         <Numbers />
         <RecentWriting />
@@ -659,7 +407,6 @@ function HomeApp() {
       </main>
       <Footer />
     </>);
-
 }
 
 export default HomeApp;
