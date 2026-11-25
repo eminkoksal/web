@@ -1,9 +1,13 @@
 /* Blog page — real post feed from content/posts/index.json.
    Featured post pinned at top; topic chips + Turkish-posts filter drive
-   the grid client-side. */
+   the grid client-side.
+   Emin Style v1.2 (2026-11-25): the featured post sits on a sunken card with its cover in
+   stone radius, card text is larger and darker, the closing ask is on the coral surface,
+   sections reveal on scroll. */
 import React from 'react';
 import { IconArrow, IconSearch, IconDownload, IconChevron, Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA, Nav, Footer, OrbitalArc } from './shared.jsx';
 import { POSTS, TOPICS, FEATURED_POST, formatDate, trimWords } from './posts.js';
+import { useReveal, ArrowUpRight, Btn, CoralClose } from './v2.jsx';
 
 const { useState: useBlogState } = React;
 
@@ -34,22 +38,20 @@ function scrollToId(id) {
 
 function BlogHero() {
   return (
-    <section style={{ position: 'relative', padding: '120px 0 48px' }}>
+    <section style={{ position: 'relative', padding: '8px 0 48px' }}>
       <div className="container" style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', left: -10, top: 60, zIndex: 0 }}>
-          <GhostHeadline>Writing</GhostHeadline>
-        </div>
+        
         <div style={{ position: 'relative', zIndex: 1, paddingTop: 64,
-                      display: 'grid', gridTemplateColumns: '1.4fr 1fr',
-                      gap: 64, alignItems: 'end' }}>
+                      display: 'grid', gridTemplateColumns: '1fr',
+          gap: 40, alignItems: 'end' }}>
           <div>
             <Eyebrow>Writing</Eyebrow>
-            <h1 className="display" style={{ margin: '28px 0 0' }}>
+            <h1 className="display" style={{ margin: '28px 0 0', maxWidth: 1080, fontSize: 'clamp(40px, 6.4vw, 96px)' }}>
               Notes from the seam between economics, regulation, and AI
             </h1>
           </div>
-          <p style={{ fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
-                      margin: 0 }}>
+          <p style={{ fontFamily: 'var(--font-prose)', fontSize: 20, lineHeight: 1.5, color: '#2E2E29',
+            margin: 0, maxWidth: 700 }}>
             Essays, working notes, and shorter posts from where economics,
             competition policy, and AI meet in day-to-day analytical work.
             Some pieces are written for academics and some for practitioners;
@@ -71,7 +73,7 @@ function TopicChips({ topic, trOnly, onTopic }) {
   const all = ['All', ...TOPICS];
   return (
     <section id="topics" style={{ padding: '24px 0 16px', scrollMarginTop: 120 }}>
-      <div className="container">
+      <div className="container" data-reveal data-r>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
           {all.map((t) => {
             const on = topic === t && !(t === 'All' && trOnly);
@@ -106,17 +108,16 @@ function FeaturedPost() {
   if (!p) return null;
   return (
     <section className="section" style={{ paddingTop: 48, paddingBottom: 48 }}>
-      <div className="container">
+      <div className="container" data-reveal data-r>
         <div style={{
           display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 56,
-          alignItems: 'center', padding: '64px 0',
-          borderTop: '1px solid rgba(22,21,15,.12)',
-          borderBottom: '1px solid rgba(22,21,15,.12)',
+          alignItems: 'center', padding: '56px',
+          background: '#EAE8DF', borderRadius: 24,
         }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20, flexWrap: 'wrap' }}>
               <Eyebrow>Featured</Eyebrow>
-              <span style={{ fontSize: 13, color: '#56554F' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '.06em', textTransform: 'uppercase', color: '#56554F' }}>
                 {formatDate(p.date)} · {p.readingMin} min read · {p.topic}
               </span>
             </div>
@@ -125,8 +126,8 @@ function FeaturedPost() {
                 {p.title}
               </a>
             </h2>
-            <p style={{ fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.5, color: '#56554F',
-                        margin: '0 0 28px', maxWidth: 560 }}>
+            <p style={{ fontFamily: 'var(--font-prose)', fontSize: 20, lineHeight: 1.5, color: '#2E2E29',
+              margin: '0 0 28px', maxWidth: 560 }}>
               {trimWords(p.excerpt, 45)}
             </p>
             <a href={postHref(p)} style={{
@@ -138,12 +139,12 @@ function FeaturedPost() {
               Read the post <IconArrow size={14} />
             </a>
           </div>
-          <div style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+          <div style={{ position: 'relative' }}>
             <a href={postHref(p)} style={{ position: 'relative', display: 'block', textDecoration: 'none' }}>
               {p.image ? (
                 <div aria-hidden="true" style={{
-                  width: 360, height: 360, borderRadius: '50%',
-                  background: `#EAE8DF url(${p.image}) center/cover`,
+                  width: '100%', aspectRatio: '4 / 3', borderRadius: 24,
+                  background: `#DAD8CD url(${p.image}) center/cover`,
                 }} />
               ) : (
                 <Portrait
@@ -152,9 +153,9 @@ function FeaturedPost() {
                 />
               )}
               <span style={{
-                position: 'absolute', left: '50%', bottom: 34, transform: 'translateX(-50%)',
+                position: 'absolute', left: 20, top: 20,
                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                background: '#FFFFFF', color: '#16150F',
+                background: '#FBFAF6', color: '#16150F',
                 padding: '8px 14px', borderRadius: 999,
                 fontFamily: 'var(--font-sans)', fontSize: 12, fontWeight: 500,
                 letterSpacing: '-.02em', whiteSpace: 'nowrap',
@@ -216,7 +217,7 @@ function PostCard({ p, n }) {
         </div>
       </a>
       <div>
-        <div style={{ fontSize: 13, color: '#56554F', marginBottom: 10 }}>
+        <div style={{ fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '.06em', textTransform: 'uppercase', color: '#56554F', marginBottom: 12 }}>
           {formatDate(p.date)} · {p.readingMin} min read
         </div>
         <h3 style={{ fontFamily: 'var(--font-sans)',
@@ -226,8 +227,8 @@ function PostCard({ p, n }) {
             {p.title}
           </a>
         </h3>
-        <p style={{ fontSize: 15, lineHeight: 1.55, color: '#56554F',
-                    margin: '0 0 14px' }}>
+        <p style={{ fontSize: 16.5, lineHeight: 1.55, color: '#2E2E29',
+          margin: '0 0 14px' }}>
           {trimWords(p.excerpt, 25)}
         </p>
         <a href={postHref(p)} style={{
@@ -247,7 +248,7 @@ function RecentPosts({ posts, total, trOnly, limit, onMore }) {
   const visible = posts.slice(0, limit);
   return (
     <section id="feed" className="section" style={{ paddingTop: 64, scrollMarginTop: 120 }}>
-      <div className="container">
+      <div className="container" data-reveal data-r>
         <div style={{ display: 'flex', alignItems: 'baseline',
                       justifyContent: 'space-between', marginBottom: 48,
                       flexWrap: 'wrap', gap: 24 }}>
@@ -301,7 +302,7 @@ function Archive({ onByYear, onByTopic, onTurkish }) {
   ];
   return (
     <section className="section" style={{ paddingTop: 96, paddingBottom: 96 }}>
-      <div className="container">
+      <div className="container" data-reveal data-r>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: 64,
                       alignItems: 'start' }}>
           <div>
@@ -361,9 +362,9 @@ function Archive({ onByYear, onByTopic, onTurkish }) {
 function Subscribe() {
   return (
     <section className="section" style={{ paddingTop: 0, paddingBottom: 96 }}>
-      <div className="container">
+      <div className="container" data-reveal data-r>
         <div style={{
-          background: '#FBFAF6', borderRadius: 24,
+          background: '#FBFAF6', borderRadius: 24, border: '1px solid #DAD8CD',
           padding: '72px 64px',
         }}>
           <div style={{
@@ -438,45 +439,22 @@ function Subscribe() {
 
 function ClosingCTA() {
   return (
-    <section className="section" style={{ paddingTop: 16, paddingBottom: 120 }}>
-      <div className="container">
-        <div style={{
-          display: 'grid', gridTemplateColumns: '1.3fr 1fr',
-          gap: 64, alignItems: 'center',
-          padding: '64px 0',
-          borderTop: '1px solid rgba(22,21,15,.12)',
-        }}>
-          <div>
-            <h2 className="display--mid" style={{ margin: 0, maxWidth: 720 }}>
-              Have a piece in mind for a guest essay, podcast, or panel?
-            </h2>
-            <p style={{ fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.5, color: '#2E2E29',
-                        margin: '24px 0 0', maxWidth: 640 }}>
-              I take on a small number of invited essays, podcast
-              appearances, and panels each year, mostly on
-              AI in competition and regulation, AI-native research methods,
-              or the economics of digital platforms. Get in touch.
-            </p>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Button variant="primary" href="contact.html">
-              Get in touch <IconArrow size={14} dir="up-right" />
-            </Button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+    <CoralClose
+      title="Have a piece in mind for a guest essay, podcast, or panel?"
+      body={'I take on a small number of invited essays, podcast appearances, and panels each ' +
+      'year, mostly on AI in competition and regulation, AI-native research methods, or the ' +
+      'economics of digital platforms. Get in touch.'}>
+      <Btn href="contact.html">Get in touch <ArrowUpRight /></Btn>
+    </CoralClose>);
 }
 
-/* ------------------------------------------------------------------ */
-/*  App                                                                */
 /* ------------------------------------------------------------------ */
 
 function BlogApp() {
   const [topic, setTopic] = useBlogState('All');
   const [trOnly, setTrOnly] = useBlogState(false);
   const [limit, setLimit] = useBlogState(PAGE_SIZE);
+  useReveal();
 
   /* The featured post is pinned above the grid, so the grid carries
      the rest; topic and language filters apply to the grid. */

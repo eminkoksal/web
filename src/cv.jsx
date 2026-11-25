@@ -1,11 +1,15 @@
-/* CV page: full curriculum vitae. Content lives in cv-data.jsx, shared with the PDF. */
+/* CV page: full curriculum vitae. Content lives in cv-data.jsx, shared with the PDF.
+   Emin Style v1.2 (2026-11-25): the career timeline on an ink band under the hero, sections
+   ruled instead of banded, larger and darker record text, the closing on the coral surface. */
 import React from 'react';
 import {
   CV_UPDATED, CV_TITLE, CV_ACADEMIC_RANK, CV_AI_STRATEGY, CV_ECONOMIC, CV_PERSONAL, CURRENT_POSITIONS, PREVIOUS_POSITIONS, AFFILIATIONS, EDUCATION, TEACHING_BAU, TEACHING_GUEST, REFEREE_FOR, RESEARCH_INTERESTS, venuePart, PUB_BOOKS, PUB_CHAPTERS, PUB_ARTICLES_SELECTED, PUB_ARTICLES_OTHER, PUB_OTHER_JOURNAL, PUB_REPORTS,
 } from './cv-data.jsx';
-import { CV_PDF, IconArrow, IconSearch, IconDownload, IconChevron, Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA, Nav, Footer, OrbitalArc } from './shared.jsx';
+import { CV_PDF, IconArrow, IconDownload, Eyebrow, Button, Nav, Footer } from './shared.jsx';
+import { useReveal, ArrowUpRight, Btn, CoralClose } from './v2.jsx';
+import CareerTimeline from './career-timeline.jsx';
 
-const { useState, useEffect, useRef } = React;
+const { useState, useEffect } = React;
 
 /* ------------------------------------------------------------------ */
 /*  Content                                                            */
@@ -37,11 +41,11 @@ function Citation({ pub }) {
       padding: '18px 0',
       borderTop: '1px solid rgba(22,21,15,.1)'
     }}>
-      <span style={{ fontSize: 13, color: '#56554F', whiteSpace: 'nowrap' }}>
+      <span style={{ fontFamily: 'var(--font-mono)', fontSize: 13, letterSpacing: '.04em', color: '#56554F', whiteSpace: 'nowrap' }}>
         {pub.year || ''}
       </span>
       <p style={{
-        fontSize: 15, lineHeight: 1.5, color: '#16150F', margin: 0
+        fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.5, color: '#16150F', margin: 0
       }}>
         <strong style={{ fontWeight: 500 }}>{pub.authors}</strong>
         {pub.year ? ` (${pub.year}). ` : ' '}
@@ -91,14 +95,14 @@ function PubGroup({ id, title, items }) {
 /* CV section header — eyebrow + heading, with anchor scroll target */
 function CVHeader({ index, eyebrow, title }) {
   return (
-    <header style={{
+    <header data-r style={{
       display: 'grid', gridTemplateColumns: '64px 1fr',
       gap: 24, alignItems: 'baseline',
       marginBottom: 32
     }}>
       <div style={{
-        fontFamily: 'var(--font-sans)',
-        fontSize: 16, fontWeight: 500,
+        fontFamily: 'var(--font-mono)',
+        fontSize: 13, fontWeight: 500,
         letterSpacing: '.08em', color: '#BC4527'
       }}>
         {index}
@@ -122,18 +126,18 @@ function CVSection({ id, index, eyebrow, title, children, pageBreak, alt }) {
   return (
     <section id={id} className={'cv-section' + (pageBreak ? ' cv-section--break' : '')}
     style={{
-      padding: '96px 0',
-      scrollMarginTop: 140,
-      background: alt ? '#FBFAF6' : 'transparent'
+      padding: '0 0 88px',
+      scrollMarginTop: 140
     }}>
-      <div className="container">
+      <div className="container" data-reveal style={{ position: 'relative', paddingTop: 40 }}>
+        <span className="v2-rule v2-draw" style={{ left: 'var(--container-gutter)', right: 'var(--container-gutter)' }} />
         <CVHeader index={index} eyebrow={eyebrow} title={title} />
         <div style={{
           display: 'grid', gridTemplateColumns: '64px 1fr',
           gap: 24, alignItems: 'start'
         }}>
           <div />
-          <div>{children}</div>
+          <div data-r style={{ '--i': 1 }}>{children}</div>
         </div>
       </div>
     </section>);
@@ -150,18 +154,19 @@ function PositionRow({ role, org, years }) {
       borderTop: '1px solid rgba(22,21,15,.12)'
     }}>
       <div style={{
-        fontFamily: 'var(--font-sans)', fontSize: 19, fontWeight: 500,
-        letterSpacing: '-.015em', lineHeight: 1.3, color: '#16150F'
+        fontFamily: 'var(--font-sans)', fontSize: 21, fontWeight: 500,
+        letterSpacing: '-.018em', lineHeight: 1.3, color: '#16150F'
       }}>
         {role}
       </div>
       <div style={{
-        fontSize: 16, color: '#2E2E29', lineHeight: 1.5
+        fontSize: 17, color: '#2E2E29', lineHeight: 1.5
       }}>
         {org}
       </div>
       <div style={{
-        fontSize: 14, color: '#56554F', textAlign: 'right', whiteSpace: 'nowrap'
+        fontFamily: 'var(--font-mono)', fontSize: 12, letterSpacing: '.06em', textTransform: 'uppercase',
+        color: '#56554F', textAlign: 'right', whiteSpace: 'nowrap'
       }}>
         {years}
       </div>
@@ -175,11 +180,9 @@ function PositionRow({ role, org, years }) {
 
 function CVHero() {
   return (
-    <section className="cv-hero" style={{ position: 'relative', padding: '100px 0 64px' }}>
+    <section className="cv-hero" style={{ position: 'relative', padding: '40px 0 64px' }}>
       <div className="container" style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', left: -20, top: 60, zIndex: 0 }}>
-          <GhostHeadline>Vitae</GhostHeadline>
-        </div>
+        
 
         <div style={{
           position: 'relative', zIndex: 1, paddingTop: 64,
@@ -239,7 +242,7 @@ function Meta({ label, value }) {
       }}>
         {label}
       </div>
-      <div style={{ fontSize: 15, color: '#16150F' }}>{value}</div>
+      <div style={{ fontSize: 17, color: '#16150F' }}>{value}</div>
     </div>);
 
 }
@@ -320,12 +323,20 @@ function CVTOC() {
 /* ------------------------------------------------------------------ */
 
 function CVApp() {
+  useReveal();
   return (
     <>
       <Nav active="CV" />
-      <main>
+      <main className="cvp">
         <CVHero />
+        <section className="cv-timeline" style={{ background: '#16150F', color: '#F5F2EB', padding: '64px 0 72px', overflow: 'hidden' }}>
+          <div className="container">
+            <Eyebrow color="#B9B6AB">Career timeline</Eyebrow>
+            <CareerTimeline />
+          </div>
+        </section>
         <CVTOC />
+        <div style={{ height: 56 }} />
 
         <CVSection id="current" index="01" eyebrow="Current Positions" title="Where I am now">
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
@@ -497,44 +508,18 @@ function CVApp() {
           </p>
         </CVSection>
 
-        {/* Footer CTA */}
-        <section className="cv-footer-cta" style={{
-          padding: '64px 0 128px', background: 'transparent'
-        }}>
-          <div className="container">
-            <div style={{
-              padding: '48px',
-              background: '#16150F', color: '#F5F2EB',
-              borderRadius: 24,
-              display: 'grid', gridTemplateColumns: '1.4fr 1fr',
-              gap: 48, alignItems: 'end'
-            }}>
-              <p style={{
-                fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55,
-                color: 'rgba(245,242,235,.9)', margin: 0, maxWidth: 640
-              }}>
-                The latest PDF version of this CV is available for download above.
-                For collaboration or speaking inquiries, reach out by{' '}
-                <a href="mailto:mail@eminkoksal.com" style={{
-                  color: '#F5F2EB', textDecoration: 'underline', textUnderlineOffset: 3
-                }}>email</a>
-                {' '}or{' '}
-                <a href="https://linkedin.com/in/eminkoksal" target="_blank" rel="noopener noreferrer" style={{
-                  color: '#F5F2EB', textDecoration: 'underline', textUnderlineOffset: 3
-                }}>LinkedIn</a>.
-              </p>
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                <Button variant="inverse" href={CV_PDF} target="_blank">
-                  Download PDF <IconDownload size={14} />
-                </Button>
-                <Button variant="ghost" href="contact.html"
-                style={{ borderColor: 'rgba(255,255,255,.4)', color: '#F5F2EB' }}>
-                  Get in touch <IconArrow size={14} dir="up-right" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CoralClose
+          title="The full record, as a PDF"
+          body={<>
+            The latest PDF version of this CV is available for download above.
+            For collaboration or speaking inquiries, reach out by{' '}
+            <a href="mailto:mail@eminkoksal.com">email</a>
+            {' '}or{' '}
+            <a href="https://linkedin.com/in/eminkoksal" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+          </>}>
+          <Btn href={CV_PDF} external>Download PDF <IconDownload size={14} /></Btn>
+          <Btn variant="ghost" href="contact.html">Get in touch <ArrowUpRight /></Btn>
+        </CoralClose>
       </main>
       <Footer />
     </>);

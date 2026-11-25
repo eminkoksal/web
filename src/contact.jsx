@@ -1,6 +1,9 @@
-/* Contact page — short by design. Email + LinkedIn + Web only. No form. */
+/* Contact page — short by design. Email + LinkedIn + Web only. No form.
+   Emin Style v1.2 (2026-11-25): the email card is the page's coral surface, the other cards
+   are edged, list bullets are nodes, sections reveal on scroll. */
 import React from 'react';
-import { IconArrow, IconSearch, IconDownload, IconChevron, Monogram, Eyebrow, GhostHeadline, Button, Portrait, SatelliteCTA, Nav, Footer, OrbitalArc } from './shared.jsx';
+import { IconArrow, Eyebrow, Nav, Footer } from './shared.jsx';
+import { useReveal } from './v2.jsx';
 
 const { useState: useContactState } = React;
 
@@ -24,11 +27,9 @@ function contactEmail() {
 
 function ContactHero() {
   return (
-    <section style={{ position: 'relative', padding: '120px 0 48px' }}>
+    <section style={{ position: 'relative', padding: '8px 0 48px' }}>
       <div className="container" style={{ position: 'relative' }}>
-        <div style={{ position: 'absolute', right: -20, top: 60, zIndex: 0 }}>
-          <GhostHeadline>Contact</GhostHeadline>
-        </div>
+        
         <div style={{ position: 'relative', zIndex: 1, paddingTop: 64,
           display: 'grid', gridTemplateColumns: '1.2fr 1fr',
           gap: 64, alignItems: 'end' }}>
@@ -38,7 +39,7 @@ function ContactHero() {
               Get in touch
             </h1>
           </div>
-          <p style={{ fontFamily: 'var(--font-prose)', fontSize: 18, lineHeight: 1.55, color: '#2E2E29',
+          <p style={{ fontFamily: 'var(--font-prose)', fontSize: 20, lineHeight: 1.5, color: '#2E2E29',
             margin: 0 }}>
             Email is the most reliable way to reach me. Write if you have a
             competition or regulation matter where AI could change the workflow,
@@ -59,9 +60,9 @@ function ContactHero() {
 
 function ChannelCard({ label, value, helper, href, target, primary }) {
   const [hover, setHover] = useContactState(false);
-  const bg = primary ? '#16150F' : '#FBFAF6';
-  const fg = primary ? '#F5F2EB' : '#16150F';
-  const mutedFg = primary ? 'rgba(245,242,235,.72)' : '#56554F';
+  const bg = primary ? '#F37338' : '#FBFAF6';
+  const fg = '#16150F';
+  const mutedFg = primary ? '#16150F' : '#2E2E29';
   return (
     <a href={href} target={target}
     rel={target === '_blank' ? 'noopener noreferrer' : undefined}
@@ -70,7 +71,7 @@ function ChannelCard({ label, value, helper, href, target, primary }) {
       position: 'relative',
       background: bg, color: fg,
       borderRadius: 24,
-      border: primary ? '1.5px solid #16150F' : '1px solid rgba(22,21,15,.12)',
+      border: primary ? '1.5px solid #F37338' : '1px solid #DAD8CD',
       padding: primary ? '40px 36px 36px' : '36px 32px 32px',
       minHeight: primary ? 320 : 280,
       display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
@@ -82,25 +83,25 @@ function ChannelCard({ label, value, helper, href, target, primary }) {
         <span style={{
           fontFamily: 'var(--font-sans)', fontSize: 14, fontWeight: 500,
           letterSpacing: '.08em', textTransform: 'uppercase', fontFamily: 'var(--font-mono)',
-          color: primary ? '#F5F2EB' : '#16150F',
-          display: 'inline-flex', alignItems: 'center', gap: 10, lineHeight: 1
-        }}>
-          <span style={{ width: 6, height: 6, borderRadius: '50%',
-            background: '#F37338', flexShrink: 0 }} />
+          color: '#16150F',
+            display: 'inline-flex', alignItems: 'center', gap: 10, lineHeight: 1
+          }}>
+            <span style={{ width: 8, height: 8, borderRadius: '50%',
+              background: primary ? '#16150F' : '#F37338', flexShrink: 0 }} />
           {label}
           {primary &&
           <span style={{
             marginLeft: 8, padding: '4px 10px', borderRadius: 999,
-            background: '#F37338', color: '#16150F',
-            fontSize: 11, letterSpacing: '0.08em'
-          }}>
-              Primary
+            background: '#16150F', color: '#F5F2EB',
+                fontSize: 11, letterSpacing: '0.08em'
+              }}>
+                Primary
             </span>
           }
         </span>
         <div style={{
           fontFamily: 'var(--font-sans)',
-          fontSize: primary ? 'clamp(26px, 2.6vw, 36px)' : 22,
+          fontSize: primary ? 'clamp(24px, 2.4vw, 34px)' : 20,
           fontWeight: 500, letterSpacing: '-0.02em',
           lineHeight: 1.15,
           margin: '24px 0 16px',
@@ -108,20 +109,20 @@ function ChannelCard({ label, value, helper, href, target, primary }) {
         }}>
           {value}
         </div>
-        <p style={{ fontSize: 15, lineHeight: 1.5, color: mutedFg, margin: 0,
-          maxWidth: 420 }}>
+        <p style={{ fontSize: primary ? 18 : 16, lineHeight: 1.5, color: mutedFg, margin: 0,
+            maxWidth: 420 }}>
           {helper}
         </p>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12,
-        color: primary ? '#F5F2EB' : '#16150F',
-        fontFamily: 'var(--font-sans)',
-        fontSize: 14, fontWeight: 500, letterSpacing: '-.02em' }}>
+        color: '#16150F',
+          fontFamily: 'var(--font-sans)',
+          fontSize: 15, fontWeight: 500, letterSpacing: '-.02em' }}>
         <span style={{
           width: primary ? 52 : 44, height: primary ? 52 : 44,
           borderRadius: '50%',
-          background: primary ? '#FBFAF6' : '#16150F',
-          color: primary ? '#16150F' : '#F5F2EB',
+          background: '#16150F',
+            color: '#F5F2EB',
           display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
           transform: hover ? 'translateX(2px)' : 'none',
           transition: 'transform 180ms cubic-bezier(0.4,0,0.2,1)'
@@ -141,10 +142,10 @@ function ContactChannels() {
   const [emailText, emailHref] = contactEmail();
   return (
     <section className="section" style={{ paddingTop: 32, paddingBottom: 96 }}>
-      <div className="container">
+      <div className="container" data-reveal data-r>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: '1.25fr 1fr 1fr',
+          gridTemplateColumns: '1.35fr 1fr 1fr',
           gap: 24, alignItems: 'stretch'
         }}>
           <ChannelCard
@@ -210,21 +211,12 @@ function OpenToColumn({ heading, items }) {
           borderBottom: i === items.length - 1 ? '1px solid rgba(22,21,15,.14)' : 'none',
           display: 'grid', gridTemplateColumns: '20px 1fr', gap: 16,
           alignItems: 'start',
-          fontSize: 16, lineHeight: 1.45, color: '#16150F'
-        }}>
-            <span style={{
-            display: 'inline-flex', alignItems: 'center',
-            justifyContent: 'center',
-            width: 18, height: 18, borderRadius: '50%',
-            background: '#F37338', color: '#16150F',
-            marginTop: 3
+          fontSize: 17, lineHeight: 1.45, color: '#16150F'
           }}>
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" strokeWidth="3"
-            strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            </span>
+            <span style={{
+              width: 8, height: 8, borderRadius: '50%',
+              background: '#F37338', marginTop: 9
+            }} />
             <span>{it}</span>
           </li>
         )}
@@ -236,7 +228,7 @@ function OpenToColumn({ heading, items }) {
 function OpenTo() {
   return (
     <section className="section" style={{ paddingTop: 16, paddingBottom: 96 }}>
-      <div className="container">
+      <div className="container" data-reveal data-r>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr',
           gap: 64, alignItems: 'start', marginBottom: 56 }}>
           <div>
@@ -269,9 +261,9 @@ function OpenTo() {
 function SpeakingMedia() {
   return (
     <section className="section" style={{ paddingTop: 16, paddingBottom: 96 }}>
-      <div className="container">
+      <div className="container" data-reveal data-r>
         <div style={{
-          background: '#FBFAF6', borderRadius: 24, padding: '64px 56px',
+          background: '#EAE8DF', borderRadius: 24, padding: '64px 56px',
           display: 'grid', gridTemplateColumns: '1fr 1.4fr',
           gap: 64, alignItems: 'start'
         }}>
@@ -286,7 +278,7 @@ function SpeakingMedia() {
               For interview, podcast, panel, or keynote inquiries
             </h2>
           </div>
-          <p style={{ fontFamily: 'var(--font-prose)', fontSize: 17, lineHeight: 1.55, color: '#2E2E29',
+          <p style={{ fontFamily: 'var(--font-prose)', fontSize: 19, lineHeight: 1.55, color: '#2E2E29',
             margin: 0, maxWidth: 620 }}>
             I speak in English and Turkish. I am most useful on AI in legal
             and economic practice, AI-native research methods for regulatory
@@ -308,7 +300,7 @@ function SpeakingMedia() {
 function Location() {
   return (
     <section className="section" style={{ paddingTop: 16, paddingBottom: 96 }}>
-      <div className="container">
+      <div className="container" data-reveal data-r>
         <div style={{
           display: 'grid', gridTemplateColumns: '1fr 1.6fr',
           gap: 64, alignItems: 'center',
@@ -340,7 +332,7 @@ function Location() {
 function Confidentiality() {
   return (
     <section className="section" style={{ paddingTop: 16, paddingBottom: 120 }}>
-      <div className="container">
+      <div className="container" data-reveal data-r>
         <div style={{
           display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 64,
           alignItems: 'start'
@@ -411,6 +403,7 @@ function StickyMailto() {
 /* ------------------------------------------------------------------ */
 
 function ContactApp() {
+  useReveal();
   return (
     <>
       <Nav active="Contact" />

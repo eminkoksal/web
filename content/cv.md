@@ -3,6 +3,8 @@
 > Drop-in content for the CV page (web version). Aligned with `brand-guide.md` (verbal identity) and the February 2026 PDF CV. Visual design lives in Claude Design. English. The page should also offer a `Download PDF` link to the current PDF CV in the site's media library.
 >
 > **Title note** *(internal):* "Associate Professor" is the formal academic title (Doçentlik); the role at Bahçeşehir University since 2024 is part-time teaching (lecturer). The CV reflects both correctly — full Associate Professor position 2018–2024 (listed under Previous Positions), part-time lecturer 2024–present (under Current Positions).
+>
+> **Layout note (Emin Style v1.2, 2026-11-25):** the page now carries the career timeline on an ink band under the hero (shared with About; eyebrow CAREER TIMELINE), sections are separated by a rule that draws instead of alternating bands, the record text is larger and darker, and the closing block sits on the coral surface with a new H2, "The full record, as a PDF", above the existing sentence. Record content is unchanged and still comes from `src/cv-data.jsx`.
 
 ---
 

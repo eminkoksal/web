@@ -1,9 +1,10 @@
 /* About page — Emin Style v1.2 (2026-11-25).
    Copy lives in content/about.md; styles in public/assets/v2.css (shared) and
-   about.css (ab- classes). The timeline's dates are those of the CV (src/cv-data.jsx). */
+   about.css (ab- classes). The career timeline is shared with the CV page (career-timeline.jsx). */
 import React from 'react';
 import { Eyebrow, Nav, Footer } from './shared.jsx';
 import { useReveal, ArrowUpRight, Btn, CoralClose, StatRow } from './v2.jsx';
+import CareerTimeline from './career-timeline.jsx';
 
 /* ------------------------------------------------------------------ */
 /*  Content                                                            */
@@ -15,21 +16,6 @@ const ABOUT_STATS = [
 { n: 50, suffix: '+', label: 'publications' },
 { n: 1000, suffix: 's', label: 'legal documents analyzed with AI', hero: true },
 { n: 11, suffix: '+', label: 'courses taught' }];
-
-/* The career, in order. side/level/right place a label on the wide layout (above or below
-   the line, one or two rows out, text to the left of its leader near the right edge);
-   ai marks the AI-native work, drawn in coral. Years as in the CV. */
-const TIMELINE = [
-{ year: 2001, text: 'BA in Economics, Galatasaray University', side: 'up' },
-{ year: 2002, text: 'Research Assistant, Bahçeşehir University', side: 'down' },
-{ year: 2008, text: 'PhD in Economics, Marmara University; Assistant Professor', side: 'up' },
-{ year: 2013, text: 'Vice Dean; coordinator of the Financial Economics graduate program', side: 'down' },
-{ year: 2015, text: 'Economic Consultant, Dentons', side: 'up' },
-{ year: 2018, text: 'Associate Professor; Associate Editor-in-Chief of a SAGE journal', side: 'down' },
-{ year: 2024, text: 'Co-editor, Routledge volume on digitalization in Türkiye', side: 'up', right: true },
-{ year: 2025, text: 'First AI-native paper: 3,369 infringement decisions', side: 'down', level: 2, right: true, ai: true },
-{ year: 2026, text: 'Second paper: 18,513 citations mapped as a network', side: 'up', level: 2, right: true, ai: true }];
-const T0 = 2001, T1 = 2027;
 
 const EDUCATION = [
 { years: '2008', degree: 'PhD in Economics', place: 'Marmara University' },
@@ -358,18 +344,7 @@ function CareerBand() {
           <div data-r><Eyebrow color="#B9B6AB">Career story</Eyebrow></div>
           <h2 className="v2-h2" data-r style={{ '--i': 1 }}>How I got here</h2>
         </div>
-        <div className="ab-time" data-reveal>
-          <span className="ab-time__line v2-draw" aria-hidden="true" />
-          <ol>
-          {TIMELINE.map((e, i) =>
-          <li key={e.year}
-          className={'is-' + e.side + (e.level === 2 ? ' is-l2' : '') + (e.right ? ' is-right' : '') + (e.ai ? ' is-ai' : '')}
-          style={{ '--t': (e.year - T0) / (T1 - T0), '--i': i + 2 }} data-r>
-            <div className="ab-time__label"><b>{e.year}</b>{e.text}</div>
-          </li>
-          )}
-          </ol>
-        </div>
+        <CareerTimeline />
       </div>
     </section>);
 }

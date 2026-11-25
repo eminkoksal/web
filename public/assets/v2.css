@@ -89,6 +89,7 @@ a:hover > * > .v2-arrow-link svg, a:hover > .v2-arrow-link svg { transform: tran
 .v2-close { padding: 0; }
 .v2-close__stone { background: var(--ek-coral-arc); color: var(--ek-ink); border-radius: 24px; padding: 88px 72px; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 56px; align-items: end; }
 .v2-close__stone .v2-h2 { font-size: clamp(34px, 4vw, 58px); text-wrap: pretty; }
+.v2-close__stone p a { color: var(--ek-ink); text-underline-offset: 3px; }
 .v2-close__stone p { font-family: var(--ek-font-prose); font-size: 19px; line-height: 1.5; color: var(--ek-ink); }
 .v2-close__cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
 .v2-close__stone .v2-btn:hover { background: var(--ek-paper); border-color: var(--ek-paper); color: var(--ek-ink); }
@@ -107,6 +108,36 @@ a:hover > * > .v2-arrow-link svg, a:hover > .v2-arrow-link svg { transform: tran
 
 /* ---------- a rule that draws (position its parent relative) ---------- */
 .v2-rule { position: absolute; left: 0; right: 0; top: 0; height: 1.5px; background: var(--ek-ink); }
+
+/* ---------- career timeline (on an ink band) ---------- */
+.v2-time { position: relative; margin: 72px 0 0; height: 404px; }
+.v2-time ol { list-style: none; margin: 0; padding: 0; }
+.v2-time__line { position: absolute; left: 0; right: 0; top: 202px; height: 1px; background: rgba(245,242,235,.4); }
+.v2-time li { position: absolute; left: calc(var(--t) * 100%); top: 202px; width: 0; height: 0; }
+.v2-time li::before { content: ''; position: absolute; left: -4.5px; top: -4px; width: 9px; height: 9px; border-radius: 50%; background: var(--ek-paper); }
+.v2-time li.is-ai::before { left: -6.5px; top: -6px; width: 13px; height: 13px; background: var(--ek-coral-arc); }
+.v2-time__label { position: absolute; left: 0; width: 196px; padding-left: 12px; border-left: 1px solid rgba(245,242,235,.4); font-size: 15px; line-height: 1.35; color: #E4E1D8; }
+.v2-time__label b { display: block; font-family: var(--ek-font-mono); font-size: 12px; font-weight: 500; letter-spacing: .08em; color: var(--ek-paper); margin-bottom: 5px; }
+.v2-time li.is-ai .v2-time__label { border-color: rgba(243,115,56,.85); color: var(--ek-paper); }
+.v2-time li.is-ai .v2-time__label b { color: var(--ek-coral-arc); }
+.v2-time li.is-up .v2-time__label { bottom: 4px; padding-bottom: 18px; }
+.v2-time li.is-down .v2-time__label { top: 5px; padding-top: 18px; }
+.v2-time li.is-up.is-l2 .v2-time__label { padding-bottom: 104px; }
+.v2-time li.is-down.is-l2 .v2-time__label { padding-top: 104px; }
+.v2-time li.is-right .v2-time__label { left: auto; right: 0; padding-left: 0; padding-right: 12px; border-left: 0; border-right: 1px solid rgba(245,242,235,.4); text-align: right; }
+.v2-time li.is-right.is-ai .v2-time__label { border-color: rgba(243,115,56,.85); }
+/* ---------- narrower screens: the timeline becomes a list ---------- */
+@media (max-width: 1240px) {
+  .v2-time { height: auto; margin-top: 48px; }
+  .v2-time__line { display: none; }
+  .v2-time li { position: relative; left: auto; top: auto; width: auto; height: auto; padding: 0 0 26px 30px; }
+  .v2-time li::before { left: 0; top: 4px; }
+  .v2-time li.is-ai::before { left: -2px; top: 2px; }
+  .v2-time li::after { content: ''; position: absolute; left: 4px; top: 19px; bottom: -1px; width: 1px; background: rgba(245,242,235,.3); }
+  .v2-time li:last-child::after { display: none; }
+  .v2-time li:last-child { padding-bottom: 0; }
+  .v2-time li .v2-time__label, .v2-time li.is-right .v2-time__label, .v2-time li.is-up .v2-time__label, .v2-time li.is-down .v2-time__label, .v2-time li.is-l2 .v2-time__label { position: static; width: auto; padding: 0; border: 0; text-align: left; font-size: 17px; }
+}
 
 /* The band inside a card (Research page): no head row, shorter. */
 .v2-net--card { height: clamp(360px, 38vw, 470px); }
@@ -127,4 +158,9 @@ a:hover > * > .v2-arrow-link svg, a:hover > .v2-arrow-link svg { transform: tran
   .v2-card { padding: 28px; min-height: 0; }
   .v2-stats__row { grid-template-columns: 1fr 1fr; gap: 40px 20px; }
   .v2-stat + .v2-stat { padding-left: 0; border-left: 0; }
+}
+
+/* On paper nothing waits for a scroll. */
+@media print {
+  .js [data-r], .js .v2-draw { opacity: 1 !important; transform: none !important; }
 }

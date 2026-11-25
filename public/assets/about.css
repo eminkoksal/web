@@ -62,23 +62,6 @@
 /* ---------- career: the timeline band (ink) ---------- */
 .ab-career { background: var(--ek-ink); color: var(--ek-paper); padding: 112px 0 96px; overflow: hidden; }
 .ab-career .v2-h2 { color: var(--ek-paper); margin-top: 22px; }
-.ab-time { position: relative; margin: 72px 0 0; height: 404px; }
-.ab-time ol { list-style: none; margin: 0; padding: 0; }
-.ab-time__line { position: absolute; left: 0; right: 0; top: 202px; height: 1px; background: rgba(245,242,235,.4); }
-.ab-time li { position: absolute; left: calc(var(--t) * 100%); top: 202px; width: 0; height: 0; }
-.ab-time li::before { content: ''; position: absolute; left: -4.5px; top: -4px; width: 9px; height: 9px; border-radius: 50%; background: var(--ek-paper); }
-.ab-time li.is-ai::before { left: -6.5px; top: -6px; width: 13px; height: 13px; background: var(--ek-coral-arc); }
-.ab-time__label { position: absolute; left: 0; width: 196px; padding-left: 12px; border-left: 1px solid rgba(245,242,235,.4); font-size: 15px; line-height: 1.35; color: #E4E1D8; }
-.ab-time__label b { display: block; font-family: var(--ek-font-mono); font-size: 12px; font-weight: 500; letter-spacing: .08em; color: var(--ek-paper); margin-bottom: 5px; }
-.ab-time li.is-ai .ab-time__label { border-color: rgba(243,115,56,.85); color: var(--ek-paper); }
-.ab-time li.is-ai .ab-time__label b { color: var(--ek-coral-arc); }
-.ab-time li.is-up .ab-time__label { bottom: 4px; padding-bottom: 18px; }
-.ab-time li.is-down .ab-time__label { top: 5px; padding-top: 18px; }
-.ab-time li.is-up.is-l2 .ab-time__label { padding-bottom: 104px; }
-.ab-time li.is-down.is-l2 .ab-time__label { padding-top: 104px; }
-.ab-time li.is-right .ab-time__label { left: auto; right: 0; padding-left: 0; padding-right: 12px; border-left: 0; border-right: 1px solid rgba(245,242,235,.4); text-align: right; }
-.ab-time li.is-right.is-ai .ab-time__label { border-color: rgba(243,115,56,.85); }
-
 /* ---------- the story ---------- */
 .ab-story { padding: 104px 0 64px; }
 .ab-edu { position: relative; padding-top: 28px; }
@@ -103,18 +86,6 @@
 .ab-personal { padding: 40px 0 128px; }
 .ab-personal__text { font-family: var(--ek-font-prose); font-size: clamp(22px, 2vw, 28px); line-height: 1.4; color: var(--ek-ink); max-width: 24em; }
 
-/* ---------- narrower screens: the timeline becomes a list ---------- */
-@media (max-width: 1240px) {
-  .ab-time { height: auto; margin-top: 48px; }
-  .ab-time__line { display: none; }
-  .ab-time li { position: relative; left: auto; top: auto; width: auto; height: auto; padding: 0 0 26px 30px; }
-  .ab-time li::before { left: 0; top: 4px; }
-  .ab-time li.is-ai::before { left: -2px; top: 2px; }
-  .ab-time li::after { content: ''; position: absolute; left: 4px; top: 19px; bottom: -1px; width: 1px; background: rgba(245,242,235,.3); }
-  .ab-time li:last-child::after { display: none; }
-  .ab-time li:last-child { padding-bottom: 0; }
-  .ab-time li .ab-time__label, .ab-time li.is-right .ab-time__label, .ab-time li.is-up .ab-time__label, .ab-time li.is-down .ab-time__label, .ab-time li.is-l2 .ab-time__label { position: static; width: auto; padding: 0; border: 0; text-align: left; font-size: 17px; }
-}
 @media (max-width: 980px) {
   .ab-hero { padding: 44px 0 32px; }
   .ab-display { margin-bottom: 36px; }

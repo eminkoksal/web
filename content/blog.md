@@ -5,6 +5,8 @@
 > **Voice note (2026-06-11 rewrite):** copy revised for a more human register. Facts unchanged.
 >
 > **Voice note (2026-09-26 pass):** copy revised to the `emin-english-voice` register: verdict first, one aphorism and one vivid example per page at most, no em-dashes, no contractions in prose, American spelling except published titles, no consultancy phrasing. Facts unchanged.
+>
+> **Layout note (Emin Style v1.2, 2026-11-25):** the featured post sits on a sunken card with its cover in stone radius (no longer a circle), card text is larger and darker, dates are mono labels, and the closing ask sits on the coral surface. Copy unchanged.
 
 ---
 

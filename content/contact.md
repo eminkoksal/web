@@ -5,6 +5,8 @@
 > **Voice note (2026-06-11 rewrite):** copy revised for a more human register. Facts unchanged.
 >
 > **Voice note (2026-09-26 pass):** copy revised to the `emin-english-voice` register: verdict first, one aphorism and one vivid example per page at most, no em-dashes, no contractions in prose, American spelling except published titles, no consultancy phrasing. Facts unchanged.
+>
+> **Layout note (Emin Style v1.2, 2026-11-25):** the email card is the page's coral surface (ink text, ink "Primary" pill), the other two cards are edged, the list bullets are nodes instead of check marks, and the speaking card is on the sunken surface. Copy unchanged.
 
 ---
 
