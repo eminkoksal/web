@@ -144,7 +144,7 @@ function FeaturedPost() {
               {p.image ? (
                 <div aria-hidden="true" style={{
                   width: '100%', aspectRatio: '4 / 3', borderRadius: 24,
-                  background: `#DAD8CD url(${p.image}) center/cover`,
+                  background: `#DAD8CD url(${p.cardImage || p.image}) center/cover`,
                 }} />
               ) : (
                 <Portrait
@@ -182,8 +182,9 @@ function PostCard({ p, n }) {
       <a href={postHref(p)} style={{ display: 'block', textDecoration: 'none' }}>
         <div style={{ position: 'relative', width: '100%', aspectRatio: '1.05/1' }}>
           {p.image ? (
-            <img src={p.image} alt="" loading="lazy"
-                 width={p.imageWidth || undefined} height={p.imageHeight || undefined}
+            <img src={p.cardImage || p.image} alt="" loading="lazy"
+                 width={p.cardImage ? undefined : p.imageWidth || undefined}
+                 height={p.cardImage ? undefined : p.imageHeight || undefined}
                  style={{
                    width: '100%', height: '100%', objectFit: 'cover', display: 'block',
                    borderRadius: 24, background: '#EAE8DF',
