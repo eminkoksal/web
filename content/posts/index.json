@@ -1,5 +1,24 @@
 [
   {
+    "slug": "kapi-kapanmiyor-daraliyor",
+    "title": "Kapı Kapanmıyor, Daralıyor: Mühendislik Öğrencilerine Yapay Zekâ ve Mesleğe Giriş Hakkında Ne Anlattım?",
+    "date": "2026-11-28",
+    "lang": "tr",
+    "topic": "Economics & Public Policy",
+    "featured": false,
+    "excerpt": "Türkiye’de her beş kişiden biri üretken yapay zekâ kullanıyor, şirketlerin ise yüzde 7,5’i. Geçen hafta mühendislik öğrencilerine üç soruyu anlattım. Şirketler neden geride, mesleğe giriş nasıl değişiyor, hangi bilgi işe yarıyor?",
+    "byline": null,
+    "sourceName": null,
+    "sourceUrl": null,
+    "readingMin": 7,
+    "words": 1393,
+    "native": true,
+    "image": "/blog-media/kapi-kapanmiyor-daraliyor-cover.jpg",
+    "imageWidth": 1600,
+    "imageHeight": 900,
+    "coverInBody": false
+  },
+  {
     "slug": "google-ai-overviews-rekabeti-ihlal-ediyor-mu",
     "title": "Google AI Overviews Rekabeti İhlal Ediyor mu?: Cevabı Masa Başında Değil, Sahada Aramak",
     "date": "2026-09-22",
